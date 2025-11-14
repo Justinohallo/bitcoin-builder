@@ -3,8 +3,9 @@ import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { loadRecap, loadRecaps } from "@/lib/content";
-import { generateMetadata as generateMeta } from "@/lib/seo";
+import { generateMetadata as generateMeta, createArticleSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
 
 interface RecapPageProps {
   params: Promise<{ slug: string }>;
@@ -36,27 +37,46 @@ export default async function RecapPage({ params }: RecapPageProps) {
     notFound();
   }
 
+  // Generate structured data
+  const articleSchema = createArticleSchema({
+    title: recap.title,
+    slug: recap.slug,
+    summary: recap.summary,
+    date: recap.date,
+    eventTitle: recap.eventTitle,
+  });
+
+  const breadcrumbSchema = createBreadcrumbList([
+    { name: "Home", url: "https://builder.van" },
+    { name: "Recaps", url: "https://builder.van/recaps" },
+    { name: recap.title },
+  ]);
+
+  const structuredData = createSchemaGraph(articleSchema, breadcrumbSchema);
+
   return (
-    <PageContainer>
-      <Link
-        href="/recaps"
-        className="inline-block text-orange-400 hover:text-orange-300 mb-6 transition-colors"
-      >
-        ← Back to Recaps
-      </Link>
+    <>
+      <JsonLd data={structuredData} />
+      <PageContainer>
+        <Link
+          href="/recaps"
+          className="inline-block text-orange-400 hover:text-orange-300 mb-6 transition-colors"
+        >
+          ← Back to Recaps
+        </Link>
 
-      <Heading level="h1" className="text-orange-400 mb-4">
-        {recap.title}
-      </Heading>
+        <Heading level="h1" className="text-orange-400 mb-4">
+          {recap.title}
+        </Heading>
 
-      <div className="text-lg text-neutral-300 mb-8 space-y-2">
-        <p>📅 {recap.date}</p>
-        <p>Event: {recap.eventTitle}</p>
-      </div>
+        <div className="text-lg text-neutral-300 mb-8 space-y-2">
+          <p>📅 {recap.date}</p>
+          <p>Event: {recap.eventTitle}</p>
+        </div>
 
-      <p className="text-xl text-neutral-300 mb-12">{recap.summary}</p>
+        <p className="text-xl text-neutral-300 mb-12">{recap.summary}</p>
 
-      {recap.sections.map((section, index) => (
+        {recap.sections.map((section, index) => (
         <Section key={index}>
           <Heading level="h2" className="text-neutral-100 mb-4">
             {section.title}
@@ -82,7 +102,8 @@ export default async function RecapPage({ params }: RecapPageProps) {
           )}
         </Section>
       ))}
-    </PageContainer>
+      </PageContainer>
+    </>
   );
 }
 

@@ -1,8 +1,9 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { loadWhatToExpect } from "@/lib/content";
-import { generateMetadata as generateMeta } from "@/lib/seo";
+import { generateMetadata as generateMeta, createHowToSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
 import Link from "next/link";
 
 export async function generateMetadata() {
@@ -13,8 +14,28 @@ export async function generateMetadata() {
 export default function WhatToExpectPage() {
   const content = loadWhatToExpect();
 
+  // Generate structured data
+  const howToSchema = createHowToSchema({
+    title: content.title,
+    slug: "what-to-expect",
+    description: content.description,
+    steps: content.sections.map(section => ({
+      title: section.title,
+      body: section.body,
+    })),
+  });
+
+  const breadcrumbSchema = createBreadcrumbList([
+    { name: "Home", url: "https://builder.van" },
+    { name: "What to Expect" },
+  ]);
+
+  const structuredData = createSchemaGraph(howToSchema, breadcrumbSchema);
+
   return (
-    <PageContainer>
+    <>
+      <JsonLd data={structuredData} />
+      <PageContainer>
       <Heading level="h1" className="text-orange-400 mb-4">
         {content.title}
       </Heading>
@@ -46,7 +67,8 @@ export default function WhatToExpectPage() {
           )}
         </Section>
       ))}
-    </PageContainer>
+      </PageContainer>
+    </>
   );
 }
 

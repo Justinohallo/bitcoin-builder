@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { createOrganizationSchema, createWebSiteSchema, createSchemaGraph } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,8 +26,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Generate site-wide structured data
+  const organizationSchema = createOrganizationSchema();
+  const websiteSchema = createWebSiteSchema();
+  const siteSchema = createSchemaGraph(organizationSchema, websiteSchema);
+
   return (
     <html lang="en">
+      <head>
+        <JsonLd data={siteSchema} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-950 text-neutral-100`}
       >

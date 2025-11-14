@@ -2,8 +2,9 @@ import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { loadRecaps } from "@/lib/content";
-import { generatePageMetadata } from "@/lib/seo";
+import { generatePageMetadata, createCollectionPageSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
 
 export const metadata = generatePageMetadata(
   "Event Recaps | Builder Vancouver",
@@ -14,8 +15,29 @@ export const metadata = generatePageMetadata(
 export default function RecapsPage() {
   const { recaps } = loadRecaps();
 
+  // Generate structured data
+  const collectionSchema = createCollectionPageSchema(
+    "https://builder.van/recaps",
+    "Event Recaps | Builder Vancouver",
+    "Read recaps and highlights from past Builder Vancouver events and workshops.",
+    recaps.map(recap => ({
+      name: recap.title,
+      url: `https://builder.van/recaps/${recap.slug}`,
+      description: recap.summary,
+    }))
+  );
+
+  const breadcrumbSchema = createBreadcrumbList([
+    { name: "Home", url: "https://builder.van" },
+    { name: "Recaps" },
+  ]);
+
+  const structuredData = createSchemaGraph(collectionSchema, breadcrumbSchema);
+
   return (
-    <PageContainer>
+    <>
+      <JsonLd data={structuredData} />
+      <PageContainer>
       <Heading level="h1" className="text-orange-400 mb-4">
         Event Recaps
       </Heading>
@@ -55,7 +77,8 @@ export default function RecapsPage() {
           </p>
         </Section>
       )}
-    </PageContainer>
+      </PageContainer>
+    </>
   );
 }
 

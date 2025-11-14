@@ -1,8 +1,9 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { loadBitcoin101 } from "@/lib/content";
-import { generateMetadata as generateMeta } from "@/lib/seo";
+import { generateMetadata as generateMeta, createCourseSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
 import Link from "next/link";
 
 export async function generateMetadata() {
@@ -13,14 +14,31 @@ export async function generateMetadata() {
 export default function Bitcoin101Page() {
   const content = loadBitcoin101();
 
-  return (
-    <PageContainer>
-      <Heading level="h1" className="text-orange-400 mb-4">
-        {content.title}
-      </Heading>
-      <p className="text-xl text-neutral-300 mb-12">{content.description}</p>
+  // Generate structured data
+  const courseSchema = createCourseSchema({
+    title: content.title,
+    slug: "bitcoin-101",
+    description: content.description,
+    educationalLevel: "Beginner",
+  });
 
-      {content.sections.map((section, index) => (
+  const breadcrumbSchema = createBreadcrumbList([
+    { name: "Home", url: "https://builder.van" },
+    { name: "Bitcoin 101" },
+  ]);
+
+  const structuredData = createSchemaGraph(courseSchema, breadcrumbSchema);
+
+  return (
+    <>
+      <JsonLd data={structuredData} />
+      <PageContainer>
+        <Heading level="h1" className="text-orange-400 mb-4">
+          {content.title}
+        </Heading>
+        <p className="text-xl text-neutral-300 mb-12">{content.description}</p>
+
+        {content.sections.map((section, index) => (
         <Section key={index}>
           <Heading level="h2" className="text-neutral-100 mb-4">
             {section.title}
@@ -46,7 +64,8 @@ export default function Bitcoin101Page() {
           )}
         </Section>
       ))}
-    </PageContainer>
+      </PageContainer>
+    </>
   );
 }
 

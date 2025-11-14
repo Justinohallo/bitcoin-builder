@@ -1,8 +1,9 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { loadOnboarding } from "@/lib/content";
-import { generateMetadata as generateMeta } from "@/lib/seo";
+import { generateMetadata as generateMeta, createHowToSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
 import Link from "next/link";
 
 export async function generateMetadata() {
@@ -13,8 +14,28 @@ export async function generateMetadata() {
 export default function OnboardingPage() {
   const content = loadOnboarding();
 
+  // Generate structured data
+  const howToSchema = createHowToSchema({
+    title: content.title,
+    slug: "onboarding",
+    description: content.description,
+    steps: content.sections.map(section => ({
+      title: section.title,
+      body: section.body,
+    })),
+  });
+
+  const breadcrumbSchema = createBreadcrumbList([
+    { name: "Home", url: "https://builder.van" },
+    { name: "Onboarding" },
+  ]);
+
+  const structuredData = createSchemaGraph(howToSchema, breadcrumbSchema);
+
   return (
-    <PageContainer>
+    <>
+      <JsonLd data={structuredData} />
+      <PageContainer>
       <Heading level="h1" className="text-orange-400 mb-4">
         {content.title}
       </Heading>
@@ -46,7 +67,8 @@ export default function OnboardingPage() {
           )}
         </Section>
       ))}
-    </PageContainer>
+      </PageContainer>
+    </>
   );
 }
 

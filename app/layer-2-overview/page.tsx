@@ -1,8 +1,9 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { loadLayer2 } from "@/lib/content";
-import { generateMetadata as generateMeta } from "@/lib/seo";
+import { generateMetadata as generateMeta, createCourseSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
 import Link from "next/link";
 
 export async function generateMetadata() {
@@ -13,8 +14,25 @@ export async function generateMetadata() {
 export default function Layer2OverviewPage() {
   const content = loadLayer2();
 
+  // Generate structured data
+  const courseSchema = createCourseSchema({
+    title: content.title,
+    slug: "layer-2-overview",
+    description: content.description,
+    educationalLevel: "Intermediate",
+  });
+
+  const breadcrumbSchema = createBreadcrumbList([
+    { name: "Home", url: "https://builder.van" },
+    { name: "Layer 2 Overview" },
+  ]);
+
+  const structuredData = createSchemaGraph(courseSchema, breadcrumbSchema);
+
   return (
-    <PageContainer>
+    <>
+      <JsonLd data={structuredData} />
+      <PageContainer>
       <Heading level="h1" className="text-orange-400 mb-4">
         {content.title}
       </Heading>
@@ -46,7 +64,8 @@ export default function Layer2OverviewPage() {
           )}
         </Section>
       ))}
-    </PageContainer>
+      </PageContainer>
+    </>
   );
 }
 
