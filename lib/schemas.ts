@@ -153,3 +153,42 @@ export const HomeSchema = z.object({
     meta: MetaSchema,
 });
 
+// Foundation Content Schemas (Mission, Vision, Charter, Philosophy)
+export const MissionSchema = z.object({
+    title: z.string(),
+    version: z.string(),
+    summary: z.string(),
+    paragraphs: z.array(z.string()),
+});
+
+export const VisionSchema = z.object({
+    title: z.string(),
+    version: z.string(),
+    summary: z.string(),
+    statements: z.array(z.string()),
+});
+
+const PillarSchema = z.object({
+    name: z.string(),
+    description: z.string(),
+});
+
+export const CharterSchema = z.object({
+    title: z.string(),
+    version: z.string(),
+    pillars: z.array(PillarSchema),
+    principles: z.array(z.string()),
+});
+
+const ThemeSchema = z.object({
+    name: z.string(),
+    summary: z.string(),
+    details: z.string(),
+});
+
+export const PhilosophySchema = z.object({
+    title: z.string(),
+    version: z.string(),
+    themes: z.array(ThemeSchema),
+});
+

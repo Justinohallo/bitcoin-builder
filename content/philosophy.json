@@ -1,0 +1,27 @@
+{
+  "title": "Builder Philosophy",
+  "version": "1.0",
+  "themes": [
+    {
+      "name": "Education",
+      "summary": "Start with 101s, build toward mastery, keep content structured.",
+      "details": "Education should be accessible, practical, and sovereignty-aligned."
+    },
+    {
+      "name": "Design & UX",
+      "summary": "Better UX improves sovereignty.",
+      "details": "We emphasize usability, clarity, and tool design that empowers users."
+    },
+    {
+      "name": "AI & Vibe Coding",
+      "summary": "AI assists structured building.",
+      "details": "All content should be consumable by LLMs for reuse and remixing."
+    },
+    {
+      "name": "Community",
+      "summary": "We build stronger together.",
+      "details": "Meetups, structured networking, and chapter alignment drive progress."
+    }
+  ]
+}
+

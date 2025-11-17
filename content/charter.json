@@ -1,0 +1,34 @@
+{
+  "title": "Builder Charter",
+  "version": "1.0",
+  "pillars": [
+    {
+      "name": "Build-First",
+      "description": "We prioritize demos, prototypes, code, and shipping real product experiences."
+    },
+    {
+      "name": "Open, Neutral & Welcoming",
+      "description": "Builder is inclusive, professional, and committed to neutrality."
+    },
+    {
+      "name": "Sovereignty Through Better Tools",
+      "description": "We teach sovereignty as a spectrum, enabled through superior UX and practical tooling."
+    },
+    {
+      "name": "Structured Knowledge & Documentation",
+      "description": "Knowledge must be preserved in structured, reusable formats."
+    },
+    {
+      "name": "Collaborative Community & Participation",
+      "description": "Builder thrives when people share ideas, feedback, and contributions."
+    }
+  ],
+  "principles": [
+    "No speculation",
+    "No financial advice",
+    "Respectful critique",
+    "Curiosity and openness",
+    "Long-term knowledge creation"
+  ]
+}
+

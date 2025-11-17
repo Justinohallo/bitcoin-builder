@@ -15,6 +15,10 @@ import {
     WhatToExpectSchema,
     HomeSchema,
     SectionSchema,
+    MissionSchema,
+    VisionSchema,
+    CharterSchema,
+    PhilosophySchema,
 } from "./schemas";
 
 /**
@@ -44,6 +48,12 @@ export type VibeAppsCollection = z.infer<typeof VibeAppsCollectionSchema>;
 export type WhatToExpect = z.infer<typeof WhatToExpectSchema>;
 
 export type Home = z.infer<typeof HomeSchema>;
+
+// Foundation content types
+export type Mission = z.infer<typeof MissionSchema>;
+export type Vision = z.infer<typeof VisionSchema>;
+export type Charter = z.infer<typeof CharterSchema>;
+export type Philosophy = z.infer<typeof PhilosophySchema>;
 
 // Helper types for sections and common elements
 export type Section = z.infer<typeof SectionSchema>;

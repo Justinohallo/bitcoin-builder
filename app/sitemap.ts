@@ -23,6 +23,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/about/mission`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/about/vision`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/about/charter`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/about/philosophy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/events`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
