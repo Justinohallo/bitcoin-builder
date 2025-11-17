@@ -340,30 +340,33 @@ Ensure `tsconfig.json` paths are properly configured.
 
 ## Deployment
 
-### Automated Deployment via GitHub Actions
+### Automated Deployment via Vercel
 
-This project uses GitHub Actions for automated CI/CD:
+This project deploys automatically to Vercel:
 
-- **Pull Requests**: Automatically run quality checks and create preview deployments
-- **Merges to Main**: Automatically deploy to production on Vercel
+- **Pull Requests**: Automatically create preview deployments (handled by Vercel)
+- **Merges to Main**: Automatically deploy to production (handled by Vercel)
+- **Quality Checks**: GitHub Actions runs linting, formatting, type checking, and builds on every PR
 
 **Workflow:**
 
 1. Create a feature branch: `git checkout -b feat/your-feature`
 2. Make changes and commit: `git commit -m "feat: add feature"`
 3. Push and create a PR: `git push origin feat/your-feature`
-4. CI checks run automatically (lint, format, type check, build)
-5. Preview deployment is created
-6. Once approved and checks pass, merge to `main`
-7. Production deployment triggers automatically
+4. GitHub Actions CI checks run automatically (lint, format, type check, build)
+5. Vercel creates a preview deployment automatically
+6. Once checks pass, merge to `main`
+7. Vercel deploys to production automatically
 
-**⚠️ Direct pushes to `main` are blocked** - all changes must go through pull requests.
+**Setup:**
 
-For complete setup instructions, see **[GitHub Actions Setup Guide](docs/GITHUB-ACTIONS-SETUP.md)**.
+1. Connect your GitHub repository to Vercel (via Vercel dashboard → Settings → Git)
+2. Vercel will automatically deploy on every push
+3. Configure environment variables in Vercel dashboard
 
 ### Environment Variables
 
-Required environment variables:
+Set these in your Vercel project settings:
 
 ```env
 NEXT_PUBLIC_SITE_URL=https://builder.van
@@ -372,7 +375,7 @@ NEXT_PUBLIC_SITE_URL=https://builder.van
 ### Manual Deployment (if needed)
 
 ```bash
-# Deploy to production (use only if GitHub Actions is not set up)
+# Deploy to production manually
 vercel --prod
 ```
 

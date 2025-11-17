@@ -51,26 +51,30 @@ git push origin feat/your-feature-name
 
 ### 5. Wait for CI Checks ✓
 
-GitHub Actions will automatically:
+**GitHub Actions** will automatically run:
 
 - ✅ Check formatting
 - ✅ Run linting
 - ✅ Run type checking
 - ✅ Validate content
 - ✅ Build the project
+
+**Vercel** will automatically:
+
 - ✅ Create a preview deployment
+- ✅ Comment on PR with preview URL
 
 ### 6. Review and Merge
 
-1. Review the preview deployment
+1. Review the preview deployment (URL in PR comments)
 2. Wait for any required approvals
 3. Once all checks pass ✓, click "Squash and merge"
 4. Delete the branch (automatic if configured)
 
 ### 7. Production Deployment 🎉
 
-- Your changes are automatically deployed to production
-- Check the Actions tab to monitor deployment
+- Vercel automatically deploys to production
+- Check Vercel dashboard to monitor deployment
 
 ---
 
@@ -192,7 +196,8 @@ git push origin your-branch
 
 ## 📚 Documentation
 
-- **[GitHub Actions Setup](docs/GITHUB-ACTIONS-SETUP.md)** - Complete CI/CD setup guide
+- **[SETUP-CHECKLIST.md](SETUP-CHECKLIST.md)** - Quick CI/CD setup guide
+- **[docs/GITHUB-ACTIONS-SETUP.md](docs/GITHUB-ACTIONS-SETUP.md)** - Detailed setup and troubleshooting
 - **[Architecture](docs/ARCHITECTURE.md)** - System architecture and patterns
 - **[Content Guide](docs/CONTENT-GUIDE.md)** - Content authoring guide
 - **[Schema Development](docs/SCHEMA-DEVELOPMENT.md)** - Creating schemas
