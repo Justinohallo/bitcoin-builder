@@ -340,12 +340,26 @@ Ensure `tsconfig.json` paths are properly configured.
 
 ## Deployment
 
-This site is optimized for deployment on Vercel:
+### Automated Deployment via GitHub Actions
 
-```bash
-# Deploy to production
-vercel --prod
-```
+This project uses GitHub Actions for automated CI/CD:
+
+- **Pull Requests**: Automatically run quality checks and create preview deployments
+- **Merges to Main**: Automatically deploy to production on Vercel
+
+**Workflow:**
+
+1. Create a feature branch: `git checkout -b feat/your-feature`
+2. Make changes and commit: `git commit -m "feat: add feature"`
+3. Push and create a PR: `git push origin feat/your-feature`
+4. CI checks run automatically (lint, format, type check, build)
+5. Preview deployment is created
+6. Once approved and checks pass, merge to `main`
+7. Production deployment triggers automatically
+
+**⚠️ Direct pushes to `main` are blocked** - all changes must go through pull requests.
+
+For complete setup instructions, see **[GitHub Actions Setup Guide](docs/GITHUB-ACTIONS-SETUP.md)**.
 
 ### Environment Variables
 
@@ -353,6 +367,13 @@ Required environment variables:
 
 ```env
 NEXT_PUBLIC_SITE_URL=https://builder.van
+```
+
+### Manual Deployment (if needed)
+
+```bash
+# Deploy to production (use only if GitHub Actions is not set up)
+vercel --prod
 ```
 
 ## Documentation
