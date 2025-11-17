@@ -39,6 +39,7 @@ export const EventSchema = z.object({
   time: z.string(),
   location: z.string(),
   description: z.string(),
+  newsTopicIds: z.array(z.string()).optional(), // References to NewsTopics by ID
   sections: z.array(SectionSchema),
   meta: MetaSchema,
 });
@@ -190,4 +191,20 @@ export const PhilosophySchema = z.object({
   title: z.string(),
   version: z.string(),
   themes: z.array(ThemeSchema),
+});
+
+// News Topics Schema
+export const NewsTopicSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  slug: z.string(),
+  summary: z.string(),
+  urls: z.array(z.string().url()),
+  questions: z.array(z.string()),
+  tags: z.array(z.string()).optional(),
+  dateAdded: z.string(), // ISO date format
+});
+
+export const NewsTopicsCollectionSchema = z.object({
+  newsTopics: z.array(NewsTopicSchema),
 });

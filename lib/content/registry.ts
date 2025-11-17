@@ -11,6 +11,7 @@ import {
   EventsCollectionSchema,
   HomeSchema,
   MissionSchema,
+  NewsTopicsCollectionSchema,
   OnboardingSchema,
   PhilosophySchema,
   ProjectsCollectionSchema,
@@ -26,6 +27,7 @@ import type {
   EventsCollection,
   Home,
   Mission,
+  NewsTopicsCollection,
   Onboarding,
   Philosophy,
   ProjectsCollection,
@@ -97,6 +99,13 @@ export const CONTENT_REGISTRY = {
     description: "Bitcoin applications showcase",
     category: "collections",
   } as ContentEntry<VibeAppsCollection>,
+
+  newsTopics: {
+    filename: "news-topics.json",
+    schema: NewsTopicsCollectionSchema,
+    description: "Bitcoin and Lightning news topics for discussion",
+    category: "collections",
+  } as ContentEntry<NewsTopicsCollection>,
 
   bitcoin101: {
     filename: "bitcoin101.json",

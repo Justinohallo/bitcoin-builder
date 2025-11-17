@@ -10,6 +10,7 @@ import {
   EventsCollectionSchema,
   HomeSchema,
   MissionSchema,
+  NewsTopicsCollectionSchema,
   OnboardingSchema,
   PhilosophySchema,
   ProjectsCollectionSchema,
@@ -26,6 +27,8 @@ import type {
   EventsCollection,
   Home,
   Mission,
+  NewsTopic,
+  NewsTopicsCollection,
   Onboarding,
   Philosophy,
   ProjectsCollection,
@@ -233,6 +236,118 @@ export function loadWhatToExpect(): WhatToExpect {
   return loadContent("what-to-expect.json", WhatToExpectSchema);
 }
 
+// News Topics loaders
+
+/**
+ * Loads all news topics
+ * @returns Collection of news topics
+ * @throws {Error} If news-topics.json is invalid or missing
+ */
+export function loadNewsTopics(): NewsTopicsCollection {
+  return loadContent("news-topics.json", NewsTopicsCollectionSchema);
+}
+
+/**
+ * Loads a single news topic by its ID
+ * @param id - Unique news topic identifier
+ * @returns NewsTopic object if found, undefined otherwise
+ * @throws {Error} If news-topics.json cannot be loaded
+ *
+ * @example
+ * const topic = loadNewsTopic('bitcoin-etf-2025');
+ * if (topic) {
+ *   console.log(topic.title, topic.summary);
+ * }
+ */
+export function loadNewsTopic(id: string): NewsTopic | undefined {
+  const newsTopics = loadNewsTopics();
+  return newsTopics.newsTopics.find((topic) => topic.id === id);
+}
+
+/**
+ * Loads a single news topic by its slug identifier
+ * @param slug - URL-safe news topic identifier
+ * @returns NewsTopic object if found, undefined otherwise
+ * @throws {Error} If news-topics.json cannot be loaded
+ *
+ * @example
+ * const topic = loadNewsTopicBySlug('bitcoin-etf-approval');
+ * if (topic) {
+ *   console.log(topic.title, topic.summary);
+ * }
+ */
+export function loadNewsTopicBySlug(slug: string): NewsTopic | undefined {
+  const newsTopics = loadNewsTopics();
+  return newsTopics.newsTopics.find((topic) => topic.slug === slug);
+}
+
+// Relationship helpers
+
+/**
+ * Type for Event with resolved news topics
+ */
+export type EventWithNewsTopics = Event & {
+  newsTopics?: NewsTopic[];
+};
+
+/**
+ * Loads an event with all referenced news topics resolved
+ * @param slug - URL-safe event identifier
+ * @returns Event with embedded news topics array, or undefined if event not found
+ * @throws {Error} If events.json or news-topics.json cannot be loaded
+ *
+ * @example
+ * const eventData = getEventWithNewsTopics('lightning-workshop');
+ * if (eventData) {
+ *   console.log(eventData.title);
+ *   eventData.newsTopics?.forEach(topic => {
+ *     console.log(topic.title);
+ *   });
+ * }
+ */
+export function getEventWithNewsTopics(
+  slug: string
+): EventWithNewsTopics | undefined {
+  const event = loadEvent(slug);
+  if (!event) return undefined;
+
+  // Resolve news topics if event has newsTopicIds
+  const newsTopics = event.newsTopicIds
+    ?.map((id) => loadNewsTopic(id))
+    .filter((topic): topic is NewsTopic => topic !== undefined);
+
+  return {
+    ...event,
+    newsTopics,
+  };
+}
+
+/**
+ * Loads all events with their news topics resolved
+ * @returns Array of events with embedded news topics
+ * @throws {Error} If events.json or news-topics.json cannot be loaded
+ *
+ * @example
+ * const allEvents = getAllEventsWithNewsTopics();
+ * allEvents.forEach(event => {
+ *   console.log(event.title, 'has', event.newsTopics?.length, 'news topics');
+ * });
+ */
+export function getAllEventsWithNewsTopics(): EventWithNewsTopics[] {
+  const events = loadEvents();
+
+  return events.events.map((event) => {
+    const newsTopics = event.newsTopicIds
+      ?.map((id) => loadNewsTopic(id))
+      .filter((topic): topic is NewsTopic => topic !== undefined);
+
+    return {
+      ...event,
+      newsTopics,
+    };
+  });
+}
+
 // Foundation content loaders
 
 /**
@@ -293,6 +408,8 @@ export const loadVibeAppsAsync = () =>
   loadContentAsync("vibeapps.json", VibeAppsCollectionSchema);
 export const loadWhatToExpectAsync = () =>
   loadContentAsync("what-to-expect.json", WhatToExpectSchema);
+export const loadNewsTopicsAsync = () =>
+  loadContentAsync("news-topics.json", NewsTopicsCollectionSchema);
 export const loadMissionAsync = () =>
   loadContentAsync("mission.json", MissionSchema);
 export const loadVisionAsync = () =>

@@ -7,6 +7,8 @@ import {
   EventsCollectionSchema,
   HomeSchema,
   MissionSchema,
+  NewsTopicSchema,
+  NewsTopicsCollectionSchema,
   OnboardingSchema,
   PhilosophySchema,
   ProjectSchema,
@@ -49,6 +51,10 @@ export type VibeAppsCollection = z.infer<typeof VibeAppsCollectionSchema>;
 export type WhatToExpect = z.infer<typeof WhatToExpectSchema>;
 
 export type Home = z.infer<typeof HomeSchema>;
+
+// News Topics types
+export type NewsTopic = z.infer<typeof NewsTopicSchema>;
+export type NewsTopicsCollection = z.infer<typeof NewsTopicsCollectionSchema>;
 
 // Foundation content types
 export type Mission = z.infer<typeof MissionSchema>;

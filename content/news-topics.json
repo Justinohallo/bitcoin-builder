@@ -1,0 +1,118 @@
+{
+  "newsTopics": [
+    {
+      "id": "bitcoin-etf-approval-2024",
+      "title": "Bitcoin ETF Approval in the US",
+      "slug": "bitcoin-etf-approval-2024",
+      "summary": "In January 2024, the SEC approved spot Bitcoin ETFs from multiple issuers, marking a significant milestone for institutional Bitcoin adoption in the United States.",
+      "urls": [
+        "https://www.sec.gov/news/statement/gensler-statement-spot-bitcoin-011023",
+        "https://www.coindesk.com/policy/2024/01/10/sec-approves-spot-bitcoin-etfs/",
+        "https://bitcoinmagazine.com/business/sec-approves-11-spot-bitcoin-etfs"
+      ],
+      "questions": [
+        "How might ETF approval impact Bitcoin's price and volatility?",
+        "What are the differences between spot ETFs and Bitcoin futures ETFs?",
+        "How do custody solutions work for institutional Bitcoin holdings?",
+        "What are the implications for self-custody versus institutional custody?"
+      ],
+      "tags": ["regulation", "institutional", "ETF", "SEC"],
+      "dateAdded": "2024-01-10"
+    },
+    {
+      "id": "lightning-network-growth-2024",
+      "title": "Lightning Network Capacity Reaches New Highs",
+      "slug": "lightning-network-growth-2024",
+      "summary": "The Lightning Network has seen significant growth in 2024, with total capacity exceeding 5,000 BTC and improved routing efficiency making micropayments more practical.",
+      "urls": [
+        "https://mempool.space/lightning",
+        "https://bitcoinvisuals.com/lightning",
+        "https://1ml.com/statistics"
+      ],
+      "questions": [
+        "What factors are driving Lightning Network adoption?",
+        "How does channel liquidity management work?",
+        "What are the current limitations of Lightning payments?",
+        "How can merchants integrate Lightning payments into their systems?"
+      ],
+      "tags": ["lightning", "layer-2", "payments", "adoption"],
+      "dateAdded": "2024-03-15"
+    },
+    {
+      "id": "bitcoin-halving-2024",
+      "title": "Bitcoin's Fourth Halving Event",
+      "slug": "bitcoin-halving-2024",
+      "summary": "Bitcoin's fourth halving occurred in April 2024, reducing the block reward from 6.25 BTC to 3.125 BTC and further decreasing the rate of new Bitcoin creation.",
+      "urls": [
+        "https://www.blockchain.com/charts/halving",
+        "https://bitcoinmagazine.com/guides/bitcoin-halving-explained",
+        "https://www.coindesk.com/tech/2024/04/20/bitcoin-halving-2024/"
+      ],
+      "questions": [
+        "How does the halving affect Bitcoin's monetary policy?",
+        "What historical patterns have followed previous halvings?",
+        "How might reduced block rewards impact miner profitability?",
+        "What role do transaction fees play in securing the network post-halving?"
+      ],
+      "tags": ["halving", "mining", "monetary-policy", "supply"],
+      "dateAdded": "2024-04-20"
+    },
+    {
+      "id": "taproot-assets-protocol",
+      "title": "Taproot Assets Protocol Launch",
+      "slug": "taproot-assets-protocol",
+      "summary": "Lightning Labs released the Taproot Assets protocol, enabling the issuance and transfer of assets on Bitcoin and Lightning Network using Taproot technology.",
+      "urls": [
+        "https://lightning.engineering/posts/2023-10-18-taproot-assets-v0.3/",
+        "https://docs.lightning.engineering/the-lightning-network/taproot-assets",
+        "https://github.com/lightninglabs/taproot-assets"
+      ],
+      "questions": [
+        "How do Taproot Assets differ from other Bitcoin token protocols?",
+        "What are the privacy benefits of using Taproot for asset issuance?",
+        "Can Taproot Assets be transferred over Lightning channels?",
+        "What use cases are most promising for Taproot Assets?"
+      ],
+      "tags": ["taproot", "assets", "lightning", "protocol"],
+      "dateAdded": "2023-10-18"
+    },
+    {
+      "id": "ordinals-inscriptions-debate",
+      "title": "Bitcoin Ordinals and Inscriptions Debate",
+      "slug": "ordinals-inscriptions-debate",
+      "summary": "The Ordinals protocol enabled the creation of NFT-like digital artifacts on Bitcoin, sparking debate about block space usage, fees, and Bitcoin's core purpose.",
+      "urls": [
+        "https://ordinals.com/",
+        "https://bitcoinmagazine.com/technical/what-are-ordinals-an-overview-of-the-protocol",
+        "https://www.coindesk.com/tech/2023/02/02/ordinals-inscriptions-nfts-bitcoin/"
+      ],
+      "questions": [
+        "How do Ordinals inscriptions work technically?",
+        "What impact have Ordinals had on Bitcoin transaction fees?",
+        "Should Bitcoin block space be used for data storage?",
+        "How do Ordinals differ from traditional NFTs on other blockchains?"
+      ],
+      "tags": ["ordinals", "inscriptions", "NFTs", "block-space"],
+      "dateAdded": "2023-02-02"
+    },
+    {
+      "id": "nostr-protocol-adoption",
+      "title": "Nostr Protocol and Bitcoin Integration",
+      "slug": "nostr-protocol-adoption",
+      "summary": "Nostr, a decentralized social protocol, has gained traction with native Bitcoin Lightning integration for micropayments and tips, creating a censorship-resistant social layer.",
+      "urls": [
+        "https://nostr.com/",
+        "https://github.com/nostr-protocol/nostr",
+        "https://bitcoinmagazine.com/technical/what-is-nostr"
+      ],
+      "questions": [
+        "How does Nostr's relay architecture work?",
+        "What advantages does Nostr have over traditional social media?",
+        "How are Lightning payments integrated into Nostr clients?",
+        "What are the privacy considerations when using Nostr?"
+      ],
+      "tags": ["nostr", "social", "lightning", "censorship-resistance"],
+      "dateAdded": "2023-06-15"
+    }
+  ]
+}

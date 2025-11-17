@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { loadEvent, loadEvents } from "@/lib/content";
+import { getEventWithNewsTopics, loadEvent, loadEvents } from "@/lib/content";
 import {
   createBreadcrumbList,
   createEventSchema,
@@ -39,11 +39,13 @@ export async function generateStaticParams() {
 
 export default async function EventPage({ params }: EventPageProps) {
   const { slug } = await params;
-  const event = loadEvent(slug);
+  const eventData = getEventWithNewsTopics(slug);
 
-  if (!event) {
+  if (!eventData) {
     notFound();
   }
+
+  const event = eventData;
 
   // Generate structured data
   const eventSchema = createEventSchema({
@@ -112,6 +114,57 @@ export default async function EventPage({ params }: EventPageProps) {
             )}
           </Section>
         ))}
+
+        {eventData.newsTopics && eventData.newsTopics.length > 0 && (
+          <Section>
+            <Heading level="h2" className="text-neutral-100 mb-4">
+              Discussion Topics
+            </Heading>
+            <p className="text-neutral-300 mb-6">
+              We will be discussing these Bitcoin and Lightning Network news
+              topics at this event:
+            </p>
+            <div className="space-y-4">
+              {eventData.newsTopics.map((topic) => (
+                <article
+                  key={topic.id}
+                  className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors"
+                >
+                  <Link href={`/news-topics/${topic.slug}`}>
+                    <Heading
+                      level="h3"
+                      className="text-neutral-100 mb-2 hover:text-orange-400 transition-colors"
+                    >
+                      {topic.title}
+                    </Heading>
+                  </Link>
+
+                  {topic.tags && topic.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {topic.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs bg-neutral-800 text-neutral-400 px-2 py-1 rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <p className="text-neutral-300 mb-3">{topic.summary}</p>
+
+                  <Link
+                    href={`/news-topics/${topic.slug}`}
+                    className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
+                  >
+                    View Discussion Questions →
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </Section>
+        )}
       </PageContainer>
     </>
   );

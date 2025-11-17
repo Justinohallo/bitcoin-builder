@@ -73,6 +73,22 @@ export const urls = {
   },
 
   /**
+   * News topics URLs
+   */
+  newsTopics: {
+    /**
+     * News topics listing page
+     */
+    list: () => buildUrl("/news-topics"),
+
+    /**
+     * Individual news topic detail page
+     * @param slug - News topic slug identifier
+     */
+    detail: (slug: string) => buildUrl(`/news-topics/${slug}`),
+  },
+
+  /**
    * Educational content URLs
    */
   education: {
@@ -163,6 +179,11 @@ export const paths = {
   recaps: {
     list: () => "/recaps",
     detail: (slug: string) => `/recaps/${slug}`,
+  },
+
+  newsTopics: {
+    list: () => "/news-topics",
+    detail: (slug: string) => `/news-topics/${slug}`,
   },
 
   education: {
