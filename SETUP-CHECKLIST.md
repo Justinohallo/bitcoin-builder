@@ -18,7 +18,7 @@ This checklist will guide you through setting up the PR-based deployment workflo
 - [ ] Navigate to Settings → Git
 - [ ] Connect your GitHub repository
 - [ ] Enable "Vercel for GitHub" integration
-- [ ] ✨ **If you choose this option, you can skip to Step 3** (GitHub Actions will only run quality checks, Vercel handles deployments)
+- [ ] ✨ **If you choose this option, you can skip Step 2** (GitHub Actions will only run quality checks, Vercel handles deployments)
 
 **Option B: Manual Setup with Vercel CLI**
 
@@ -44,34 +44,13 @@ This checklist will guide you through setting up the PR-based deployment workflo
 - [ ] Delete `.github/workflows/deploy.yml` (not needed)
 - [ ] Delete `.github/workflows/pr-preview.yml` (Vercel handles this)
 
-### Step 3: Set Up Branch Protection (5 minutes)
+### Step 3: Commit and Push Setup Files (2 minutes)
 
-This is **required** regardless of which option you chose above.
-
-- [ ] Go to GitHub repo → Settings → Branches
-- [ ] Click "Add branch protection rule"
-- [ ] Set branch name pattern: `main`
-- [ ] Enable: ✅ **Require a pull request before merging**
-- [ ] Enable: ✅ **Require status checks to pass before merging**
-  - If using Option A (Vercel integration): Add status check `Quality Checks`
-  - If using Option B (manual): Add status checks `Quality Checks` and `Deploy Preview`
-- [ ] Enable: ✅ **Require conversation resolution before merging**
-- [ ] Enable: ✅ **Require linear history** (recommended)
-- [ ] Disable: ❌ **Allow force pushes**
-- [ ] Disable: ❌ **Allow deletions**
-- [ ] Click "Create" or "Save changes"
-
-### Step 4: Configure Pull Request Settings (2 minutes)
-
-- [ ] Go to Settings → General → Pull Requests section
-- [ ] Enable: ✅ **Allow squash merging** (recommended)
-- [ ] Enable: ✅ **Automatically delete head branches**
-- [ ] Configure default merge commit message format (your choice)
-
-### Step 5: Commit and Push Setup Files (2 minutes)
+⚠️ **Important:** Complete this step BEFORE setting up branch protection!
 
 ```bash
-cd /Users/justinohalloran/Documents/justinohalloran/bitcoin/bitcoin-builder
+# Navigate to your project root (if not already there)
+# cd /path/to/your/project
 
 # Check what files were created
 git status
@@ -86,20 +65,60 @@ git commit -m "feat: add GitHub Actions CI/CD workflow with branch protection"
 git push origin main
 ```
 
-### Step 6: Test the Workflow (10 minutes)
+### Step 4: Set Up Branch Protection (5 minutes)
 
-- [ ] Create a test branch: `git checkout -b test/github-actions`
-- [ ] Make a small change: `echo "# Test" >> TEST.md`
-- [ ] Commit: `git add TEST.md && git commit -m "test: verify GitHub Actions"`
-- [ ] Push: `git push origin test/github-actions`
+🔒 **Now we protect the `main` branch** - no more direct pushes after this!
+
+This is **required** regardless of which deployment option you chose.
+
+- [ ] Go to GitHub repo → Settings → Branches
+- [ ] Click "Add branch protection rule"
+- [ ] Set branch name pattern: `main`
+- [ ] Enable: ✅ **Require a pull request before merging**
+- [ ] Enable: ✅ **Require status checks to pass before merging**
+  - If using Option A (Vercel integration): Add status check `Quality Checks`
+  - If using Option B (manual): Add status checks `Quality Checks` and `Deploy Preview`
+- [ ] Enable: ✅ **Require conversation resolution before merging**
+- [ ] Enable: ✅ **Require linear history** (recommended)
+- [ ] Disable: ❌ **Allow force pushes**
+- [ ] Disable: ❌ **Allow deletions**
+- [ ] Click "Create" or "Save changes"
+
+### Step 5: Configure Pull Request Settings (2 minutes)
+
+- [ ] Go to Settings → General → Pull Requests section
+- [ ] Enable: ✅ **Allow squash merging** (recommended)
+- [ ] Enable: ✅ **Automatically delete head branches**
+- [ ] Configure default merge commit message format (your choice)
+
+### Step 6: Verify Branch Protection (5 minutes)
+
+🧪 **Test that branch protection is working correctly**
+
+```bash
+# Create a test branch
+git checkout -b test/github-actions
+
+# Make a small change
+echo "# Test" >> TEST.md
+
+# Commit and push
+git add TEST.md
+git commit -m "test: verify GitHub Actions"
+git push origin test/github-actions
+```
+
 - [ ] Go to GitHub and create a Pull Request
 - [ ] Verify CI checks run automatically ✅
 - [ ] Verify preview deployment is created (if configured)
-- [ ] Merge the PR once checks pass
+- [ ] Wait for all checks to pass
+- [ ] Merge the PR (squash and merge)
 - [ ] Verify production deployment runs (check Actions tab)
 - [ ] Clean up: Delete TEST.md with a new PR or via GitHub web interface
 
-### Step 7: Try to Push to Main (Verify Protection)
+### Step 7: Confirm Direct Push is Blocked (1 minute)
+
+🚫 **Verify that direct pushes to `main` are now blocked**
 
 ```bash
 # This should FAIL (which is correct!)
