@@ -179,13 +179,21 @@ export function Navbar() {
 
     const handleClickOutside = (event: MouseEvent) => {
       const dropdown = dropdownRefs.current[openDropdown];
-      if (dropdown && !dropdown.contains(event.target as Node)) {
-        setOpenDropdown(null);
+      const target = event.target as Node;
+      
+      // Check if click is outside the dropdown container
+      if (dropdown && !dropdown.contains(target)) {
+        // Also check if it's not a link click (links should navigate)
+        const linkElement = (target as Element).closest('a');
+        if (!linkElement || !dropdown.contains(linkElement)) {
+          setOpenDropdown(null);
+        }
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    // Use click instead of mousedown to allow link navigation to complete first
+    document.addEventListener("click", handleClickOutside, true);
+    return () => document.removeEventListener("click", handleClickOutside, true);
   }, [openDropdown]);
 
   return (
@@ -239,7 +247,6 @@ export function Navbar() {
                       dropdownRefs.current[item.label] = el;
                     }}
                     onMouseEnter={() => setOpenDropdown(item.label)}
-                    onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <button
                       onClick={() => handleDropdownToggle(item.label)}
@@ -261,7 +268,7 @@ export function Navbar() {
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
                         {/* Invisible bridge to prevent gap from closing dropdown */}
-                        <div className="h-2 w-full" />
+                        <div className="h-2 w-full pointer-events-none" />
                         <div className="bg-neutral-900 border border-neutral-800 rounded-lg shadow-xl overflow-hidden">
                           <div className="py-2">
                             {item.children.map((child) => (
@@ -273,7 +280,10 @@ export function Navbar() {
                                     ? "bg-neutral-800 text-orange-400"
                                     : "text-neutral-300 hover:bg-neutral-800 hover:text-orange-400"
                                 }`}
-                                onClick={closeMenus}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  closeMenus();
+                                }}
                               >
                                 {child.label}
                               </Link>
