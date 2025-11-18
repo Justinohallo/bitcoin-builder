@@ -85,11 +85,11 @@ export default async function WalletDetailPage({ params }: WalletPageProps) {
   }
 
   // Generate structured data
-  const webPageSchema = createWebPageSchema({
-    url: urls.wallets.detail(wallet.slug),
-    title: wallet.meta.title,
-    description: wallet.description,
-  });
+  const webPageSchema = createWebPageSchema(
+    urls.wallets.detail(wallet.slug),
+    wallet.meta.title,
+    wallet.description
+  );
 
   const breadcrumbSchema = createBreadcrumbList([
     { name: "Home", url: urls.home() },
@@ -196,16 +196,17 @@ export default async function WalletDetailPage({ params }: WalletPageProps) {
                 Visit Website
               </a>
             )}
-            {wallet.website && wallet.website !== wallet.downloadLinks.website && (
-              <a
-                href={wallet.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-700 hover:border-orange-400 text-neutral-300 hover:text-orange-400 rounded-lg font-medium transition-colors"
-              >
-                Official Website
-              </a>
-            )}
+            {wallet.website &&
+              wallet.website !== wallet.downloadLinks.website && (
+                <a
+                  href={wallet.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-700 hover:border-orange-400 text-neutral-300 hover:text-orange-400 rounded-lg font-medium transition-colors"
+                >
+                  Official Website
+                </a>
+              )}
           </div>
         </Section>
 

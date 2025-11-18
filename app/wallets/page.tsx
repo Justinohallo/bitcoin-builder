@@ -62,11 +62,11 @@ export default async function WalletsPage() {
   const content = await loadWallets();
 
   // Generate structured data
-  const webPageSchema = createWebPageSchema({
-    url: urls.wallets.list(),
-    title: content.title,
-    description: content.description,
-  });
+  const webPageSchema = createWebPageSchema(
+    urls.wallets.list(),
+    content.title,
+    content.description
+  );
 
   const breadcrumbSchema = createBreadcrumbList([
     { name: "Home", url: urls.home() },
@@ -75,7 +75,7 @@ export default async function WalletsPage() {
 
   const structuredData = createSchemaGraph(webPageSchema, breadcrumbSchema);
 
-  const platforms = (wallet: typeof content.wallets[0]) => {
+  const platforms = (wallet: (typeof content.wallets)[0]) => {
     const result: string[] = [];
     if (wallet.platforms.ios) result.push("iOS");
     if (wallet.platforms.android) result.push("Android");
@@ -117,7 +117,10 @@ export default async function WalletsPage() {
                   className="group block p-6 border border-neutral-800 rounded-xl bg-neutral-950 hover:border-orange-400/50 transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <Heading level="h2" className="text-neutral-100 group-hover:text-orange-400 transition-colors">
+                    <Heading
+                      level="h2"
+                      className="text-neutral-100 group-hover:text-orange-400 transition-colors"
+                    >
                       {wallet.name}
                     </Heading>
                     <TypeBadge type={wallet.type} />
