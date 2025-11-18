@@ -1,0 +1,109 @@
+{
+  "presentations": [
+    {
+      "id": "presentation-intro-to-lightning-2025",
+      "title": "Introduction to Lightning Network",
+      "slug": "intro-to-lightning-2025",
+      "description": "A comprehensive introduction to the Lightning Network, covering the basics of payment channels, routing, and practical applications.",
+      "overview": "This presentation provides a deep dive into the Lightning Network, Bitcoin's Layer 2 scaling solution. We'll explore how payment channels work, the routing mechanism that enables instant, low-cost transactions, and real-world use cases. Perfect for developers and enthusiasts who want to understand how Lightning makes Bitcoin more practical for everyday use.",
+      "presenterId": "presenter-alice-johnson",
+      "eventId": "lightning-network-workshop",
+      "date": "2025-12-15",
+      "duration": "45 minutes",
+      "links": [
+        {
+          "text": "Lightning Network Whitepaper",
+          "url": "https://lightning.network/lightning-network-paper.pdf",
+          "external": true
+        },
+        {
+          "text": "Lightning Labs Documentation",
+          "url": "https://docs.lightning.engineering/",
+          "external": true
+        },
+        {
+          "text": "Lightning Network Explorer",
+          "url": "https://1ml.com/",
+          "external": true
+        }
+      ],
+      "slidesUrl": "https://slides.example.com/intro-to-lightning",
+      "videoUrl": "https://youtube.com/watch?v=example",
+      "recordingUrl": "https://recording.example.com/intro-to-lightning",
+      "sections": [
+        {
+          "title": "What is Lightning Network?",
+          "body": "The Lightning Network is a Layer 2 payment protocol that operates on top of Bitcoin. It enables instant, low-cost transactions by creating payment channels between users.\n\nKey benefits:\n- Instant transactions\n- Low fees\n- Scalability\n- Privacy improvements"
+        },
+        {
+          "title": "How Payment Channels Work",
+          "body": "Payment channels allow two parties to transact multiple times off-chain, with only the opening and closing transactions recorded on the Bitcoin blockchain.\n\nThis dramatically reduces on-chain transaction volume while maintaining Bitcoin's security guarantees."
+        },
+        {
+          "title": "Routing and Network Effects",
+          "body": "The Lightning Network uses a routing protocol that allows payments to be sent through multiple channels, even if the sender and receiver don't have a direct channel.\n\nAs more nodes join the network, routing becomes more efficient and reliable."
+        }
+      ],
+      "meta": {
+        "title": "Introduction to Lightning Network | Builder Vancouver",
+        "description": "Learn the fundamentals of Lightning Network, Bitcoin's Layer 2 scaling solution. Covers payment channels, routing, and practical applications.",
+        "keywords": [
+          "lightning network",
+          "bitcoin",
+          "layer 2",
+          "payment channels",
+          "scalability"
+        ]
+      }
+    },
+    {
+      "id": "presentation-taproot-deep-dive",
+      "title": "Taproot and Schnorr Signatures: A Deep Dive",
+      "slug": "taproot-deep-dive-2025",
+      "description": "Exploring Taproot and Schnorr signatures, two major Bitcoin protocol upgrades that improve privacy, efficiency, and flexibility.",
+      "overview": "Taproot represents one of the most significant upgrades to Bitcoin since SegWit. This presentation covers the technical details of Taproot and Schnorr signatures, explaining how they work, why they matter, and what new possibilities they unlock for Bitcoin applications.",
+      "presenterId": "presenter-bob-smith",
+      "date": "2025-11-20",
+      "duration": "60 minutes",
+      "links": [
+        {
+          "text": "BIP 340: Schnorr Signatures",
+          "url": "https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki",
+          "external": true
+        },
+        {
+          "text": "BIP 341: Taproot",
+          "url": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki",
+          "external": true
+        },
+        {
+          "text": "Taproot Activation",
+          "url": "https://taprootactivation.com/",
+          "external": true
+        }
+      ],
+      "slidesUrl": "https://slides.example.com/taproot-deep-dive",
+      "sections": [
+        {
+          "title": "Understanding Schnorr Signatures",
+          "body": "Schnorr signatures offer several advantages over ECDSA:\n- Linear signature aggregation\n- Better privacy\n- Smaller signature size\n- Formal security proofs"
+        },
+        {
+          "title": "Taproot Benefits",
+          "body": "Taproot improves Bitcoin in multiple ways:\n- Enhanced privacy for complex transactions\n- Reduced on-chain data\n- Lower fees\n- More flexible smart contracts"
+        }
+      ],
+      "meta": {
+        "title": "Taproot and Schnorr Signatures Deep Dive | Builder Vancouver",
+        "description": "Technical deep dive into Taproot and Schnorr signatures, exploring how these Bitcoin upgrades improve privacy, efficiency, and flexibility.",
+        "keywords": [
+          "taproot",
+          "schnorr",
+          "bitcoin",
+          "protocol upgrade",
+          "privacy"
+        ]
+      }
+    }
+  ]
+}

@@ -15,6 +15,8 @@ import {
   NewsTopicsCollectionSchema,
   OnboardingSchema,
   PhilosophySchema,
+  PresentationsCollectionSchema,
+  PresentersCollectionSchema,
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
@@ -34,6 +36,8 @@ import type {
   NewsTopicsCollection,
   Onboarding,
   Philosophy,
+  PresentationsCollection,
+  PresentersCollection,
   ProjectsCollection,
   RecapsCollection,
   ResourcesCollection,
@@ -188,6 +192,20 @@ export const CONTENT_REGISTRY = {
     description: "Event sponsors and partners",
     category: "collections",
   } as ContentEntry<SponsorsCollection>,
+
+  presenters: {
+    filename: "presenters.json",
+    schema: PresentersCollectionSchema,
+    description: "Speaker and presenter profiles",
+    category: "collections",
+  } as ContentEntry<PresentersCollection>,
+
+  presentations: {
+    filename: "presentations.json",
+    schema: PresentationsCollectionSchema,
+    description: "Presentations and talks from events",
+    category: "collections",
+  } as ContentEntry<PresentationsCollection>,
 } as const;
 
 /**

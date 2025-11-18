@@ -14,6 +14,10 @@ import {
   NewsTopicsCollectionSchema,
   OnboardingSchema,
   PhilosophySchema,
+  PresentationSchema,
+  PresentationsCollectionSchema,
+  PresenterSchema,
+  PresentersCollectionSchema,
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
@@ -35,6 +39,10 @@ import type {
   NewsTopicsCollection,
   Onboarding,
   Philosophy,
+  Presentation,
+  PresentationsCollection,
+  Presenter,
+  PresentersCollection,
   ProjectsCollection,
   Recap,
   RecapsCollection,
@@ -617,8 +625,204 @@ export function getEventWithSponsors(
   };
 }
 
+/**
+ * Type for Event with resolved presentations
+ */
+export type EventWithPresentations = Event & {
+  presentations?: Presentation[];
+};
+
+/**
+ * Loads an event with its referenced presentations resolved
+ * @param slug - URL-safe event identifier
+ * @returns Event with embedded presentations array, or undefined if event not found
+ * @throws {Error} If events.json or presentations.json cannot be loaded
+ *
+ * @example
+ * const eventData = getEventWithPresentations('lightning-workshop');
+ * if (eventData) {
+ *   console.log(eventData.title, 'has', eventData.presentations?.length, 'presentations');
+ * }
+ */
+export function getEventWithPresentations(
+  slug: string
+): EventWithPresentations | undefined {
+  const event = loadEvent(slug);
+  if (!event) return undefined;
+
+  const presentations = loadPresentations();
+  const eventPresentations = event.presentationIds
+    ? event.presentationIds
+        .map((id) => presentations.presentations.find((p) => p.id === id))
+        .filter((p): p is Presentation => p !== undefined)
+    : undefined;
+
+  return {
+    ...event,
+    presentations:
+      eventPresentations && eventPresentations.length > 0
+        ? eventPresentations
+        : undefined,
+  };
+}
+
+// Presenters loaders
+
+/**
+ * Loads all presenters
+ * @returns Collection of presenters
+ * @throws {Error} If presenters.json is invalid or missing
+ */
+export function loadPresenters(): PresentersCollection {
+  return loadContent("presenters.json", PresentersCollectionSchema);
+}
+
+/**
+ * Loads a single presenter by its ID
+ * @param id - Unique presenter identifier (e.g., "presenter-alice-johnson")
+ * @returns Presenter object if found, undefined otherwise
+ * @throws {Error} If presenters.json cannot be loaded
+ *
+ * @example
+ * const presenter = loadPresenterById('presenter-alice-johnson');
+ * if (presenter) {
+ *   console.log(presenter.name, presenter.bio);
+ * }
+ */
+export function loadPresenterById(id: string): Presenter | undefined {
+  const presenters = loadPresenters();
+  return presenters.presenters.find((presenter) => presenter.id === id);
+}
+
+/**
+ * Loads a single presenter by its slug
+ * @param slug - URL-safe presenter identifier
+ * @returns Presenter object if found, undefined otherwise
+ * @throws {Error} If presenters.json cannot be loaded
+ *
+ * @example
+ * const presenter = loadPresenterBySlug('alice-johnson');
+ * if (presenter) {
+ *   console.log(presenter.name);
+ * }
+ */
+export function loadPresenterBySlug(slug: string): Presenter | undefined {
+  const presenters = loadPresenters();
+  return presenters.presenters.find((presenter) => presenter.slug === slug);
+}
+
+// Presentations loaders
+
+/**
+ * Loads all presentations
+ * @returns Collection of presentations
+ * @throws {Error} If presentations.json is invalid or missing
+ */
+export function loadPresentations(): PresentationsCollection {
+  return loadContent("presentations.json", PresentationsCollectionSchema);
+}
+
+/**
+ * Loads a single presentation by its slug
+ * @param slug - URL-safe presentation identifier
+ * @returns Presentation object if found, undefined otherwise
+ * @throws {Error} If presentations.json cannot be loaded
+ *
+ * @example
+ * const presentation = loadPresentation('intro-to-lightning-2025');
+ * if (presentation) {
+ *   console.log(presentation.title, presentation.description);
+ * }
+ */
+export function loadPresentation(slug: string): Presentation | undefined {
+  const presentations = loadPresentations();
+  return presentations.presentations.find((p) => p.slug === slug);
+}
+
+/**
+ * Loads a single presentation by its ID
+ * @param id - Unique presentation identifier
+ * @returns Presentation object if found, undefined otherwise
+ * @throws {Error} If presentations.json cannot be loaded
+ */
+export function loadPresentationById(id: string): Presentation | undefined {
+  const presentations = loadPresentations();
+  return presentations.presentations.find((p) => p.id === id);
+}
+
+/**
+ * Type for Presentation with resolved presenter
+ */
+export type PresentationWithPresenter = Presentation & {
+  presenter?: Presenter;
+};
+
+/**
+ * Loads a presentation with its referenced presenter resolved
+ * @param slug - URL-safe presentation identifier
+ * @returns Presentation with embedded presenter object, or undefined if presentation not found
+ * @throws {Error} If presentations.json or presenters.json cannot be loaded
+ *
+ * @example
+ * const presentationData = getPresentationWithPresenter('intro-to-lightning-2025');
+ * if (presentationData) {
+ *   console.log(presentationData.title, 'by', presentationData.presenter?.name);
+ * }
+ */
+export function getPresentationWithPresenter(
+  slug: string
+): PresentationWithPresenter | undefined {
+  const presentation = loadPresentation(slug);
+  if (!presentation) return undefined;
+
+  const presenter = loadPresenterById(presentation.presenterId);
+
+  return {
+    ...presentation,
+    presenter: presenter || undefined,
+  };
+}
+
+/**
+ * Gets all presentations by a specific presenter
+ * @param presenterId - Presenter ID
+ * @returns Array of presentations by the presenter
+ * @throws {Error} If presentations.json cannot be loaded
+ *
+ * @example
+ * const presentations = getPresentationsByPresenter('presenter-alice-johnson');
+ * console.log(`Found ${presentations.length} presentations`);
+ */
+export function getPresentationsByPresenter(
+  presenterId: string
+): Presentation[] {
+  const presentations = loadPresentations();
+  return presentations.presentations.filter(
+    (p) => p.presenterId === presenterId
+  );
+}
+
+/**
+ * Gets all presentations for a specific event
+ * @param eventId - Event ID
+ * @returns Array of presentations for the event
+ * @throws {Error} If presentations.json cannot be loaded
+ *
+ * @example
+ * const presentations = getPresentationsByEvent('lightning-workshop');
+ * console.log(`Found ${presentations.length} presentations for this event`);
+ */
+export function getPresentationsByEvent(eventId: string): Presentation[] {
+  const presentations = loadPresentations();
+  return presentations.presentations.filter((p) => p.eventId === eventId);
+}
+
 // Async versions
 export const loadCitiesAsync = () =>
   loadContentAsync("cities.json", CitiesCollectionSchema);
 export const loadSponsorsAsync = () =>
   loadContentAsync("sponsors.json", SponsorsCollectionSchema);
+export const loadPresentersAsync = () =>
+  loadContentAsync("presenters.json", PresentersCollectionSchema);
+export const loadPresentationsAsync = () =>
+  loadContentAsync("presentations.json", PresentationsCollectionSchema);

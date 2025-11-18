@@ -1,0 +1,33 @@
+{
+  "presenters": [
+    {
+      "id": "presenter-alice-johnson",
+      "name": "Alice Johnson",
+      "slug": "alice-johnson",
+      "bio": "Lightning Network developer and educator with 5 years of experience building Bitcoin infrastructure. Alice has contributed to multiple Lightning implementations and is passionate about making Bitcoin more accessible.",
+      "title": "Lightning Core Developer",
+      "company": "Lightning Labs",
+      "avatar": "/images/presenters/alice-johnson.jpg",
+      "links": {
+        "twitter": "https://twitter.com/alice_lightning",
+        "github": "https://github.com/alicej",
+        "website": "https://alice.dev",
+        "nostr": "npub1alice123456789"
+      }
+    },
+    {
+      "id": "presenter-bob-smith",
+      "name": "Bob Smith",
+      "slug": "bob-smith",
+      "bio": "Bitcoin protocol researcher and educator specializing in Taproot and Schnorr signatures. Bob has published multiple papers on Bitcoin scalability and privacy improvements.",
+      "title": "Bitcoin Protocol Researcher",
+      "company": "Bitcoin Research Lab",
+      "avatar": "/images/presenters/bob-smith.jpg",
+      "links": {
+        "twitter": "https://twitter.com/bob_bitcoin",
+        "github": "https://github.com/bobsmith",
+        "website": "https://bob.bitcoin.research"
+      }
+    }
+  ]
+}

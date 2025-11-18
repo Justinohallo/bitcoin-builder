@@ -8,6 +8,7 @@
       "location": "Bitcoin Commons, Vancouver",
       "cityId": "city-vancouver",
       "sponsorIds": ["sponsor-bitcoin-commons", "sponsor-coffee-shop"],
+      "presentationIds": ["presentation-intro-to-lightning-2025"],
       "description": "Hands-on workshop exploring Lightning Network channels, routing, and payment flows. Bring your laptop and learn to set up your own Lightning node.",
       "newsTopicIds": [
         "lightning-network-growth-2024",

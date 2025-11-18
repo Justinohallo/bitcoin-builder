@@ -55,6 +55,52 @@ export const SponsorsCollectionSchema = z.object({
   sponsors: z.array(SponsorSchema),
 });
 
+// Presenters Schema
+export const PresenterSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  slug: z.string(),
+  bio: z.string(),
+  title: z.string().optional(), // Job title or role
+  company: z.string().optional(), // Company or organization
+  avatar: z.string().optional(), // URL to avatar image
+  links: z
+    .object({
+      twitter: z.string().optional(),
+      github: z.string().optional(),
+      website: z.string().url().optional(),
+      nostr: z.string().optional(),
+    })
+    .optional(),
+});
+
+export const PresentersCollectionSchema = z.object({
+  presenters: z.array(PresenterSchema),
+});
+
+// Presentations Schema
+export const PresentationSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(), // Brief description for listings
+  overview: z.string(), // Detailed overview of the presentation
+  presenterId: z.string(), // Reference to Presenter by ID
+  eventId: z.string().optional(), // Reference to Event by ID (if presented at an event)
+  date: z.string().optional(), // ISO date format - when presentation was given
+  duration: z.string().optional(), // e.g., "45 minutes", "1 hour"
+  links: z.array(LinkSchema).optional(), // Useful links related to the presentation
+  slidesUrl: z.string().url().optional(), // URL to slides (e.g., Google Slides, PDF)
+  videoUrl: z.string().url().optional(), // URL to video recording
+  recordingUrl: z.string().url().optional(), // Alternative recording URL
+  sections: z.array(SectionSchema).optional(), // Detailed content sections
+  meta: MetaSchema,
+});
+
+export const PresentationsCollectionSchema = z.object({
+  presentations: z.array(PresentationSchema),
+});
+
 // Events Schema
 export const EventSchema = z.object({
   title: z.string(),
@@ -65,6 +111,7 @@ export const EventSchema = z.object({
   description: z.string(),
   cityId: z.string().optional(), // Reference to City by ID
   sponsorIds: z.array(z.string()).optional(), // References to Sponsors by ID
+  presentationIds: z.array(z.string()).optional(), // References to Presentations by ID
   newsTopicIds: z.array(z.string()).optional(), // References to NewsTopics by ID
   sections: z.array(SectionSchema),
   meta: MetaSchema,

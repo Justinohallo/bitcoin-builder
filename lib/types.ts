@@ -16,6 +16,10 @@ import {
   NotableBuilderSchema,
   OnboardingSchema,
   PhilosophySchema,
+  PresentationSchema,
+  PresentationsCollectionSchema,
+  PresenterSchema,
+  PresentersCollectionSchema,
   ProjectSchema,
   ProjectsCollectionSchema,
   RecapSchema,
@@ -88,3 +92,13 @@ export type CitiesCollection = z.infer<typeof CitiesCollectionSchema>;
 // Sponsors types
 export type Sponsor = z.infer<typeof SponsorSchema>;
 export type SponsorsCollection = z.infer<typeof SponsorsCollectionSchema>;
+
+// Presenters types
+export type Presenter = z.infer<typeof PresenterSchema>;
+export type PresentersCollection = z.infer<typeof PresentersCollectionSchema>;
+
+// Presentations types
+export type Presentation = z.infer<typeof PresentationSchema>;
+export type PresentationsCollection = z.infer<
+  typeof PresentationsCollectionSchema
+>;

@@ -188,6 +188,38 @@ export const urls = {
      */
     list: () => buildUrl("/sponsors"),
   },
+
+  /**
+   * Presentations URLs
+   */
+  presentations: {
+    /**
+     * Presentations listing page
+     */
+    list: () => buildUrl("/presentations"),
+
+    /**
+     * Individual presentation detail page
+     * @param slug - Presentation slug identifier
+     */
+    detail: (slug: string) => buildUrl(`/presentations/${slug}`),
+  },
+
+  /**
+   * Presenters URLs
+   */
+  presenters: {
+    /**
+     * Presenters listing page
+     */
+    list: () => buildUrl("/presenters"),
+
+    /**
+     * Individual presenter detail page
+     * @param slug - Presenter slug identifier
+     */
+    detail: (slug: string) => buildUrl(`/presenters/${slug}`),
+  },
 } as const;
 
 /**
@@ -239,5 +271,15 @@ export const paths = {
 
   sponsors: {
     list: () => "/sponsors",
+  },
+
+  presentations: {
+    list: () => "/presentations",
+    detail: (slug: string) => `/presentations/${slug}`,
+  },
+
+  presenters: {
+    list: () => "/presenters",
+    detail: (slug: string) => `/presenters/${slug}`,
   },
 } as const;

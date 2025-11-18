@@ -26,6 +26,8 @@ import {
   NewsTopicsCollectionSchema,
   OnboardingSchema,
   PhilosophySchema,
+  PresentationsCollectionSchema,
+  PresentersCollectionSchema,
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
@@ -57,6 +59,8 @@ const CONTENT_SCHEMAS: Record<string, z.ZodSchema<unknown>> = {
   "philosophy.json": PhilosophySchema,
   "cities.json": CitiesCollectionSchema,
   "sponsors.json": SponsorsCollectionSchema,
+  "presenters.json": PresentersCollectionSchema,
+  "presentations.json": PresentationsCollectionSchema,
 };
 
 interface ValidationResult {

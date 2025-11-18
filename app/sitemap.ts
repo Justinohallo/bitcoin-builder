@@ -3,8 +3,9 @@ import type { MetadataRoute } from "next";
 import {
   loadCities,
   loadEvents,
+  loadPresentations,
+  loadPresenters,
   loadRecaps,
-  loadSponsors,
 } from "@/lib/content";
 import { urls } from "@/lib/utils/urls";
 
@@ -18,7 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const { events } = loadEvents();
   const { recaps } = loadRecaps();
   const { cities } = loadCities();
-  const { sponsors } = loadSponsors();
+  const { presentations } = loadPresentations();
+  const { presenters } = loadPresenters();
 
   // Static pages
   const staticPages = [
@@ -130,6 +132,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    {
+      url: urls.presentations.list(),
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: urls.presenters.list(),
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
   ];
 
   // Event pages
@@ -156,5 +170,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...eventPages, ...recapPages, ...cityPages];
+  // Presentation pages
+  const presentationPages = presentations.map((presentation) => ({
+    url: urls.presentations.detail(presentation.slug),
+    lastModified: presentation.date ? new Date(presentation.date) : new Date(),
+    changeFrequency: "yearly" as const,
+    priority: 0.7,
+  }));
+
+  // Presenter pages
+  const presenterPages = presenters.map((presenter) => ({
+    url: urls.presenters.detail(presenter.slug),
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [
+    ...staticPages,
+    ...eventPages,
+    ...recapPages,
+    ...cityPages,
+    ...presentationPages,
+    ...presenterPages,
+  ];
 }
