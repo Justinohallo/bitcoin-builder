@@ -1,0 +1,118 @@
+{
+  "title": "Open Source & Bitcoin",
+  "slug": "open-source",
+  "description": "Learn how open source development drives Bitcoin innovation, discover top Bitcoin projects, and explore opportunities to get paid for contributing to open source.",
+  "sections": [
+    {
+      "title": "Open Source at the Heart of Builder",
+      "body": "Open source isn't just a development methodology at Builder—it's a fundamental principle that aligns perfectly with Bitcoin's values of transparency, decentralization, and permissionless innovation.\n\nBuilder exists to accelerate Bitcoin product development through openness, neutrality, and collaboration. Open source software embodies these values by making code publicly accessible, allowing anyone to inspect, modify, and distribute it. This transparency builds trust, enables peer review, and creates a foundation for collaborative building.\n\nWhen we build in the open, we create better products. Code that anyone can audit is more secure. Projects that welcome contributions grow faster. Communities that share knowledge advance together. This is why Builder champions open source development as the primary way to build Bitcoin products."
+    },
+    {
+      "title": "Understanding Open Source Development",
+      "body": "Open source development is a collaborative approach where source code is made publicly available under licenses that allow others to view, use, modify, and distribute the software. Unlike proprietary software, open source projects invite community participation.\n\nKey principles of open source:\n\n• Transparency: All code is visible and auditable\n• Collaboration: Anyone can contribute improvements\n• Meritocracy: Contributions are evaluated on merit, not credentials\n• Decentralization: No single entity controls the project\n• Freedom: Users can run, study, modify, and share the software\n\nIn the Bitcoin ecosystem, open source is essential because it enables trustless verification. Users can verify that the software does what it claims without relying on trust in developers or companies. This aligns perfectly with Bitcoin's trust-minimized design philosophy."
+    },
+    {
+      "title": "Top Open Source Bitcoin Projects",
+      "body": "The Bitcoin ecosystem thrives on open source innovation. Here are some of the most important projects driving Bitcoin forward:\n\nCore Infrastructure:\n• Bitcoin Core: The reference implementation of Bitcoin, maintained by a global team of contributors\n• Lightning Network: Layer 2 payment protocol enabling instant, low-cost transactions\n• LND (Lightning Network Daemon): One of the major Lightning implementations\n• Core Lightning (CLN): Another leading Lightning implementation\n• BTCPay Server: Self-hosted payment processor for accepting Bitcoin\n\nDeveloper Tools:\n• Bitcoin Dev Kit (BDK): Library for building Bitcoin wallets and applications\n• Rust Bitcoin: Rust implementation of Bitcoin protocols\n• BitcoinJS: JavaScript library for Bitcoin operations\n• Bitcoin Core RPC: API for interacting with Bitcoin nodes\n\nWallet Software:\n• Electrum: Lightweight Bitcoin wallet\n• Sparrow Wallet: Desktop Bitcoin wallet focused on privacy\n• BlueWallet: Mobile Bitcoin and Lightning wallet\n\nThese projects represent thousands of contributors working together to build the future of money. Each project has its own community, governance model, and contribution guidelines."
+    },
+    {
+      "title": "Getting Paid to Contribute to Open Source",
+      "body": "Many people assume open source work is unpaid volunteer labor, but that's far from the truth. There are numerous ways to earn income while contributing to open source Bitcoin projects:\n\nDirect Employment:\n• Many Bitcoin companies hire developers to work full-time on open source projects\n• Core developers are often employed by companies like Block, Chaincode Labs, and others\n• Lightning implementations have teams funded by companies building on Lightning\n\nGrants and Funding:\n• Bitcoin development grants from organizations like Human Rights Foundation, OpenSats, and others\n• Bounty programs for specific features or bug fixes\n• Community funding through platforms like GitHub Sponsors or direct donations\n\nConsulting and Services:\n• Build expertise through contributions, then offer consulting services\n• Companies pay for custom implementations or integrations\n• Training and education opportunities based on your open source experience\n\nBuilding Your Own Product:\n• Use open source projects as building blocks for your own products\n• Contribute improvements that benefit your use case\n• Build a business on top of open source infrastructure\n\nThe key is to start contributing. Build a reputation, demonstrate value, and opportunities will follow. Many successful Bitcoin developers started as volunteers and transitioned to paid roles as their contributions gained recognition."
+    },
+    {
+      "title": "How to Get Started",
+      "body": "Ready to contribute to open source Bitcoin projects? Here's how to begin:\n\n1. Choose a project that interests you—start with something you use or want to learn\n2. Read the contribution guidelines and code of conduct\n3. Start small: fix documentation, report bugs, or tackle \"good first issue\" labels\n4. Join the community: participate in discussions, ask questions, and learn from others\n5. Build your reputation through consistent, quality contributions\n\nRemember: Every expert was once a beginner. The open source community values curiosity, persistence, and collaboration over credentials. Your first contribution might be small, but it's a step toward building something meaningful.\n\nAt Builder, we encourage members to contribute to open source projects and share their experiences. Many of our meetups feature presentations about open source work, and we often collaborate on open source initiatives together."
+    },
+    {
+      "title": "Resources & Further Reading",
+      "body": "Explore these resources to deepen your understanding of open source development in Bitcoin:",
+      "links": [
+        {
+          "text": "Bitcoin Core GitHub",
+          "url": "https://github.com/bitcoin/bitcoin",
+          "external": true
+        },
+        {
+          "text": "Lightning Network GitHub",
+          "url": "https://github.com/lightningnetwork",
+          "external": true
+        },
+        {
+          "text": "OpenSats - Bitcoin Open Source Funding",
+          "url": "https://opensats.org",
+          "external": true
+        },
+        {
+          "text": "Human Rights Foundation Bitcoin Development Fund",
+          "url": "https://hrf.org/grants",
+          "external": true
+        },
+        {
+          "text": "Bitcoin Dev Kit",
+          "url": "https://bitcoindevkit.org",
+          "external": true
+        },
+        {
+          "text": "BTCPay Server",
+          "url": "https://btcpayserver.org",
+          "external": true
+        },
+        {
+          "text": "Chaincode Labs - Bitcoin Research & Development",
+          "url": "https://chaincode.com",
+          "external": true
+        },
+        {
+          "text": "Bitcoin Optech - Technical Resources",
+          "url": "https://bitcoinops.org",
+          "external": true
+        },
+        {
+          "text": "The Bitcoin Developer Guide",
+          "url": "https://bitcoin.org/en/developer-guide",
+          "external": true
+        },
+        {
+          "text": "First Contributions - Open Source Guide",
+          "url": "https://firstcontributions.github.io",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Blog Posts & Articles",
+      "body": "Learn from the experiences of open source contributors and thought leaders:",
+      "links": [
+        {
+          "text": "Why Open Source Matters for Bitcoin",
+          "url": "https://bitcoinmagazine.com/culture/why-open-source-matters-bitcoin",
+          "external": true
+        },
+        {
+          "text": "Getting Paid to Work on Bitcoin Open Source",
+          "url": "https://blog.chaincode.com",
+          "external": true
+        },
+        {
+          "text": "The Economics of Open Source Bitcoin Development",
+          "url": "https://bitcoinmagazine.com",
+          "external": true
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Open Source & Bitcoin | Builder Vancouver",
+    "description": "Learn how open source drives Bitcoin innovation, discover top Bitcoin projects, and explore opportunities to get paid for contributing to open source software.",
+    "keywords": [
+      "open source",
+      "bitcoin development",
+      "bitcoin projects",
+      "lightning network",
+      "bitcoin core",
+      "open source contributions",
+      "bitcoin grants",
+      "bitcoin developers"
+    ]
+  }
+}

@@ -46,6 +46,7 @@ const CONTENT_SCHEMAS: Record<string, z.ZodSchema<unknown>> = {
   "bitcoin101.json": EducationalContentSchema,
   "lightning101.json": EducationalContentSchema,
   "layer2.json": EducationalContentSchema,
+  "open-source.json": EducationalContentSchema,
   "resources.json": ResourcesCollectionSchema,
   "recaps.json": RecapsCollectionSchema,
   "projects.json": ProjectsCollectionSchema,
