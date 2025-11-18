@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -12,6 +12,34 @@ interface NavItem {
   href?: string;
   label: string;
   children?: NavItem[];
+}
+
+/**
+ * Chevron icon component for dropdown indicators
+ */
+function ChevronIcon({
+  isOpen,
+  size = "sm",
+}: {
+  isOpen: boolean;
+  size?: "sm" | "md";
+}) {
+  const sizeClass = size === "sm" ? "w-4 h-4" : "w-5 h-5";
+  return (
+    <svg
+      className={`${sizeClass} transition-transform ${isOpen ? "rotate-180" : ""}`}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M19 9l-7 7-7-7"
+      />
+    </svg>
+  );
 }
 
 /**
@@ -77,6 +105,41 @@ export function Navbar() {
     },
   ];
 
+  // Helper functions
+  const isActive = (href?: string, exactOnly = false) => {
+    if (!href) return false;
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    // Exact match always wins
+    if (pathname === href) {
+      return true;
+    }
+
+    // If exactOnly is true (for child links), don't use startsWith
+    if (exactOnly) {
+      return false;
+    }
+
+    // For parent routes, check if pathname starts with href + "/"
+    return pathname.startsWith(href + "/");
+  };
+
+  const hasActiveChild = (item: NavItem): boolean => {
+    if (!item.children) return false;
+    return item.children.some((child) => isActive(child.href, true));
+  };
+
+  const handleDropdownToggle = (label: string) => {
+    setOpenDropdown(openDropdown === label ? null : label);
+  };
+
+  const closeMenus = useCallback(() => {
+    setOpenDropdown(null);
+    setMobileMenuOpen(false);
+  }, []);
+
   // Handle scroll effect for navbar shadow
   useEffect(() => {
     const handleScroll = () => {
@@ -87,12 +150,9 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when route changes (only if menu is actually open)
+  // Close menus when route changes
   useEffect(() => {
-    if (mobileMenuOpen) {
-      setMobileMenuOpen(false);
-    }
-    // Intentionally only depend on pathname to close menu on navigation
+    closeMenus();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
@@ -108,40 +168,20 @@ export function Navbar() {
     };
   }, [mobileMenuOpen]);
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside (desktop only - mobile uses overlay)
   useEffect(() => {
+    if (!openDropdown) return;
+
     const handleClickOutside = (event: MouseEvent) => {
-      if (openDropdown) {
-        const dropdown = dropdownRefs.current[openDropdown];
-        if (dropdown && !dropdown.contains(event.target as Node)) {
-          setOpenDropdown(null);
-        }
+      const dropdown = dropdownRefs.current[openDropdown];
+      if (dropdown && !dropdown.contains(event.target as Node)) {
+        setOpenDropdown(null);
       }
     };
 
-    if (openDropdown) {
-      document.addEventListener("mousedown", handleClickOutside);
-      return () =>
-        document.removeEventListener("mousedown", handleClickOutside);
-    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openDropdown]);
-
-  const isActive = (href?: string) => {
-    if (!href) return false;
-    if (href === "/") {
-      return pathname === "/";
-    }
-    return pathname === href || pathname.startsWith(href + "/");
-  };
-
-  const hasActiveChild = (item: NavItem): boolean => {
-    if (!item.children) return false;
-    return item.children.some((child) => isActive(child.href));
-  };
-
-  const handleDropdownToggle = (label: string) => {
-    setOpenDropdown(openDropdown === label ? null : label);
-  };
 
   return (
     <nav
@@ -205,21 +245,7 @@ export function Navbar() {
                       }`}
                     >
                       {item.label}
-                      <svg
-                        className={`w-4 h-4 transition-transform ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
+                      <ChevronIcon isOpen={isOpen} size="sm" />
                     </button>
 
                     {/* Dropdown Card */}
@@ -232,11 +258,11 @@ export function Navbar() {
                                 key={child.href || child.label}
                                 href={child.href || "#"}
                                 className={`block px-4 py-2 text-sm transition-colors ${
-                                  isActive(child.href)
+                                  isActive(child.href, true)
                                     ? "bg-neutral-800 text-orange-400"
                                     : "text-neutral-300 hover:bg-neutral-800 hover:text-orange-400"
                                 }`}
-                                onClick={() => setOpenDropdown(null)}
+                                onClick={closeMenus}
                               >
                                 {child.label}
                               </Link>
@@ -304,6 +330,7 @@ export function Navbar() {
         className={`fixed right-0 top-16 bottom-0 z-50 w-64 bg-neutral-950 border-l border-neutral-800 shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden overflow-y-auto ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="flex flex-col p-4">
           {navItems.map((item) => {
@@ -329,9 +356,18 @@ export function Navbar() {
             const isActiveItem = hasActiveChild(item);
 
             return (
-              <div key={item.label} className="mb-1">
+              <div
+                key={item.label}
+                className="mb-1"
+                ref={(el) => {
+                  dropdownRefs.current[item.label] = el;
+                }}
+              >
                 <button
-                  onClick={() => handleDropdownToggle(item.label)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleDropdownToggle(item.label);
+                  }}
                   className={`w-full rounded-md px-4 py-3 text-base font-medium transition-colors flex items-center justify-between ${
                     isActiveItem || isOpen
                       ? "bg-neutral-800 text-orange-400"
@@ -339,36 +375,25 @@ export function Navbar() {
                   }`}
                 >
                   <span>{item.label}</span>
-                  <svg
-                    className={`w-5 h-5 transition-transform ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
+                  <ChevronIcon isOpen={isOpen} size="md" />
                 </button>
                 {isOpen && item.children && (
-                  <div className="mt-1 ml-4 border-l border-neutral-800 pl-2">
+                  <div
+                    className="mt-1 ml-4 border-l border-neutral-800 pl-2"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     {item.children.map((child) => (
                       <Link
                         key={child.href || child.label}
                         href={child.href || "#"}
                         className={`block rounded-md px-4 py-2 text-sm font-medium transition-colors mb-1 ${
-                          isActive(child.href)
+                          isActive(child.href, true)
                             ? "bg-neutral-800 text-orange-400"
                             : "text-neutral-300 hover:bg-neutral-800 hover:text-orange-400"
                         }`}
-                        onClick={() => {
-                          setOpenDropdown(null);
-                          setMobileMenuOpen(false);
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          closeMenus();
                         }}
                       >
                         {child.label}
