@@ -132,7 +132,7 @@
           "external": false
         }
       ],
-      "slidesUrl": "/slides/builder-vancouver-intro/present",
+      "slidesUrl": "https://builder.van/slides/builder-vancouver-intro/present",
       "sections": [
         {
           "title": "What is Builder?",
