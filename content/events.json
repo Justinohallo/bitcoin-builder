@@ -61,10 +61,6 @@
               "external": true
             }
           ]
-        },
-        {
-          "title": "Schedule",
-          "body": "6:00 PM - Introduction and Setup\n6:30 PM - Lightning Network Fundamentals\n7:00 PM - Hands-on Lab\n8:00 PM - Q&A and Networking"
         }
       ],
       "meta": {
