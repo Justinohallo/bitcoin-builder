@@ -33,6 +33,7 @@ import {
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
   SponsorsCollectionSchema,
+  TechnicalRoadmapSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
   WhatToExpectSchema,
@@ -64,6 +65,7 @@ const CONTENT_SCHEMAS: Record<string, z.ZodSchema<unknown>> = {
   "sponsors.json": SponsorsCollectionSchema,
   "presenters.json": PresentersCollectionSchema,
   "presentations.json": PresentationsCollectionSchema,
+  "technical-roadmap.json": TechnicalRoadmapSchema,
 };
 
 interface ValidationResult {

@@ -68,6 +68,7 @@ export function Navbar() {
         { href: "/about/vision", label: "Vision" },
         { href: "/about/charter", label: "Charter" },
         { href: "/about/philosophy", label: "Philosophy" },
+        { href: "/technical-roadmap", label: "Technical Roadmap" },
       ],
     },
     {

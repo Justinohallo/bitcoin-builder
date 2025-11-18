@@ -286,6 +286,37 @@ export const ProjectsCollectionSchema = z.object({
   meta: MetaSchema,
 });
 
+// Technical Roadmap Schema
+export const RoadmapItemSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string(),
+  status: z.enum(["planned", "in-progress", "completed", "blocked"]),
+  priority: z.enum(["low", "medium", "high", "critical"]).optional(),
+  links: z.array(LinkSchema).optional(),
+  dependencies: z.array(z.string()).optional(), // Array of item IDs this depends on
+  assignee: z.string().optional(), // Person or team responsible
+  estimatedCompletion: z.string().optional(), // ISO date format
+});
+
+export const RoadmapMilestoneSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string(),
+  targetDate: z.string().optional(), // ISO date format
+  status: z.enum(["upcoming", "in-progress", "completed", "delayed"]),
+  items: z.array(RoadmapItemSchema),
+});
+
+export const TechnicalRoadmapSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  overview: z.string(), // Overview of the roadmap
+  milestones: z.array(RoadmapMilestoneSchema),
+  meta: MetaSchema,
+});
+
 // Vibe Apps Schema
 export const VibeAppSchema = z.object({
   title: z.string(),
