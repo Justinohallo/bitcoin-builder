@@ -197,6 +197,46 @@ export const EducationalContentSchema = z.object({
   meta: MetaSchema,
 });
 
+// Vibe Coding Schema
+const VibeCodingApplicationSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  url: z.string().url().optional(),
+  category: z.string().optional(),
+});
+
+const VibeCodingResourceSchema = z.object({
+  title: z.string(),
+  url: z.string().url(),
+  description: z.string(),
+  type: z.enum(["blog", "video", "tutorial", "documentation"]),
+  author: z.string().optional(),
+});
+
+const BitcoinOpportunitySchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+const BitcoinChallengeSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+export const VibeCodingSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  sections: z.array(SectionSchema),
+  applications: z.array(VibeCodingApplicationSchema),
+  resources: z.array(VibeCodingResourceSchema),
+  bitcoin: z.object({
+    opportunities: z.array(BitcoinOpportunitySchema),
+    challenges: z.array(BitcoinChallengeSchema),
+  }),
+  meta: MetaSchema,
+});
+
 // Resources Schema
 export const ResourceSchema = z.object({
   title: z.string(),
