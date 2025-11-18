@@ -6,7 +6,12 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { getEventWithNewsTopics, loadEvent, loadEvents } from "@/lib/content";
+import {
+  getEventWithCity,
+  getEventWithNewsTopics,
+  loadEvent,
+  loadEvents,
+} from "@/lib/content";
 import {
   createBreadcrumbList,
   createEventSchema,
@@ -46,6 +51,7 @@ export default async function EventPage({ params }: EventPageProps) {
   }
 
   const event = eventData;
+  const eventWithCity = getEventWithCity(slug);
 
   // Generate structured data
   const eventSchema = createEventSchema({
@@ -84,6 +90,17 @@ export default async function EventPage({ params }: EventPageProps) {
           <p>📅 {event.date}</p>
           <p>🕐 {event.time}</p>
           <p>📍 {event.location}</p>
+          {eventWithCity?.city && (
+            <p>
+              🏙️ Hosted in{" "}
+              <Link
+                href={`/cities/${eventWithCity.city.slug}`}
+                className="text-orange-400 hover:text-orange-300 transition-colors"
+              >
+                {eventWithCity.city.name}
+              </Link>
+            </p>
+          )}
         </div>
 
         <p className="text-xl text-neutral-300 mb-12">{event.description}</p>

@@ -2,13 +2,18 @@ import { z } from "zod";
 
 import {
   CharterSchema,
+  CitiesCollectionSchema,
+  CitySchema,
   EducationalContentSchema,
   EventSchema,
   EventsCollectionSchema,
   HomeSchema,
+  MeetupSchema,
+  MerchantSchema,
   MissionSchema,
   NewsTopicSchema,
   NewsTopicsCollectionSchema,
+  NotableBuilderSchema,
   OnboardingSchema,
   PhilosophySchema,
   ProjectSchema,
@@ -70,3 +75,10 @@ export type Meta = {
   description: string;
   keywords?: string[];
 };
+
+// Cities types
+export type Merchant = z.infer<typeof MerchantSchema>;
+export type NotableBuilder = z.infer<typeof NotableBuilderSchema>;
+export type Meetup = z.infer<typeof MeetupSchema>;
+export type City = z.infer<typeof CitySchema>;
+export type CitiesCollection = z.infer<typeof CitiesCollectionSchema>;

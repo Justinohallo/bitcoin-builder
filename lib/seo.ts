@@ -25,6 +25,7 @@ export {
   createCollectionPageSchema,
   createItemListSchema,
   createSoftwareApplicationSchema,
+  createCitySchema,
   createSchemaGraph,
 } from "./structured-data";
 

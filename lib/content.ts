@@ -6,6 +6,7 @@ import { z } from "zod";
 import { createContentError, formatContentError } from "./errors";
 import {
   CharterSchema,
+  CitiesCollectionSchema,
   EducationalContentSchema,
   EventsCollectionSchema,
   HomeSchema,
@@ -22,6 +23,8 @@ import {
 } from "./schemas";
 import type {
   Charter,
+  CitiesCollection,
+  City,
   EducationalContent,
   Event,
   EventsCollection,
@@ -418,3 +421,132 @@ export const loadCharterAsync = () =>
   loadContentAsync("charter.json", CharterSchema);
 export const loadPhilosophyAsync = () =>
   loadContentAsync("philosophy.json", PhilosophySchema);
+
+// Cities loaders
+
+/**
+ * Loads all cities
+ * @returns Collection of cities
+ * @throws {Error} If cities.json is invalid or missing
+ */
+export function loadCities(): CitiesCollection {
+  return loadContent("cities.json", CitiesCollectionSchema);
+}
+
+/**
+ * Loads a single city by its slug identifier
+ * @param slug - URL-safe city identifier (e.g., "vancouver")
+ * @returns City object if found, undefined otherwise
+ * @throws {Error} If cities.json cannot be loaded
+ *
+ * @example
+ * const city = loadCity('vancouver');
+ * if (city) {
+ *   console.log(city.name, city.country);
+ * }
+ */
+export function loadCity(slug: string): City | undefined {
+  const cities = loadCities();
+  return cities.cities.find((city) => city.slug === slug);
+}
+
+/**
+ * Loads a single city by its ID
+ * @param id - Unique city identifier (e.g., "vancouver-ca")
+ * @returns City object if found, undefined otherwise
+ * @throws {Error} If cities.json cannot be loaded
+ *
+ * @example
+ * const city = loadCityById('vancouver-ca');
+ * if (city) {
+ *   console.log(city.name);
+ * }
+ */
+export function loadCityById(id: string): City | undefined {
+  const cities = loadCities();
+  return cities.cities.find((city) => city.id === id);
+}
+
+/**
+ * Type for Event with resolved city
+ */
+export type EventWithCity = Event & {
+  city?: City;
+};
+
+/**
+ * Type for City with resolved events
+ */
+export type CityWithEvents = City & {
+  events?: Event[];
+};
+
+/**
+ * Loads an event with its referenced city resolved
+ * @param slug - URL-safe event identifier
+ * @returns Event with embedded city, or undefined if event not found
+ * @throws {Error} If events.json or cities.json cannot be loaded
+ *
+ * @example
+ * const eventData = getEventWithCity('lightning-workshop');
+ * if (eventData) {
+ *   console.log(eventData.title, 'in', eventData.city?.name);
+ * }
+ */
+export function getEventWithCity(slug: string): EventWithCity | undefined {
+  const event = loadEvent(slug);
+  if (!event) return undefined;
+
+  const city = event.cityId ? loadCityById(event.cityId) : undefined;
+
+  return {
+    ...event,
+    city,
+  };
+}
+
+/**
+ * Loads a city with all events hosted in that city resolved
+ * @param slug - URL-safe city identifier
+ * @returns City with embedded events array, or undefined if city not found
+ * @throws {Error} If cities.json or events.json cannot be loaded
+ *
+ * @example
+ * const cityData = getCityWithEvents('vancouver');
+ * if (cityData) {
+ *   console.log(cityData.name, 'hosts', cityData.events?.length, 'events');
+ * }
+ */
+export function getCityWithEvents(slug: string): CityWithEvents | undefined {
+  const city = loadCity(slug);
+  if (!city) return undefined;
+
+  const events = loadEvents();
+  const cityEvents = events.events.filter((event) => event.cityId === city.id);
+
+  return {
+    ...city,
+    events: cityEvents.length > 0 ? cityEvents : undefined,
+  };
+}
+
+/**
+ * Loads all events for a specific city by city ID
+ * @param cityId - City identifier
+ * @returns Array of events hosted in the city
+ * @throws {Error} If events.json cannot be loaded
+ *
+ * @example
+ * const events = getCityEvents('vancouver-ca');
+ * events.forEach(event => {
+ *   console.log(event.title, event.date);
+ * });
+ */
+export function getCityEvents(cityId: string): Event[] {
+  const events = loadEvents();
+  return events.events.filter((event) => event.cityId === cityId);
+}
+
+// Async versions
+export const loadCitiesAsync = () =>
+  loadContentAsync("cities.json", CitiesCollectionSchema);

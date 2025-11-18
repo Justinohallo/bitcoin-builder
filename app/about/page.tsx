@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/Section";
 
 import {
   loadCharter,
+  loadCities,
   loadMission,
   loadPhilosophy,
   loadVision,
@@ -33,6 +34,7 @@ export default function AboutPage() {
   const vision = loadVision();
   const charter = loadCharter();
   const philosophy = loadPhilosophy();
+  const { cities } = loadCities();
 
   return (
     <PageContainer>
@@ -97,6 +99,25 @@ export default function AboutPage() {
           content creation, and community engagement.
         </p>
       </Section>
+
+      {cities.length > 0 && (
+        <Section>
+          <Heading level="h2" className="text-neutral-100 mb-4">
+            Builder Cities
+          </Heading>
+          <p className="text-lg text-neutral-300 mb-6 leading-relaxed">
+            Builder operates in cities around the world, each with its own
+            vibrant Bitcoin ecosystem. Explore our cities to discover local
+            builders, merchants, and communities.
+          </p>
+          <Link
+            href="/cities"
+            className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors"
+          >
+            Explore Builder Cities →
+          </Link>
+        </Section>
+      )}
     </PageContainer>
   );
 }

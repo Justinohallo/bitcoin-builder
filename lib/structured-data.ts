@@ -349,6 +349,39 @@ export function createSoftwareApplicationSchema(software: {
 }
 
 /**
+ * Creates a City schema
+ */
+export function createCitySchema(city: {
+  name: string;
+  slug: string;
+  description: string;
+  country: string;
+  region: string;
+  latitude: number;
+  longitude: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "City",
+    "@id": `${SITE_URL}/cities/${city.slug}`,
+    name: city.name,
+    description: city.description,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: city.latitude,
+      longitude: city.longitude,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: city.name,
+      addressRegion: city.region,
+      addressCountry: city.country,
+    },
+    url: `${SITE_URL}/cities/${city.slug}`,
+  };
+}
+
+/**
  * Helper to combine multiple schemas into a graph
  */
 export function createSchemaGraph(...schemas: Record<string, unknown>[]) {

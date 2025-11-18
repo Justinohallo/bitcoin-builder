@@ -1,0 +1,586 @@
+{
+  "cities": [
+    {
+      "id": "city-vancouver",
+      "slug": "vancouver",
+      "name": "Vancouver",
+      "country": "Canada",
+      "region": "British Columbia",
+      "timezone": "America/Vancouver",
+      "meta": {
+        "shortDescription": "A highly active and fast-growing Bitcoin builder city with strong Lightning adoption and an entrepreneurial culture.",
+        "longDescription": "Vancouver is one of the most Bitcoin-friendly cities in North America, with a vibrant builder community, over 100 Lightning-enabled merchants, and a deep culture of experimentation and sovereignty. The local ecosystem benefits from strong tech talent, established Bitcoin meetups, and a culture that values privacy and open digital systems.",
+        "heroImage": "https://example.com/vancouver-hero.jpg",
+        "galleryImages": []
+      },
+      "bitcoinEcosystem": {
+        "merchantCount": 100,
+        "merchantList": [],
+        "walletEcosystem": {
+          "dominantWallets": ["Coinos", "Phoenix", "Muun", "Zeus"],
+          "nodeCommunities": [
+            "Vancouver Bitcoiners Node Cluster",
+            "Local Umbrel + Start9 users"
+          ],
+          "custodialVsNonCustodialBalance": {
+            "custodial": 60,
+            "nonCustodial": 40
+          }
+        },
+        "notableBuilders": [
+          {
+            "name": "Coinos Team",
+            "description": "Creators of Coinos, the Lightning backend powering hundreds of merchants in Vancouver.",
+            "project": "Coinos",
+            "website": "https://coinos.io",
+            "twitter": "https://twitter.com/coinos_io"
+          },
+          {
+            "name": "Builder Vancouver Crew",
+            "description": "Local organizers building a structured product-focused meetup community.",
+            "project": "Builder Vancouver",
+            "website": "https://builder.van",
+            "twitter": "https://twitter.com/builder_van"
+          }
+        ],
+        "meetups": [
+          {
+            "name": "Builder Vancouver",
+            "type": "builder",
+            "frequency": "Monthly",
+            "website": "https://builder.van/events",
+            "description": "Product, design, and engineering meetup for people building on Bitcoin."
+          },
+          {
+            "name": "Vancouver Bitcoiners",
+            "type": "bitcoin",
+            "frequency": "Monthly",
+            "website": "https://meetup.com/vancouver-bitcoiners",
+            "description": "Long-running Bitcoin community meetup."
+          }
+        ]
+      },
+      "whyThisCityIsGreatForBitcoin": {
+        "economicStrengths": [
+          "High-tech workforce",
+          "Strong startup community",
+          "Gateway city for global talent"
+        ],
+        "techEcosystem": [
+          "Deep engineering talent pool",
+          "Strong AI presence",
+          "High adoption of decentralized tools like Umbrel and Start9"
+        ],
+        "regulatoryEnvironment": {
+          "summary": "Canada is moderately friendly to Bitcoin users, though exchanges are heavily regulated.",
+          "friendlyScore": 6
+        },
+        "qualityOfBuilders": {
+          "talentPools": ["Ex-Amazon, Ex-Microsoft, Web3 refugees"],
+          "localCompanies": ["Coinos", "Dappl", "Local Bitcoin-first agencies"],
+          "universityPipelines": ["UBC", "SFU", "BCIT"]
+        },
+        "infrastructure": {
+          "wifiQuality": "High",
+          "coWorkingSpaces": [
+            {
+              "name": "WeWork Bentall",
+              "address": "Vancouver, BC",
+              "website": ""
+            },
+            {
+              "name": "Hive",
+              "address": "128 W Hastings",
+              "website": ""
+            }
+          ],
+          "conferenceVenues": ["SFU Harbour Centre", "UBC Robson Square"]
+        },
+        "sovereigntyCulture": {
+          "score": 8,
+          "factors": [
+            "Tech-forward",
+            "Privacy-aware population",
+            "Strong Lightning merchant adoption"
+          ]
+        },
+        "cryptoCommerceInnovation": [
+          "Merchant Lightning adoption over 100+ stores",
+          "Strong point-of-sale experimentation",
+          "Local push for Bitcoin-native design"
+        ]
+      },
+      "travelGuide": {
+        "airport": "YVR Vancouver International Airport",
+        "transportation": ["SkyTrain", "Bus", "Rideshare"],
+        "bestAreasToStay": ["Downtown", "Gastown", "Yaletown"],
+        "safetyNotes": "Very safe city with typical urban considerations.",
+        "localTips": [
+          "Bring an umbrella",
+          "Tap payments everywhere",
+          "Walkable downtown"
+        ]
+      },
+      "maps": {
+        "center": { "lat": 49.2827, "lng": -123.1207 },
+        "merchantMapStyle": "bitcoin",
+        "primaryClusters": [
+          {
+            "name": "Gastown Merchant Cluster",
+            "lat": 49.283,
+            "lng": -123.108,
+            "description": "High concentration of Bitcoin-friendly shops."
+          }
+        ]
+      },
+      "builderCityScores": {
+        "sovereignty": 8,
+        "builderDensity": 7,
+        "merchantActivity": 9,
+        "innovationEnergy": 8,
+        "regulatorySupport": 6,
+        "globalVisibility": 6
+      },
+      "links": {
+        "officialWebsite": "https://builder.van",
+        "github": "",
+        "meetupPage": "",
+        "twitter": "https://twitter.com/builder_van",
+        "nostr": "",
+        "resources": []
+      },
+      "tags": ["bitcoin", "lightning", "builder-city", "canada"]
+    },
+    {
+      "id": "city-austin",
+      "slug": "austin",
+      "name": "Austin",
+      "country": "USA",
+      "region": "Texas",
+      "timezone": "America/Chicago",
+      "meta": {
+        "shortDescription": "The global epicenter of Bitcoin building in the United States.",
+        "longDescription": "Austin has emerged as one of Bitcoin's most important builder ecosystems, home to the largest concentration of Lightning developers, major Bitcoin startups, active open-source contributors, and a deeply supportive culture for experimentation and sovereignty. The city's political climate and tech community make it a magnet for global Bitcoin talent.",
+        "heroImage": "",
+        "galleryImages": []
+      },
+      "bitcoinEcosystem": {
+        "merchantCount": 120,
+        "merchantList": [],
+        "walletEcosystem": {
+          "dominantWallets": ["Phoenix", "Blixt", "Zeus"],
+          "nodeCommunities": ["Plebnet Austin"],
+          "custodialVsNonCustodialBalance": {
+            "custodial": 40,
+            "nonCustodial": 60
+          }
+        },
+        "notableBuilders": [
+          {
+            "name": "Spiral / Block Builders",
+            "description": "Home to Bitcoin developers working on LDK, Bitcoin Dev Kit, and design projects.",
+            "project": "Spiral",
+            "website": "https://spiral.xyz",
+            "twitter": "https://twitter.com/spiralbtc"
+          },
+          {
+            "name": "Oshi",
+            "description": "Bitcoin-powered local business incentive app.",
+            "project": "Oshi",
+            "website": "",
+            "twitter": ""
+          },
+          {
+            "name": "PlebLab",
+            "description": "The most famous Bitcoin startup accelerator in the world.",
+            "project": "PlebLab",
+            "website": "https://pleblab.com",
+            "twitter": ""
+          }
+        ],
+        "meetups": [
+          {
+            "name": "Austin BitDevs",
+            "type": "bitdevs",
+            "frequency": "Monthly",
+            "website": "",
+            "description": "One of the most important technical Bitcoin meetups globally."
+          },
+          {
+            "name": "Austin Bitcoin Club",
+            "type": "bitcoin",
+            "frequency": "Monthly",
+            "website": "",
+            "description": "Large monthly meetup for new and experienced Bitcoiners."
+          }
+        ]
+      },
+      "whyThisCityIsGreatForBitcoin": {
+        "economicStrengths": [
+          "Strong startup funding",
+          "Supportive regulatory environment",
+          "Low taxes"
+        ],
+        "techEcosystem": [
+          "High concentration of Bitcoin developers",
+          "Access to hardware engineering talent",
+          "Dozens of Bitcoin startups"
+        ],
+        "regulatoryEnvironment": {
+          "summary": "One of the most Bitcoin-friendly jurisdictions in the U.S.",
+          "friendlyScore": 9
+        },
+        "qualityOfBuilders": {
+          "talentPools": ["Bitcoin developers", "Hardware hackers"],
+          "localCompanies": ["Unchained", "Start9", "PlebLab"],
+          "universityPipelines": ["University of Texas at Austin"]
+        },
+        "infrastructure": {
+          "wifiQuality": "High",
+          "coWorkingSpaces": [
+            { "name": "PlebLab", "address": "Austin, TX", "website": "" }
+          ],
+          "conferenceVenues": ["Bitcoin Commons"]
+        },
+        "sovereigntyCulture": {
+          "score": 9,
+          "factors": [
+            "Deep Bitcoin culture",
+            "High self-custody literacy",
+            "Strong privacy tech ecosystem"
+          ]
+        },
+        "cryptoCommerceInnovation": [
+          "Lightning incentives for merchants",
+          "Bitcoin business ecosystems",
+          "Bitcoin accelerator culture"
+        ]
+      },
+      "travelGuide": {
+        "airport": "AUS Austin-Bergstrom International Airport",
+        "transportation": ["Rideshare", "Light rail", "Bus"],
+        "bestAreasToStay": ["Downtown", "East Austin"],
+        "safetyNotes": "Generally safe in core tech districts.",
+        "localTips": ["Prepare for heat", "Big startup culture", "Great BBQ"]
+      },
+      "maps": {
+        "center": { "lat": 30.2672, "lng": -97.7431 },
+        "merchantMapStyle": "bitcoin",
+        "primaryClusters": [
+          {
+            "name": "Bitcoin Commons",
+            "lat": 30.268,
+            "lng": -97.743,
+            "description": "Austin's Bitcoin hub."
+          }
+        ]
+      },
+      "builderCityScores": {
+        "sovereignty": 9,
+        "builderDensity": 10,
+        "merchantActivity": 8,
+        "innovationEnergy": 10,
+        "regulatorySupport": 9,
+        "globalVisibility": 9
+      },
+      "links": {
+        "officialWebsite": "",
+        "github": "",
+        "meetupPage": "",
+        "twitter": "",
+        "nostr": "",
+        "resources": []
+      },
+      "tags": ["bitcoin", "builder-city", "texas"]
+    },
+    {
+      "id": "city-miami",
+      "slug": "miami",
+      "name": "Miami",
+      "country": "USA",
+      "region": "Florida",
+      "timezone": "America/New_York",
+      "meta": {
+        "shortDescription": "A global fintech and Bitcoin hotspot with strong crypto culture and major conferences.",
+        "longDescription": "Miami is one of the most open crypto cities in the U.S., with a supportive political climate, strong fintech presence, and major annual Bitcoin conferences. The city mixes global energy with an experimental builder culture and has many Bitcoin-friendly venues.",
+        "heroImage": "",
+        "galleryImages": []
+      },
+      "bitcoinEcosystem": {
+        "merchantCount": 60,
+        "merchantList": [],
+        "walletEcosystem": {
+          "dominantWallets": ["Cash App", "Muun", "Phoenix"],
+          "nodeCommunities": ["Miami Bitcoin Node Circle"],
+          "custodialVsNonCustodialBalance": {
+            "custodial": 70,
+            "nonCustodial": 30
+          }
+        },
+        "notableBuilders": [
+          {
+            "name": "Builder Miami Organizers",
+            "description": "Local Builder chapter hosting monthly events.",
+            "project": "Builder Miami",
+            "website": "",
+            "twitter": ""
+          },
+          {
+            "name": "Open Source Bitcoin Builders",
+            "description": "Strong presence of global Bitcoin devs passing through for conferences.",
+            "project": "",
+            "website": "",
+            "twitter": ""
+          }
+        ],
+        "meetups": [
+          {
+            "name": "Builder Miami",
+            "type": "builder",
+            "frequency": "Monthly",
+            "website": "",
+            "description": ""
+          },
+          {
+            "name": "Miami Bitcoin Meetup",
+            "type": "bitcoin",
+            "frequency": "Monthly",
+            "website": "",
+            "description": ""
+          }
+        ]
+      },
+      "whyThisCityIsGreatForBitcoin": {
+        "economicStrengths": [
+          "Strong fintech presence",
+          "High concentration of global investors",
+          "Business-friendly tax environment"
+        ],
+        "techEcosystem": [
+          "Large fintech community",
+          "Frequent crypto conferences",
+          "Strong Latin America connection"
+        ],
+        "regulatoryEnvironment": {
+          "summary": "Generally pro-Bitcoin political posture, strong public support for digital assets.",
+          "friendlyScore": 8
+        },
+        "qualityOfBuilders": {
+          "talentPools": ["Fintech engineers", "Crypto startup founders"],
+          "localCompanies": ["Marco", "Local fintech startups"],
+          "universityPipelines": ["University of Miami"]
+        },
+        "infrastructure": {
+          "wifiQuality": "Medium-High",
+          "coWorkingSpaces": [
+            { "name": "The LAB Miami", "address": "Wynwood", "website": "" }
+          ],
+          "conferenceVenues": ["Miami Beach Convention Center"]
+        },
+        "sovereigntyCulture": {
+          "score": 6,
+          "factors": [
+            "Global money culture",
+            "Fintech-first",
+            "Lower self-custody literacy than Austin"
+          ]
+        },
+        "cryptoCommerceInnovation": [
+          "High-end dining accepting Bitcoin",
+          "Cross-border remittance innovation",
+          "Conference-driven experimentation"
+        ]
+      },
+      "travelGuide": {
+        "airport": "MIA Miami International Airport",
+        "transportation": ["Uber", "MetroMover", "Bus"],
+        "bestAreasToStay": ["Brickell", "Wynwood"],
+        "safetyNotes": "Tourist-heavy areas are safe; typical nightlife precautions.",
+        "localTips": [
+          "Prepare for heat",
+          "Huge LATAM influence",
+          "Great nightlife"
+        ]
+      },
+      "maps": {
+        "center": { "lat": 25.7617, "lng": -80.1918 },
+        "merchantMapStyle": "bitcoin",
+        "primaryClusters": [
+          {
+            "name": "Brickell Cluster",
+            "lat": 25.761,
+            "lng": -80.191,
+            "description": "High concentration of fintech and crypto spaces."
+          }
+        ]
+      },
+      "builderCityScores": {
+        "sovereignty": 6,
+        "builderDensity": 7,
+        "merchantActivity": 6,
+        "innovationEnergy": 8,
+        "regulatorySupport": 8,
+        "globalVisibility": 9
+      },
+      "links": {
+        "officialWebsite": "",
+        "github": "",
+        "meetupPage": "",
+        "twitter": "",
+        "nostr": "",
+        "resources": []
+      },
+      "tags": ["bitcoin", "builder-city", "miami"]
+    },
+    {
+      "id": "city-san-francisco",
+      "slug": "san-francisco",
+      "name": "San Francisco",
+      "country": "USA",
+      "region": "California",
+      "timezone": "America/Los_Angeles",
+      "meta": {
+        "shortDescription": "One of the highest-density Bitcoin builder ecosystems, home to Bitcoin Builder SF, Spiral, design leadership, and vibecoding culture.",
+        "longDescription": "San Francisco is a global center for Bitcoin design, product development, AI innovation, and Lightning research. The city is filled with startups, high-talent engineers, and communities that push the boundaries of Bitcoin UX and developer tooling. Bitcoin Builder SF is one of the most active product-focused chapters in the world.",
+        "heroImage": "",
+        "galleryImages": []
+      },
+      "bitcoinEcosystem": {
+        "merchantCount": 50,
+        "merchantList": [],
+        "walletEcosystem": {
+          "dominantWallets": ["Muun", "Phoenix", "Zeus"],
+          "nodeCommunities": ["SF Lightning Dev Circle"],
+          "custodialVsNonCustodialBalance": {
+            "custodial": 50,
+            "nonCustodial": 50
+          }
+        },
+        "notableBuilders": [
+          {
+            "name": "Bitcoin Design Community",
+            "description": "Creators of Bitcoin.design, a global design system for Bitcoin UX.",
+            "project": "Bitcoin.design",
+            "website": "https://bitcoin.design",
+            "twitter": ""
+          },
+          {
+            "name": "Spiral (Square/Block)",
+            "description": "Bitcoin open-source team behind LDK and Bitcoin Dev Kit.",
+            "project": "Spiral",
+            "website": "https://spiral.xyz",
+            "twitter": ""
+          },
+          {
+            "name": "Builder SF Team",
+            "description": "The founding Builder chapter that created the Builder format.",
+            "project": "Bitcoin Builder SF",
+            "website": "https://bitcoinbuildersf.com",
+            "twitter": "https://twitter.com/bbuildersf"
+          }
+        ],
+        "meetups": [
+          {
+            "name": "Bitcoin Builder SF",
+            "type": "builder",
+            "frequency": "Monthly",
+            "website": "https://bitcoinbuildersf.com",
+            "description": "The original Builder meetup: demos, design, UX, and product building."
+          },
+          {
+            "name": "SF BitDevs",
+            "type": "bitdevs",
+            "frequency": "Monthly",
+            "website": "",
+            "description": "Technical Bitcoin discussions led by core engineers."
+          }
+        ]
+      },
+      "whyThisCityIsGreatForBitcoin": {
+        "economicStrengths": [
+          "World-class startup ecosystem",
+          "Deep venture capital support",
+          "Strong AI and engineering expertise"
+        ],
+        "techEcosystem": [
+          "High density of elite engineers",
+          "Birthplace of Bitcoin design standards",
+          "Strong product culture"
+        ],
+        "regulatoryEnvironment": {
+          "summary": "California is mixed but tolerant toward Bitcoin builders.",
+          "friendlyScore": 6
+        },
+        "qualityOfBuilders": {
+          "talentPools": [
+            "AI engineers",
+            "Bitcoin designers",
+            "Lightning developers"
+          ],
+          "localCompanies": ["Block", "Startups building Lightning tools"],
+          "universityPipelines": ["UC Berkeley", "Stanford"]
+        },
+        "infrastructure": {
+          "wifiQuality": "High",
+          "coWorkingSpaces": [
+            { "name": "Sandbox Suites", "address": "SF", "website": "" }
+          ],
+          "conferenceVenues": ["SF Mint", "General Assembly"]
+        },
+        "sovereigntyCulture": {
+          "score": 7,
+          "factors": [
+            "High self-custody literacy",
+            "Strong open-source ethos",
+            "High experimental energy"
+          ]
+        },
+        "cryptoCommerceInnovation": [
+          "Bitcoin design standards",
+          "LDK experimentation",
+          "AI-driven Bitcoin tools"
+        ]
+      },
+      "travelGuide": {
+        "airport": "SFO / OAK",
+        "transportation": ["BART", "Muni", "Rideshare"],
+        "bestAreasToStay": ["SoMa", "Mission"],
+        "safetyNotes": "Tech districts generally safe; exercise normal city caution.",
+        "localTips": [
+          "Walkable neighborhoods",
+          "Incredible food",
+          "Historic Bitcoin meetups"
+        ]
+      },
+      "maps": {
+        "center": { "lat": 37.7749, "lng": -122.4194 },
+        "merchantMapStyle": "bitcoin",
+        "primaryClusters": [
+          {
+            "name": "FiDi",
+            "lat": 37.794,
+            "lng": -122.399,
+            "description": "Home to crypto startups and Bitcoin Builders SF venues."
+          }
+        ]
+      },
+      "builderCityScores": {
+        "sovereignty": 7,
+        "builderDensity": 9,
+        "merchantActivity": 5,
+        "innovationEnergy": 10,
+        "regulatorySupport": 6,
+        "globalVisibility": 9
+      },
+      "links": {
+        "officialWebsite": "https://bitcoinbuildersf.com",
+        "github": "",
+        "meetupPage": "",
+        "twitter": "https://twitter.com/bbuildersf",
+        "nostr": "",
+        "resources": []
+      },
+      "tags": ["bitcoin", "builder-city", "san-francisco"]
+    }
+  ]
+}

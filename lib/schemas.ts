@@ -39,6 +39,7 @@ export const EventSchema = z.object({
   time: z.string(),
   location: z.string(),
   description: z.string(),
+  cityId: z.string().optional(), // Reference to City by ID
   newsTopicIds: z.array(z.string()).optional(), // References to NewsTopics by ID
   sections: z.array(SectionSchema),
   meta: MetaSchema,
@@ -207,4 +208,142 @@ export const NewsTopicSchema = z.object({
 
 export const NewsTopicsCollectionSchema = z.object({
   newsTopics: z.array(NewsTopicSchema),
+});
+
+// Cities Schema
+export const MerchantSchema = z.object({
+  name: z.string(),
+  category: z.enum([
+    "cafe",
+    "restaurant",
+    "retail",
+    "bar",
+    "service",
+    "venue",
+    "other",
+  ]),
+  address: z.string(),
+  latitude: z.number(),
+  longitude: z.number(),
+  paymentTypes: z.array(z.string()),
+  website: z.string().optional(),
+  description: z.string().optional(),
+  image: z.string().optional(),
+});
+
+export const NotableBuilderSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+  project: z.string(),
+  website: z.string().optional(),
+  twitter: z.string().optional(),
+});
+
+export const MeetupSchema = z.object({
+  name: z.string(),
+  type: z.enum(["builder", "bitdevs", "litdevs", "bitcoin", "coding", "other"]),
+  frequency: z.string(),
+  website: z.string().optional(),
+  description: z.string().optional(),
+});
+
+export const CitySchema = z.object({
+  id: z.string(),
+  slug: z.string(),
+  name: z.string(),
+  country: z.string(),
+  region: z.string(),
+  timezone: z.string(),
+  meta: z.object({
+    shortDescription: z.string(),
+    longDescription: z.string(),
+    heroImage: z.string().optional(),
+    galleryImages: z.array(z.string()),
+  }),
+  bitcoinEcosystem: z.object({
+    merchantCount: z.number(),
+    merchantList: z.array(MerchantSchema),
+    walletEcosystem: z.object({
+      dominantWallets: z.array(z.string()),
+      nodeCommunities: z.array(z.string()),
+      custodialVsNonCustodialBalance: z.object({
+        custodial: z.number(),
+        nonCustodial: z.number(),
+      }),
+    }),
+    notableBuilders: z.array(NotableBuilderSchema),
+    meetups: z.array(MeetupSchema),
+  }),
+  whyThisCityIsGreatForBitcoin: z.object({
+    economicStrengths: z.array(z.string()),
+    techEcosystem: z.array(z.string()),
+    regulatoryEnvironment: z.object({
+      summary: z.string(),
+      friendlyScore: z.number(),
+    }),
+    qualityOfBuilders: z.object({
+      talentPools: z.array(z.string()),
+      localCompanies: z.array(z.string()),
+      universityPipelines: z.array(z.string()),
+    }),
+    infrastructure: z.object({
+      wifiQuality: z.string(),
+      coWorkingSpaces: z.array(
+        z.object({
+          name: z.string(),
+          address: z.string(),
+          website: z.string().optional(),
+        })
+      ),
+      conferenceVenues: z.array(z.string()),
+    }),
+    sovereigntyCulture: z.object({
+      score: z.number(),
+      factors: z.array(z.string()),
+    }),
+    cryptoCommerceInnovation: z.array(z.string()),
+  }),
+  travelGuide: z.object({
+    airport: z.string(),
+    transportation: z.array(z.string()),
+    bestAreasToStay: z.array(z.string()),
+    safetyNotes: z.string(),
+    localTips: z.array(z.string()),
+  }),
+  maps: z.object({
+    center: z.object({
+      lat: z.number(),
+      lng: z.number(),
+    }),
+    merchantMapStyle: z.enum(["light", "dark", "bitcoin"]),
+    primaryClusters: z.array(
+      z.object({
+        name: z.string(),
+        lat: z.number(),
+        lng: z.number(),
+        description: z.string(),
+      })
+    ),
+  }),
+  builderCityScores: z.object({
+    sovereignty: z.number(),
+    builderDensity: z.number(),
+    merchantActivity: z.number(),
+    innovationEnergy: z.number(),
+    regulatorySupport: z.number(),
+    globalVisibility: z.number(),
+  }),
+  links: z.object({
+    officialWebsite: z.string().optional(),
+    github: z.string().optional(),
+    meetupPage: z.string().optional(),
+    twitter: z.string().optional(),
+    nostr: z.string().optional(),
+    resources: z.array(z.string()),
+  }),
+  tags: z.array(z.string()),
+});
+
+export const CitiesCollectionSchema = z.object({
+  cities: z.array(CitySchema),
 });

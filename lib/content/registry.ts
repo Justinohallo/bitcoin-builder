@@ -7,6 +7,7 @@ import { z } from "zod";
 
 import {
   CharterSchema,
+  CitiesCollectionSchema,
   EducationalContentSchema,
   EventsCollectionSchema,
   HomeSchema,
@@ -23,6 +24,7 @@ import {
 } from "../schemas";
 import type {
   Charter,
+  CitiesCollection,
   EducationalContent,
   EventsCollection,
   Home,
@@ -169,6 +171,13 @@ export const CONTENT_REGISTRY = {
     description: "Community philosophy and themes",
     category: "foundation",
   } as ContentEntry<Philosophy>,
+
+  cities: {
+    filename: "cities.json",
+    schema: CitiesCollectionSchema,
+    description: "Bitcoin Builder cities and their ecosystems",
+    category: "collections",
+  } as ContentEntry<CitiesCollection>,
 } as const;
 
 /**

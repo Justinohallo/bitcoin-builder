@@ -18,6 +18,7 @@ import { z } from "zod";
 
 import {
   CharterSchema,
+  CitiesCollectionSchema,
   EducationalContentSchema,
   EventsCollectionSchema,
   HomeSchema,
@@ -53,6 +54,7 @@ const CONTENT_SCHEMAS: Record<string, z.ZodSchema<unknown>> = {
   "vision.json": VisionSchema,
   "charter.json": CharterSchema,
   "philosophy.json": PhilosophySchema,
+  "cities.json": CitiesCollectionSchema,
 };
 
 interface ValidationResult {

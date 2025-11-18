@@ -162,6 +162,22 @@ export const urls = {
    * What to expect page URL
    */
   whatToExpect: () => buildUrl("/what-to-expect"),
+
+  /**
+   * Cities URLs
+   */
+  cities: {
+    /**
+     * Cities listing page
+     */
+    list: () => buildUrl("/cities"),
+
+    /**
+     * Individual city detail page
+     * @param slug - City slug identifier
+     */
+    detail: (slug: string) => buildUrl(`/cities/${slug}`),
+  },
 } as const;
 
 /**
@@ -205,4 +221,9 @@ export const paths = {
   vibeApps: () => "/vibe-apps",
   onboarding: () => "/onboarding",
   whatToExpect: () => "/what-to-expect",
+
+  cities: {
+    list: () => "/cities",
+    detail: (slug: string) => `/cities/${slug}`,
+  },
 } as const;

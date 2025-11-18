@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { loadEvents, loadRecaps } from "@/lib/content";
+import { loadCities, loadEvents, loadRecaps } from "@/lib/content";
 import { urls } from "@/lib/utils/urls";
 
 /**
@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Load dynamic content
   const { events } = loadEvents();
   const { recaps } = loadRecaps();
+  const { cities } = loadCities();
 
   // Static pages
   const staticPages = [
@@ -111,6 +112,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.6,
     },
+    {
+      url: urls.cities.list(),
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
   ];
 
   // Event pages
@@ -129,5 +136,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...eventPages, ...recapPages];
+  // City pages
+  const cityPages = cities.map((city) => ({
+    url: urls.cities.detail(city.slug),
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...eventPages, ...recapPages, ...cityPages];
 }

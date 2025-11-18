@@ -4,13 +4,14 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { loadHome } from "@/lib/content";
+import { loadCities, loadHome } from "@/lib/content";
 import { generateHomeMetadata } from "@/lib/seo";
 
 export const metadata = generateHomeMetadata();
 
 export default function Home() {
   const content = loadHome();
+  const { cities } = loadCities();
 
   return (
     <PageContainer>
@@ -94,8 +95,51 @@ export default function Home() {
             description="Explore community projects"
             href="/projects"
           />
+          <QuickLinkCard
+            title="Cities"
+            description="Explore Bitcoin Builder cities worldwide"
+            href="/cities"
+          />
         </div>
       </Section>
+
+      {/* Builder Cities Section */}
+      {cities.length > 0 && (
+        <Section>
+          <Heading level="h2" className="text-neutral-100 mb-6">
+            Builder Cities
+          </Heading>
+          <p className="text-lg text-neutral-300 mb-6">
+            Builder is a global movement with active chapters in cities around
+            the world.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            {cities.slice(0, 4).map((city) => (
+              <Link
+                key={city.id}
+                href={`/cities/${city.slug}`}
+                className="block p-4 bg-neutral-900 border border-neutral-800 rounded-lg hover:border-orange-400 transition-colors group"
+              >
+                <h3 className="font-bold text-neutral-100 mb-1 group-hover:text-orange-400 transition-colors">
+                  {city.name}
+                </h3>
+                <p className="text-sm text-neutral-400">
+                  {city.region}, {city.country}
+                </p>
+                <p className="text-xs text-neutral-500 mt-2">
+                  {city.bitcoinEcosystem.merchantCount} merchants
+                </p>
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/cities"
+            className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors"
+          >
+            View All Cities →
+          </Link>
+        </Section>
+      )}
     </PageContainer>
   );
 }

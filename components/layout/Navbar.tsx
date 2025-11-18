@@ -21,6 +21,7 @@ export function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/cities", label: "Cities" },
     { href: "/events", label: "Events" },
     { href: "/news-topics", label: "News Topics" },
     { href: "/onboarding", label: "Onboarding" },
