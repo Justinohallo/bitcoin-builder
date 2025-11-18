@@ -1,105 +1,22 @@
 {
   "title": "Get Involved with Builder Vancouver",
   "slug": "get-involved",
-  "description": "Builder Vancouver runs because people pitch in with their time, gear, and ideas. If you want to help—even for a single meetup—we will plug you in quickly.",
-  "impactStatement": "A lighter lift still matters: greeting guests, taking notes, or sending one recap email keeps the flywheel turning for the next builder night.",
-  "sections": [
-    {
-      "title": "What We Need Right Now",
-      "body": "We stay small on purpose, so clear ownership beats a long volunteer checklist. Pick one thing, own it for a month, and hand off notes to the next person.",
-      "highlights": [
-        {
-          "title": "Weekly Sessions",
-          "description": "Set up chairs, welcome newcomers, and make sure demos run on time."
-        },
-        {
-          "title": "Builder Notes",
-          "description": "Summarize wins in 3 bullet points so we can share them on social later."
-        },
-        {
-          "title": "Sponsor Touchpoints",
-          "description": "Send a short thank-you after an event and capture what worked."
-        }
-      ]
-    },
-    {
-      "title": "How You'll Plug In",
-      "body": "Send the organizers a note with the role you want to try. We set up a quick call, add you to a signal thread, and walk through the single document you need for that role.",
-      "highlights": [
-        {
-          "title": "Fast Ramp",
-          "description": "Expect a response within 48 hours with a 15 minute calendar link."
-        },
-        {
-          "title": "Transparent Scope",
-          "description": "Every role has three bullet point outcomes and an owner for questions."
-        },
-        {
-          "title": "Builder Credit",
-          "description": "We shout out volunteers in recaps, newsletters, and sponsor notes."
-        }
-      ]
-    }
-  ],
-  "tracks": [
-    {
-      "id": "events",
-      "title": "Event & Operations Crew",
-      "summary": "Keep the room ready, speakers mic'd, and the schedule on track.",
-      "commitment": "2 hours on event night + 30 minutes of prep.",
-      "sampleContributions": [
-        "Bring signage and make sure the check-in sheet is printed.",
-        "Run a two minute welcome so speakers can stay focused on content."
-      ],
-      "supportOffered": [
-        "Run-of-show template",
-        "Slack thread with the core team"
-      ]
-    },
-    {
-      "id": "content",
-      "title": "Content & Storytelling Guild",
-      "summary": "Capture a quick recap so the wider community knows what shipped.",
-      "commitment": "1 hour per week, remote friendly.",
-      "sampleContributions": [
-        "Draft a 5 sentence event recap for the newsletter.",
-        "Clip one speaker quote for social and schedule it in Buffer."
-      ],
-      "supportOffered": ["Simple recap template", "Shared photo folder"]
-    }
-  ],
-  "quickStats": [
-    {
-      "label": "Active Contributors",
-      "value": "12",
-      "description": "People currently rotating through light operations and content roles."
-    },
-    {
-      "label": "Response Time",
-      "value": "48 hrs",
-      "description": "We reply within two days with a short call invite."
-    }
-  ],
+  "description": "Want to help keep Builder Vancouver running? We are always looking for extra hands to welcome people, jot down wins, or send a short recap.",
+  "impactStatement": "If you can spare an hour, that is enough to keep the next builder night rolling.",
+  "sections": [],
+  "tracks": [],
+  "quickStats": [],
   "contact": {
     "email": "bitcoinbuildervan@gmail.com",
     "label": "Reach the organizing team",
     "responseTime": "Expect a reply within 48 hours.",
     "instructions": [
-      "Use the subject line \"I Want to Help\" so we can triage fast.",
-      "Include your name, areas of interest, and any relevant links (GitHub, LinkedIn, projects).",
-      "Let us know your availability and how soon you want to start contributing."
+      "Use the subject line \"I Want to Help\" so we can triage fast."
     ]
   },
   "meta": {
     "title": "Get Involved | Builder Vancouver",
-    "description": "Join Builder Vancouver's volunteer crew. Help run events, ship content, mentor builders, and grow the Bitcoin scene in the Pacific Northwest.",
-    "keywords": [
-      "volunteer",
-      "bitcoin meetup",
-      "builder vancouver",
-      "get involved",
-      "community",
-      "lightning network"
-    ]
+    "description": "Quick note on how to help Builder Vancouver and where to email the organizers.",
+    "keywords": ["volunteer", "builder vancouver", "get involved"]
   }
 }
