@@ -119,11 +119,6 @@ export type PresentationsCollection = z.infer<
   typeof PresentationsCollectionSchema
 >;
 
-// Technical Roadmap types
-export type RoadmapItem = z.infer<typeof RoadmapItemSchema>;
-export type RoadmapMilestone = z.infer<typeof RoadmapMilestoneSchema>;
-export type TechnicalRoadmap = z.infer<typeof TechnicalRoadmapSchema>;
-
 // Slides types
 export type Slide = z.infer<typeof SlideSchema>;
 export type SlideDeck = z.infer<typeof SlideDeckSchema>;
