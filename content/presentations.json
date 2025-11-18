@@ -121,6 +121,67 @@
           "builder"
         ]
       }
+    },
+    {
+      "id": "presentation-spiral-bitcoin-merchant-community",
+      "title": "Spiral.xyz and the Bitcoin Merchant Community Website",
+      "slug": "spiral-bitcoin-merchant-community",
+      "description": "An exploration of Spiral.xyz's mission and infrastructure, plus the story behind the Bitcoin Merchant Community Website—how it came to life and what it means for Bitcoin commerce.",
+      "overview": "Mat Balez presents a comprehensive overview of Spiral.xyz, covering everything Spiral does to support Bitcoin and Lightning infrastructure. The presentation also dives deep into the Bitcoin Merchant Community Website project, sharing the origin story of how this initiative came to life and its impact on the Bitcoin merchant ecosystem.",
+      "presenterId": "presenter-mat-balez",
+      "date": "2025-01-15",
+      "duration": "45 minutes",
+      "links": [
+        {
+          "text": "Spiral.xyz",
+          "url": "https://spiral.xyz",
+          "external": true
+        },
+        {
+          "text": "Bitcoin Merchant Community Website",
+          "url": "https://www.bitcoinmerchantcommunity.org/",
+          "external": true
+        }
+      ],
+      "sections": [
+        {
+          "title": "What is Spiral.xyz?",
+          "body": "Spiral.xyz is a non-profit organization dedicated to advancing Bitcoin and Lightning Network infrastructure. Spiral provides open-source tools, developer resources, and support for teams building Bitcoin-native applications. The organization focuses on creating polished user experiences powered by open-source infrastructure, helping developers ship production-ready Bitcoin and Lightning products."
+        },
+        {
+          "title": "Spiral's Core Mission",
+          "body": "Spiral's mission centers on making Bitcoin and Lightning development more accessible and practical. By providing robust infrastructure, comprehensive documentation, and developer support, Spiral enables teams to focus on building great user experiences rather than wrestling with low-level Bitcoin protocol details. The organization champions open-source principles and sovereignty-first approaches to financial technology."
+        },
+        {
+          "title": "What Spiral Does",
+          "body": "Spiral provides a comprehensive suite of tools and services for Bitcoin builders. This includes open-source libraries and SDKs for Bitcoin and Lightning integration, developer documentation and educational resources, community support and collaboration opportunities, and infrastructure components that abstract away Bitcoin protocol complexity. Spiral also maintains and contributes to critical Bitcoin open-source projects, ensuring the ecosystem has reliable, well-maintained building blocks."
+        },
+        {
+          "title": "The Bitcoin Merchant Community Website",
+          "body": "The Bitcoin Merchant Community Website (bitcoinmerchantcommunity.org) serves as a central hub for merchants accepting Bitcoin and Lightning payments. The platform helps merchants discover each other, share best practices, and showcase their Bitcoin adoption. It provides a directory of Bitcoin-accepting businesses, resources for merchants getting started with Bitcoin payments, and a community space for collaboration and knowledge sharing."
+        },
+        {
+          "title": "How the Project Came to Life",
+          "body": "The Bitcoin Merchant Community Website emerged from recognizing a gap in the Bitcoin ecosystem: while merchants were adopting Bitcoin payments, there was no centralized place for them to connect, learn, and grow together. The project started with conversations about the challenges merchants face—from technical integration to customer education—and evolved into a vision for a community-driven platform. Through collaboration with merchants, developers, and the broader Bitcoin community, the website took shape as both a practical tool and a symbol of Bitcoin commerce growth."
+        },
+        {
+          "title": "Impact and Vision",
+          "body": "The Bitcoin Merchant Community Website represents more than just a directory—it's a movement toward stronger Bitcoin commerce networks. By connecting merchants and providing resources, the platform helps accelerate Bitcoin adoption at the point of sale. The vision extends to creating a thriving ecosystem where merchants can easily accept Bitcoin, customers can easily spend it, and the entire network grows stronger through community collaboration and shared knowledge."
+        }
+      ],
+      "meta": {
+        "title": "Spiral.xyz and the Bitcoin Merchant Community Website | Builder Vancouver",
+        "description": "Mat Balez presents Spiral.xyz's mission and infrastructure, plus the story behind the Bitcoin Merchant Community Website—how it came to life and what it means for Bitcoin commerce.",
+        "keywords": [
+          "spiral",
+          "bitcoin merchant",
+          "lightning network",
+          "bitcoin commerce",
+          "infrastructure",
+          "open source",
+          "bitcoin payments"
+        ]
+      }
     }
   ]
 }
