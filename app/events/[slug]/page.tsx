@@ -207,6 +207,95 @@ export default async function EventPage({ params }: EventPageProps) {
             </Section>
           ))}
 
+        {(() => {
+          // Extract unique presenters from presentations
+          const presenterIds = new Set<string>();
+          presentations.forEach((presentation) => {
+            if (presentation.presenterId) {
+              presenterIds.add(presentation.presenterId);
+            }
+          });
+          
+          // Also check presentations in schedule items
+          if (event.schedule) {
+            for (const scheduleItem of event.schedule) {
+              if (scheduleItem.presentationId) {
+                const presentation = presentationsById.get(scheduleItem.presentationId);
+                if (presentation?.presenterId) {
+                  presenterIds.add(presentation.presenterId);
+                }
+              }
+            }
+          }
+
+          const uniquePresenters = Array.from(presenterIds)
+            .map((id) => presentersById.get(id))
+            .filter((p): p is NonNullable<typeof p> => p !== undefined);
+
+          if (uniquePresenters.length > 0) {
+            return (
+              <Section>
+                <Heading level="h2" className="text-neutral-100 mb-4">
+                  Presenters
+                </Heading>
+                <p className="text-neutral-300 mb-6">
+                  Meet the speakers presenting at this event:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {uniquePresenters.map((presenter) => (
+                    <article
+                      key={presenter.id}
+                      className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors"
+                    >
+                      <Link href={`/presenters/${presenter.slug}`}>
+                        <div className="flex items-start gap-4 mb-4">
+                          {presenter.avatar && (
+                            <img
+                              src={presenter.avatar}
+                              alt={presenter.name}
+                              className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                            />
+                          )}
+                          <div className="flex-1 min-w-0">
+                            <Heading
+                              level="h3"
+                              className="text-neutral-100 mb-1 hover:text-orange-400 transition-colors"
+                            >
+                              {presenter.name}
+                            </Heading>
+                            {presenter.title && (
+                              <p className="text-sm text-neutral-400 mb-1">
+                                {presenter.title}
+                              </p>
+                            )}
+                            {presenter.company && (
+                              <p className="text-sm text-neutral-500">
+                                {presenter.company}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </Link>
+                      {presenter.bio && (
+                        <p className="text-sm text-neutral-300 mb-4 line-clamp-3">
+                          {presenter.bio}
+                        </p>
+                      )}
+                      <Link
+                        href={`/presenters/${presenter.slug}`}
+                        className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
+                      >
+                        View Profile →
+                      </Link>
+                    </article>
+                  ))}
+                </div>
+              </Section>
+            );
+          }
+          return null;
+        })()}
+
         <Section>
           <Heading level="h2" className="text-neutral-100 mb-4">
             Discussion Topics
