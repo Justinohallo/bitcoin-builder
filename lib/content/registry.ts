@@ -15,9 +15,13 @@ import {
   NewsTopicsCollectionSchema,
   OnboardingSchema,
   PhilosophySchema,
+  PresentersCollectionSchema,
+  PresentationsCollectionSchema,
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
+  SponsorSchema,
+  SponsorsCollectionSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
   WhatToExpectSchema,
@@ -32,9 +36,12 @@ import type {
   NewsTopicsCollection,
   Onboarding,
   Philosophy,
+  PresentersCollection,
+  PresentationsCollection,
   ProjectsCollection,
   RecapsCollection,
   ResourcesCollection,
+  SponsorsCollection,
   VibeAppsCollection,
   Vision,
   WhatToExpect,
@@ -178,6 +185,27 @@ export const CONTENT_REGISTRY = {
     description: "Bitcoin Builder cities and their ecosystems",
     category: "collections",
   } as ContentEntry<CitiesCollection>,
+
+  sponsors: {
+    filename: "sponsors.json",
+    schema: SponsorsCollectionSchema,
+    description: "Event sponsors and partners",
+    category: "collections",
+  } as ContentEntry<SponsorsCollection>,
+
+  presenters: {
+    filename: "presenters.json",
+    schema: PresentersCollectionSchema,
+    description: "Speaker and presenter profiles",
+    category: "collections",
+  } as ContentEntry<PresentersCollection>,
+
+  presentations: {
+    filename: "presentations.json",
+    schema: PresentationsCollectionSchema,
+    description: "Presentations and talks from events",
+    category: "collections",
+  } as ContentEntry<PresentationsCollection>,
 } as const;
 
 /**
