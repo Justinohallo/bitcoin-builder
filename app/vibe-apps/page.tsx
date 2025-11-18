@@ -1,4 +1,5 @@
 import { PageContainer } from "@/components/layout/PageContainer";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -20,8 +21,17 @@ export default async function VibeAppsPage() {
       </Heading>
       <p className="text-xl text-neutral-300 mb-12">{content.description}</p>
 
-      <div className="space-y-6">
-        {content.apps.map((app) => (
+      {content.apps.length === 0 ? (
+        <Section>
+          <EmptyState
+            icon="⚡"
+            title="No Vibe Apps Yet"
+            message="We haven't created any experimental Bitcoin apps yet. Stay tuned for innovative tools and applications built by the community!"
+          />
+        </Section>
+      ) : (
+        <div className="space-y-6">
+          {content.apps.map((app) => (
           <Section key={app.slug}>
             <article className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors">
               <div className="flex items-start justify-between mb-4">
@@ -54,14 +64,7 @@ export default async function VibeAppsPage() {
             </article>
           </Section>
         ))}
-      </div>
-
-      {content.apps.length === 0 && (
-        <Section>
-          <p className="text-neutral-400 text-center py-12">
-            No vibe apps yet. Stay tuned for experimental Bitcoin apps!
-          </p>
-        </Section>
+        </div>
       )}
     </PageContainer>
   );

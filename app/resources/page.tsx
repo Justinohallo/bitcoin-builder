@@ -1,4 +1,5 @@
 import { PageContainer } from "@/components/layout/PageContainer";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -32,7 +33,17 @@ export default async function ResourcesPage() {
       </Heading>
       <p className="text-xl text-neutral-300 mb-12">{content.description}</p>
 
-      {Object.entries(resourcesByCategory).map(([category, resources]) => (
+      {content.resources.length === 0 ? (
+        <Section>
+          <EmptyState
+            icon="📚"
+            title="No Resources Yet"
+            message="We haven't added any resources yet. Check back soon to discover helpful links, tools, and learning materials!"
+          />
+        </Section>
+      ) : (
+        <>
+          {Object.entries(resourcesByCategory).map(([category, resources]) => (
         <Section key={category}>
           <Heading level="h2" className="text-neutral-100 mb-6">
             {category}
@@ -73,6 +84,8 @@ export default async function ResourcesPage() {
           </div>
         </Section>
       ))}
+        </>
+      )}
     </PageContainer>
   );
 }

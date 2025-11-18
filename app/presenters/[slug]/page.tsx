@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -151,11 +152,11 @@ export default async function PresenterPage({ params }: PresenterPageProps) {
           </div>
         </Section>
 
-        {presentations.length > 0 && (
-          <Section>
-            <Heading level="h2" className="text-neutral-100 mb-4">
-              Presentations ({presentations.length})
-            </Heading>
+        <Section>
+          <Heading level="h2" className="text-neutral-100 mb-4">
+            Presentations {presentations.length > 0 && `(${presentations.length})`}
+          </Heading>
+          {presentations.length > 0 ? (
             <div className="space-y-6">
               {presentations.map((presentation) => {
                 const event = presentation.eventId
@@ -209,8 +210,14 @@ export default async function PresenterPage({ params }: PresenterPageProps) {
                 );
               })}
             </div>
-          </Section>
-        )}
+          ) : (
+            <EmptyState
+              icon="🎤"
+              message="This presenter hasn't given any presentations yet."
+              className="py-8"
+            />
+          )}
+        </Section>
       </PageContainer>
     </>
   );

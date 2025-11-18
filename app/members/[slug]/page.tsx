@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -98,8 +99,9 @@ export default async function MemberDetailPage({ params }: MemberPageProps) {
         <Heading level="h2" className="text-neutral-100 mb-6">
           How Builder accelerates you
         </Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {member.focusAreas.map((focus) => (
+        {member.focusAreas.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {member.focusAreas.map((focus) => (
             <article
               key={focus.title}
               className="p-5 border border-neutral-800 rounded-xl bg-neutral-900"
@@ -110,15 +112,23 @@ export default async function MemberDetailPage({ params }: MemberPageProps) {
               <p className="text-neutral-300">{focus.description}</p>
             </article>
           ))}
-        </div>
+          </div>
+        ) : (
+          <EmptyState
+            icon="🎯"
+            message="No focus areas have been added for this member persona yet."
+            className="py-8"
+          />
+        )}
       </Section>
 
       <Section>
         <Heading level="h2" className="text-neutral-100 mb-6">
           Wins you can claim at each meetup
         </Heading>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {member.meetupWins.map((win) => (
+        {member.meetupWins.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {member.meetupWins.map((win) => (
             <article
               key={win.title}
               className="p-5 border border-neutral-800 rounded-xl bg-neutral-950"
@@ -131,15 +141,23 @@ export default async function MemberDetailPage({ params }: MemberPageProps) {
               </p>
             </article>
           ))}
-        </div>
+          </div>
+        ) : (
+          <EmptyState
+            icon="🏆"
+            message="No meetup wins have been added for this member persona yet."
+            className="py-8"
+          />
+        )}
       </Section>
 
       <Section>
         <Heading level="h2" className="text-neutral-100 mb-6">
           Recommended sessions & deep dives
         </Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {member.recommendedSessions.map((session) => (
+        {member.recommendedSessions.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {member.recommendedSessions.map((session) => (
             <article
               key={session.title}
               className="p-6 border border-neutral-800 rounded-xl bg-neutral-900 flex flex-col gap-3"
@@ -156,15 +174,23 @@ export default async function MemberDetailPage({ params }: MemberPageProps) {
               </Link>
             </article>
           ))}
-        </div>
+          </div>
+        ) : (
+          <EmptyState
+            icon="📚"
+            message="No recommended sessions have been added for this member persona yet."
+            className="py-8"
+          />
+        )}
       </Section>
 
       <Section>
         <Heading level="h2" className="text-neutral-100 mb-6">
           Resources you can act on
         </Heading>
-        <div className="space-y-8">
-          {Object.entries(resourcesByType).map(([type, resources]) => (
+        {member.resources.length > 0 ? (
+          <div className="space-y-8">
+            {Object.entries(resourcesByType).map(([type, resources]) => (
             <div key={type} className="space-y-4">
               <h3 className="text-lg font-semibold text-orange-300">
                 {RESOURCE_TYPE_LABELS[type as MemberResource["type"]] ?? type}
@@ -206,8 +232,15 @@ export default async function MemberDetailPage({ params }: MemberPageProps) {
                 ))}
               </div>
             </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <EmptyState
+            icon="📖"
+            message="No resources have been added for this member persona yet."
+            className="py-8"
+          />
+        )}
       </Section>
 
       <Section>

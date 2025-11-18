@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -53,8 +54,17 @@ export default async function RecapsPage() {
           Highlights and takeaways from past Builder Vancouver events.
         </p>
 
-        <div className="space-y-8">
-          {recaps.map((recap) => (
+        {recaps.length === 0 ? (
+          <Section>
+            <EmptyState
+              icon="📝"
+              title="No Recaps Yet"
+              message="We haven't written any event recaps yet. Check back after our next event to read highlights and takeaways!"
+            />
+          </Section>
+        ) : (
+          <div className="space-y-8">
+            {recaps.map((recap) => (
             <Section key={recap.slug}>
               <article className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors">
                 <Link href={`/recaps/${recap.slug}`}>
@@ -79,14 +89,7 @@ export default async function RecapsPage() {
               </article>
             </Section>
           ))}
-        </div>
-
-        {recaps.length === 0 && (
-          <Section>
-            <p className="text-neutral-400 text-center py-12">
-              No recaps available yet. Check back after our next event!
-            </p>
-          </Section>
+          </div>
         )}
       </PageContainer>
     </>

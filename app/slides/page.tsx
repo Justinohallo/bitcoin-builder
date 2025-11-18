@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { SlideDeckCard } from "@/components/slides/SlideDeckCard";
@@ -70,15 +71,19 @@ export default async function SlidesPage() {
 
         {sortedDecks.length === 0 ? (
           <Section>
-            <div className="text-center py-12">
-              <p className="text-neutral-400 mb-4">No slide decks available yet.</p>
-              <Link
-                href={paths.slides.detail("new")}
-                className="inline-block px-6 py-3 bg-orange-400 text-neutral-950 font-medium rounded-lg hover:bg-orange-300 transition-colors"
-              >
-                Create Your First Deck
-              </Link>
-            </div>
+            <EmptyState
+              icon="📊"
+              title="No Slide Decks Yet"
+              message="You haven't created any slide decks yet. Create your first deck to start building presentations!"
+              action={
+                <Link
+                  href={paths.slides.detail("new")}
+                  className="inline-block px-6 py-3 bg-orange-400 text-neutral-950 font-medium rounded-lg hover:bg-orange-300 transition-colors"
+                >
+                  Create Your First Deck
+                </Link>
+              }
+            />
           </Section>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

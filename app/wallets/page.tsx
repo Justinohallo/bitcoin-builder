@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { FAQSection } from "@/components/faq/FAQSection";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -109,8 +110,15 @@ export default async function WalletsPage() {
         </Section>
 
         <Section>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {content.wallets.map((wallet) => {
+          {content.wallets.length === 0 ? (
+            <EmptyState
+              icon="💼"
+              title="No Wallets Listed"
+              message="We haven't added any Lightning wallets to our directory yet. Check back soon to explore custodial and non-custodial wallet options!"
+            />
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {content.wallets.map((wallet) => {
               const walletPlatforms = platforms(wallet);
               return (
                 <Link
@@ -157,7 +165,8 @@ export default async function WalletsPage() {
                 </Link>
               );
             })}
-          </div>
+            </div>
+          )}
         </Section>
 
         <Section>
