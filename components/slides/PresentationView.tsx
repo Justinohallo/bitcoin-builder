@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { SlideRenderer } from "./SlideRenderer";
@@ -23,6 +23,32 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
   // Initialize state - will be set properly in useEffect
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(true);
+  const inactivityTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const inactivityDelay = 2500;
+
+  const scheduleOverlayHide = useCallback(() => {
+    if (inactivityTimerRef.current) {
+      clearTimeout(inactivityTimerRef.current);
+    }
+    inactivityTimerRef.current = setTimeout(() => {
+      setIsOverlayVisible(false);
+    }, inactivityDelay);
+  }, [inactivityDelay]);
+
+  const handleUserActivity = useCallback(() => {
+    setIsOverlayVisible(true);
+    scheduleOverlayHide();
+  }, [scheduleOverlayHide]);
+
+  useEffect(() => {
+    scheduleOverlayHide();
+    return () => {
+      if (inactivityTimerRef.current) {
+        clearTimeout(inactivityTimerRef.current);
+      }
+    };
+  }, [scheduleOverlayHide]);
 
   // Initialize from URL params or localStorage on mount
   useEffect(() => {
@@ -115,7 +141,7 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
         e.preventDefault();
       }
 
-      switch (e.key) {
+        switch (e.key) {
         case "ArrowRight":
         case " ": // Spacebar
           if (currentIndex < totalSlides - 1) {
@@ -137,11 +163,12 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
           updateSlideIndex(totalSlides - 1);
           break;
       }
+        handleUserActivity();
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex, totalSlides, deckSlug, router, updateSlideIndex]);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [currentIndex, totalSlides, deckSlug, router, updateSlideIndex, handleUserActivity]);
 
   // Touch swipe handlers
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -149,16 +176,18 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
 
   const minSwipeDistance = 50;
 
-  const onTouchStart = (e: React.TouchEvent) => {
+    const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
+      handleUserActivity();
   };
 
-  const onTouchMove = (e: React.TouchEvent) => {
+    const onTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
+      handleUserActivity();
   };
 
-  const onTouchEnd = () => {
+    const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
 
     const distance = touchStart - touchEnd;
@@ -168,9 +197,10 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
     if (isLeftSwipe && currentIndex < totalSlides - 1) {
       updateSlideIndex(currentIndex + 1);
     }
-    if (isRightSwipe && currentIndex > 0) {
+      if (isRightSwipe && currentIndex > 0) {
       updateSlideIndex(currentIndex - 1);
     }
+      handleUserActivity();
   };
 
   if (!currentSlide) {
@@ -182,11 +212,12 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
   }
 
   return (
-    <div
-      className="fixed inset-0 bg-neutral-950 overflow-hidden z-50"
+      <div
+        className="fixed inset-0 bg-neutral-950 overflow-hidden z-50"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
+        onMouseMove={handleUserActivity}
     >
       {/* Slide content */}
       <div className="h-full w-full flex items-center justify-center pb-24">
@@ -194,7 +225,11 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
       </div>
 
       {/* Navigation controls */}
-      <div className="fixed bottom-0 left-0 right-0 bg-neutral-900/80 backdrop-blur-sm border-t border-neutral-800 p-4">
+        <div
+          className={`fixed bottom-0 left-0 right-0 bg-neutral-900/80 backdrop-blur-sm border-t border-neutral-800 p-4 transition-opacity duration-300 ${
+            isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+        >
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <button
             onClick={() => {
@@ -227,16 +262,22 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
       </div>
 
       {/* Exit button */}
-      <button
+        <button
         onClick={() => router.push(paths.slides.detail(deckSlug))}
-        className="fixed top-4 right-4 px-4 py-2 bg-neutral-900/80 backdrop-blur-sm border border-neutral-800 text-neutral-300 rounded-lg hover:bg-neutral-800 hover:text-orange-400 transition-colors"
+          className={`fixed top-4 right-4 px-4 py-2 bg-neutral-900/80 backdrop-blur-sm border border-neutral-800 text-neutral-300 rounded-lg hover:bg-neutral-800 hover:text-orange-400 transition-colors transition-opacity duration-300 ${
+            isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
         aria-label="Exit presentation"
       >
         ✕ Exit
       </button>
 
       {/* Keyboard hints (hidden on mobile) */}
-      <div className="hidden md:block fixed top-4 left-4 text-xs text-neutral-600 space-y-1">
+        <div
+          className={`hidden md:block fixed top-4 left-4 text-xs text-neutral-600 space-y-1 transition-opacity duration-300 ${
+            isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+        >
         <div>← → Navigate</div>
         <div>ESC Exit</div>
       </div>
