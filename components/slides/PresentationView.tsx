@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState, useCallback } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { SlideRenderer } from "./SlideRenderer";
 import type { Slide } from "@/lib/types";
@@ -13,13 +13,100 @@ interface PresentationViewProps {
 }
 
 export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const router = useRouter();
-
+  const searchParams = useSearchParams();
+  
   // Sort slides by order
   const sortedSlides = [...slides].sort((a, b) => a.order - b.order);
-  const currentSlide = sortedSlides[currentIndex];
   const totalSlides = sortedSlides.length;
+
+  // Initialize state - will be set properly in useEffect
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Initialize from URL params or localStorage on mount
+  useEffect(() => {
+    if (isInitialized) return;
+
+    // First, try URL params
+    const slideParam = searchParams.get("slide");
+    if (slideParam) {
+      const parsed = parseInt(slideParam, 10);
+      if (!isNaN(parsed) && parsed >= 0 && parsed < totalSlides) {
+        setCurrentIndex(parsed);
+        setIsInitialized(true);
+        return;
+      }
+    }
+
+    // Fallback to localStorage
+    const storageKey = `slides-${deckSlug}-index`;
+    try {
+      const stored = localStorage.getItem(storageKey);
+      if (stored) {
+        const parsed = parseInt(stored, 10);
+        if (!isNaN(parsed) && parsed >= 0 && parsed < totalSlides) {
+          setCurrentIndex(parsed);
+          // Update URL to match localStorage
+          const url = new URL(window.location.href);
+          url.searchParams.set("slide", parsed.toString());
+          router.replace(url.pathname + url.search, { scroll: false });
+          setIsInitialized(true);
+          return;
+        }
+      }
+    } catch (e) {
+      // localStorage might not be available
+      console.warn("localStorage not available:", e);
+    }
+
+    setIsInitialized(true);
+  }, [isInitialized, searchParams, deckSlug, totalSlides, router]);
+
+  // Update URL and localStorage when slide changes
+  const updateSlideIndex = useCallback((newIndex: number) => {
+    if (newIndex < 0 || newIndex >= totalSlides) return;
+    
+    setCurrentIndex(newIndex);
+    
+    // Update URL without page reload
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set("slide", newIndex.toString());
+      router.replace(url.pathname + url.search, { scroll: false });
+    } catch (e) {
+      console.warn("Failed to update URL:", e);
+    }
+    
+    // Update localStorage
+    try {
+      const storageKey = `slides-${deckSlug}-index`;
+      localStorage.setItem(storageKey, newIndex.toString());
+    } catch (e) {
+      console.warn("Failed to update localStorage:", e);
+    }
+  }, [totalSlides, deckSlug, router]);
+
+  // Sync with URL params when they change externally (browser back/forward)
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    const slideParam = searchParams.get("slide");
+    if (slideParam) {
+      const parsed = parseInt(slideParam, 10);
+      if (!isNaN(parsed) && parsed >= 0 && parsed < totalSlides && parsed !== currentIndex) {
+        setCurrentIndex(parsed);
+        try {
+          const storageKey = `slides-${deckSlug}-index`;
+          localStorage.setItem(storageKey, parsed.toString());
+        } catch (e) {
+          console.warn("Failed to update localStorage:", e);
+        }
+      }
+    }
+  }, [searchParams, totalSlides, deckSlug, currentIndex, isInitialized]);
+
+  const currentSlide = sortedSlides[currentIndex];
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -32,29 +119,29 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
         case "ArrowRight":
         case " ": // Spacebar
           if (currentIndex < totalSlides - 1) {
-            setCurrentIndex(currentIndex + 1);
+            updateSlideIndex(currentIndex + 1);
           }
           break;
         case "ArrowLeft":
           if (currentIndex > 0) {
-            setCurrentIndex(currentIndex - 1);
+            updateSlideIndex(currentIndex - 1);
           }
           break;
         case "Escape":
           router.push(paths.slides.detail(deckSlug));
           break;
         case "Home":
-          setCurrentIndex(0);
+          updateSlideIndex(0);
           break;
         case "End":
-          setCurrentIndex(totalSlides - 1);
+          updateSlideIndex(totalSlides - 1);
           break;
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex, totalSlides, deckSlug, router]);
+  }, [currentIndex, totalSlides, deckSlug, router, updateSlideIndex]);
 
   // Touch swipe handlers
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -79,10 +166,10 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
     const isRightSwipe = distance < -minSwipeDistance;
 
     if (isLeftSwipe && currentIndex < totalSlides - 1) {
-      setCurrentIndex(currentIndex + 1);
+      updateSlideIndex(currentIndex + 1);
     }
     if (isRightSwipe && currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+      updateSlideIndex(currentIndex - 1);
     }
   };
 
@@ -112,7 +199,7 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
           <button
             onClick={() => {
               if (currentIndex > 0) {
-                setCurrentIndex(currentIndex - 1);
+                updateSlideIndex(currentIndex - 1);
               }
             }}
             disabled={currentIndex === 0}
@@ -128,7 +215,7 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
           <button
             onClick={() => {
               if (currentIndex < totalSlides - 1) {
-                setCurrentIndex(currentIndex + 1);
+                updateSlideIndex(currentIndex + 1);
               }
             }}
             disabled={currentIndex === totalSlides - 1}

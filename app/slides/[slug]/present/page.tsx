@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 
 import { PresentationView } from "@/components/slides/PresentationView";
@@ -56,5 +57,13 @@ export default async function PresentationPage({
     );
   }
 
-  return <PresentationView slides={deck.slides} deckSlug={deck.slug} />;
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center h-screen bg-neutral-950">
+        <p className="text-neutral-400">Loading presentation...</p>
+      </div>
+    }>
+      <PresentationView slides={deck.slides} deckSlug={deck.slug} />
+    </Suspense>
+  );
 }
