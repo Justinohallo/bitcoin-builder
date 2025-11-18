@@ -24,11 +24,17 @@ const ImageSchema = z.object({
   caption: z.string().optional(),
 });
 
+const HighlightSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
 export const SectionSchema = z.object({
   title: z.string(),
   body: z.string(),
   links: z.array(LinkSchema).optional(),
   images: z.array(ImageSchema).optional(),
+  highlights: z.array(HighlightSchema).optional(),
 });
 
 // Sponsors Schema
