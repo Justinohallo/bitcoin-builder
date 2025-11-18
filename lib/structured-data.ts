@@ -3,59 +3,7 @@
  * Type-safe builders for all schema types used in Builder Vancouver
  */
 
-const SITE_NAME = "Builder Vancouver";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://builder.van";
-
-/**
- * Input type definitions for schema builders
- * Use these types when calling schema builder functions for type safety
- */
-
-/**
- * Input type for createEventSchema
- * @example
- * const eventInput: EventSchemaInput = {
- *   title: "Lightning Workshop",
- *   slug: "lightning-workshop",
- *   description: "Learn about Lightning Network",
- *   date: "2025-12-15",
- *   time: "6:00 PM",
- *   location: "Bitcoin Commons"
- * };
- */
-export type EventSchemaInput = Parameters<typeof createEventSchema>[0];
-
-/**
- * Input type for createArticleSchema
- */
-export type ArticleSchemaInput = Parameters<typeof createArticleSchema>[0];
-
-/**
- * Input type for createCourseSchema
- */
-export type CourseSchemaInput = Parameters<typeof createCourseSchema>[0];
-
-/**
- * Input type for createHowToSchema
- */
-export type HowToSchemaInput = Parameters<typeof createHowToSchema>[0];
-
-/**
- * Input type for createSoftwareApplicationSchema
- */
-export type SoftwareApplicationSchemaInput = Parameters<
-  typeof createSoftwareApplicationSchema
->[0];
-
-/**
- * Input type for createCollectionPageSchema
- */
-export type CollectionPageSchemaInput = {
-  url: string;
-  title: string;
-  description: string;
-  items: Array<{ name: string; url: string; description?: string }>;
-};
+import { SITE_NAME, SITE_URL } from "./constants";
 
 /**
  * Input type for createBreadcrumbList
@@ -304,49 +252,6 @@ export function createCollectionPageSchema(
   };
 }
 
-/**
- * Creates an ItemList schema
- */
-export function createItemListSchema(
-  items: Array<{ name: string; url?: string; description?: string }>
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    numberOfItems: items.length,
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      ...(item.url && { url: item.url }),
-      ...(item.description && { description: item.description }),
-    })),
-  };
-}
-
-/**
- * Creates a SoftwareApplication schema (for projects)
- */
-export function createSoftwareApplicationSchema(software: {
-  title: string;
-  slug: string;
-  description: string;
-  status: string;
-  url?: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "@id": `${SITE_URL}/projects/${software.slug}`,
-    name: software.title,
-    description: software.description,
-    ...(software.url && { codeRepository: software.url }),
-    author: {
-      "@id": `${SITE_URL}/#organization`,
-    },
-    url: `${SITE_URL}/projects/${software.slug}`,
-  };
-}
 
 /**
  * Creates a City schema

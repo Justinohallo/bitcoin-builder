@@ -3,7 +3,7 @@
  * Type-safe URL generation for all routes
  */
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://builder.van";
+import { SITE_URL } from "../constants";
 
 export function getSiteUrl(): string {
   return SITE_URL;

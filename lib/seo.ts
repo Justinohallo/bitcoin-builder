@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
 
+import { DEFAULT_IMAGE, SITE_NAME } from "./constants";
 import type { Meta } from "./types";
 
 /**
  * SEO Utilities for Next.js Metadata API
  * Helper functions to generate consistent metadata across the site
- * Includes JSON-LD structured data generation
  */
-
-const SITE_NAME = "Builder Vancouver";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://builder.van";
-const DEFAULT_IMAGE = "/og-image.png";
 
 // Re-export structured data builders for convenience
 export {
@@ -23,8 +19,6 @@ export {
   createCourseSchema,
   createHowToSchema,
   createCollectionPageSchema,
-  createItemListSchema,
-  createSoftwareApplicationSchema,
   createCitySchema,
   createSchemaGraph,
 } from "./structured-data";
@@ -111,51 +105,3 @@ export function generateHomeMetadata(): Metadata {
   };
 }
 
-/**
- * Generate canonical URL for a page
- */
-export function generateCanonicalUrl(path: string): string {
-  return `${SITE_URL}${path}`;
-}
-
-/**
- * Generate structured data for events
- * @deprecated Use createEventSchema from structured-data.ts instead
- */
-export function generateEventStructuredData(event: {
-  title: string;
-  date: string;
-  time: string;
-  location: string;
-  description: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    name: event.title,
-    startDate: event.date,
-    location: {
-      "@type": "Place",
-      name: event.location,
-    },
-    description: event.description,
-    organizer: {
-      "@type": "Organization",
-      name: SITE_NAME,
-    },
-  };
-}
-
-/**
- * Generate full site URL from path
- */
-export function getSiteUrl(path: string = ""): string {
-  return `${SITE_URL}${path}`;
-}
-
-/**
- * Get site name
- */
-export function getSiteName(): string {
-  return SITE_NAME;
-}

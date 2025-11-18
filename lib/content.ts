@@ -59,34 +59,6 @@ import type {
 const CONTENT_DIR = join(process.cwd(), "content");
 
 /**
- * Content registry mapping filenames to schemas
- */
-const CONTENT_REGISTRY = {
-  "home.json": HomeSchema,
-  "members.json": MembersCollectionSchema,
-  "events.json": EventsCollectionSchema,
-  "onboarding.json": OnboardingSchema,
-  "bitcoin101.json": EducationalContentSchema,
-  "lightning101.json": EducationalContentSchema,
-  "layer2.json": EducationalContentSchema,
-  "open-source.json": EducationalContentSchema,
-  "resources.json": ResourcesCollectionSchema,
-  "recaps.json": RecapsCollectionSchema,
-  "projects.json": ProjectsCollectionSchema,
-  "vibeapps.json": VibeAppsCollectionSchema,
-  "what-to-expect.json": WhatToExpectSchema,
-  "news-topics.json": NewsTopicsCollectionSchema,
-  "mission.json": MissionSchema,
-  "vision.json": VisionSchema,
-  "charter.json": CharterSchema,
-  "philosophy.json": PhilosophySchema,
-  "cities.json": CitiesCollectionSchema,
-  "sponsors.json": SponsorsCollectionSchema,
-  "presenters.json": PresentersCollectionSchema,
-  "presentations.json": PresentationsCollectionSchema,
-} as const;
-
-/**
  * Generic async content loader with Zod validation
  */
 async function loadContent<T>(
@@ -263,9 +235,4 @@ export async function getCityEvents(cityId: string): Promise<Event[]> {
 export async function getPresentationsByPresenter(presenterId: string): Promise<Presentation[]> {
   const { presentations } = await loadPresentations();
   return presentations.filter((p) => p.presenterId === presenterId);
-}
-
-export async function getPresentationsByEvent(eventId: string): Promise<Presentation[]> {
-  const { presentations } = await loadPresentations();
-  return presentations.filter((p) => p.eventId === eventId);
 }
