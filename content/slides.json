@@ -47,12 +47,7 @@
       "meta": {
         "title": "Introduction to Bitcoin | Slides | Builder Vancouver",
         "description": "A beginner-friendly introduction to Bitcoin covering the basics of what Bitcoin is and why it matters.",
-        "keywords": [
-          "bitcoin",
-          "introduction",
-          "education",
-          "slides"
-        ]
+        "keywords": ["bitcoin", "introduction", "education", "slides"]
       }
     },
     {
@@ -136,6 +131,154 @@
           "bitcoin education",
           "cursor",
           "chatgpt"
+        ]
+      }
+    },
+    {
+      "id": "deck-builder-vancouver-intro",
+      "title": "Welcome to Builder Vancouver",
+      "slug": "builder-vancouver-intro",
+      "description": "A comprehensive introduction to Builder Vancouver, covering what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at meetups.",
+      "createdAt": "2025-01-20T10:00:00Z",
+      "updatedAt": "2025-01-20T10:00:00Z",
+      "slides": [
+        {
+          "id": "slide-builder-intro-1",
+          "type": "title",
+          "title": "Welcome to Builder Vancouver",
+          "subtitle": "Building the Future of Bitcoin Together",
+          "order": 1
+        },
+        {
+          "id": "slide-builder-intro-2",
+          "type": "content",
+          "title": "What is Builder?",
+          "body": "Builder is a community-driven movement focused on accelerating Bitcoin product development.\n\nWe bring together developers, designers, and builders to:\n• Learn practical Bitcoin skills\n• Share knowledge and tools\n• Build real products together\n• Foster sovereignty through better UX",
+          "order": 2
+        },
+        {
+          "id": "slide-builder-intro-3",
+          "type": "content",
+          "title": "Our Mission",
+          "body": "Accelerate the creation of Bitcoin products by fostering an open, neutral, sovereign, and collaborative builder ecosystem.\n\nWe exist to help people build real products on Bitcoin.\n\nWe promote practical skills, structured knowledge, and open collaboration.\n\nWe believe sovereignty and better tooling go hand in hand.",
+          "order": 3
+        },
+        {
+          "id": "slide-builder-intro-4",
+          "type": "content",
+          "title": "Our Vision",
+          "body": "A world where Bitcoin builders have the tools, knowledge, and community to create the next generation of open financial products.\n\n• Every city has a Builder chapter\n• Learning Bitcoin feels accessible, structured, and welcoming\n• Builders share tools, demos, research, and knowledge openly\n• Sovereignty is elevated through better UX and education",
+          "order": 4
+        },
+        {
+          "id": "slide-builder-intro-5",
+          "type": "content",
+          "title": "Our Charter - The Five Pillars",
+          "body": "1. Build-First\n   We prioritize demos, prototypes, code, and shipping real product experiences.\n\n2. Open, Neutral & Welcoming\n   Builder is inclusive, professional, and committed to neutrality.\n\n3. Sovereignty Through Better Tools\n   We teach sovereignty as a spectrum, enabled through superior UX and practical tooling.\n\n4. Structured Knowledge & Documentation\n   Knowledge must be preserved in structured, reusable formats.\n\n5. Collaborative Community & Participation\n   Builder thrives when people share ideas, feedback, and contributions.",
+          "order": 5
+        },
+        {
+          "id": "slide-builder-intro-6",
+          "type": "content",
+          "title": "Our Principles",
+          "body": "• No speculation\n• No financial advice\n• Respectful critique\n• Curiosity and openness\n• Long-term knowledge creation",
+          "order": 6
+        },
+        {
+          "id": "slide-builder-intro-7",
+          "type": "content",
+          "title": "Our Philosophy",
+          "body": "Education\n   Start with 101s, build toward mastery, keep content structured.\n\nDesign & UX\n   Better UX improves sovereignty.\n\nAI & Vibe Coding\n   AI assists structured building. All content should be consumable by LLMs.\n\nCommunity\n   We build stronger together through meetups, structured networking, and chapter alignment.",
+          "order": 7
+        },
+        {
+          "id": "slide-builder-intro-8",
+          "type": "content",
+          "title": "Why Vancouver?",
+          "body": "Vancouver is one of the most Bitcoin-friendly cities in North America.\n\n• Highly active and fast-growing Bitcoin builder city\n• Strong Lightning adoption\n• Entrepreneurial culture\n• Vibrant builder community\n• Over 100 Lightning-enabled merchants\n• Deep culture of experimentation and sovereignty",
+          "order": 8
+        },
+        {
+          "id": "slide-builder-intro-9",
+          "type": "content",
+          "title": "Vancouver's Bitcoin Ecosystem",
+          "body": "Merchant Activity\n• 100+ Lightning-enabled merchants\n• Strong point-of-sale experimentation\n• Local push for Bitcoin-native design\n\nWallet Ecosystem\n• Dominant wallets: Coinos, Phoenix, Muun, Zeus\n• Active node communities\n• Growing self-custody adoption\n\nNotable Builders\n• Coinos Team - Lightning backend powering hundreds of merchants\n• Builder Vancouver Crew - Building structured product-focused community",
+          "order": 9
+        },
+        {
+          "id": "slide-builder-intro-10",
+          "type": "content",
+          "title": "Builder City Scores",
+          "body": "Vancouver's Bitcoin Builder Metrics:\n\n• Sovereignty: 8/10\n• Builder Density: 7/10\n• Merchant Activity: 9/10\n• Innovation Energy: 8/10\n• Regulatory Support: 6/10\n• Global Visibility: 6/10",
+          "order": 10
+        },
+        {
+          "id": "slide-builder-intro-11",
+          "type": "content",
+          "title": "Why Vancouver is Great for Bitcoin",
+          "body": "Economic Strengths\n• High-tech workforce\n• Strong startup community\n• Gateway city for global talent\n\nTech Ecosystem\n• Deep engineering talent pool\n• Strong AI presence\n• High adoption of decentralized tools (Umbrel, Start9)\n\nQuality of Builders\n• Ex-Amazon, Ex-Microsoft, Web3 refugees\n• Local Bitcoin-first companies\n• University pipelines: UBC, SFU, BCIT\n\nInfrastructure\n• High-quality WiFi\n• Excellent co-working spaces\n• Conference venues available",
+          "order": 11
+        },
+        {
+          "id": "slide-builder-intro-12",
+          "type": "content",
+          "title": "Meetup Format",
+          "body": "Our meetups typically run 2-3 hours and include:\n\n• Presentations\n• Hands-on activities\n• Networking\n• Open discussion\n\nWe start with introductions, followed by the main content, and end with open discussion and collaboration time.",
+          "order": 12
+        },
+        {
+          "id": "slide-builder-intro-13",
+          "type": "content",
+          "title": "Typical Schedule",
+          "body": "6:00 PM - Doors open, networking\n6:30 PM - Welcome and introductions\n6:45 PM - Main presentation or workshop\n7:45 PM - Break\n8:00 PM - Open discussion / hands-on time\n8:30 PM - Wrap up",
+          "order": 13
+        },
+        {
+          "id": "slide-builder-intro-14",
+          "type": "content",
+          "title": "What to Bring",
+          "body": "Yourself and your curiosity!\n\nFor workshop sessions:\n• Laptop\n• Bitcoin wallet (mobile or hardware) - optional but useful\n\nWe'll provide any other materials needed.",
+          "order": 14
+        },
+        {
+          "id": "slide-builder-intro-15",
+          "type": "content",
+          "title": "Atmosphere",
+          "body": "Expect a casual, friendly environment focused on learning and building.\n\n• People are genuinely excited to share knowledge\n• Questions are encouraged\n• Learning is collaborative\n• All skill levels welcome\n• Don't be shy - introduce yourself and ask questions!",
+          "order": 15
+        },
+        {
+          "id": "slide-builder-intro-16",
+          "type": "content",
+          "title": "How to Get Started",
+          "body": "Before your first meetup:\n• Review our Bitcoin 101 guide\n• Check out What to Expect page\n• No preparation required - just bring curiosity!\n\nJoin our community:\n• Follow us on social media\n• Subscribe to our newsletter\n• Join community channels\n• Attend upcoming events",
+          "order": 16
+        },
+        {
+          "id": "slide-builder-intro-17",
+          "type": "content",
+          "title": "Stay Connected",
+          "body": "Website: builder.van\nTwitter: @builder_van\n\nJoin us for:\n• Monthly meetups\n• Technical presentations\n• Hands-on workshops\n• Collaborative building sessions\n• Networking with fellow builders",
+          "order": 17
+        },
+        {
+          "id": "slide-builder-intro-18",
+          "type": "title",
+          "title": "Let's Build Together",
+          "subtitle": "Questions?",
+          "order": 18
+        }
+      ],
+      "meta": {
+        "title": "Welcome to Builder Vancouver | Slides | Builder Vancouver",
+        "description": "A comprehensive introduction to Builder Vancouver, covering what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at meetups.",
+        "keywords": [
+          "builder",
+          "vancouver",
+          "bitcoin",
+          "introduction",
+          "meetup",
+          "slides"
         ]
       }
     }

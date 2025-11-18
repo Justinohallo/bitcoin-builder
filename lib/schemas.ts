@@ -149,6 +149,7 @@ export const PresentationSchema = z.object({
   duration: z.string().optional(), // e.g., "45 minutes", "1 hour"
   links: z.array(LinkSchema).optional(), // Useful links related to the presentation
   slidesUrl: z.string().url().optional(), // URL to slides (e.g., Google Slides, PDF)
+  slideDeckSlug: z.string().optional(), // Reference to SlideDeck by slug (for internal slides)
   videoUrl: z.string().url().optional(), // URL to video recording
   recordingUrl: z.string().url().optional(), // Alternative recording URL
   sections: z.array(SectionSchema).optional(), // Detailed content sections
@@ -165,16 +166,18 @@ export const ScheduleItemSchema = z.object({
   endTime: z.string().optional(), // e.g., "18:30" or "6:30 PM"
   title: z.string(),
   description: z.string().optional(),
-  type: z.enum([
-    "presentation",
-    "workshop",
-    "break",
-    "networking",
-    "q-and-a",
-    "introduction",
-    "closing",
-    "other",
-  ]).optional(),
+  type: z
+    .enum([
+      "presentation",
+      "workshop",
+      "break",
+      "networking",
+      "q-and-a",
+      "introduction",
+      "closing",
+      "other",
+    ])
+    .optional(),
   presenterId: z.string().optional(), // Reference to Presenter by ID
   presentationId: z.string().optional(), // Reference to Presentation by ID
 });

@@ -1,7 +1,9 @@
 import { Suspense } from "react";
+
 import { notFound } from "next/navigation";
 
 import { EventTopicsPresentationView } from "@/components/events/EventTopicsPresentationView";
+
 import { loadEvent, loadNewsTopics } from "@/lib/content";
 import { generatePageMetadata } from "@/lib/seo";
 
@@ -9,9 +11,7 @@ interface EventPresentationPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({
-  params,
-}: EventPresentationPageProps) {
+export async function generateMetadata({ params }: EventPresentationPageProps) {
   const { slug } = await params;
   const event = await loadEvent(slug);
 
@@ -27,9 +27,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const { events } = await import("@/lib/content").then((m) =>
-    m.loadEvents()
-  );
+  const { events } = await import("@/lib/content").then((m) => m.loadEvents());
   return events.map((event) => ({
     slug: event.slug,
   }));

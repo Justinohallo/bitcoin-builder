@@ -8,9 +8,9 @@ import { Section } from "@/components/ui/Section";
 
 import {
   loadEvent,
-  loadPresenterById,
   loadPresentation,
   loadPresentations,
+  loadPresenterById,
 } from "@/lib/content";
 import {
   createArticleSchema,
@@ -18,7 +18,7 @@ import {
   createSchemaGraph,
   generateMetadata as generateMeta,
 } from "@/lib/seo";
-import { urls } from "@/lib/utils/urls";
+import { paths, urls } from "@/lib/utils/urls";
 
 interface PresentationPageProps {
   params: Promise<{ slug: string }>;
@@ -100,10 +100,7 @@ export default async function PresentationPage({
                 {presenter.name}
               </Link>
               {presenter.title && (
-                <span className="text-neutral-400">
-                  {" "}
-                  - {presenter.title}
-                </span>
+                <span className="text-neutral-400"> - {presenter.title}</span>
               )}
             </p>
           )}
@@ -172,6 +169,7 @@ export default async function PresentationPage({
 
         {(presentation.links && presentation.links.length > 0) ||
         presentation.slidesUrl ||
+        presentation.slideDeckSlug ||
         presentation.videoUrl ||
         presentation.recordingUrl ? (
           <Section>
@@ -179,6 +177,14 @@ export default async function PresentationPage({
               Resources
             </Heading>
             <div className="flex flex-wrap gap-4">
+              {presentation.slideDeckSlug && (
+                <Link
+                  href={paths.slides.present(presentation.slideDeckSlug)}
+                  className="text-orange-400 hover:text-orange-300 font-medium underline transition-colors"
+                >
+                  📊 View Slides
+                </Link>
+              )}
               {presentation.slidesUrl && (
                 <a
                   href={presentation.slidesUrl}
@@ -186,7 +192,7 @@ export default async function PresentationPage({
                   rel="noopener noreferrer"
                   className="text-orange-400 hover:text-orange-300 font-medium underline transition-colors"
                 >
-                  📊 View Slides
+                  📊 View External Slides
                 </a>
               )}
               {presentation.videoUrl && (

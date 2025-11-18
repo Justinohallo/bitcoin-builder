@@ -74,6 +74,87 @@
           "hands-on"
         ]
       }
+    },
+    {
+      "title": "Builder Vancouver Launch Event",
+      "slug": "builder-vancouver-launch",
+      "date": "2025-02-15",
+      "time": "6:00 PM - 9:00 PM",
+      "location": "TBD, Vancouver",
+      "cityId": "city-vancouver",
+      "presentationIds": ["presentation-builder-vancouver-intro"],
+      "description": "Join us for the inaugural Builder Vancouver event! We'll introduce the Builder movement, explore Vancouver's Bitcoin ecosystem, and kick off our monthly meetup series. This is the perfect opportunity to meet fellow builders, learn about our community, and get involved.",
+      "schedule": [
+        {
+          "startTime": "6:00 PM",
+          "endTime": "6:30 PM",
+          "title": "Doors Open & Networking",
+          "description": "Welcome! Grab a drink, meet fellow builders, and get settled in.",
+          "type": "networking"
+        },
+        {
+          "startTime": "6:30 PM",
+          "endTime": "7:15 PM",
+          "title": "Welcome to Builder Vancouver",
+          "description": "Introduction to Builder Vancouver, our mission, vision, and what makes Vancouver a great Bitcoin builder city.",
+          "type": "presentation",
+          "presentationId": "presentation-builder-vancouver-intro"
+        },
+        {
+          "startTime": "7:15 PM",
+          "endTime": "7:30 PM",
+          "title": "Break",
+          "description": "Short break for refreshments and networking.",
+          "type": "break"
+        },
+        {
+          "startTime": "7:30 PM",
+          "endTime": "8:15 PM",
+          "title": "Open Discussion & Q&A",
+          "description": "Open discussion about Bitcoin building, Lightning Network, and what you'd like to see in future meetups.",
+          "type": "q-and-a"
+        },
+        {
+          "startTime": "8:15 PM",
+          "endTime": "9:00 PM",
+          "title": "Networking & Collaboration",
+          "description": "Continue the conversation, share ideas, and connect with fellow builders.",
+          "type": "networking"
+        }
+      ],
+      "sections": [
+        {
+          "title": "What to Expect",
+          "body": "This inaugural event will introduce you to Builder Vancouver and our community. We'll cover what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at future meetups. There will be plenty of time for questions, discussion, and networking."
+        },
+        {
+          "title": "Who Should Attend",
+          "body": "Everyone is welcome! Whether you're a seasoned Bitcoin developer, a designer interested in Bitcoin UX, a curious newcomer, or someone building Bitcoin products - there's a place for you in our community."
+        },
+        {
+          "title": "Getting There",
+          "body": "Location details will be announced closer to the event date. Follow us on social media for updates.",
+          "links": [
+            {
+              "text": "Follow @builder_van",
+              "url": "https://twitter.com/builder_van",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "title": "Builder Vancouver Launch Event | Builder Vancouver",
+        "description": "Join us for the inaugural Builder Vancouver event! Introduction to Builder, Vancouver's Bitcoin ecosystem, and kick off our monthly meetup series.",
+        "keywords": [
+          "builder",
+          "vancouver",
+          "bitcoin",
+          "launch",
+          "meetup",
+          "community"
+        ]
+      }
     }
   ]
 }

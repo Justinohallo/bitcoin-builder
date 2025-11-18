@@ -30,10 +30,24 @@
       }
     },
     {
+      "id": "presenter-builder-vancouver-organizer",
+      "name": "Builder Vancouver Team",
+      "slug": "builder-vancouver-organizer",
+      "bio": "The organizing team behind Builder Vancouver, dedicated to fostering a collaborative Bitcoin builder community in Vancouver. We focus on practical skills, structured knowledge, and open collaboration to accelerate Bitcoin product development.",
+      "title": "Builder Vancouver Organizers",
+      "company": "Builder Vancouver",
+      "avatar": "/images/presenters/builder-vancouver.jpg",
+      "links": {
+        "twitter": "https://twitter.com/builder_van",
+        "website": "https://builder.van",
+        "nostr": ""
+      }
+    },
+    {
       "id": "presenter-builder-ops",
       "name": "Builder Ops Team",
       "slug": "builder-ops-team",
-      "bio": "The Builder Ops Team stewards the vibe coding workflow behind the Builder website\u2014from structured content design to AI-assisted shipping. They focus on translating experiments with ChatGPT, Cursor, and decentralized tech into educational resources for the Bitcoin community.",
+      "bio": "The Builder Ops Team stewards the vibe coding workflow behind the Builder website—from structured content design to AI-assisted shipping. They focus on translating experiments with ChatGPT, Cursor, and decentralized tech into educational resources for the Bitcoin community.",
       "title": "Vibe Coding Facilitators",
       "company": "Builder",
       "links": {

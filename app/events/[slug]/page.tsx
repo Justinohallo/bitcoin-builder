@@ -133,7 +133,9 @@ export default async function EventPage({ params }: EventPageProps) {
             {event.title}
           </Heading>
           {newsTopics.length > 0 &&
-            newsTopics.some((topic) => topic.questions && topic.questions.length > 0) && (
+            newsTopics.some(
+              (topic) => topic.questions && topic.questions.length > 0
+            ) && (
               <Link
                 href={paths.events.present(slug)}
                 className="px-6 py-3 bg-orange-400 text-neutral-950 font-medium rounded-lg hover:bg-orange-300 transition-colors whitespace-nowrap text-center"
@@ -341,12 +343,24 @@ export default async function EventPage({ params }: EventPageProps) {
                         ⏱️ {presentation.duration}
                       </p>
                     )}
-                    <Link
-                      href={`/presentations/${presentation.slug}`}
-                      className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
-                    >
-                      View Presentation →
-                    </Link>
+                    <div className="flex flex-wrap gap-4">
+                      <Link
+                        href={`/presentations/${presentation.slug}`}
+                        className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
+                      >
+                        View Presentation →
+                      </Link>
+                      {presentation.slideDeckSlug && (
+                        <Link
+                          href={paths.slides.present(
+                            presentation.slideDeckSlug
+                          )}
+                          className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
+                        >
+                          📊 View Slides →
+                        </Link>
+                      )}
+                    </div>
                   </article>
                 );
               })}
