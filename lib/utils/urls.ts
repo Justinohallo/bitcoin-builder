@@ -95,6 +95,7 @@ export const paths = {
   events: {
     list: () => "/events",
     detail: (slug: string) => `/events/${slug}`,
+    flyer: (slug: string) => `/events/${slug}/flyer`,
   },
   recaps: {
     list: () => "/recaps",
