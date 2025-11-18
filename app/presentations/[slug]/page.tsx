@@ -125,6 +125,83 @@ export default async function PresentationPage({
           {presentation.description}
         </p>
 
+        {presenter && (
+          <Section>
+            <Heading level="h2" className="text-neutral-100 mb-4">
+              About the Presenter
+            </Heading>
+            <div className="flex flex-col md:flex-row gap-6 mb-6">
+              {presenter.avatar && (
+                <img
+                  src={presenter.avatar}
+                  alt={presenter.name}
+                  className="w-32 h-32 rounded-full object-cover flex-shrink-0"
+                />
+              )}
+              <div className="flex-1">
+                <div className="mb-3">
+                  <Link
+                    href={`/presenters/${presenter.slug}`}
+                    className="text-xl font-semibold text-orange-400 hover:text-orange-300 transition-colors"
+                  >
+                    {presenter.name}
+                  </Link>
+                  {presenter.title && (
+                    <p className="text-lg text-neutral-300 mt-1">
+                      {presenter.title}
+                    </p>
+                  )}
+                  {presenter.company && (
+                    <p className="text-neutral-400 mt-1">{presenter.company}</p>
+                  )}
+                </div>
+                {presenter.bio && (
+                  <div className="text-lg text-neutral-300 whitespace-pre-line leading-relaxed mb-4">
+                    {presenter.bio}
+                  </div>
+                )}
+                {presenter.links && (
+                  <div className="flex flex-wrap gap-4">
+                    {presenter.links.twitter && (
+                      <a
+                        href={presenter.links.twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-400 hover:text-orange-300 transition-colors"
+                      >
+                        Twitter
+                      </a>
+                    )}
+                    {presenter.links.github && (
+                      <a
+                        href={presenter.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-400 hover:text-orange-300 transition-colors"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                    {presenter.links.website && (
+                      <a
+                        href={presenter.links.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-400 hover:text-orange-300 transition-colors"
+                      >
+                        Website
+                      </a>
+                    )}
+                    {presenter.links.nostr && (
+                      <span className="text-neutral-500">Nostr</span>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          </Section>
+        )}
+
         {presentation.overview && (
           <Section>
             <Heading level="h2" className="text-neutral-100 mb-4">
