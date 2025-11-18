@@ -211,76 +211,27 @@ export function PresentationView({ slides, deckSlug }: PresentationViewProps) {
     );
   }
 
-  return (
+    return (
       <div
         className="fixed inset-0 bg-neutral-950 overflow-hidden z-50"
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
         onMouseMove={handleUserActivity}
-    >
-      {/* Slide content */}
-      <div className="h-full w-full flex items-center justify-center pb-24">
-        <SlideRenderer slide={currentSlide} />
-      </div>
+      >
+        {/* Slide content */}
+        <div className="h-full w-full flex items-center justify-center">
+          <SlideRenderer slide={currentSlide} />
+        </div>
 
-      {/* Navigation controls */}
+        {/* Minimal toast */}
         <div
-          className={`fixed bottom-0 left-0 right-0 bg-neutral-900/80 backdrop-blur-sm border-t border-neutral-800 p-4 transition-opacity duration-300 ${
+          className={`fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 text-sm text-neutral-200 bg-neutral-900/90 border border-neutral-800 rounded-full shadow-lg transition-opacity duration-300 ${
             isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
         >
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <button
-            onClick={() => {
-              if (currentIndex > 0) {
-                updateSlideIndex(currentIndex - 1);
-              }
-            }}
-            disabled={currentIndex === 0}
-            className="px-4 py-2 bg-neutral-800 text-neutral-300 rounded-lg hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-          >
-            ← Previous
-          </button>
-
-          <div className="text-neutral-400 text-sm sm:text-base">
-            Slide {currentIndex + 1} of {totalSlides}
-          </div>
-
-          <button
-            onClick={() => {
-              if (currentIndex < totalSlides - 1) {
-                updateSlideIndex(currentIndex + 1);
-              }
-            }}
-            disabled={currentIndex === totalSlides - 1}
-            className="px-4 py-2 bg-neutral-800 text-neutral-300 rounded-lg hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-          >
-            Next →
-          </button>
+          Press Esc to exit presentation
         </div>
       </div>
-
-      {/* Exit button */}
-        <button
-        onClick={() => router.push(paths.slides.detail(deckSlug))}
-          className={`fixed top-4 right-4 px-4 py-2 bg-neutral-900/80 backdrop-blur-sm border border-neutral-800 text-neutral-300 rounded-lg hover:bg-neutral-800 hover:text-orange-400 transition-colors transition-opacity duration-300 ${
-            isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          }`}
-        aria-label="Exit presentation"
-      >
-        ✕ Exit
-      </button>
-
-      {/* Keyboard hints (hidden on mobile) */}
-        <div
-          className={`hidden md:block fixed top-4 left-4 text-xs text-neutral-600 space-y-1 transition-opacity duration-300 ${
-            isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          }`}
-        >
-        <div>← → Navigate</div>
-        <div>ESC Exit</div>
-      </div>
-    </div>
-  );
+    );
 }
