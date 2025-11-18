@@ -252,6 +252,10 @@ export async function loadPresentationById(
   return presentations.find((p) => p.id === id);
 }
 
+export async function loadTechnicalRoadmap(): Promise<TechnicalRoadmap> {
+  return loadContent("technical-roadmap.json", TechnicalRoadmapSchema);
+}
+
 // Relationship helpers - simplified inline resolvers
 export async function getCityEvents(cityId: string): Promise<Event[]> {
   const { events } = await loadEvents();
@@ -263,10 +267,6 @@ export async function getPresentationsByPresenter(
 ): Promise<Presentation[]> {
   const { presentations } = await loadPresentations();
   return presentations.filter((p) => p.presenterId === presenterId);
-}
-
-export async function loadTechnicalRoadmap(): Promise<TechnicalRoadmap> {
-  return loadContent("technical-roadmap.json", TechnicalRoadmapSchema);
 }
 
 export async function loadSlides(): Promise<SlidesCollection> {
