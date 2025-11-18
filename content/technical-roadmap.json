@@ -1,0 +1,187 @@
+{
+  "title": "Technical Roadmap",
+  "slug": "technical-roadmap",
+  "description": "Our technical roadmap outlines the planned improvements, features, and milestones for Builder Vancouver's platform and community initiatives.",
+  "overview": "This roadmap represents our commitment to building a world-class platform for the Bitcoin builder community. We're focused on improving user experience, expanding educational resources, and creating tools that empower builders to create innovative Bitcoin applications.",
+  "milestones": [
+    {
+      "id": "milestone-q1-2024",
+      "title": "Q1 2024 - Foundation & Infrastructure",
+      "description": "Establishing core infrastructure and foundational features for the platform.",
+      "targetDate": "2024-03-31",
+      "status": "completed",
+      "items": [
+        {
+          "id": "item-content-management",
+          "title": "Structured Content Management System",
+          "description": "Implement JSON-based content management system with Zod schema validation for type-safe content editing.",
+          "status": "completed",
+          "priority": "high",
+          "links": [
+            {
+              "text": "Content Guide",
+              "url": "/docs/CONTENT-GUIDE.md",
+              "external": false
+            }
+          ]
+        },
+        {
+          "id": "item-seo-optimization",
+          "title": "SEO & Structured Data",
+          "description": "Implement comprehensive SEO optimization with Schema.org structured data (JSON-LD) for better search visibility.",
+          "status": "completed",
+          "priority": "high"
+        },
+        {
+          "id": "item-responsive-design",
+          "title": "Responsive Design System",
+          "description": "Ensure all pages are fully responsive and accessible across mobile, tablet, and desktop devices.",
+          "status": "completed",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "milestone-q2-2024",
+      "title": "Q2 2024 - Community Features",
+      "description": "Enhancing community engagement and member interaction features.",
+      "targetDate": "2024-06-30",
+      "status": "in-progress",
+      "items": [
+        {
+          "id": "item-member-profiles",
+          "title": "Enhanced Member Profiles",
+          "description": "Expand member profile pages with project showcases, skill tags, and contribution history.",
+          "status": "in-progress",
+          "priority": "high",
+          "assignee": "Platform Team"
+        },
+        {
+          "id": "item-event-registration",
+          "title": "Event Registration System",
+          "description": "Build integrated event registration and RSVP system with capacity management.",
+          "status": "planned",
+          "priority": "high",
+          "dependencies": ["item-member-profiles"]
+        },
+        {
+          "id": "item-discussion-forums",
+          "title": "Discussion Forums",
+          "description": "Create community discussion forums for technical topics, project collaboration, and Q&A.",
+          "status": "planned",
+          "priority": "medium",
+          "estimatedCompletion": "2024-05-15"
+        }
+      ]
+    },
+    {
+      "id": "milestone-q3-2024",
+      "title": "Q3 2024 - Developer Tools",
+      "description": "Building tools and resources to support Bitcoin developers and builders.",
+      "targetDate": "2024-09-30",
+      "status": "upcoming",
+      "items": [
+        {
+          "id": "item-api-documentation",
+          "title": "Public API & Documentation",
+          "description": "Develop public API for accessing event data, presentations, and resources with comprehensive documentation.",
+          "status": "planned",
+          "priority": "high",
+          "assignee": "Platform Team"
+        },
+        {
+          "id": "item-code-examples",
+          "title": "Code Example Library",
+          "description": "Create searchable library of Bitcoin and Lightning Network code examples and tutorials.",
+          "status": "planned",
+          "priority": "medium"
+        },
+        {
+          "id": "item-testing-tools",
+          "title": "Testing & Development Tools",
+          "description": "Provide local development environment setup guides and testing utilities for Bitcoin applications.",
+          "status": "planned",
+          "priority": "low"
+        }
+      ]
+    },
+    {
+      "id": "milestone-q4-2024",
+      "title": "Q4 2024 - Advanced Features",
+      "description": "Implementing advanced features and integrations to enhance the platform.",
+      "targetDate": "2024-12-31",
+      "status": "upcoming",
+      "items": [
+        {
+          "id": "item-lightning-integration",
+          "title": "Lightning Network Integration",
+          "description": "Integrate Lightning Network payments for event tickets, sponsorships, and community contributions.",
+          "status": "planned",
+          "priority": "high",
+          "dependencies": ["item-event-registration"]
+        },
+        {
+          "id": "item-nostr-integration",
+          "title": "Nostr Integration",
+          "description": "Add Nostr protocol support for decentralized social features and event announcements.",
+          "status": "planned",
+          "priority": "medium"
+        },
+        {
+          "id": "item-analytics-dashboard",
+          "title": "Community Analytics Dashboard",
+          "description": "Build analytics dashboard showing community growth, event attendance trends, and engagement metrics.",
+          "status": "planned",
+          "priority": "low",
+          "assignee": "Data Team"
+        }
+      ]
+    },
+    {
+      "id": "milestone-2025",
+      "title": "2025 - Platform Expansion",
+      "description": "Expanding the platform to support multiple cities and international communities.",
+      "targetDate": "2025-12-31",
+      "status": "upcoming",
+      "items": [
+        {
+          "id": "item-multi-city-support",
+          "title": "Multi-City Platform Support",
+          "description": "Extend platform to support multiple Builder cities with city-specific content and event management.",
+          "status": "planned",
+          "priority": "critical",
+          "dependencies": ["item-api-documentation"]
+        },
+        {
+          "id": "item-internationalization",
+          "title": "Internationalization (i18n)",
+          "description": "Add multi-language support for international Builder communities.",
+          "status": "planned",
+          "priority": "medium"
+        },
+        {
+          "id": "item-mobile-app",
+          "title": "Mobile Application",
+          "description": "Develop native mobile applications for iOS and Android to improve accessibility.",
+          "status": "planned",
+          "priority": "low",
+          "estimatedCompletion": "2025-06-30"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Technical Roadmap | Builder Vancouver",
+    "description": "Explore Builder Vancouver's technical roadmap featuring planned improvements, features, and milestones for our platform and community initiatives.",
+    "keywords": [
+      "bitcoin",
+      "roadmap",
+      "technical",
+      "development",
+      "features",
+      "milestones",
+      "builder",
+      "vancouver"
+    ]
+  }
+}

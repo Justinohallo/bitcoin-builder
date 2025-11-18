@@ -21,9 +21,12 @@ import {
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
+  RoadmapItemSchema,
+  RoadmapMilestoneSchema,
   SlideDeckSchema,
   SlidesCollectionSchema,
   SponsorsCollectionSchema,
+  TechnicalRoadmapSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
   WhatToExpectSchema,
@@ -51,10 +54,13 @@ import type {
   Recap,
   RecapsCollection,
   ResourcesCollection,
+  RoadmapItem,
+  RoadmapMilestone,
   SlideDeck,
   SlidesCollection,
   Sponsor,
   SponsorsCollection,
+  TechnicalRoadmap,
   VibeAppsCollection,
   Vision,
   WhatToExpect,
@@ -90,7 +96,9 @@ export async function loadMembers(): Promise<MembersCollection> {
   return loadContent("members.json", MembersCollectionSchema);
 }
 
-export async function loadMember(slug: string): Promise<MemberPersona | undefined> {
+export async function loadMember(
+  slug: string
+): Promise<MemberPersona | undefined> {
   const { members } = await loadMembers();
   return members.find((m) => m.slug === slug);
 }
@@ -153,12 +161,16 @@ export async function loadNewsTopics(): Promise<NewsTopicsCollection> {
   return loadContent("news-topics.json", NewsTopicsCollectionSchema);
 }
 
-export async function loadNewsTopic(id: string): Promise<NewsTopic | undefined> {
+export async function loadNewsTopic(
+  id: string
+): Promise<NewsTopic | undefined> {
   const { newsTopics } = await loadNewsTopics();
   return newsTopics.find((t) => t.id === id);
 }
 
-export async function loadNewsTopicBySlug(slug: string): Promise<NewsTopic | undefined> {
+export async function loadNewsTopicBySlug(
+  slug: string
+): Promise<NewsTopic | undefined> {
   const { newsTopics } = await loadNewsTopics();
   return newsTopics.find((t) => t.slug === slug);
 }
@@ -197,7 +209,9 @@ export async function loadSponsors(): Promise<SponsorsCollection> {
   return loadContent("sponsors.json", SponsorsCollectionSchema);
 }
 
-export async function loadSponsorById(id: string): Promise<Sponsor | undefined> {
+export async function loadSponsorById(
+  id: string
+): Promise<Sponsor | undefined> {
   const { sponsors } = await loadSponsors();
   return sponsors.find((s) => s.id === id);
 }
@@ -206,12 +220,16 @@ export async function loadPresenters(): Promise<PresentersCollection> {
   return loadContent("presenters.json", PresentersCollectionSchema);
 }
 
-export async function loadPresenterById(id: string): Promise<Presenter | undefined> {
+export async function loadPresenterById(
+  id: string
+): Promise<Presenter | undefined> {
   const { presenters } = await loadPresenters();
   return presenters.find((p) => p.id === id);
 }
 
-export async function loadPresenterBySlug(slug: string): Promise<Presenter | undefined> {
+export async function loadPresenterBySlug(
+  slug: string
+): Promise<Presenter | undefined> {
   const { presenters } = await loadPresenters();
   return presenters.find((p) => p.slug === slug);
 }
@@ -220,12 +238,16 @@ export async function loadPresentations(): Promise<PresentationsCollection> {
   return loadContent("presentations.json", PresentationsCollectionSchema);
 }
 
-export async function loadPresentation(slug: string): Promise<Presentation | undefined> {
+export async function loadPresentation(
+  slug: string
+): Promise<Presentation | undefined> {
   const { presentations } = await loadPresentations();
   return presentations.find((p) => p.slug === slug);
 }
 
-export async function loadPresentationById(id: string): Promise<Presentation | undefined> {
+export async function loadPresentationById(
+  id: string
+): Promise<Presentation | undefined> {
   const { presentations } = await loadPresentations();
   return presentations.find((p) => p.id === id);
 }
@@ -236,21 +258,31 @@ export async function getCityEvents(cityId: string): Promise<Event[]> {
   return events.filter((e) => e.cityId === cityId);
 }
 
-export async function getPresentationsByPresenter(presenterId: string): Promise<Presentation[]> {
+export async function getPresentationsByPresenter(
+  presenterId: string
+): Promise<Presentation[]> {
   const { presentations } = await loadPresentations();
   return presentations.filter((p) => p.presenterId === presenterId);
+}
+
+export async function loadTechnicalRoadmap(): Promise<TechnicalRoadmap> {
+  return loadContent("technical-roadmap.json", TechnicalRoadmapSchema);
 }
 
 export async function loadSlides(): Promise<SlidesCollection> {
   return loadContent("slides.json", SlidesCollectionSchema);
 }
 
-export async function loadSlideDeck(slug: string): Promise<SlideDeck | undefined> {
+export async function loadSlideDeck(
+  slug: string
+): Promise<SlideDeck | undefined> {
   const { slideDecks } = await loadSlides();
   return slideDecks.find((d) => d.slug === slug);
 }
 
-export async function loadSlideDeckById(id: string): Promise<SlideDeck | undefined> {
+export async function loadSlideDeckById(
+  id: string
+): Promise<SlideDeck | undefined> {
   const { slideDecks } = await loadSlides();
   return slideDecks.find((d) => d.id === id);
 }

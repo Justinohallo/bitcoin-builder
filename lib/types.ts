@@ -30,12 +30,15 @@ import {
   RecapsCollectionSchema,
   ResourceSchema,
   ResourcesCollectionSchema,
+  RoadmapItemSchema,
+  RoadmapMilestoneSchema,
   SectionSchema,
   SlideDeckSchema,
   SlideSchema,
   SlidesCollectionSchema,
   SponsorSchema,
   SponsorsCollectionSchema,
+  TechnicalRoadmapSchema,
   VibeAppSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
@@ -108,6 +111,11 @@ export type Presentation = z.infer<typeof PresentationSchema>;
 export type PresentationsCollection = z.infer<
   typeof PresentationsCollectionSchema
 >;
+
+// Technical Roadmap types
+export type RoadmapItem = z.infer<typeof RoadmapItemSchema>;
+export type RoadmapMilestone = z.infer<typeof RoadmapMilestoneSchema>;
+export type TechnicalRoadmap = z.infer<typeof TechnicalRoadmapSchema>;
 
 // Slides types
 export type Slide = z.infer<typeof SlideSchema>;
