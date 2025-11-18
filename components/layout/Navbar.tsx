@@ -83,6 +83,7 @@ export function Navbar() {
       children: [
         { href: "/presentations", label: "Presentations" },
         { href: "/presenters", label: "Presenters" },
+        { href: "/slides", label: "Slides" },
         { href: "/resources", label: "Resources" },
       ],
     },
