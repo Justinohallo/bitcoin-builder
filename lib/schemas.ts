@@ -31,6 +31,30 @@ export const SectionSchema = z.object({
   images: z.array(ImageSchema).optional(),
 });
 
+// Sponsors Schema
+export const SponsorSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  type: z.enum([
+    "venue",
+    "food-and-drink",
+    "technology",
+    "media",
+    "community",
+    "financial",
+    "other",
+  ]),
+  description: z.string().optional(),
+  website: z.string().url().optional(),
+  logo: z.string().optional(), // URL to logo image
+  twitter: z.string().optional(),
+  nostr: z.string().optional(),
+});
+
+export const SponsorsCollectionSchema = z.object({
+  sponsors: z.array(SponsorSchema),
+});
+
 // Events Schema
 export const EventSchema = z.object({
   title: z.string(),
@@ -40,6 +64,7 @@ export const EventSchema = z.object({
   location: z.string(),
   description: z.string(),
   cityId: z.string().optional(), // Reference to City by ID
+  sponsorIds: z.array(z.string()).optional(), // References to Sponsors by ID
   newsTopicIds: z.array(z.string()).optional(), // References to NewsTopics by ID
   sections: z.array(SectionSchema),
   meta: MetaSchema,

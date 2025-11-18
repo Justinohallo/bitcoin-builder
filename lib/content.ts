@@ -17,6 +17,7 @@ import {
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
+  SponsorsCollectionSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
   WhatToExpectSchema,
@@ -38,6 +39,8 @@ import type {
   Recap,
   RecapsCollection,
   ResourcesCollection,
+  Sponsor,
+  SponsorsCollection,
   VibeAppsCollection,
   Vision,
   WhatToExpect,
@@ -547,6 +550,75 @@ export function getCityEvents(cityId: string): Event[] {
   return events.events.filter((event) => event.cityId === cityId);
 }
 
+// Sponsors loaders
+
+/**
+ * Loads all sponsors
+ * @returns Collection of sponsors
+ * @throws {Error} If sponsors.json is invalid or missing
+ */
+export function loadSponsors(): SponsorsCollection {
+  return loadContent("sponsors.json", SponsorsCollectionSchema);
+}
+
+/**
+ * Loads a single sponsor by its ID
+ * @param id - Unique sponsor identifier (e.g., "sponsor-bitcoin-commons")
+ * @returns Sponsor object if found, undefined otherwise
+ * @throws {Error} If sponsors.json cannot be loaded
+ *
+ * @example
+ * const sponsor = loadSponsorById('sponsor-bitcoin-commons');
+ * if (sponsor) {
+ *   console.log(sponsor.name, sponsor.type);
+ * }
+ */
+export function loadSponsorById(id: string): Sponsor | undefined {
+  const sponsors = loadSponsors();
+  return sponsors.sponsors.find((sponsor) => sponsor.id === id);
+}
+
+/**
+ * Type for Event with resolved sponsors
+ */
+export type EventWithSponsors = Event & {
+  sponsors?: Sponsor[];
+};
+
+/**
+ * Loads an event with its referenced sponsors resolved
+ * @param slug - URL-safe event identifier
+ * @returns Event with embedded sponsors array, or undefined if event not found
+ * @throws {Error} If events.json or sponsors.json cannot be loaded
+ *
+ * @example
+ * const eventData = getEventWithSponsors('lightning-workshop');
+ * if (eventData) {
+ *   console.log(eventData.title, 'sponsored by', eventData.sponsors?.map(s => s.name));
+ * }
+ */
+export function getEventWithSponsors(
+  slug: string
+): EventWithSponsors | undefined {
+  const event = loadEvent(slug);
+  if (!event) return undefined;
+
+  const sponsors = loadSponsors();
+  const eventSponsors = event.sponsorIds
+    ? event.sponsorIds
+        .map((id) => sponsors.sponsors.find((s) => s.id === id))
+        .filter((s): s is Sponsor => s !== undefined)
+    : undefined;
+
+  return {
+    ...event,
+    sponsors:
+      eventSponsors && eventSponsors.length > 0 ? eventSponsors : undefined,
+  };
+}
+
 // Async versions
 export const loadCitiesAsync = () =>
   loadContentAsync("cities.json", CitiesCollectionSchema);
+export const loadSponsorsAsync = () =>
+  loadContentAsync("sponsors.json", SponsorsCollectionSchema);

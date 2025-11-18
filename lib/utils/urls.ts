@@ -178,6 +178,16 @@ export const urls = {
      */
     detail: (slug: string) => buildUrl(`/cities/${slug}`),
   },
+
+  /**
+   * Sponsors URLs
+   */
+  sponsors: {
+    /**
+     * Sponsors listing page
+     */
+    list: () => buildUrl("/sponsors"),
+  },
 } as const;
 
 /**
@@ -225,5 +235,9 @@ export const paths = {
   cities: {
     list: () => "/cities",
     detail: (slug: string) => `/cities/${slug}`,
+  },
+
+  sponsors: {
+    list: () => "/sponsors",
   },
 } as const;

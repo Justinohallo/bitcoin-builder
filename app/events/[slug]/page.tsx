@@ -9,6 +9,7 @@ import { Section } from "@/components/ui/Section";
 import {
   getEventWithCity,
   getEventWithNewsTopics,
+  getEventWithSponsors,
   loadEvent,
   loadEvents,
 } from "@/lib/content";
@@ -52,6 +53,7 @@ export default async function EventPage({ params }: EventPageProps) {
 
   const event = eventData;
   const eventWithCity = getEventWithCity(slug);
+  const eventWithSponsors = getEventWithSponsors(slug);
 
   // Generate structured data
   const eventSchema = createEventSchema({
@@ -182,6 +184,50 @@ export default async function EventPage({ params }: EventPageProps) {
             </div>
           </Section>
         )}
+
+        {eventWithSponsors?.sponsors &&
+          eventWithSponsors.sponsors.length > 0 && (
+            <Section>
+              <Heading level="h2" className="text-neutral-100 mb-4">
+                Event Sponsors
+              </Heading>
+              <p className="text-neutral-300 mb-6">
+                We are grateful to our sponsors for making this event possible:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {eventWithSponsors.sponsors.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="bg-neutral-900 border border-neutral-800 rounded-lg p-4 hover:border-orange-400 transition-colors"
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="font-semibold text-neutral-100">
+                        {sponsor.name}
+                      </h3>
+                      <span className="text-xs text-neutral-500 capitalize">
+                        {sponsor.type.replace("-", " ")}
+                      </span>
+                    </div>
+                    {sponsor.description && (
+                      <p className="text-sm text-neutral-400 mb-2">
+                        {sponsor.description}
+                      </p>
+                    )}
+                    {sponsor.website && (
+                      <a
+                        href={sponsor.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-orange-400 hover:text-orange-300 transition-colors"
+                      >
+                        Visit Website →
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </Section>
+          )}
       </PageContainer>
     </>
   );

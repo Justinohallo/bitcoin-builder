@@ -18,6 +18,8 @@ import {
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
+  SponsorSchema,
+  SponsorsCollectionSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
   WhatToExpectSchema,
@@ -35,6 +37,7 @@ import type {
   ProjectsCollection,
   RecapsCollection,
   ResourcesCollection,
+  SponsorsCollection,
   VibeAppsCollection,
   Vision,
   WhatToExpect,
@@ -178,6 +181,13 @@ export const CONTENT_REGISTRY = {
     description: "Bitcoin Builder cities and their ecosystems",
     category: "collections",
   } as ContentEntry<CitiesCollection>,
+
+  sponsors: {
+    filename: "sponsors.json",
+    schema: SponsorsCollectionSchema,
+    description: "Event sponsors and partners",
+    category: "collections",
+  } as ContentEntry<SponsorsCollection>,
 } as const;
 
 /**

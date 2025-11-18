@@ -1,0 +1,20 @@
+{
+  "sponsors": [
+    {
+      "id": "sponsor-bitcoin-commons",
+      "name": "Bitcoin Commons",
+      "type": "venue",
+      "description": "A community space dedicated to Bitcoin education and events",
+      "website": "https://bitcoincommons.com",
+      "logo": "/images/sponsors/bitcoin-commons.png",
+      "twitter": "@BitcoinCommons"
+    },
+    {
+      "id": "sponsor-coffee-shop",
+      "name": "Local Coffee Co",
+      "type": "food-and-drink",
+      "description": "Providing refreshments for our community events",
+      "website": "https://localcoffee.example.com"
+    }
+  ]
+}
