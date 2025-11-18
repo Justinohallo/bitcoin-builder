@@ -15,7 +15,7 @@ interface MemberPageProps {
 }
 
 export async function generateStaticParams() {
-  const { members } = loadMembers();
+  const { members } = await loadMembers();
   return members.map((member) => ({
     slug: member.slug,
   }));
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: MemberPageProps) {
   const { slug } = await params;
-  const member = loadMember(slug);
+  const member = await loadMember(slug);
 
   if (!member) {
     return {};
@@ -58,7 +58,7 @@ const RESOURCE_TYPE_LABELS: Record<MemberResource["type"], string> = {
 
 export default async function MemberDetailPage({ params }: MemberPageProps) {
   const { slug } = await params;
-  const member = loadMember(slug);
+  const member = await loadMember(slug);
 
   if (!member) {
     notFound();

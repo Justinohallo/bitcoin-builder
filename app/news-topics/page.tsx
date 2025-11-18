@@ -20,8 +20,8 @@ export const metadata = generatePageMetadata(
   ["news", "bitcoin", "lightning", "discussion", "topics"]
 );
 
-export default function NewsTopicsPage() {
-  const { newsTopics } = loadNewsTopics();
+export default async function NewsTopicsPage() {
+  const { newsTopics } = await loadNewsTopics();
 
   // Sort by date added (newest first)
   const sortedTopics = [...newsTopics].sort(

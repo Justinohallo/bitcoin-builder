@@ -20,7 +20,7 @@ interface NewsTopicPageProps {
 
 export async function generateMetadata({ params }: NewsTopicPageProps) {
   const { slug } = await params;
-  const topic = loadNewsTopicBySlug(slug);
+  const topic = await loadNewsTopicBySlug(slug);
 
   if (!topic) {
     return {};
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: NewsTopicPageProps) {
 }
 
 export async function generateStaticParams() {
-  const { newsTopics } = loadNewsTopics();
+  const { newsTopics } = await loadNewsTopics();
   return newsTopics.map((topic) => ({
     slug: topic.slug,
   }));
@@ -42,7 +42,7 @@ export async function generateStaticParams() {
 
 export default async function NewsTopicPage({ params }: NewsTopicPageProps) {
   const { slug } = await params;
-  const topic = loadNewsTopicBySlug(slug);
+  const topic = await loadNewsTopicBySlug(slug);
 
   if (!topic) {
     notFound();

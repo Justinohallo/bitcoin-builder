@@ -29,12 +29,12 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function AboutPage() {
-  const mission = loadMission();
-  const vision = loadVision();
-  const charter = loadCharter();
-  const philosophy = loadPhilosophy();
-  const { cities } = loadCities();
+export default async function AboutPage() {
+  const mission = await loadMission();
+  const vision = await loadVision();
+  const charter = await loadCharter();
+  const philosophy = await loadPhilosophy();
+  const { cities } = await loadCities();
 
   return (
     <PageContainer>

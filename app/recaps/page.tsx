@@ -20,8 +20,8 @@ export const metadata = generatePageMetadata(
   ["recaps", "bitcoin", "events", "vancouver", "highlights"]
 );
 
-export default function RecapsPage() {
-  const { recaps } = loadRecaps();
+export default async function RecapsPage() {
+  const { recaps } = await loadRecaps();
 
   // Generate structured data
   const collectionSchema = createCollectionPageSchema(

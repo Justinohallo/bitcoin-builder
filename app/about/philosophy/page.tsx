@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function PhilosophyPage() {
-  const philosophy = loadPhilosophy();
+export default async function PhilosophyPage() {
+  const philosophy = await loadPhilosophy();
 
   return (
     <PageContainer>

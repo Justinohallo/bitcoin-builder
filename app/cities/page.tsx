@@ -20,9 +20,9 @@ export const metadata = generatePageMetadata(
   ["cities", "bitcoin", "builder", "community"]
 );
 
-export default function CitiesPage() {
-  const { cities } = loadCities();
-  const { events } = loadEvents();
+export default async function CitiesPage() {
+  const { cities } = await loadCities();
+  const { events } = await loadEvents();
 
   // Pre-compute event counts for each city (more efficient than calling getCityEvents multiple times)
   const citiesWithEventCounts = cities.map((city) => ({

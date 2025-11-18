@@ -21,7 +21,7 @@ interface RecapPageProps {
 
 export async function generateMetadata({ params }: RecapPageProps) {
   const { slug } = await params;
-  const recap = loadRecap(slug);
+  const recap = await loadRecap(slug);
 
   if (!recap) {
     return {};
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: RecapPageProps) {
 }
 
 export async function generateStaticParams() {
-  const { recaps } = loadRecaps();
+  const { recaps } = await loadRecaps();
   return recaps.map((recap) => ({
     slug: recap.slug,
   }));
@@ -39,7 +39,7 @@ export async function generateStaticParams() {
 
 export default async function RecapPage({ params }: RecapPageProps) {
   const { slug } = await params;
-  const recap = loadRecap(slug);
+  const recap = await loadRecap(slug);
 
   if (!recap) {
     notFound();

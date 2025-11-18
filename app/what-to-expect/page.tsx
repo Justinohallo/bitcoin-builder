@@ -15,12 +15,12 @@ import {
 import { urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
-  const content = loadWhatToExpect();
+  const content = await loadWhatToExpect();
   return generateMeta(content.meta);
 }
 
-export default function WhatToExpectPage() {
-  const content = loadWhatToExpect();
+export default async function WhatToExpectPage() {
+  const content = await loadWhatToExpect();
 
   // Generate structured data
   const howToSchema = createHowToSchema({

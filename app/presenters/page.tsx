@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { getPresentationsByPresenter, loadPresenters } from "@/lib/content";
+import { loadPresentations, loadPresenters } from "@/lib/content";
 import {
   createBreadcrumbList,
   createCollectionPageSchema,
@@ -20,13 +20,21 @@ export const metadata = generatePageMetadata(
   ["presenters", "speakers", "bitcoin", "lightning", "vancouver"]
 );
 
-export default function PresentersPage() {
-  const { presenters } = loadPresenters();
+export default async function PresentersPage() {
+  const { presenters } = await loadPresenters();
 
   // Sort presenters alphabetically by name
   const sortedPresenters = [...presenters].sort((a, b) =>
     a.name.localeCompare(b.name)
   );
+  
+  // Pre-load presentations for all presenters
+  const presentationsData = await loadPresentations();
+  const presentationsByPresenterId = new Map<string, typeof presentationsData.presentations>();
+  presentationsData.presentations.forEach((p) => {
+    const existing = presentationsByPresenterId.get(p.presenterId) || [];
+    presentationsByPresenterId.set(p.presenterId, [...existing, p]);
+  });
 
   // Generate structured data
   const collectionSchema = createCollectionPageSchema(
@@ -69,7 +77,7 @@ export default function PresentersPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sortedPresenters.map((presenter) => {
-              const presentations = getPresentationsByPresenter(presenter.id);
+              const presentations = presentationsByPresenterId.get(presenter.id) || [];
 
               return (
                 <article

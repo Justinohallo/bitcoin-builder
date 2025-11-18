@@ -9,7 +9,7 @@ export function getSiteUrl(): string {
   return SITE_URL;
 }
 
-function buildUrl(path: string): string {
+export function buildUrl(path: string): string {
   return `${SITE_URL}${path}`;
 }
 
