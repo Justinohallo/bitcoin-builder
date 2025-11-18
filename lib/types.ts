@@ -35,6 +35,7 @@ import {
   SponsorsCollectionSchema,
   VibeAppSchema,
   VibeAppsCollectionSchema,
+  VibeCodingSchema,
   VisionSchema,
   WhatToExpectSchema,
 } from "./schemas";
@@ -50,6 +51,8 @@ export type EventsCollection = z.infer<typeof EventsCollectionSchema>;
 export type Onboarding = z.infer<typeof OnboardingSchema>;
 
 export type EducationalContent = z.infer<typeof EducationalContentSchema>;
+
+export type VibeCoding = z.infer<typeof VibeCodingSchema>;
 
 export type Resource = z.infer<typeof ResourceSchema>;
 export type ResourcesCollection = z.infer<typeof ResourcesCollectionSchema>;

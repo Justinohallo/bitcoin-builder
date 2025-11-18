@@ -23,6 +23,7 @@ import {
   ResourcesCollectionSchema,
   SponsorsCollectionSchema,
   VibeAppsCollectionSchema,
+  VibeCodingSchema,
   VisionSchema,
   WhatToExpectSchema,
 } from "./schemas";
@@ -52,6 +53,7 @@ import type {
   Sponsor,
   SponsorsCollection,
   VibeAppsCollection,
+  VibeCoding,
   Vision,
   WhatToExpect,
 } from "./types";
@@ -118,6 +120,10 @@ export async function loadLayer2(): Promise<EducationalContent> {
 
 export async function loadOpenSource(): Promise<EducationalContent> {
   return loadContent("open-source.json", EducationalContentSchema);
+}
+
+export async function loadVibeCoding(): Promise<VibeCoding> {
+  return loadContent("vibe-coding.json", VibeCodingSchema);
 }
 
 export async function loadResources(): Promise<ResourcesCollection> {

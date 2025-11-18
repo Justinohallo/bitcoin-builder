@@ -1,0 +1,190 @@
+{
+  "title": "Vibe Coding",
+  "slug": "vibe-coding",
+  "description": "Discover the art of vibe coding - a collaborative, creative approach to building software that emphasizes flow, experimentation, and community.",
+  "sections": [
+    {
+      "title": "What is Vibe Coding?",
+      "body": "Vibe coding is a collaborative programming approach that emphasizes flow state, creative experimentation, and community-driven development. Unlike traditional solo coding sessions, vibe coding brings developers together in a relaxed, supportive environment where ideas flow freely and learning happens organically.\n\nAt its core, vibe coding is about creating a positive, low-pressure atmosphere where developers can explore new technologies, share knowledge, and build projects together. It's less about deadlines and deliverables, and more about the joy of coding, discovery, and connection."
+    },
+    {
+      "title": "How to Get Started",
+      "body": "Getting started with vibe coding is simple and accessible:\n\n1. **Find Your Community**: Join local coding meetups, online communities, or organize sessions with friends and colleagues.\n\n2. **Set the Right Environment**: Choose a comfortable space with good lighting, snacks, and a collaborative atmosphere. Virtual sessions work great too!\n\n3. **Choose a Project**: Pick something interesting but not too complex. The goal is exploration, not perfection.\n\n4. **Start Coding Together**: Pair up or work in small groups. Share screens, discuss approaches, and learn from each other.\n\n5. **Embrace Experimentation**: Try new frameworks, languages, or tools. The focus is on learning and having fun.\n\n6. **Document and Share**: Keep notes, share what you learned, and contribute back to the community.\n\nRemember, vibe coding is about the journey, not the destination. Enjoy the process!"
+    }
+  ],
+  "applications": [
+    {
+      "title": "Cursor",
+      "description": "An AI-powered code editor that enhances your coding flow with intelligent autocomplete, code generation, and pair programming capabilities.",
+      "url": "https://cursor.sh",
+      "category": "AI Code Editor"
+    },
+    {
+      "title": "GitHub Copilot",
+      "description": "Your AI pair programmer that suggests code as you type, helping you code faster and discover new patterns.",
+      "url": "https://github.com/features/copilot",
+      "category": "AI Assistant"
+    },
+    {
+      "title": "Replit",
+      "description": "A collaborative, browser-based IDE that makes it easy to code together in real-time with built-in sharing and collaboration features.",
+      "url": "https://replit.com",
+      "category": "Online IDE"
+    },
+    {
+      "title": "CodeSandbox",
+      "description": "An online code editor for rapid web development with instant preview, collaboration, and deployment features.",
+      "url": "https://codesandbox.io",
+      "category": "Online IDE"
+    },
+    {
+      "title": "Live Share",
+      "description": "Visual Studio Code extension that enables real-time collaborative editing and debugging sessions.",
+      "url": "https://visualstudio.microsoft.com/services/live-share/",
+      "category": "Collaboration Tool"
+    },
+    {
+      "title": "Codeium",
+      "description": "Free AI-powered code completion and chat that works across multiple IDEs and editors.",
+      "url": "https://codeium.com",
+      "category": "AI Assistant"
+    },
+    {
+      "title": "Continue",
+      "description": "Open-source autopilot for your IDE that helps you code faster with AI assistance while maintaining privacy.",
+      "url": "https://continue.dev",
+      "category": "AI Assistant"
+    },
+    {
+      "title": "Windsurf",
+      "description": "AI-native code editor built for the modern developer workflow with integrated AI assistance.",
+      "url": "https://codeium.com/windsurf",
+      "category": "AI Code Editor"
+    }
+  ],
+  "resources": [
+    {
+      "title": "The Art of Vibe Coding",
+      "url": "https://example.com/vibe-coding-art",
+      "description": "A comprehensive blog post exploring the philosophy and practice of vibe coding.",
+      "type": "blog",
+      "author": "Community Contributor"
+    },
+    {
+      "title": "Getting Started with Collaborative Coding",
+      "url": "https://example.com/collaborative-coding-guide",
+      "description": "Step-by-step guide to organizing and participating in vibe coding sessions.",
+      "type": "tutorial",
+      "author": "Builder Community"
+    },
+    {
+      "title": "Vibe Coding: Building Together",
+      "url": "https://www.youtube.com/watch?v=example",
+      "description": "Video walkthrough of a vibe coding session showing the collaborative process in action.",
+      "type": "video",
+      "author": "Bitcoin Builder"
+    },
+    {
+      "title": "The Flow State in Programming",
+      "url": "https://example.com/flow-state-programming",
+      "description": "Deep dive into achieving flow state while coding and how it enhances productivity and creativity.",
+      "type": "blog",
+      "author": "Developer Advocate"
+    },
+    {
+      "title": "Pair Programming Best Practices",
+      "url": "https://example.com/pair-programming",
+      "description": "Learn effective pair programming techniques that work great in vibe coding sessions.",
+      "type": "tutorial",
+      "author": "Tech Educator"
+    },
+    {
+      "title": "Vibe Coding Session Recording",
+      "url": "https://www.youtube.com/watch?v=example2",
+      "description": "Full recording of a Bitcoin-focused vibe coding session building a Lightning Network application.",
+      "type": "video",
+      "author": "Builder Vancouver"
+    },
+    {
+      "title": "AI-Assisted Coding Tools Comparison",
+      "url": "https://example.com/ai-coding-tools",
+      "description": "Comprehensive comparison of modern AI coding assistants and how they enhance vibe coding sessions.",
+      "type": "blog",
+      "author": "Tech Reviewer"
+    },
+    {
+      "title": "Building Bitcoin Apps: A Vibe Coding Approach",
+      "url": "https://example.com/bitcoin-vibe-coding",
+      "description": "Tutorial on using vibe coding principles to build Bitcoin and Lightning Network applications.",
+      "type": "tutorial",
+      "author": "Bitcoin Developer"
+    }
+  ],
+  "bitcoin": {
+    "opportunities": [
+      {
+        "title": "Lightning Network Development",
+        "description": "The Lightning Network offers exciting opportunities for vibe coding sessions. Building Lightning applications requires experimentation with payment flows, node management, and user experience design. The collaborative nature of vibe coding is perfect for exploring Lightning's unique challenges and opportunities."
+      },
+      {
+        "title": "Bitcoin Layer 2 Innovation",
+        "description": "Layer 2 solutions like Lightning, Liquid, and other protocols provide fertile ground for experimentation. Vibe coding sessions can explore new use cases, improve existing tools, and build innovative applications that leverage Bitcoin's security while adding new capabilities."
+      },
+      {
+        "title": "Open Source Contribution",
+        "description": "Bitcoin's open-source ecosystem thrives on community contributions. Vibe coding sessions provide an excellent opportunity to contribute to Bitcoin-related projects, learn from experienced developers, and make meaningful improvements to the ecosystem."
+      },
+      {
+        "title": "Educational Tools and Resources",
+        "description": "Building educational tools, interactive demos, and learning resources for Bitcoin is a great way to combine vibe coding with community education. These projects help onboard new developers while providing valuable learning experiences."
+      },
+      {
+        "title": "Developer Tooling",
+        "description": "The Bitcoin development ecosystem needs better tooling, testing frameworks, and developer experience improvements. Vibe coding sessions can focus on building tools that make Bitcoin development more accessible and enjoyable."
+      },
+      {
+        "title": "Nostr Integration",
+        "description": "Nostr's decentralized social protocol pairs naturally with Bitcoin. Vibe coding sessions can explore building applications that integrate Bitcoin payments with Nostr, creating new social and economic interactions."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Learning Curve",
+        "description": "Bitcoin development has a steep learning curve. Concepts like UTXOs, transaction construction, and cryptographic primitives can be intimidating. Vibe coding sessions need to balance exploration with education, ensuring participants have the foundational knowledge to contribute meaningfully."
+      },
+      {
+        "title": "Testing and Security",
+        "description": "Bitcoin applications handle real value, making security and testing critical. Vibe coding sessions must emphasize proper testing practices, security audits, and careful handling of private keys. This can slow down the rapid experimentation that makes vibe coding fun."
+      },
+      {
+        "title": "Network Requirements",
+        "description": "Developing Bitcoin applications often requires running nodes, syncing blockchains, or connecting to test networks. These infrastructure requirements can complicate vibe coding sessions, especially for beginners or in environments with limited resources."
+      },
+      {
+        "title": "Regulatory Uncertainty",
+        "description": "The regulatory landscape for Bitcoin development varies by jurisdiction and continues to evolve. Developers need to stay informed about compliance requirements, which can add complexity to projects and limit certain types of experimentation."
+      },
+      {
+        "title": "Documentation Gaps",
+        "description": "While Bitcoin has excellent core documentation, some areas, especially newer Layer 2 solutions, lack comprehensive guides. Vibe coding sessions may need to spend time researching and documenting findings, which can slow down the coding flow."
+      },
+      {
+        "title": "Mainnet vs Testnet",
+        "description": "Deciding when to move from testnet to mainnet is a challenge. Vibe coding sessions often produce experimental code that needs careful consideration before handling real bitcoin. Balancing experimentation with responsible development is key."
+      }
+    ]
+  },
+  "meta": {
+    "title": "Vibe Coding | Builder Vancouver",
+    "description": "Learn about vibe coding - a collaborative approach to programming. Discover the best vibe coding applications, resources, and opportunities in Bitcoin development.",
+    "keywords": [
+      "vibe coding",
+      "collaborative coding",
+      "pair programming",
+      "bitcoin development",
+      "lightning network",
+      "coding community",
+      "AI coding tools"
+    ]
+  }
+}
