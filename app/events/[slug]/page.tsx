@@ -93,12 +93,20 @@ export default async function EventPage({ params }: EventPageProps) {
     <>
       <JsonLd data={structuredData} />
       <PageContainer>
-        <Link
-          href="/events"
-          className="inline-block text-orange-400 hover:text-orange-300 mb-6 transition-colors"
-        >
-          ← Back to Events
-        </Link>
+        <div className="flex items-center justify-between mb-6">
+          <Link
+            href="/events"
+            className="inline-block text-orange-400 hover:text-orange-300 transition-colors"
+          >
+            ← Back to Events
+          </Link>
+          <Link
+            href={`/events/${slug}/flyer`}
+            className="inline-block bg-orange-400 hover:bg-orange-500 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+          >
+            View Flyer
+          </Link>
+        </div>
 
         <Heading level="h1" className="text-orange-400 mb-4">
           {event.title}
