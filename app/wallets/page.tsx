@@ -12,7 +12,7 @@ import {
   createWebPageSchema,
   generateMetadata as generateMeta,
 } from "@/lib/seo";
-import { urls } from "@/lib/utils/urls";
+import { paths, urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
   const content = await loadWallets();
@@ -98,7 +98,7 @@ export default async function WalletsPage() {
         <Section>
           <div className="mb-6">
             <Link
-              href={urls.education.lightningGettingStarted()}
+              href={paths.education.lightningGettingStarted()}
               className="inline-flex items-center text-orange-400 hover:text-orange-300 font-medium transition-colors"
             >
               ← New to Lightning? Start with our Getting Started guide
@@ -113,7 +113,7 @@ export default async function WalletsPage() {
               return (
                 <Link
                   key={wallet.id}
-                  href={urls.wallets.detail(wallet.slug)}
+                  href={paths.wallets.detail(wallet.slug)}
                   className="group block p-6 border border-neutral-800 rounded-xl bg-neutral-950 hover:border-orange-400/50 transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
@@ -169,7 +169,7 @@ export default async function WalletsPage() {
               wallets, and helps you choose based on your needs.
             </p>
             <Link
-              href={urls.education.lightningGettingStarted()}
+              href={paths.education.lightningGettingStarted()}
               className="inline-flex items-center text-orange-400 hover:text-orange-300 font-medium transition-colors"
             >
               Read Getting Started Guide →

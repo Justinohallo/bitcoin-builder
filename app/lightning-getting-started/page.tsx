@@ -12,7 +12,7 @@ import {
   createSchemaGraph,
   generateMetadata as generateMeta,
 } from "@/lib/seo";
-import { urls } from "@/lib/utils/urls";
+import { paths, urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
   const content = await loadLightningGettingStarted();
@@ -84,7 +84,7 @@ export default async function LightningGettingStartedPage() {
               links for iOS, Android, desktop, and web platforms.
             </p>
             <Link
-              href={urls.wallets.list()}
+              href={paths.wallets.list()}
               className="inline-flex items-center justify-center rounded-xl bg-orange-400 px-6 py-3 font-semibold text-neutral-950 hover:bg-orange-300 transition-colors"
             >
               Browse Lightning Wallets →
@@ -95,13 +95,13 @@ export default async function LightningGettingStartedPage() {
         <Section>
           <div className="flex flex-wrap gap-4 text-sm text-neutral-500">
             <Link
-              href={urls.education.lightning101()}
+              href={paths.education.lightning101()}
               className="hover:text-orange-400 transition-colors"
             >
               Learn more about Lightning Network →
             </Link>
             <Link
-              href={urls.events.list()}
+              href={paths.events.list()}
               className="hover:text-orange-400 transition-colors"
             >
               Attend our workshops →

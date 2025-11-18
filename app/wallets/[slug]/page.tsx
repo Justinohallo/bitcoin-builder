@@ -13,7 +13,7 @@ import {
   createWebPageSchema,
   generateMetadata as generateMeta,
 } from "@/lib/seo";
-import { urls } from "@/lib/utils/urls";
+import { paths, urls } from "@/lib/utils/urls";
 
 interface WalletPageProps {
   params: Promise<{ slug: string }>;
@@ -110,7 +110,7 @@ export default async function WalletDetailPage({ params }: WalletPageProps) {
       <JsonLd data={structuredData} />
       <PageContainer>
         <Link
-          href={urls.wallets.list()}
+          href={paths.wallets.list()}
           className="inline-flex items-center text-orange-400 hover:text-orange-300 mb-6 transition-colors"
         >
           ← Back to all wallets
@@ -308,7 +308,7 @@ export default async function WalletDetailPage({ params }: WalletPageProps) {
               wallet, receive your first payment, and send Lightning payments.
             </p>
             <Link
-              href={urls.education.lightningGettingStarted()}
+              href={paths.education.lightningGettingStarted()}
               className="inline-flex items-center text-orange-400 hover:text-orange-300 font-medium transition-colors"
             >
               Read Getting Started Guide →
