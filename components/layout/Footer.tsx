@@ -35,6 +35,7 @@ export function Footer() {
       { href: paths.education.bitcoin101(), label: "Bitcoin 101" },
       { href: paths.education.lightning101(), label: "Lightning 101" },
       { href: paths.education.layer2(), label: "Layer 2 Overview" },
+      { href: paths.education.vibeCoding(), label: "Vibe Coding" },
       { href: paths.onboarding(), label: "Onboarding" },
       { href: paths.whatToExpect(), label: "What to Expect" },
     ],

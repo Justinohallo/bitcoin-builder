@@ -38,6 +38,7 @@ export const urls = {
     bitcoin101: () => buildUrl("/bitcoin-101"),
     lightning101: () => buildUrl("/lightning-101"),
     layer2: () => buildUrl("/layer-2-overview"),
+    vibeCoding: () => buildUrl("/vibe-coding"),
   },
 
   about: {
@@ -51,6 +52,7 @@ export const urls = {
   resources: () => buildUrl("/resources"),
   projects: () => buildUrl("/projects"),
   vibeApps: () => buildUrl("/vibe-apps"),
+  vibeCoding: () => buildUrl("/vibe-coding"),
   onboarding: () => buildUrl("/onboarding"),
   whatToExpect: () => buildUrl("/what-to-expect"),
 
@@ -106,6 +108,7 @@ export const paths = {
     bitcoin101: () => "/bitcoin-101",
     lightning101: () => "/lightning-101",
     layer2: () => "/layer-2-overview",
+    vibeCoding: () => "/vibe-coding",
   },
   about: {
     overview: () => "/about",
@@ -117,6 +120,7 @@ export const paths = {
   resources: () => "/resources",
   projects: () => "/projects",
   vibeApps: () => "/vibe-apps",
+  vibeCoding: () => "/vibe-coding",
   onboarding: () => "/onboarding",
   whatToExpect: () => "/what-to-expect",
   cities: {

@@ -197,6 +197,46 @@ export const EducationalContentSchema = z.object({
   meta: MetaSchema,
 });
 
+// Vibe Coding Schema
+const VibeCodingApplicationSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  url: z.string().url().optional(),
+  category: z.string().optional(),
+});
+
+const VibeCodingResourceSchema = z.object({
+  title: z.string(),
+  url: z.string().url(),
+  description: z.string(),
+  type: z.enum(["blog", "video", "tutorial", "documentation"]),
+  author: z.string().optional(),
+});
+
+const BitcoinOpportunitySchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+const BitcoinChallengeSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+export const VibeCodingSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  sections: z.array(SectionSchema),
+  applications: z.array(VibeCodingApplicationSchema),
+  resources: z.array(VibeCodingResourceSchema),
+  bitcoin: z.object({
+    opportunities: z.array(BitcoinOpportunitySchema),
+    challenges: z.array(BitcoinChallengeSchema),
+  }),
+  meta: MetaSchema,
+});
+
 // Resources Schema
 export const ResourceSchema = z.object({
   title: z.string(),
@@ -243,6 +283,37 @@ export const ProjectsCollectionSchema = z.object({
   slug: z.string(),
   description: z.string(),
   projects: z.array(ProjectSchema),
+  meta: MetaSchema,
+});
+
+// Technical Roadmap Schema
+export const RoadmapItemSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string(),
+  status: z.enum(["planned", "in-progress", "completed", "blocked"]),
+  priority: z.enum(["low", "medium", "high", "critical"]).optional(),
+  links: z.array(LinkSchema).optional(),
+  dependencies: z.array(z.string()).optional(), // Array of item IDs this depends on
+  assignee: z.string().optional(), // Person or team responsible
+  estimatedCompletion: z.string().optional(), // ISO date format
+});
+
+export const RoadmapMilestoneSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string(),
+  targetDate: z.string().optional(), // ISO date format
+  status: z.enum(["upcoming", "in-progress", "completed", "delayed"]),
+  items: z.array(RoadmapItemSchema),
+});
+
+export const TechnicalRoadmapSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  overview: z.string(), // Overview of the roadmap
+  milestones: z.array(RoadmapMilestoneSchema),
   meta: MetaSchema,
 });
 

@@ -41,6 +41,7 @@ import {
   TechnicalRoadmapSchema,
   VibeAppSchema,
   VibeAppsCollectionSchema,
+  VibeCodingSchema,
   VisionSchema,
   WhatToExpectSchema,
 } from "./schemas";
@@ -57,6 +58,8 @@ export type Onboarding = z.infer<typeof OnboardingSchema>;
 
 export type EducationalContent = z.infer<typeof EducationalContentSchema>;
 
+export type VibeCoding = z.infer<typeof VibeCodingSchema>;
+
 export type Resource = z.infer<typeof ResourceSchema>;
 export type ResourcesCollection = z.infer<typeof ResourcesCollectionSchema>;
 
@@ -65,6 +68,10 @@ export type RecapsCollection = z.infer<typeof RecapsCollectionSchema>;
 
 export type Project = z.infer<typeof ProjectSchema>;
 export type ProjectsCollection = z.infer<typeof ProjectsCollectionSchema>;
+
+export type RoadmapItem = z.infer<typeof RoadmapItemSchema>;
+export type RoadmapMilestone = z.infer<typeof RoadmapMilestoneSchema>;
+export type TechnicalRoadmap = z.infer<typeof TechnicalRoadmapSchema>;
 
 export type VibeApp = z.infer<typeof VibeAppSchema>;
 export type VibeAppsCollection = z.infer<typeof VibeAppsCollectionSchema>;
