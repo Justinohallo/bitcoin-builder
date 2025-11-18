@@ -19,14 +19,14 @@
           "id": "slide-2",
           "type": "content",
           "title": "What is Bitcoin?",
-          "body": "Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without the need for intermediaries like banks.\n\nKey characteristics:\n• Decentralized\n• Borderless\n• Censorship-resistant\n• Limited supply",
+          "body": "Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without the need for intermediaries like banks.\n\nKey characteristics:\n\u2022 Decentralized\n\u2022 Borderless\n\u2022 Censorship-resistant\n\u2022 Limited supply",
           "order": 2
         },
         {
           "id": "slide-3",
           "type": "content",
           "title": "Why Bitcoin Matters",
-          "body": "Bitcoin represents a fundamental shift in how we think about money:\n\n• Financial sovereignty\n• Global accessibility\n• Store of value\n• Programmable money",
+          "body": "Bitcoin represents a fundamental shift in how we think about money:\n\n\u2022 Financial sovereignty\n\u2022 Global accessibility\n\u2022 Store of value\n\u2022 Programmable money",
           "order": 3
         },
         {
@@ -40,14 +40,103 @@
           "id": "slide-5",
           "type": "content",
           "title": "Getting Started",
-          "body": "Ready to explore Bitcoin?\n\n• Download a wallet\n• Learn about security\n• Start with small amounts\n• Join the community",
+          "body": "Ready to explore Bitcoin?\n\n\u2022 Download a wallet\n\u2022 Learn about security\n\u2022 Start with small amounts\n\u2022 Join the community",
           "order": 5
         }
       ],
       "meta": {
         "title": "Introduction to Bitcoin | Slides | Builder Vancouver",
         "description": "A beginner-friendly introduction to Bitcoin covering the basics of what Bitcoin is and why it matters.",
-        "keywords": ["bitcoin", "introduction", "education", "slides"]
+        "keywords": [
+          "bitcoin",
+          "introduction",
+          "education",
+          "slides"
+        ]
+      }
+    },
+    {
+      "id": "deck-vibe-coding-education",
+      "title": "Vibe Coding for Builder",
+      "slug": "vibe-coding-builder",
+      "description": "How Builder uses vibe coding, structured content, and AI-powered workflows to deliver Bitcoin education.",
+      "createdAt": "2025-11-18T00:00:00Z",
+      "updatedAt": "2025-11-18T00:00:00Z",
+      "slides": [
+        {
+          "id": "slide-vibe-1",
+          "type": "title",
+          "title": "Vibe Coding for Builder",
+          "subtitle": "Education-first value for the Bitcoin ecosystem",
+          "order": 1
+        },
+        {
+          "id": "slide-vibe-2",
+          "type": "content",
+          "title": "Education Is the Vibe",
+          "body": "The fastest way to add value to Bitcoin is through education.\n\n\u2022 Every tutorial unlocks new contributors\n\u2022 Clear guidance reduces onboarding friction\n\u2022 Shared knowledge compounds into open-source breakthroughs",
+          "order": 2
+        },
+        {
+          "id": "slide-vibe-3",
+          "type": "content",
+          "title": "Structured Content Playbook",
+          "body": "Structured Content breaks Builder into reusable data blocks that travel anywhere.\n\n\u2022 Same facts power web, mobile, email, agents\n\u2022 Content stays consistent across every surface\n\u2022 New experiences launch by recomposing what already exists",
+          "order": 3
+        },
+        {
+          "id": "slide-vibe-4",
+          "type": "content",
+          "title": "Vibe Planning with ChatGPT",
+          "body": "ChatGPT Pro became the vibe planning room.\n\n\u2022 Projects feature stores Builder docs for instant recall\n\u2022 Each conversation outputs structured records\n\u2022 Ideas are stress-tested with an AI sparring partner before a single commit",
+          "order": 4
+        },
+        {
+          "id": "slide-vibe-5",
+          "type": "content",
+          "title": "From Concepts to Structured Data",
+          "body": "Every ChatGPT session ends by distilling the insights into JSON blocks.\n\n\u2022 Topics, resources, and personas are normalized\n\u2022 Content stays portable between channels\n\u2022 Future backends can ingest the same schema without rewrites",
+          "order": 5
+        },
+        {
+          "id": "slide-vibe-6",
+          "type": "content",
+          "title": "Building the MVP",
+          "body": "Next.js + Vercel host the Builder resource center today.\n\n\u2022 GitHub repo connected to Vercel previews for review\n\u2022 Ship quickly, inspect in temporary environments, merge with confidence\n\u2022 A content-first MVP that already educates the community",
+          "order": 6
+        },
+        {
+          "id": "slide-vibe-7",
+          "type": "content",
+          "title": "Cursor for the Feels",
+          "body": "Cursor Pro keeps the flow going anywhere.\n\n\u2022 Agents tackle parallel tasks while you stay on strategy\n\u2022 Mobile web access lets you spin an agent from your phone\n\u2022 ChatGPT + Cursor co-create features, copy, and refactors",
+          "order": 7
+        },
+        {
+          "id": "slide-vibe-8",
+          "type": "content",
+          "title": "Workflow Superpowers",
+          "body": "Vibe coding thrives on tight loops.\n\n1. Ideate with ChatGPT Projects\n2. Capture structured content immediately\n3. Ship updates through Cursor + Vercel previews\n4. Review, iterate, and redeploy inside minutes",
+          "order": 8
+        },
+        {
+          "id": "slide-vibe-9",
+          "type": "content",
+          "title": "Future Roadmap",
+          "body": "Next steps keep the vibe educational and Bitcoin-native.\n\n\u2022 Ship a backend to edit content on the fly\n\u2022 Expose the structured data to other services\n\u2022 Layer in Lightning, Nostr, and decentralization features as the community grows",
+          "order": 9
+        }
+      ],
+      "meta": {
+        "title": "Vibe Coding for Builder | Slides | Builder Vancouver",
+        "description": "Slide deck covering how Builder uses vibe coding, AI agents, and structured content to deliver Bitcoin education.",
+        "keywords": [
+          "vibe coding",
+          "structured content",
+          "bitcoin education",
+          "cursor",
+          "chatgpt"
+        ]
       }
     }
   ]

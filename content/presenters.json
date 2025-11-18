@@ -28,6 +28,17 @@
         "github": "https://github.com/bobsmith",
         "website": "https://bob.bitcoin.research"
       }
+    },
+    {
+      "id": "presenter-builder-ops",
+      "name": "Builder Ops Team",
+      "slug": "builder-ops-team",
+      "bio": "The Builder Ops Team stewards the vibe coding workflow behind the Builder website\u2014from structured content design to AI-assisted shipping. They focus on translating experiments with ChatGPT, Cursor, and decentralized tech into educational resources for the Bitcoin community.",
+      "title": "Vibe Coding Facilitators",
+      "company": "Builder",
+      "links": {
+        "website": "https://builder.van"
+      }
     }
   ]
 }

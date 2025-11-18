@@ -104,6 +104,69 @@
           "privacy"
         ]
       }
+    },
+    {
+      "id": "presentation-vibe-coding-builder-2025",
+      "title": "Vibe Coding the Builder Resource Center",
+      "slug": "vibe-coding-builder-workflow",
+      "description": "How the Builder Ops Team uses structured content, ChatGPT, and Cursor Agents to ship Bitcoin education faster.",
+      "overview": "Builder treats vibe coding as an educational engine. This presentation walks through how the team turns loose ideas into structured content blocks, ships them through a Next.js + Vercel pipeline, and keeps iterating with ChatGPT Projects and Cursor Agents\u2014often from a phone. Attendees will see how education-first workflows create real value for the Bitcoin ecosystem while laying the groundwork for future decentralized features.",
+      "presenterId": "presenter-builder-ops",
+      "date": "2025-11-18",
+      "duration": "30 minutes",
+      "links": [
+        {
+          "text": "Cursor",
+          "url": "https://cursor.sh",
+          "external": true
+        },
+        {
+          "text": "ChatGPT Projects",
+          "url": "https://openai.com/chatgpt",
+          "external": true
+        },
+        {
+          "text": "Vercel",
+          "url": "https://vercel.com",
+          "external": true
+        },
+        {
+          "text": "Structured Content Primer",
+          "url": "https://www.contentful.com/blog/what-is-structured-content/",
+          "external": true
+        }
+      ],
+      "slidesUrl": "https://builder.van/slides/vibe-coding-builder",
+      "sections": [
+        {
+          "title": "Education as Bitcoin Value",
+          "body": "The Builder Ops Team frames vibe coding as an education multiplier. Every guide, FAQ, or slide deck removes friction for the next contributor, so the first priority is building a resource center that anyone can remix. By keeping the spotlight on education, Builder turns documentation into a product that compounds value for the ecosystem."
+        },
+        {
+          "title": "Structured Content Everywhere",
+          "body": "Instead of copy-pasting prose, Builder breaks information into small JSON structures. Those blocks power the website today and can be piped into mobile apps, newsletters, or agent prompts tomorrow. ChatGPT sessions always end by distilling insights straight into schema-friendly snippets so future surfaces can re-use the same source of truth."
+        },
+        {
+          "title": "ChatGPT + Cursor Workflow",
+          "body": "ChatGPT Pro (with Projects) is the vibe planning space where documents live, questions get answered, and next steps emerge. Cursor Pro keeps build momentum high with AI pair programming, rapid refactors, and the new Agents feature for parallel work\u2014even from a phone. Code flows into GitHub, deploys to Vercel previews, and returns with feedback in minutes."
+        },
+        {
+          "title": "Roadmap to Decentralized Features",
+          "body": "With the content MVP live, the next moves are clear: ship a backend to edit structured content on the fly, expose the data so other services can subscribe to Builder knowledge, and layer in more Bitcoin-native features like Lightning, Nostr, and decentralization primitives. The same vibe coding habits will power each milestone."
+        }
+      ],
+      "meta": {
+        "title": "Vibe Coding the Builder Resource Center | Builder Vancouver",
+        "description": "Presentation covering how Builder uses structured content, ChatGPT, Cursor, and Vercel to deliver Bitcoin education and prepare for decentralized features.",
+        "keywords": [
+          "vibe coding",
+          "structured content",
+          "chatgpt",
+          "cursor",
+          "bitcoin education",
+          "builder"
+        ]
+      }
     }
   ]
 }
