@@ -1,0 +1,54 @@
+{
+  "slideDecks": [
+    {
+      "id": "deck-intro-bitcoin",
+      "title": "Introduction to Bitcoin",
+      "slug": "intro-bitcoin",
+      "description": "A beginner-friendly introduction to Bitcoin covering the basics of what Bitcoin is and why it matters.",
+      "createdAt": "2025-01-15T10:00:00Z",
+      "updatedAt": "2025-01-15T10:00:00Z",
+      "slides": [
+        {
+          "id": "slide-1",
+          "type": "title",
+          "title": "Introduction to Bitcoin",
+          "subtitle": "Understanding Digital Money",
+          "order": 1
+        },
+        {
+          "id": "slide-2",
+          "type": "content",
+          "title": "What is Bitcoin?",
+          "body": "Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without the need for intermediaries like banks.\n\nKey characteristics:\n• Decentralized\n• Borderless\n• Censorship-resistant\n• Limited supply",
+          "order": 2
+        },
+        {
+          "id": "slide-3",
+          "type": "content",
+          "title": "Why Bitcoin Matters",
+          "body": "Bitcoin represents a fundamental shift in how we think about money:\n\n• Financial sovereignty\n• Global accessibility\n• Store of value\n• Programmable money",
+          "order": 3
+        },
+        {
+          "id": "slide-4",
+          "type": "content",
+          "title": "How It Works",
+          "body": "Bitcoin uses blockchain technology:\n\n1. Transactions are grouped into blocks\n2. Blocks are verified by miners\n3. Verified blocks are added to the chain\n4. The chain creates an immutable ledger",
+          "order": 4
+        },
+        {
+          "id": "slide-5",
+          "type": "content",
+          "title": "Getting Started",
+          "body": "Ready to explore Bitcoin?\n\n• Download a wallet\n• Learn about security\n• Start with small amounts\n• Join the community",
+          "order": 5
+        }
+      ],
+      "meta": {
+        "title": "Introduction to Bitcoin | Slides | Builder Vancouver",
+        "description": "A beginner-friendly introduction to Bitcoin covering the basics of what Bitcoin is and why it matters.",
+        "keywords": ["bitcoin", "introduction", "education", "slides"]
+      }
+    }
+  ]
+}

@@ -31,6 +31,9 @@ import {
   ResourceSchema,
   ResourcesCollectionSchema,
   SectionSchema,
+  SlideDeckSchema,
+  SlideSchema,
+  SlidesCollectionSchema,
   SponsorSchema,
   SponsorsCollectionSchema,
   VibeAppSchema,
@@ -105,3 +108,8 @@ export type Presentation = z.infer<typeof PresentationSchema>;
 export type PresentationsCollection = z.infer<
   typeof PresentationsCollectionSchema
 >;
+
+// Slides types
+export type Slide = z.infer<typeof SlideSchema>;
+export type SlideDeck = z.infer<typeof SlideDeckSchema>;
+export type SlidesCollection = z.infer<typeof SlidesCollectionSchema>;

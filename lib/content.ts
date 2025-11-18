@@ -21,6 +21,8 @@ import {
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
+  SlideDeckSchema,
+  SlidesCollectionSchema,
   SponsorsCollectionSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
@@ -49,6 +51,8 @@ import type {
   Recap,
   RecapsCollection,
   ResourcesCollection,
+  SlideDeck,
+  SlidesCollection,
   Sponsor,
   SponsorsCollection,
   VibeAppsCollection,
@@ -235,4 +239,18 @@ export async function getCityEvents(cityId: string): Promise<Event[]> {
 export async function getPresentationsByPresenter(presenterId: string): Promise<Presentation[]> {
   const { presentations } = await loadPresentations();
   return presentations.filter((p) => p.presenterId === presenterId);
+}
+
+export async function loadSlides(): Promise<SlidesCollection> {
+  return loadContent("slides.json", SlidesCollectionSchema);
+}
+
+export async function loadSlideDeck(slug: string): Promise<SlideDeck | undefined> {
+  const { slideDecks } = await loadSlides();
+  return slideDecks.find((d) => d.slug === slug);
+}
+
+export async function loadSlideDeckById(id: string): Promise<SlideDeck | undefined> {
+  const { slideDecks } = await loadSlides();
+  return slideDecks.find((d) => d.id === id);
 }

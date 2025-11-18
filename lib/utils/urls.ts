@@ -77,6 +77,12 @@ export const urls = {
     list: () => buildUrl("/members"),
     detail: (slug: string) => buildUrl(`/members/${slug}`),
   },
+
+  slides: {
+    list: () => buildUrl("/slides"),
+    detail: (slug: string) => buildUrl(`/slides/${slug}`),
+    present: (slug: string) => buildUrl(`/slides/${slug}/present`),
+  },
 } as const;
 
 /**
@@ -131,5 +137,11 @@ export const paths = {
   members: {
     list: () => "/members",
     detail: (slug: string) => `/members/${slug}`,
+  },
+
+  slides: {
+    list: () => "/slides",
+    detail: (slug: string) => `/slides/${slug}`,
+    present: (slug: string) => `/slides/${slug}/present`,
   },
 } as const;

@@ -477,3 +477,35 @@ export const CitySchema = z.object({
 export const CitiesCollectionSchema = z.object({
   cities: z.array(CitySchema),
 });
+
+// Slides Schema
+export const SlideSchema = z.object({
+  id: z.string(),
+  type: z.enum(["title", "content", "image", "mixed"]),
+  title: z.string().optional(),
+  subtitle: z.string().optional(),
+  body: z.string().optional(),
+  image: z
+    .object({
+      src: z.string(),
+      alt: z.string(),
+      caption: z.string().optional(),
+    })
+    .optional(),
+  order: z.number(),
+});
+
+export const SlideDeckSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  createdAt: z.string(), // ISO date format
+  updatedAt: z.string(), // ISO date format
+  slides: z.array(SlideSchema),
+  meta: MetaSchema,
+});
+
+export const SlidesCollectionSchema = z.object({
+  slideDecks: z.array(SlideDeckSchema),
+});

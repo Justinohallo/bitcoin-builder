@@ -32,6 +32,7 @@ import {
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
+  SlidesCollectionSchema,
   SponsorsCollectionSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
@@ -64,6 +65,7 @@ const CONTENT_SCHEMAS: Record<string, z.ZodSchema<unknown>> = {
   "sponsors.json": SponsorsCollectionSchema,
   "presenters.json": PresentersCollectionSchema,
   "presentations.json": PresentationsCollectionSchema,
+  "slides.json": SlidesCollectionSchema,
 };
 
 interface ValidationResult {
