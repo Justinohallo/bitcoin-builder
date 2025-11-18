@@ -102,6 +102,7 @@ export function Navbar() {
         { href: "/vibe-coding", label: "Vibe Coding" },
         { href: "/onboarding", label: "Onboarding" },
         { href: "/what-to-expect", label: "What to Expect" },
+        { href: "/faq", label: "FAQ" },
       ],
     },
     {

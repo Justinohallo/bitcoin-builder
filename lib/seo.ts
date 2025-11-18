@@ -20,6 +20,7 @@ export {
   createHowToSchema,
   createCollectionPageSchema,
   createCitySchema,
+  createFAQPageSchema,
   createSchemaGraph,
 } from "./structured-data";
 

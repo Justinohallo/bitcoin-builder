@@ -1,11 +1,12 @@
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { FAQSection } from "@/components/faq/FAQSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { loadBitcoin101 } from "@/lib/content";
+import { loadBitcoin101, getFAQsByTags } from "@/lib/content";
 import {
   createBreadcrumbList,
   createCourseSchema,
@@ -21,6 +22,7 @@ export async function generateMetadata() {
 
 export default async function Bitcoin101Page() {
   const content = await loadBitcoin101();
+  const bitcoinFaqs = await getFAQsByTags(["bitcoin", "basics"]);
 
   // Generate structured data
   const courseSchema = createCourseSchema({
@@ -72,6 +74,12 @@ export default async function Bitcoin101Page() {
             )}
           </Section>
         ))}
+
+        <FAQSection
+          faqs={bitcoinFaqs}
+          title="Frequently Asked Questions"
+          limit={5}
+        />
       </PageContainer>
     </>
   );

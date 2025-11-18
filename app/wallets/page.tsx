@@ -1,11 +1,12 @@
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { FAQSection } from "@/components/faq/FAQSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { loadWallets } from "@/lib/content";
+import { loadWallets, getFAQsByTags } from "@/lib/content";
 import {
   createBreadcrumbList,
   createSchemaGraph,
@@ -60,6 +61,7 @@ function TypeBadge({ type }: { type: string }) {
 
 export default async function WalletsPage() {
   const content = await loadWallets();
+  const walletFaqs = await getFAQsByTags(["wallets"]);
 
   // Generate structured data
   const webPageSchema = createWebPageSchema(
@@ -176,6 +178,12 @@ export default async function WalletsPage() {
             </Link>
           </div>
         </Section>
+
+        <FAQSection
+          faqs={walletFaqs}
+          title="Wallet Questions"
+          limit={6}
+        />
       </PageContainer>
     </>
   );

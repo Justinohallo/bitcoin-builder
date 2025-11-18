@@ -616,3 +616,35 @@ export const WalletsCollectionSchema = z.object({
   wallets: z.array(WalletSchema),
   meta: MetaSchema,
 });
+
+// FAQ Schema
+export const FAQItemSchema = z.object({
+  id: z.string(),
+  question: z.string(),
+  answer: z.string(),
+  sourceContent: z
+    .object({
+      type: z.enum(["page", "section"]),
+      slug: z.string(),
+      title: z.string(),
+      anchor: z.string().optional(), // Optional anchor link to specific section
+    })
+    .optional(),
+  relatedFaqs: z.array(z.string()).optional(), // Array of FAQ IDs
+  tags: z.array(z.string()).optional(),
+});
+
+export const FAQCategorySchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string().optional(),
+  faqs: z.array(FAQItemSchema),
+});
+
+export const FAQsCollectionSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  categories: z.array(FAQCategorySchema),
+  meta: MetaSchema,
+});

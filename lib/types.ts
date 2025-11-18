@@ -46,6 +46,9 @@ import {
   WalletSchema,
   WalletsCollectionSchema,
   WhatToExpectSchema,
+  FAQItemSchema,
+  FAQCategorySchema,
+  FAQsCollectionSchema,
 } from "./schemas";
 
 /**
@@ -129,3 +132,8 @@ export type SlidesCollection = z.infer<typeof SlidesCollectionSchema>;
 // Wallets types
 export type Wallet = z.infer<typeof WalletSchema>;
 export type WalletsCollection = z.infer<typeof WalletsCollectionSchema>;
+
+// FAQ types
+export type FAQItem = z.infer<typeof FAQItemSchema>;
+export type FAQCategory = z.infer<typeof FAQCategorySchema>;
+export type FAQsCollection = z.infer<typeof FAQsCollectionSchema>;
