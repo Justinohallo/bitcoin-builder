@@ -255,7 +255,13 @@ export function Navbar() {
 
                     {/* Dropdown Card */}
                     {isOpen && item.children && (
-                      <div className="absolute top-full left-0 pt-2 w-56 z-50">
+                      <div 
+                        className="absolute top-full left-0 w-56 z-50"
+                        onMouseEnter={() => setOpenDropdown(item.label)}
+                        onMouseLeave={() => setOpenDropdown(null)}
+                      >
+                        {/* Invisible bridge to prevent gap from closing dropdown */}
+                        <div className="h-2 w-full" />
                         <div className="bg-neutral-900 border border-neutral-800 rounded-lg shadow-xl overflow-hidden">
                           <div className="py-2">
                             {item.children.map((child) => (
