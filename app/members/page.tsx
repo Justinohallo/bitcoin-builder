@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -24,7 +25,16 @@ export default async function MembersPage() {
         {content.description}
       </p>
 
-      <div className="grid grid-cols-1 gap-8">
+      {content.members.length === 0 ? (
+        <Section>
+          <EmptyState
+            icon="👥"
+            title="No Member Personas Yet"
+            message="We haven't created any member personas yet. Check back soon to discover different types of builders and their journeys!"
+          />
+        </Section>
+      ) : (
+        <div className="grid grid-cols-1 gap-8">
         {content.members.map((member) => (
           <Section
             key={member.id}
@@ -105,7 +115,8 @@ export default async function MembersPage() {
             </div>
           </Section>
         ))}
-      </div>
+        </div>
+      )}
     </PageContainer>
   );
 }

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -59,8 +60,17 @@ export default async function NewsTopicsPage() {
           learning.
         </p>
 
-        <div className="space-y-6">
-          {sortedTopics.map((topic) => (
+        {sortedTopics.length === 0 ? (
+          <Section>
+            <EmptyState
+              icon="📰"
+              title="No News Topics Yet"
+              message="We haven't added any news topics for discussion yet. Check back soon to explore Bitcoin and Lightning Network news topics!"
+            />
+          </Section>
+        ) : (
+          <div className="space-y-6">
+            {sortedTopics.map((topic) => (
             <Section key={topic.id}>
               <article className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors">
                 <Link href={`/news-topics/${topic.slug}`}>
@@ -105,14 +115,7 @@ export default async function NewsTopicsPage() {
               </article>
             </Section>
           ))}
-        </div>
-
-        {newsTopics.length === 0 && (
-          <Section>
-            <p className="text-neutral-400 text-center py-12">
-              No news topics available at the moment. Check back soon!
-            </p>
-          </Section>
+          </div>
         )}
       </PageContainer>
     </>

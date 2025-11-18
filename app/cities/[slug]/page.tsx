@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { CityMapClient } from "@/components/maps/CityMapClient";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -148,22 +149,33 @@ export default async function CityPage({ params }: CityPageProps) {
           </div>
 
           {/* Merchant Map */}
-          {city.bitcoinEcosystem.merchantList.length > 0 && (
+          {city.bitcoinEcosystem.merchantList.length > 0 ? (
             <div className="mb-8">
               <Heading level="h3" className="text-neutral-100 mb-4">
                 Merchant Map
               </Heading>
               <CityMapClient city={city} />
             </div>
+          ) : (
+            <div className="mb-8">
+              <Heading level="h3" className="text-neutral-100 mb-4">
+                Merchant Map
+              </Heading>
+              <EmptyState
+                icon="📍"
+                message="No merchants have been added to the map yet. Check back soon!"
+                className="py-8"
+              />
+            </div>
           )}
         </Section>
 
         {/* Notable Builders */}
-        {city.bitcoinEcosystem.notableBuilders.length > 0 && (
-          <Section>
-            <Heading level="h2" className="text-neutral-100 mb-4">
-              Notable Builders
-            </Heading>
+        <Section>
+          <Heading level="h2" className="text-neutral-100 mb-4">
+            Notable Builders
+          </Heading>
+          {city.bitcoinEcosystem.notableBuilders.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {city.bitcoinEcosystem.notableBuilders.map((builder) => (
                 <div
@@ -209,15 +221,21 @@ export default async function CityPage({ params }: CityPageProps) {
                 </div>
               ))}
             </div>
-          </Section>
-        )}
+          ) : (
+            <EmptyState
+              icon="👷"
+              message="No notable builders have been added for this city yet."
+              className="py-8"
+            />
+          )}
+        </Section>
 
         {/* Meetups */}
-        {city.bitcoinEcosystem.meetups.length > 0 && (
-          <Section>
-            <Heading level="h2" className="text-neutral-100 mb-4">
-              Meetups
-            </Heading>
+        <Section>
+          <Heading level="h2" className="text-neutral-100 mb-4">
+            Meetups
+          </Heading>
+          {city.bitcoinEcosystem.meetups.length > 0 ? (
             <div className="space-y-4">
               {city.bitcoinEcosystem.meetups.map((meetup) => (
                 <div
@@ -251,15 +269,21 @@ export default async function CityPage({ params }: CityPageProps) {
                 </div>
               ))}
             </div>
-          </Section>
-        )}
+          ) : (
+            <EmptyState
+              icon="👥"
+              message="No meetups have been listed for this city yet."
+              className="py-8"
+            />
+          )}
+        </Section>
 
         {/* Events Hosted in This City */}
-        {events.length > 0 && (
-          <Section>
-            <Heading level="h2" className="text-neutral-100 mb-4">
-              Upcoming Events
-            </Heading>
+        <Section>
+          <Heading level="h2" className="text-neutral-100 mb-4">
+            Upcoming Events
+          </Heading>
+          {events.length > 0 ? (
             <div className="space-y-4">
               {events.map((event) => (
                 <Link
@@ -282,8 +306,14 @@ export default async function CityPage({ params }: CityPageProps) {
                 </Link>
               ))}
             </div>
-          </Section>
-        )}
+          ) : (
+            <EmptyState
+              icon="📅"
+              message="No upcoming events are scheduled for this city yet. Check back soon!"
+              className="py-8"
+            />
+          )}
+        </Section>
 
         {/* Builder City Scores */}
         <Section>

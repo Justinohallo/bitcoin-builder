@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Schedule } from "@/components/events/Schedule";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -206,17 +207,18 @@ export default async function EventPage({ params }: EventPageProps) {
             </Section>
           ))}
 
-        {newsTopics.length > 0 && (
-          <Section>
-            <Heading level="h2" className="text-neutral-100 mb-4">
-              Discussion Topics
-            </Heading>
-            <p className="text-neutral-300 mb-6">
-              We will be discussing these Bitcoin and Lightning Network news
-              topics at this event:
-            </p>
-            <div className="space-y-4">
-              {newsTopics.map((topic) => (
+        <Section>
+          <Heading level="h2" className="text-neutral-100 mb-4">
+            Discussion Topics
+          </Heading>
+          {newsTopics.length > 0 ? (
+            <>
+              <p className="text-neutral-300 mb-6">
+                We will be discussing these Bitcoin and Lightning Network news
+                topics at this event:
+              </p>
+              <div className="space-y-4">
+                {newsTopics.map((topic) => (
                 <article
                   key={topic.id}
                   className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors"
@@ -252,21 +254,29 @@ export default async function EventPage({ params }: EventPageProps) {
                     View Discussion Questions →
                   </Link>
                 </article>
-              ))}
-            </div>
-          </Section>
-        )}
+                ))}
+              </div>
+            </>
+          ) : (
+            <EmptyState
+              icon="💬"
+              message="No discussion topics have been added for this event yet."
+              className="py-8"
+            />
+          )}
+        </Section>
 
-        {sponsors.length > 0 && (
-          <Section>
-            <Heading level="h2" className="text-neutral-100 mb-4">
-              Event Sponsors
-            </Heading>
-            <p className="text-neutral-300 mb-6">
-              We are grateful to our sponsors for making this event possible:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {sponsors.map((sponsor) => (
+        <Section>
+          <Heading level="h2" className="text-neutral-100 mb-4">
+            Event Sponsors
+          </Heading>
+          {sponsors.length > 0 ? (
+            <>
+              <p className="text-neutral-300 mb-6">
+                We are grateful to our sponsors for making this event possible:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {sponsors.map((sponsor) => (
                 <div
                   key={sponsor.id}
                   className="bg-neutral-900 border border-neutral-800 rounded-lg p-4 hover:border-orange-400 transition-colors"
@@ -295,21 +305,29 @@ export default async function EventPage({ params }: EventPageProps) {
                     </a>
                   )}
                 </div>
-              ))}
-            </div>
-          </Section>
-        )}
+                ))}
+              </div>
+            </>
+          ) : (
+            <EmptyState
+              icon="🤝"
+              message="No sponsors have been added for this event yet."
+              className="py-8"
+            />
+          )}
+        </Section>
 
-        {presentations.length > 0 && (
-          <Section>
-            <Heading level="h2" className="text-neutral-100 mb-4">
-              Presentations
-            </Heading>
-            <p className="text-neutral-300 mb-6">
-              Presentations and talks from this event:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {presentations.map((presentation) => {
+        <Section>
+          <Heading level="h2" className="text-neutral-100 mb-4">
+            Presentations
+          </Heading>
+          {presentations.length > 0 ? (
+            <>
+              <p className="text-neutral-300 mb-6">
+                Presentations and talks from this event:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {presentations.map((presentation) => {
                 const presenter = presentersById.get(presentation.presenterId);
                 return (
                   <article
@@ -364,9 +382,16 @@ export default async function EventPage({ params }: EventPageProps) {
                   </article>
                 );
               })}
-            </div>
-          </Section>
-        )}
+              </div>
+            </>
+          ) : (
+            <EmptyState
+              icon="🎤"
+              message="No presentations have been added for this event yet."
+              className="py-8"
+            />
+          )}
+        </Section>
       </PageContainer>
     </>
   );

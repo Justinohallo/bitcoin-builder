@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -118,36 +119,52 @@ export default async function NewsTopicPage({ params }: NewsTopicPageProps) {
           <Heading level="h2" className="text-neutral-100 mb-4">
             Resources
           </Heading>
-          <ul className="space-y-3">
-            {topic.urls.map((url, index) => (
-              <li key={index}>
-                <a
-                  href={url}
-                  className="text-orange-400 hover:text-orange-300 underline transition-colors break-all"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {url}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {topic.urls.length > 0 ? (
+            <ul className="space-y-3">
+              {topic.urls.map((url, index) => (
+                <li key={index}>
+                  <a
+                    href={url}
+                    className="text-orange-400 hover:text-orange-300 underline transition-colors break-all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {url}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <EmptyState
+              icon="🔗"
+              message="No resources have been added for this topic yet."
+              className="py-8"
+            />
+          )}
         </Section>
 
         <Section>
           <Heading level="h2" className="text-neutral-100 mb-4">
             Discussion Questions
           </Heading>
-          <ul className="space-y-4">
-            {topic.questions.map((question, index) => (
-              <li
-                key={index}
-                className="text-lg text-neutral-300 pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-orange-400"
-              >
-                {question}
-              </li>
-            ))}
-          </ul>
+          {topic.questions && topic.questions.length > 0 ? (
+            <ul className="space-y-4">
+              {topic.questions.map((question, index) => (
+                <li
+                  key={index}
+                  className="text-lg text-neutral-300 pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-orange-400"
+                >
+                  {question}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <EmptyState
+              icon="❓"
+              message="No discussion questions have been added for this topic yet."
+              className="py-8"
+            />
+          )}
         </Section>
 
         <Section>

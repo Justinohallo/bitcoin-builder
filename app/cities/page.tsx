@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -62,9 +63,11 @@ export default async function CitiesPage() {
 
         {cities.length === 0 ? (
           <Section>
-            <p className="text-neutral-400 text-center py-12">
-              No cities available at the moment. Check back soon!
-            </p>
+            <EmptyState
+              icon="🏙️"
+              title="No Cities Available"
+              message="We don't have any Bitcoin Builder cities listed yet. Check back soon to explore Bitcoin ecosystems around the world!"
+            />
           </Section>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

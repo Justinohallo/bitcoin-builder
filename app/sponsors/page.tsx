@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -83,9 +84,11 @@ export default async function SponsorsPage() {
 
         {sponsors.length === 0 ? (
           <Section>
-            <p className="text-neutral-400 text-center py-12">
-              No sponsors available at the moment. Check back soon!
-            </p>
+            <EmptyState
+              icon="🤝"
+              title="No Sponsors Yet"
+              message="We haven't added any sponsors yet. Check back soon to see the generous organizations supporting Bitcoin Builder events and community initiatives!"
+            />
           </Section>
         ) : (
           <div className="space-y-12">

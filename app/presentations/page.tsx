@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -75,9 +76,11 @@ export default async function PresentationsPage() {
 
         {sortedPresentations.length === 0 ? (
           <Section>
-            <p className="text-neutral-400 text-center py-12">
-              No presentations available at the moment. Check back soon!
-            </p>
+            <EmptyState
+              icon="🎤"
+              title="No Presentations Available"
+              message="We don't have any presentations recorded yet. Check back soon to watch talks about Bitcoin, Lightning Network, and protocol development!"
+            />
           </Section>
         ) : (
           <div className="space-y-8">

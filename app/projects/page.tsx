@@ -1,4 +1,5 @@
 import { PageContainer } from "@/components/layout/PageContainer";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -20,8 +21,17 @@ export default async function ProjectsPage() {
       </Heading>
       <p className="text-xl text-neutral-300 mb-12">{content.description}</p>
 
-      <div className="space-y-6">
-        {content.projects.map((project) => (
+      {content.projects.length === 0 ? (
+        <Section>
+          <EmptyState
+            icon="🚀"
+            title="No Projects Yet"
+            message="We don't have any community projects listed yet. Join us to start building and contribute to the Bitcoin ecosystem!"
+          />
+        </Section>
+      ) : (
+        <div className="space-y-6">
+          {content.projects.map((project) => (
           <Section key={project.slug}>
             <article className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors">
               <div className="flex items-start justify-between mb-4">
@@ -60,14 +70,7 @@ export default async function ProjectsPage() {
             </article>
           </Section>
         ))}
-      </div>
-
-      {content.projects.length === 0 && (
-        <Section>
-          <p className="text-neutral-400 text-center py-12">
-            No projects yet. Join us to start building!
-          </p>
-        </Section>
+        </div>
       )}
     </PageContainer>
   );

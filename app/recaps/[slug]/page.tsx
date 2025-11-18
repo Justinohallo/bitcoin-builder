@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -84,7 +85,9 @@ export default async function RecapPage({ params }: RecapPageProps) {
 
         <p className="text-xl text-neutral-300 mb-12">{recap.summary}</p>
 
-        {recap.sections.map((section, index) => (
+        {recap.sections && recap.sections.length > 0 ? (
+          <>
+            {recap.sections.map((section, index) => (
           <Section key={index}>
             <Heading level="h2" className="text-neutral-100 mb-4">
               {section.title}
@@ -109,7 +112,17 @@ export default async function RecapPage({ params }: RecapPageProps) {
               </div>
             )}
           </Section>
-        ))}
+            ))}
+          </>
+        ) : (
+          <Section>
+            <EmptyState
+              icon="📝"
+              message="No additional sections have been added to this recap yet."
+              className="py-8"
+            />
+          </Section>
+        )}
       </PageContainer>
     </>
   );

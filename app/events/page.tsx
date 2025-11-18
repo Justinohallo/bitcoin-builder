@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -59,9 +60,11 @@ export default async function EventsPage() {
 
         {events.length === 0 ? (
           <Section>
-            <p className="text-neutral-400 text-center py-12">
-              No upcoming events at the moment. Check back soon!
-            </p>
+            <EmptyState
+              icon="📅"
+              title="No Upcoming Events"
+              message="We don't have any upcoming events scheduled at the moment. Check back soon for new meetups, workshops, and Bitcoin community events!"
+            />
           </Section>
         ) : (
           <div className="space-y-8">
