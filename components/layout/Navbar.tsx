@@ -107,9 +107,7 @@ export function Navbar() {
     },
     {
       label: "Wallets",
-      children: [
-        { href: "/wallets", label: "All Wallets" },
-      ],
+      children: [{ href: "/wallets", label: "All Wallets" }],
     },
     {
       label: "Community",
@@ -117,6 +115,7 @@ export function Navbar() {
         { href: "/cities", label: "Cities" },
         { href: "/sponsors", label: "Sponsors" },
         { href: "/members", label: "Members" },
+        { href: "/get-involved", label: "Get Involved" },
       ],
     },
   ];
@@ -191,11 +190,11 @@ export function Navbar() {
     const handleClickOutside = (event: MouseEvent) => {
       const dropdown = dropdownRefs.current[openDropdown];
       const target = event.target as Node;
-      
+
       // Check if click is outside the dropdown container
       if (dropdown && !dropdown.contains(target)) {
         // Also check if it's not a link click (links should navigate)
-        const linkElement = (target as Element).closest('a');
+        const linkElement = (target as Element).closest("a");
         if (!linkElement || !dropdown.contains(linkElement)) {
           setOpenDropdown(null);
         }
@@ -204,7 +203,8 @@ export function Navbar() {
 
     // Use click instead of mousedown to allow link navigation to complete first
     document.addEventListener("click", handleClickOutside, true);
-    return () => document.removeEventListener("click", handleClickOutside, true);
+    return () =>
+      document.removeEventListener("click", handleClickOutside, true);
   }, [openDropdown]);
 
   return (
@@ -273,7 +273,7 @@ export function Navbar() {
 
                     {/* Dropdown Card */}
                     {isOpen && item.children && (
-                      <div 
+                      <div
                         className="absolute top-full left-0 w-56 z-50"
                         onMouseEnter={() => setOpenDropdown(item.label)}
                         onMouseLeave={() => setOpenDropdown(null)}
