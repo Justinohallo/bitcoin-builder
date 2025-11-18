@@ -47,12 +47,48 @@
       "id": "presenter-builder-ops",
       "name": "Builder Ops Team",
       "slug": "builder-ops-team",
-      "bio": "The Builder Ops Team stewards the vibe coding workflow behind the Builder website—from structured content design to AI-assisted shipping. They focus on translating experiments with ChatGPT, Cursor, and decentralized tech into educational resources for the Bitcoin community.",
+      "bio": "The Builder Ops Team stewards the vibe coding workflow behind the Builder website\u2014from structured content design to AI-assisted shipping. They focus on translating experiments with ChatGPT, Cursor, and decentralized tech into educational resources for the Bitcoin community.",
       "title": "Vibe Coding Facilitators",
       "company": "Builder",
       "links": {
         "website": "https://builder.van"
       }
+    },
+    {
+      "id": "presenter-justin-ohalloran",
+      "name": "Justin O'Halloran",
+      "slug": "justin-ohalloran",
+      "bio": "Full stack web developer and Chapter Lead for Builder Vancouver, focused on guiding local builders through hands-on Bitcoin and Lightning education.",
+      "title": "Full Stack Web Developer",
+      "company": "Builder Vancouver",
+      "links": {}
+    },
+    {
+      "id": "presenter-mat-balez",
+      "name": "Mat Balez",
+      "slug": "mat-balez",
+      "bio": "Product manager at Spiral.xyz helping Bitcoin and Lightning teams ship polished user experiences powered by open-source infrastructure.",
+      "title": "Product Manager",
+      "company": "Spiral.xyz",
+      "links": {}
+    },
+    {
+      "id": "presenter-eric-chennels",
+      "name": "Eric Chennels",
+      "slug": "eric-chennels",
+      "bio": "Cybersecurity and cloud computing specialist researching and building secure Bitcoin and Lightning deployments for modern infrastructure teams.",
+      "title": "Cybersecurity & Cloud Specialist",
+      "company": "Independent",
+      "links": {}
+    },
+    {
+      "id": "presenter-martin-montero",
+      "name": "Martin Montero",
+      "slug": "martin-montero",
+      "bio": "Project manager at Rabble Labs working on Nostr community development and coordinating open collaboration across Bitcoin builders.",
+      "title": "Project Manager",
+      "company": "Rabble Labs",
+      "links": {}
     }
   ]
 }
