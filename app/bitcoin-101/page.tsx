@@ -15,12 +15,12 @@ import {
 import { urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
-  const content = loadBitcoin101();
+  const content = await loadBitcoin101();
   return generateMeta(content.meta);
 }
 
-export default function Bitcoin101Page() {
-  const content = loadBitcoin101();
+export default async function Bitcoin101Page() {
+  const content = await loadBitcoin101();
 
   // Generate structured data
   const courseSchema = createCourseSchema({

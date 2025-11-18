@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function MissionPage() {
-  const mission = loadMission();
+export default async function MissionPage() {
+  const mission = await loadMission();
 
   return (
     <PageContainer>

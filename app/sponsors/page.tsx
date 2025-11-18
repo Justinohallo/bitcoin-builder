@@ -20,9 +20,9 @@ export const metadata = generatePageMetadata(
   ["sponsors", "partners", "bitcoin", "builder", "community"]
 );
 
-export default function SponsorsPage() {
-  const { sponsors } = loadSponsors();
-  const { events } = loadEvents();
+export default async function SponsorsPage() {
+  const { sponsors } = await loadSponsors();
+  const { events } = await loadEvents();
 
   // Pre-compute event counts for each sponsor (how many events they sponsor)
   const sponsorsWithEventCounts = sponsors.map((sponsor) => ({

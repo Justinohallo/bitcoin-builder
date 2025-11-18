@@ -8,12 +8,12 @@ import { loadMembers } from "@/lib/content";
 import { generateMetadata as generateMeta } from "@/lib/seo";
 
 export async function generateMetadata() {
-  const content = loadMembers();
+  const content = await loadMembers();
   return generateMeta(content.meta);
 }
 
-export default function MembersPage() {
-  const content = loadMembers();
+export default async function MembersPage() {
+  const content = await loadMembers();
 
   return (
     <PageContainer>

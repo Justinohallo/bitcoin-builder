@@ -15,12 +15,12 @@ import {
 import { urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
-  const content = loadOpenSource();
+  const content = await loadOpenSource();
   return generateMeta(content.meta);
 }
 
-export default function OpenSourcePage() {
-  const content = loadOpenSource();
+export default async function OpenSourcePage() {
+  const content = await loadOpenSource();
 
   // Generate structured data
   const courseSchema = createCourseSchema({

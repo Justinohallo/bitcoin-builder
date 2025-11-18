@@ -15,12 +15,12 @@ import {
 import { urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
-  const content = loadOnboarding();
+  const content = await loadOnboarding();
   return generateMeta(content.meta);
 }
 
-export default function OnboardingPage() {
-  const content = loadOnboarding();
+export default async function OnboardingPage() {
+  const content = await loadOnboarding();
 
   // Generate structured data
   const howToSchema = createHowToSchema({

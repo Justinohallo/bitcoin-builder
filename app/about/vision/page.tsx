@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function VisionPage() {
-  const vision = loadVision();
+export default async function VisionPage() {
+  const vision = await loadVision();
 
   return (
     <PageContainer>

@@ -6,12 +6,12 @@ import { loadResources } from "@/lib/content";
 import { generateMetadata as generateMeta } from "@/lib/seo";
 
 export async function generateMetadata() {
-  const content = loadResources();
+  const content = await loadResources();
   return generateMeta(content.meta);
 }
 
-export default function ResourcesPage() {
-  const content = loadResources();
+export default async function ResourcesPage() {
+  const content = await loadResources();
 
   // Group resources by category
   const resourcesByCategory = content.resources.reduce(

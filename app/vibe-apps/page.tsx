@@ -6,12 +6,12 @@ import { loadVibeApps } from "@/lib/content";
 import { generateMetadata as generateMeta } from "@/lib/seo";
 
 export async function generateMetadata() {
-  const content = loadVibeApps();
+  const content = await loadVibeApps();
   return generateMeta(content.meta);
 }
 
-export default function VibeAppsPage() {
-  const content = loadVibeApps();
+export default async function VibeAppsPage() {
+  const content = await loadVibeApps();
 
   return (
     <PageContainer>

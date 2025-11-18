@@ -213,13 +213,13 @@ export default async function CityPage({ params }: CityPageProps) {
         )}
 
         {/* Meetups */}
-        {cityData.bitcoinEcosystem.meetups.length > 0 && (
+        {city.bitcoinEcosystem.meetups.length > 0 && (
           <Section>
             <Heading level="h2" className="text-neutral-100 mb-4">
               Meetups
             </Heading>
             <div className="space-y-4">
-              {cityData.bitcoinEcosystem.meetups.map((meetup) => (
+              {city.bitcoinEcosystem.meetups.map((meetup) => (
                 <div
                   key={`${meetup.name}-${meetup.type}`}
                   className="bg-neutral-900 border border-neutral-800 rounded-lg p-6"

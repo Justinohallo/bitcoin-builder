@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function CharterPage() {
-  const charter = loadCharter();
+export default async function CharterPage() {
+  const charter = await loadCharter();
 
   return (
     <PageContainer>

@@ -8,7 +8,7 @@ import { Section } from "@/components/ui/Section";
 import {
   loadEvents,
   loadPresentations,
-  loadPresenterById,
+  loadPresenters,
 } from "@/lib/content";
 import {
   createBreadcrumbList,
@@ -24,12 +24,14 @@ export const metadata = generatePageMetadata(
   ["presentations", "bitcoin", "lightning", "talks", "vancouver"]
 );
 
-export default function PresentationsPage() {
-  const { presentations } = loadPresentations();
-  const { events } = loadEvents();
+export default async function PresentationsPage() {
+  const { presentations } = await loadPresentations();
+  const { events } = await loadEvents();
 
-  // Pre-load events for efficient lookup
+  // Pre-load events and presenters for efficient lookup
   const eventsById = new Map(events.map((event) => [event.slug, event]));
+  const presentersData = await loadPresenters();
+  const presentersById = new Map(presentersData.presenters.map((p) => [p.id, p]));
 
   // Sort presentations by date (most recent first)
   const sortedPresentations = [...presentations].sort((a, b) => {
@@ -80,7 +82,7 @@ export default function PresentationsPage() {
         ) : (
           <div className="space-y-8">
             {sortedPresentations.map((presentation) => {
-              const presenter = loadPresenterById(presentation.presenterId);
+              const presenter = presentersById.get(presentation.presenterId);
               const event = presentation.eventId
                 ? eventsById.get(presentation.eventId)
                 : undefined;

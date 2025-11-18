@@ -6,12 +6,12 @@ import { loadProjects } from "@/lib/content";
 import { generateMetadata as generateMeta } from "@/lib/seo";
 
 export async function generateMetadata() {
-  const content = loadProjects();
+  const content = await loadProjects();
   return generateMeta(content.meta);
 }
 
-export default function ProjectsPage() {
-  const content = loadProjects();
+export default async function ProjectsPage() {
+  const content = await loadProjects();
 
   return (
     <PageContainer>

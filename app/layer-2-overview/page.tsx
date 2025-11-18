@@ -15,12 +15,12 @@ import {
 import { urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
-  const content = loadLayer2();
+  const content = await loadLayer2();
   return generateMeta(content.meta);
 }
 
-export default function Layer2OverviewPage() {
-  const content = loadLayer2();
+export default async function Layer2OverviewPage() {
+  const content = await loadLayer2();
 
   // Generate structured data
   const courseSchema = createCourseSchema({

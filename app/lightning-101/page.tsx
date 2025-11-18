@@ -15,12 +15,12 @@ import {
 import { urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
-  const content = loadLightning101();
+  const content = await loadLightning101();
   return generateMeta(content.meta);
 }
 
-export default function Lightning101Page() {
-  const content = loadLightning101();
+export default async function Lightning101Page() {
+  const content = await loadLightning101();
 
   // Generate structured data
   const courseSchema = createCourseSchema({
