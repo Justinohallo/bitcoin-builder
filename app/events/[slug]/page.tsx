@@ -21,7 +21,7 @@ import {
   createSchemaGraph,
   generateMetadata as generateMeta,
 } from "@/lib/seo";
-import { urls } from "@/lib/utils/urls";
+import { paths, urls } from "@/lib/utils/urls";
 
 interface EventPageProps {
   params: Promise<{ slug: string }>;
@@ -100,9 +100,20 @@ export default async function EventPage({ params }: EventPageProps) {
           ← Back to Events
         </Link>
 
-        <Heading level="h1" className="text-orange-400 mb-4">
-          {event.title}
-        </Heading>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+          <Heading level="h1" className="text-orange-400">
+            {event.title}
+          </Heading>
+          {newsTopics.length > 0 &&
+            newsTopics.some((topic) => topic.questions && topic.questions.length > 0) && (
+              <Link
+                href={paths.events.present(slug)}
+                className="px-6 py-3 bg-orange-400 text-neutral-950 font-medium rounded-lg hover:bg-orange-300 transition-colors whitespace-nowrap text-center"
+              >
+                ▶ Present Topics
+              </Link>
+            )}
+        </div>
 
         <div className="text-lg text-neutral-300 mb-8 space-y-2">
           <p>📅 {event.date}</p>

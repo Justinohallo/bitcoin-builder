@@ -22,6 +22,7 @@ export const urls = {
   events: {
     list: () => buildUrl("/events"),
     detail: (slug: string) => buildUrl(`/events/${slug}`),
+    present: (slug: string) => buildUrl(`/events/${slug}/present`),
   },
 
   recaps: {
@@ -105,6 +106,7 @@ export const paths = {
   events: {
     list: () => "/events",
     detail: (slug: string) => `/events/${slug}`,
+    present: (slug: string) => `/events/${slug}/present`,
   },
   recaps: {
     list: () => "/recaps",

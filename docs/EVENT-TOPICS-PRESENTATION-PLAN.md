@@ -1,71 +1,34 @@
 # Event Topics Presentation Mode - Implementation Plan
 
 ## Overview
-Create an interactive full-screen presentation mode for event discussion topics. Topics will be embedded directly within events (not as a separate collection), allowing presenters to navigate through discussion points during the event.
+Create an interactive full-screen presentation mode for event discussion topics. Topics remain as a separate collection (`news-topics.json`), but events can present their referenced topics in a navigable presentation format.
 
 ## Current State
-- Events reference topics via `newsTopicIds` pointing to separate `news-topics.json` collection
+- Events reference topics via `newsTopicIds` pointing to `news-topics.json` collection
 - Topics are displayed as a list on event pages
-- Individual topics have: title, summary, urls, questions (discussion points)
+- Topics have: title, summary, urls, questions (discussion points), tags
+- Schema structure remains unchanged
 
 ## Goals
-1. Embed topics directly within event data structure
-2. Add a "Present" button to event detail pages
-3. Create full-screen presentation mode that navigates through all topics and their discussion questions
-4. Support keyboard and touch navigation
-5. Maintain URL state for sharing/bookmarking specific points
-6. Show event and topic context during presentation
+1. Add a "Present" button to event detail pages (when topics exist)
+2. Create full-screen presentation mode that navigates through all event topics and their discussion questions
+3. Support keyboard and touch navigation
+4. Maintain URL state for sharing/bookmarking specific points
+5. Show event and topic context during presentation
 
-## Architecture Changes
+## Implementation Plan
 
-### Phase 1: Schema Updates
-1. **Update Event Schema**
-   - Remove `newsTopicIds` field
-   - Add `topics` array directly to Event schema
-   - Each topic contains:
-     - `id`: string (unique within event)
-     - `title`: string
-     - `summary`: string
-     - `urls`: array of strings (resource links)
-     - `questions`: array of strings (discussion points)
-     - `tags`: optional array of strings
-
-2. **Create Topic Schema**
-   ```typescript
-   const EventTopicSchema = z.object({
-     id: z.string(),
-     title: z.string(),
-     summary: z.string(),
-     urls: z.array(z.string().url()),
-     questions: z.array(z.string()),
-     tags: z.array(z.string()).optional(),
-   });
-   ```
-
-3. **Update EventSchema**
-   - Replace `newsTopicIds` with `topics: z.array(EventTopicSchema).optional()`
-
-### Phase 2: Data Migration
-1. **Update events.json**
-   - For each event with `newsTopicIds`, convert to embedded `topics` array
-   - Copy topic data from `news-topics.json` into event structure
-   - Remove `newsTopicIds` references
-
-2. **Update Content Loading**
-   - Remove `loadNewsTopics()` calls from event page
-   - Topics are now part of event data directly
-
-### Phase 3: URL Routes & Structure
+### Phase 1: URL Routes & Structure
 1. **Add presentation route**
    - Create `/app/events/[slug]/present/page.tsx`
    - Route: `/events/{slug}/present`
-   - Server component that loads event data
+   - Server component that loads event and its referenced topics
 
 2. **Update URL utilities**
    - Add `present` method to `events` in `lib/utils/urls.ts`
    - Add to both `urls` and `paths` objects
 
-### Phase 4: Presentation Components
+### Phase 2: Presentation Components
 1. **Create `EventTopicsPresentationView` component**
    - Location: `components/events/EventTopicsPresentationView.tsx`
    - Client component ("use client")
@@ -88,7 +51,7 @@ Create an interactive full-screen presentation mode for event discussion topics.
      - Topic counter: "Topic 1 of 3" (across all topics)
      - Optional: Summary context (toggleable)
 
-### Phase 5: Navigation & State Management
+### Phase 3: Navigation & State Management
 
 #### Navigation Structure
 - **Two-level navigation:**
@@ -125,7 +88,7 @@ Create an interactive full-screen presentation mode for event discussion topics.
 - Swipe left: Next point
 - Swipe right: Previous point
 
-### Phase 6: UI/UX Design
+### Phase 4: UI/UX Design
 
 #### Presentation Layout
 ```
@@ -162,14 +125,12 @@ Create an interactive full-screen presentation mode for event discussion topics.
 - Display tags (optional, subtle)
 - Topic transition indicators (when moving between topics)
 
-### Phase 7: Integration
-1. **Update event detail page**
+### Phase 5: Integration
+1. **Add "Present" button to event detail page**
    - Location: `/app/events/[slug]/page.tsx`
-   - Remove `loadNewsTopics()` call
-   - Remove `newsTopics` variable
-   - Update topics section to use `event.topics` directly
-   - Add "▶ Start Presentation" button (only if `event.topics` exists and has questions)
+   - Only show if `newsTopics.length > 0` and topics have questions
    - Position: Near event title/header, or in topics section
+   - Style: Similar to slides "▶ Start Presentation" button
 
 2. **Handle edge cases**
    - No topics → Hide present button
@@ -177,20 +138,13 @@ Create an interactive full-screen presentation mode for event discussion topics.
    - Single question → Disable prev/next appropriately
    - Invalid point index → Redirect to first/last
 
-### Phase 8: Cleanup
-1. **Remove news-topics references**
-   - Can keep `news-topics.json` for now (may be used elsewhere)
-   - Remove `newsTopicIds` from event schema
-   - Update validation scripts if needed
-   - Remove news-topics navigation if no longer needed
-
 ## File Structure
 
 ```
 app/
   events/
     [slug]/
-      page.tsx (update: remove newsTopics, add Present button)
+      page.tsx (add Present button)
       present/
         page.tsx (new)
 
@@ -200,8 +154,6 @@ components/
     TopicPointRenderer.tsx (new)
 
 lib/
-  schemas.ts (update EventSchema)
-  content.ts (update if needed)
   utils/
     urls.ts (add present method)
 ```
@@ -210,7 +162,9 @@ lib/
 
 1. User clicks "Present" button on event detail page
 2. Navigate to `/events/{slug}/present`
-3. Server component loads event data (with embedded topics)
+3. Server component loads:
+   - Event data
+   - Topics referenced by `newsTopicIds`
 4. Client component (`EventTopicsPresentationView`) initializes:
    - Flattens all questions from all topics into sequential points
    - Checks URL param `?point=X`
@@ -220,43 +174,6 @@ lib/
 6. State updates: component → URL → localStorage
 7. Browser back/forward syncs with URL params
 8. Calculate current topic/question from flattened index for display
-
-## Example Data Structure
-
-```json
-{
-  "events": [
-    {
-      "title": "Lightning Network Workshop",
-      "slug": "lightning-network-workshop",
-      "topics": [
-        {
-          "id": "topic-1",
-          "title": "Lightning Network Growth",
-          "summary": "Discussion about LN capacity and adoption",
-          "urls": ["https://example.com"],
-          "questions": [
-            "What factors are driving Lightning Network adoption?",
-            "How does channel liquidity management work?",
-            "What are the current limitations?"
-          ],
-          "tags": ["lightning", "adoption"]
-        },
-        {
-          "id": "topic-2",
-          "title": "Taproot Assets",
-          "summary": "Exploring Taproot Assets protocol",
-          "urls": [],
-          "questions": [
-            "How do Taproot Assets differ from other protocols?",
-            "What are the privacy benefits?"
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
 
 ## Technical Considerations
 
@@ -281,19 +198,8 @@ lib/
    - Responsive layout
    - Mobile-friendly controls
 
-## Migration Strategy
-
-1. Update schema first (backward compatible - make `topics` optional)
-2. Update one event in `events.json` as example
-3. Build presentation mode
-4. Test with example event
-5. Migrate remaining events
-6. Remove `newsTopicIds` from schema (breaking change)
-7. Clean up unused code
-
 ## Testing Checklist
 
-- [ ] Schema validation works with embedded topics
 - [ ] Presentation mode loads correctly
 - [ ] Navigation works (keyboard, touch, buttons)
 - [ ] Flattened index calculation is correct
@@ -310,13 +216,11 @@ lib/
 ## Implementation Order
 
 1. ✅ Create plan document
-2. Update Event schema (add topics, keep newsTopicIds for now)
-3. Update URL utilities
-4. Create presentation route page
-5. Create EventTopicsPresentationView component
-6. Create TopicPointRenderer component
-7. Update event detail page (add Present button, use embedded topics)
-8. Test with example event
-9. Migrate remaining events
-10. Remove newsTopicIds from schema
-11. Clean up and polish
+2. Update URL utilities (add present method)
+3. Create presentation route page
+4. Create EventTopicsPresentationView component
+5. Create TopicPointRenderer component
+6. Add Present button to event detail page
+7. Test and refine
+8. Handle edge cases
+9. Polish UI/UX
