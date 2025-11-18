@@ -9,6 +9,7 @@ import {
   loadSponsors,
 } from "@/lib/content";
 import { DownloadPdfButton } from "@/components/flyer/DownloadPdfButton";
+import styles from "./flyer.module.css";
 
 interface EventFlyerPageProps {
   params: Promise<{ slug: string }>;
@@ -72,56 +73,56 @@ export default async function EventFlyerPage({ params }: EventFlyerPageProps) {
     : new Map();
 
   return (
-    <div className="flyer-container">
-      <div className="flyer-print-notice">
+    <div className={styles.flyerContainer}>
+      <div className={styles.flyerPrintNotice}>
         <p>
           💡 Use your browser&apos;s print function (Ctrl+P / Cmd+P) to save as
           PDF, or click the button below to download directly.
         </p>
         <DownloadPdfButton slug={slug} />
       </div>
-      <div className="flyer-content">
+      <div className={styles.flyerContent}>
         {/* Header */}
-        <header className="flyer-header">
-          <h1 className="flyer-title">{event.title}</h1>
-          <div className="flyer-meta">
-            <div className="flyer-meta-item">
-              <span className="flyer-meta-label">Date:</span>
-              <span className="flyer-meta-value">{event.date}</span>
+        <header className={styles.flyerHeader}>
+          <h1 className={styles.flyerTitle}>{event.title}</h1>
+          <div className={styles.flyerMeta}>
+            <div className={styles.flyerMetaItem}>
+              <span className={styles.flyerMetaLabel}>Date:</span>
+              <span className={styles.flyerMetaValue}>{event.date}</span>
             </div>
-            <div className="flyer-meta-item">
-              <span className="flyer-meta-label">Time:</span>
-              <span className="flyer-meta-value">{event.time}</span>
+            <div className={styles.flyerMetaItem}>
+              <span className={styles.flyerMetaLabel}>Time:</span>
+              <span className={styles.flyerMetaValue}>{event.time}</span>
             </div>
-            <div className="flyer-meta-item">
-              <span className="flyer-meta-label">Location:</span>
-              <span className="flyer-meta-value">{event.location}</span>
+            <div className={styles.flyerMetaItem}>
+              <span className={styles.flyerMetaLabel}>Location:</span>
+              <span className={styles.flyerMetaValue}>{event.location}</span>
             </div>
             {city && (
-              <div className="flyer-meta-item">
-                <span className="flyer-meta-label">City:</span>
-                <span className="flyer-meta-value">{city.name}</span>
+              <div className={styles.flyerMetaItem}>
+                <span className={styles.flyerMetaLabel}>City:</span>
+                <span className={styles.flyerMetaValue}>{city.name}</span>
               </div>
             )}
           </div>
         </header>
 
         {/* Description */}
-        <section className="flyer-section">
-          <p className="flyer-description">{event.description}</p>
+        <section className={styles.flyerSection}>
+          <p className={styles.flyerDescription}>{event.description}</p>
         </section>
 
         {/* Event Sections */}
         {event.sections.map((section, index) => (
-          <section key={index} className="flyer-section">
-            <h2 className="flyer-section-title">{section.title}</h2>
-            <div className="flyer-section-body">{section.body}</div>
+          <section key={index} className={styles.flyerSection}>
+            <h2 className={styles.flyerSectionTitle}>{section.title}</h2>
+            <div className={styles.flyerSectionBody}>{section.body}</div>
             {section.links && section.links.length > 0 && (
-              <div className="flyer-links">
+              <div className={styles.flyerLinks}>
                 {section.links.map((link, linkIndex) => (
-                  <div key={linkIndex} className="flyer-link">
-                    <span className="flyer-link-text">{link.text}</span>
-                    <span className="flyer-link-url">{link.url}</span>
+                  <div key={linkIndex} className={styles.flyerLink}>
+                    <span className={styles.flyerLinkText}>{link.text}</span>
+                    <span className={styles.flyerLinkUrl}>{link.url}</span>
                   </div>
                 ))}
               </div>
@@ -131,28 +132,28 @@ export default async function EventFlyerPage({ params }: EventFlyerPageProps) {
 
         {/* Presentations */}
         {presentations.length > 0 && (
-          <section className="flyer-section">
-            <h2 className="flyer-section-title">Presentations</h2>
-            <div className="flyer-presentations">
+          <section className={styles.flyerSection}>
+            <h2 className={styles.flyerSectionTitle}>Presentations</h2>
+            <div className={styles.flyerPresentations}>
               {presentations.map((presentation) => {
                 const presenter = presentersById.get(presentation.presenterId);
                 return (
-                  <div key={presentation.id} className="flyer-presentation">
-                    <h3 className="flyer-presentation-title">
+                  <div key={presentation.id} className={styles.flyerPresentation}>
+                    <h3 className={styles.flyerPresentationTitle}>
                       {presentation.title}
                     </h3>
                     {presenter && (
-                      <p className="flyer-presentation-presenter">
+                      <p className={styles.flyerPresentationPresenter}>
                         Presented by {presenter.name}
                         {presenter.title && `, ${presenter.title}`}
                         {presenter.company && ` at ${presenter.company}`}
                       </p>
                     )}
-                    <p className="flyer-presentation-description">
+                    <p className={styles.flyerPresentationDescription}>
                       {presentation.description}
                     </p>
                     {presentation.duration && (
-                      <p className="flyer-presentation-duration">
+                      <p className={styles.flyerPresentationDuration}>
                         Duration: {presentation.duration}
                       </p>
                     )}
@@ -165,17 +166,17 @@ export default async function EventFlyerPage({ params }: EventFlyerPageProps) {
 
         {/* Discussion Topics */}
         {newsTopics.length > 0 && (
-          <section className="flyer-section">
-            <h2 className="flyer-section-title">Discussion Topics</h2>
-            <div className="flyer-topics">
+          <section className={styles.flyerSection}>
+            <h2 className={styles.flyerSectionTitle}>Discussion Topics</h2>
+            <div className={styles.flyerTopics}>
               {newsTopics.map((topic) => (
-                <div key={topic.id} className="flyer-topic">
-                  <h3 className="flyer-topic-title">{topic.title}</h3>
-                  <p className="flyer-topic-summary">{topic.summary}</p>
+                <div key={topic.id} className={styles.flyerTopic}>
+                  <h3 className={styles.flyerTopicTitle}>{topic.title}</h3>
+                  <p className={styles.flyerTopicSummary}>{topic.summary}</p>
                   {topic.tags && topic.tags.length > 0 && (
-                    <div className="flyer-topic-tags">
+                    <div className={styles.flyerTopicTags}>
                       {topic.tags.map((tag) => (
-                        <span key={tag} className="flyer-tag">
+                        <span key={tag} className={styles.flyerTag}>
                           {tag}
                         </span>
                       ))}
@@ -189,22 +190,22 @@ export default async function EventFlyerPage({ params }: EventFlyerPageProps) {
 
         {/* Sponsors */}
         {sponsors.length > 0 && (
-          <section className="flyer-section">
-            <h2 className="flyer-section-title">Event Sponsors</h2>
-            <div className="flyer-sponsors">
+          <section className={styles.flyerSection}>
+            <h2 className={styles.flyerSectionTitle}>Event Sponsors</h2>
+            <div className={styles.flyerSponsors}>
               {sponsors.map((sponsor) => (
-                <div key={sponsor.id} className="flyer-sponsor">
-                  <h3 className="flyer-sponsor-name">{sponsor.name}</h3>
-                  <span className="flyer-sponsor-type">
+                <div key={sponsor.id} className={styles.flyerSponsor}>
+                  <h3 className={styles.flyerSponsorName}>{sponsor.name}</h3>
+                  <span className={styles.flyerSponsorType}>
                     {sponsor.type.replace("-", " ")}
                   </span>
                   {sponsor.description && (
-                    <p className="flyer-sponsor-description">
+                    <p className={styles.flyerSponsorDescription}>
                       {sponsor.description}
                     </p>
                   )}
                   {sponsor.website && (
-                    <p className="flyer-sponsor-website">{sponsor.website}</p>
+                    <p className={styles.flyerSponsorWebsite}>{sponsor.website}</p>
                   )}
                 </div>
               ))}
@@ -213,338 +214,12 @@ export default async function EventFlyerPage({ params }: EventFlyerPageProps) {
         )}
 
         {/* Footer */}
-        <footer className="flyer-footer">
-          <p className="flyer-footer-text">
+        <footer className={styles.flyerFooter}>
+          <p className={styles.flyerFooterText}>
             For more information, visit our website or contact us directly.
           </p>
         </footer>
       </div>
-
-      <style jsx>{`
-        .flyer-container {
-          min-height: 100vh;
-          background: white;
-          color: black;
-          padding: 0;
-          margin: 0;
-        }
-
-        .flyer-content {
-          max-width: 8.5in;
-          margin: 0 auto;
-          padding: 0.75in;
-          font-family: Arial, Helvetica, sans-serif;
-          line-height: 1.6;
-        }
-
-        .flyer-header {
-          border-bottom: 3px solid #f97316;
-          padding-bottom: 1rem;
-          margin-bottom: 1.5rem;
-        }
-
-        .flyer-title {
-          font-size: 2.5rem;
-          font-weight: bold;
-          color: #f97316;
-          margin: 0 0 1rem 0;
-          line-height: 1.2;
-        }
-
-        .flyer-meta {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1.5rem;
-        }
-
-        .flyer-meta-item {
-          display: flex;
-          flex-direction: column;
-          gap: 0.25rem;
-        }
-
-        .flyer-meta-label {
-          font-size: 0.875rem;
-          font-weight: 600;
-          color: #666;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-
-        .flyer-meta-value {
-          font-size: 1rem;
-          color: #000;
-          font-weight: 500;
-        }
-
-        .flyer-description {
-          font-size: 1.125rem;
-          color: #333;
-          margin: 0 0 1.5rem 0;
-          line-height: 1.7;
-        }
-
-        .flyer-section {
-          margin-bottom: 2rem;
-          page-break-inside: avoid;
-        }
-
-        .flyer-section-title {
-          font-size: 1.5rem;
-          font-weight: bold;
-          color: #f97316;
-          margin: 0 0 1rem 0;
-          border-bottom: 2px solid #f97316;
-          padding-bottom: 0.5rem;
-        }
-
-        .flyer-section-body {
-          font-size: 1rem;
-          color: #333;
-          white-space: pre-line;
-          line-height: 1.7;
-          margin-bottom: 1rem;
-        }
-
-        .flyer-links {
-          margin-top: 1rem;
-        }
-
-        .flyer-link {
-          margin-bottom: 0.5rem;
-          padding: 0.5rem;
-          background: #f9f9f9;
-          border-left: 3px solid #f97316;
-        }
-
-        .flyer-link-text {
-          font-weight: 600;
-          display: block;
-          margin-bottom: 0.25rem;
-        }
-
-        .flyer-link-url {
-          font-size: 0.875rem;
-          color: #666;
-          word-break: break-all;
-        }
-
-        .flyer-presentations {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-
-        .flyer-presentation {
-          padding: 1rem;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          page-break-inside: avoid;
-        }
-
-        .flyer-presentation-title {
-          font-size: 1.25rem;
-          font-weight: bold;
-          color: #000;
-          margin: 0 0 0.5rem 0;
-        }
-
-        .flyer-presentation-presenter {
-          font-size: 0.875rem;
-          color: #666;
-          margin: 0 0 0.75rem 0;
-          font-style: italic;
-        }
-
-        .flyer-presentation-description {
-          font-size: 1rem;
-          color: #333;
-          margin: 0 0 0.5rem 0;
-        }
-
-        .flyer-presentation-duration {
-          font-size: 0.875rem;
-          color: #666;
-          margin: 0;
-        }
-
-        .flyer-topics {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-        }
-
-        .flyer-topic {
-          padding: 1rem;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          page-break-inside: avoid;
-        }
-
-        .flyer-topic-title {
-          font-size: 1.125rem;
-          font-weight: bold;
-          color: #000;
-          margin: 0 0 0.5rem 0;
-        }
-
-        .flyer-topic-summary {
-          font-size: 1rem;
-          color: #333;
-          margin: 0 0 0.5rem 0;
-        }
-
-        .flyer-topic-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-        }
-
-        .flyer-tag {
-          font-size: 0.75rem;
-          background: #f0f0f0;
-          color: #666;
-          padding: 0.25rem 0.5rem;
-          border-radius: 3px;
-        }
-
-        .flyer-sponsors {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1rem;
-        }
-
-        .flyer-sponsor {
-          padding: 1rem;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          page-break-inside: avoid;
-        }
-
-        .flyer-sponsor-name {
-          font-size: 1.125rem;
-          font-weight: bold;
-          color: #000;
-          margin: 0 0 0.25rem 0;
-        }
-
-        .flyer-sponsor-type {
-          font-size: 0.75rem;
-          color: #666;
-          text-transform: capitalize;
-          display: block;
-          margin-bottom: 0.5rem;
-        }
-
-        .flyer-sponsor-description {
-          font-size: 0.875rem;
-          color: #333;
-          margin: 0 0 0.5rem 0;
-        }
-
-        .flyer-sponsor-website {
-          font-size: 0.875rem;
-          color: #666;
-          word-break: break-all;
-          margin: 0;
-        }
-
-        .flyer-footer {
-          margin-top: 2rem;
-          padding-top: 1rem;
-          border-top: 1px solid #ddd;
-          text-align: center;
-        }
-
-        .flyer-footer-text {
-          font-size: 0.875rem;
-          color: #666;
-          margin: 0;
-        }
-
-        .flyer-print-notice {
-          max-width: 8.5in;
-          margin: 0 auto;
-          padding: 1rem 0.75in;
-          background: #fff3cd;
-          border-bottom: 2px solid #ffc107;
-          text-align: center;
-        }
-
-        .flyer-print-notice p {
-          margin: 0 0 1rem 0;
-          font-size: 0.875rem;
-          color: #856404;
-          font-weight: 500;
-        }
-
-        .flyer-download-btn {
-          background: #f97316;
-          color: white;
-          border: none;
-          padding: 0.75rem 1.5rem;
-          font-size: 1rem;
-          font-weight: 600;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.2s;
-        }
-
-        .flyer-download-btn:hover {
-          background: #ea580c;
-        }
-
-        /* Print-specific styles */
-        @media print {
-          .flyer-container {
-            background: white;
-            padding: 0;
-          }
-
-          .flyer-content {
-            padding: 0.5in;
-            max-width: 100%;
-          }
-
-          .flyer-section {
-            page-break-inside: avoid;
-            break-inside: avoid;
-          }
-
-          .flyer-presentation,
-          .flyer-topic,
-          .flyer-sponsor {
-            page-break-inside: avoid;
-            break-inside: avoid;
-          }
-
-          @page {
-            size: letter;
-            margin: 0.5in;
-          }
-        }
-
-        /* Screen-only styles */
-        @media screen {
-          .flyer-container {
-            background: #f5f5f5;
-            padding: 2rem 0;
-          }
-
-          .flyer-content {
-            background: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-          }
-        }
-
-        /* Hide print notice when printing */
-        @media print {
-          .flyer-print-notice {
-            display: none;
-          }
-        }
-      `}</style>
     </div>
   );
 }

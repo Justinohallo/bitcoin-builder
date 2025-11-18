@@ -21,7 +21,7 @@ import {
   createSchemaGraph,
   generateMetadata as generateMeta,
 } from "@/lib/seo";
-import { urls } from "@/lib/utils/urls";
+import { paths, urls } from "@/lib/utils/urls";
 
 interface EventPageProps {
   params: Promise<{ slug: string }>;
