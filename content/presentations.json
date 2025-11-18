@@ -104,6 +104,65 @@
           "privacy"
         ]
       }
+    },
+    {
+      "id": "presentation-builder-vancouver-intro",
+      "title": "Welcome to Builder Vancouver",
+      "slug": "builder-vancouver-intro",
+      "description": "A comprehensive introduction to Builder Vancouver, covering what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at meetups.",
+      "overview": "This presentation serves as the opening session for Builder Vancouver's first event. We'll introduce attendees to the Builder movement, explain our mission and vision, explore why Vancouver is an exceptional Bitcoin builder city, and outline what to expect at our meetups. Perfect for newcomers and existing community members alike.",
+      "presenterId": "presenter-builder-vancouver-organizer",
+      "eventId": "event-builder-vancouver-launch",
+      "date": "2025-02-15",
+      "duration": "30-45 minutes",
+      "links": [
+        {
+          "text": "Builder Vancouver Website",
+          "url": "https://builder.van",
+          "external": true
+        },
+        {
+          "text": "Bitcoin 101 Guide",
+          "url": "/bitcoin-101",
+          "external": false
+        },
+        {
+          "text": "What to Expect",
+          "url": "/what-to-expect",
+          "external": false
+        }
+      ],
+      "slidesUrl": "/slides/builder-vancouver-intro/present",
+      "sections": [
+        {
+          "title": "What is Builder?",
+          "body": "Builder is a community-driven movement focused on accelerating Bitcoin product development. We bring together developers, designers, and builders to learn practical Bitcoin skills, share knowledge and tools, build real products together, and foster sovereignty through better UX."
+        },
+        {
+          "title": "Our Mission and Vision",
+          "body": "Our mission is to accelerate the creation of Bitcoin products by fostering an open, neutral, sovereign, and collaborative builder ecosystem. Our vision is a world where Bitcoin builders have the tools, knowledge, and community to create the next generation of open financial products."
+        },
+        {
+          "title": "Why Vancouver?",
+          "body": "Vancouver is one of the most Bitcoin-friendly cities in North America, with a vibrant builder community, over 100 Lightning-enabled merchants, and a deep culture of experimentation and sovereignty. The local ecosystem benefits from strong tech talent, established Bitcoin meetups, and a culture that values privacy and open digital systems."
+        },
+        {
+          "title": "What to Expect",
+          "body": "Our meetups typically run 2-3 hours and include presentations, hands-on activities, and networking. We start with introductions, followed by the main content, and end with open discussion and collaboration time. Expect a casual, friendly environment focused on learning and building."
+        }
+      ],
+      "meta": {
+        "title": "Welcome to Builder Vancouver | Builder Vancouver",
+        "description": "A comprehensive introduction to Builder Vancouver, covering what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at meetups.",
+        "keywords": [
+          "builder",
+          "vancouver",
+          "bitcoin",
+          "introduction",
+          "meetup",
+          "community"
+        ]
+      }
     }
   ]
 }
