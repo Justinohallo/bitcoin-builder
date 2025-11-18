@@ -10,6 +10,10 @@ import { SITE_NAME, SITE_URL } from "./constants";
  */
 export type BreadcrumbListInput = Array<{ name: string; url?: string }>;
 
+// Helper functions for common schema patterns
+const organizationRef = () => ({ "@id": `${SITE_URL}/#organization` });
+const websiteRef = () => ({ "@id": `${SITE_URL}/#website` });
+
 /**
  * Creates the Organization schema for Builder Vancouver
  */
@@ -23,9 +27,7 @@ export function createOrganizationSchema() {
     description:
       "Builder Vancouver is a community-driven meetup focused on Bitcoin education, Lightning Network development, and Layer 2 exploration.",
     logo: `${SITE_URL}/logo.png`,
-    sameAs: [
-      // Add social media URLs when available
-    ],
+    sameAs: [],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Vancouver",
@@ -47,9 +49,7 @@ export function createWebSiteSchema() {
     url: SITE_URL,
     description:
       "Bitcoin meetups, Lightning Network education, and Layer 2 exploration in Vancouver",
-    publisher: {
-      "@id": `${SITE_URL}/#organization`,
-    },
+    publisher: organizationRef(),
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/search?q={search_term_string}`,
@@ -75,9 +75,7 @@ export function createWebPageSchema(
     url,
     name: title,
     description,
-    isPartOf: {
-      "@id": `${SITE_URL}/#website`,
-    },
+    isPartOf: websiteRef(),
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
   };
@@ -112,16 +110,14 @@ export function createEventSchema(event: {
   time: string;
   location: string;
 }) {
-  // Parse time to create proper ISO datetime
-  const startDate = new Date(event.date).toISOString();
-
+  const url = `${SITE_URL}/events/${event.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Event",
-    "@id": `${SITE_URL}/events/${event.slug}`,
+    "@id": url,
     name: event.title,
     description: event.description,
-    startDate,
+    startDate: new Date(event.date).toISOString(),
     location: {
       "@type": "Place",
       name: event.location,
@@ -132,13 +128,11 @@ export function createEventSchema(event: {
         addressCountry: "CA",
       },
     },
-    organizer: {
-      "@id": `${SITE_URL}/#organization`,
-    },
+    organizer: organizationRef(),
     eventStatus: "EventScheduled",
     eventAttendanceMode: "OfflineEventAttendanceMode",
     isAccessibleForFree: true,
-    url: `${SITE_URL}/events/${event.slug}`,
+    url,
   };
 }
 
@@ -152,22 +146,19 @@ export function createArticleSchema(article: {
   date: string;
   eventTitle: string;
 }) {
+  const url = `${SITE_URL}/recaps/${article.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "@id": `${SITE_URL}/recaps/${article.slug}`,
+    "@id": url,
     headline: article.title,
     description: article.summary,
     datePublished: new Date(article.date).toISOString(),
     dateModified: new Date(article.date).toISOString(),
-    author: {
-      "@id": `${SITE_URL}/#organization`,
-    },
-    publisher: {
-      "@id": `${SITE_URL}/#organization`,
-    },
-    mainEntityOfPage: `${SITE_URL}/recaps/${article.slug}`,
-    url: `${SITE_URL}/recaps/${article.slug}`,
+    author: organizationRef(),
+    publisher: organizationRef(),
+    mainEntityOfPage: url,
+    url,
   };
 }
 
@@ -180,18 +171,17 @@ export function createCourseSchema(course: {
   description: string;
   educationalLevel?: string;
 }) {
+  const url = `${SITE_URL}/${course.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Course",
-    "@id": `${SITE_URL}/${course.slug}`,
+    "@id": url,
     name: course.title,
     description: course.description,
-    provider: {
-      "@id": `${SITE_URL}/#organization`,
-    },
+    provider: organizationRef(),
     educationalLevel: course.educationalLevel || "Beginner",
     inLanguage: "en-US",
-    url: `${SITE_URL}/${course.slug}`,
+    url,
   };
 }
 
@@ -204,10 +194,11 @@ export function createHowToSchema(howTo: {
   description: string;
   steps: Array<{ title: string; body: string }>;
 }) {
+  const url = `${SITE_URL}/${howTo.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "@id": `${SITE_URL}/${howTo.slug}`,
+    "@id": url,
     name: howTo.title,
     description: howTo.description,
     step: howTo.steps.map((step) => ({
@@ -215,7 +206,7 @@ export function createHowToSchema(howTo: {
       name: step.title,
       text: step.body,
     })),
-    url: `${SITE_URL}/${howTo.slug}`,
+    url,
   };
 }
 
@@ -235,9 +226,7 @@ export function createCollectionPageSchema(
     url,
     name: title,
     description,
-    isPartOf: {
-      "@id": `${SITE_URL}/#website`,
-    },
+    isPartOf: websiteRef(),
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: items.length,
@@ -252,7 +241,6 @@ export function createCollectionPageSchema(
   };
 }
 
-
 /**
  * Creates a City schema
  */
@@ -265,10 +253,11 @@ export function createCitySchema(city: {
   latitude: number;
   longitude: number;
 }) {
+  const url = `${SITE_URL}/cities/${city.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "City",
-    "@id": `${SITE_URL}/cities/${city.slug}`,
+    "@id": url,
     name: city.name,
     description: city.description,
     geo: {
@@ -282,7 +271,7 @@ export function createCitySchema(city: {
       addressRegion: city.region,
       addressCountry: city.country,
     },
-    url: `${SITE_URL}/cities/${city.slug}`,
+    url,
   };
 }
 

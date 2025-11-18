@@ -6,7 +6,7 @@ import { z } from "zod";
  */
 
 // Common schemas
-const MetaSchema = z.object({
+export const MetaSchema = z.object({
   title: z.string(),
   description: z.string(),
   keywords: z.array(z.string()).optional(),

@@ -13,6 +13,7 @@ import {
   MemberResourceSchema,
   MembersCollectionSchema,
   MerchantSchema,
+  MetaSchema,
   MissionSchema,
   NewsTopicSchema,
   NewsTopicsCollectionSchema,
@@ -82,12 +83,7 @@ export type Philosophy = z.infer<typeof PhilosophySchema>;
 
 // Helper types for sections and common elements
 export type Section = z.infer<typeof SectionSchema>;
-
-export type Meta = {
-  title: string;
-  description: string;
-  keywords?: string[];
-};
+export type Meta = z.infer<typeof MetaSchema>;
 
 // Cities types
 export type Merchant = z.infer<typeof MerchantSchema>;
