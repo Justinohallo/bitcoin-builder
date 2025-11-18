@@ -2,14 +2,16 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 
 import { EventTopicsPresentationView } from "@/components/events/EventTopicsPresentationView";
-import { loadEvent, loadEvents, loadNewsTopics } from "@/lib/content";
+import { loadEvent, loadNewsTopics } from "@/lib/content";
 import { generatePageMetadata } from "@/lib/seo";
 
 interface EventPresentationPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: EventPresentationPageProps) {
+export async function generateMetadata({
+  params,
+}: EventPresentationPageProps) {
   const { slug } = await params;
   const event = await loadEvent(slug);
 
@@ -18,14 +20,16 @@ export async function generateMetadata({ params }: EventPresentationPageProps) {
   }
 
   return generatePageMetadata(
-    `${event.title} - Topics Presentation | Builder Vancouver`,
-    `Interactive presentation of discussion topics for ${event.title}`,
-    ["events", "presentation", "topics", ...(event.meta.keywords || [])]
+    `${event.title} - Discussion Presentation | Builder Vancouver`,
+    `Discussion topics and questions for ${event.title}`,
+    ["events", "presentation", "discussion", ...(event.meta.keywords || [])]
   );
 }
 
 export async function generateStaticParams() {
-  const { events } = await loadEvents();
+  const { events } = await import("@/lib/content").then((m) =>
+    m.loadEvents()
+  );
   return events.map((event) => ({
     slug: event.slug,
   }));
@@ -41,15 +45,14 @@ export default async function EventPresentationPage({
     notFound();
   }
 
-  // Load topics referenced by this event
-  const newsTopics = event.newsTopicIds
-    ? (await loadNewsTopics()).newsTopics.filter((t) =>
-        event.newsTopicIds!.includes(t.id)
-      )
+  // Load news topics for this event
+  const { newsTopics } = await loadNewsTopics();
+  const eventTopics = event.newsTopicIds
+    ? newsTopics.filter((t) => event.newsTopicIds!.includes(t.id))
     : [];
 
-  // Filter out topics with no questions
-  const topicsWithQuestions = newsTopics.filter(
+  // Filter to only topics with discussion questions
+  const topicsWithQuestions = eventTopics.filter(
     (topic) => topic.questions && topic.questions.length > 0
   );
 
@@ -80,9 +83,9 @@ export default async function EventPresentationPage({
       }
     >
       <EventTopicsPresentationView
-        eventTitle={event.title}
-        eventSlug={slug}
         topics={topicsWithQuestions}
+        eventSlug={event.slug}
+        eventTitle={event.title}
       />
     </Suspense>
   );
