@@ -1,20 +1,19 @@
 {
   "sponsors": [
     {
-      "id": "sponsor-bitcoin-commons",
-      "name": "Bitcoin Commons",
-      "type": "venue",
-      "description": "A community space dedicated to Bitcoin education and events",
-      "website": "https://bitcoincommons.com",
-      "logo": "/images/sponsors/bitcoin-commons.png",
-      "twitter": "@BitcoinCommons"
+      "id": "sponsor-funk-coffee",
+      "name": "Funk Coffee",
+      "type": "food-and-drink",
+      "description": "Local roastery keeping our builders caffeinated with high-quality beans.",
+      "website": "https://funk.coffee/"
     },
     {
-      "id": "sponsor-coffee-shop",
-      "name": "Local Coffee Co",
-      "type": "food-and-drink",
-      "description": "Providing refreshments for our community events",
-      "website": "https://localcoffee.example.com"
+      "id": "sponsor-spiral",
+      "name": "Spiral",
+      "type": "technology",
+      "description": "Bitcoin-focused team at Block funding open-source development and Lightning builders.",
+      "website": "https://spiral.xyz/",
+      "twitter": "@spiralbtc"
     }
   ]
 }
