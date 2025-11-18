@@ -43,6 +43,8 @@ import {
   VibeAppsCollectionSchema,
   VibeCodingSchema,
   VisionSchema,
+  WalletSchema,
+  WalletsCollectionSchema,
   WhatToExpectSchema,
 } from "./schemas";
 
@@ -123,3 +125,7 @@ export type PresentationsCollection = z.infer<
 export type Slide = z.infer<typeof SlideSchema>;
 export type SlideDeck = z.infer<typeof SlideDeckSchema>;
 export type SlidesCollection = z.infer<typeof SlidesCollectionSchema>;
+
+// Wallets types
+export type Wallet = z.infer<typeof WalletSchema>;
+export type WalletsCollection = z.infer<typeof WalletsCollectionSchema>;

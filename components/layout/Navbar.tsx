@@ -93,11 +93,21 @@ export function Navbar() {
       children: [
         { href: "/bitcoin-101", label: "Bitcoin 101" },
         { href: "/lightning-101", label: "Lightning 101" },
+        {
+          href: "/lightning-getting-started",
+          label: "Getting Started with Lightning",
+        },
         { href: "/layer-2-overview", label: "Layer 2 Overview" },
         { href: "/open-source", label: "Open Source" },
         { href: "/vibe-coding", label: "Vibe Coding" },
         { href: "/onboarding", label: "Onboarding" },
         { href: "/what-to-expect", label: "What to Expect" },
+      ],
+    },
+    {
+      label: "Wallets",
+      children: [
+        { href: "/wallets", label: "All Wallets" },
       ],
     },
     {

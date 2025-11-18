@@ -37,6 +37,7 @@ export const urls = {
   education: {
     bitcoin101: () => buildUrl("/bitcoin-101"),
     lightning101: () => buildUrl("/lightning-101"),
+    lightningGettingStarted: () => buildUrl("/lightning-getting-started"),
     layer2: () => buildUrl("/layer-2-overview"),
     vibeCoding: () => buildUrl("/vibe-coding"),
   },
@@ -85,6 +86,11 @@ export const urls = {
     detail: (slug: string) => buildUrl(`/slides/${slug}`),
     present: (slug: string) => buildUrl(`/slides/${slug}/present`),
   },
+
+  wallets: {
+    list: () => buildUrl("/wallets"),
+    detail: (slug: string) => buildUrl(`/wallets/${slug}`),
+  },
 } as const;
 
 /**
@@ -107,6 +113,7 @@ export const paths = {
   education: {
     bitcoin101: () => "/bitcoin-101",
     lightning101: () => "/lightning-101",
+    lightningGettingStarted: () => "/lightning-getting-started",
     layer2: () => "/layer-2-overview",
     vibeCoding: () => "/vibe-coding",
   },
@@ -147,5 +154,10 @@ export const paths = {
     list: () => "/slides",
     detail: (slug: string) => `/slides/${slug}`,
     present: (slug: string) => `/slides/${slug}/present`,
+  },
+
+  wallets: {
+    list: () => "/wallets",
+    detail: (slug: string) => `/wallets/${slug}`,
   },
 } as const;

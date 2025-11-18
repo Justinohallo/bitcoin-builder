@@ -580,3 +580,39 @@ export const SlideDeckSchema = z.object({
 export const SlidesCollectionSchema = z.object({
   slideDecks: z.array(SlideDeckSchema),
 });
+
+// Wallets Schema
+export const WalletSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  shortDescription: z.string(), // For list view
+  type: z.enum(["custodial", "non-custodial", "hybrid"]),
+  platforms: z.object({
+    ios: z.boolean(),
+    android: z.boolean(),
+    desktop: z.boolean(),
+    web: z.boolean(),
+  }),
+  downloadLinks: z.object({
+    ios: z.string().url().optional(),
+    android: z.string().url().optional(),
+    desktop: z.string().url().optional(),
+    website: z.string().url().optional(),
+  }),
+  features: z.array(z.string()),
+  website: z.string().url().optional(),
+  twitter: z.string().optional(),
+  github: z.string().url().optional(),
+  sections: z.array(SectionSchema).optional(),
+  meta: MetaSchema,
+});
+
+export const WalletsCollectionSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  wallets: z.array(WalletSchema),
+  meta: MetaSchema,
+});

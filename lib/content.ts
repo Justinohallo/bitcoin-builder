@@ -30,6 +30,8 @@ import {
   VibeAppsCollectionSchema,
   VibeCodingSchema,
   VisionSchema,
+  WalletSchema,
+  WalletsCollectionSchema,
   WhatToExpectSchema,
 } from "./schemas";
 import type {
@@ -65,6 +67,8 @@ import type {
   VibeAppsCollection,
   VibeCoding,
   Vision,
+  Wallet,
+  WalletsCollection,
   WhatToExpect,
 } from "./types";
 
@@ -124,6 +128,10 @@ export async function loadBitcoin101(): Promise<EducationalContent> {
 
 export async function loadLightning101(): Promise<EducationalContent> {
   return loadContent("lightning101.json", EducationalContentSchema);
+}
+
+export async function loadLightningGettingStarted(): Promise<EducationalContent> {
+  return loadContent("lightning-getting-started.json", EducationalContentSchema);
 }
 
 export async function loadLayer2(): Promise<EducationalContent> {
@@ -291,4 +299,13 @@ export async function loadSlideDeckById(
 ): Promise<SlideDeck | undefined> {
   const { slideDecks } = await loadSlides();
   return slideDecks.find((d) => d.id === id);
+}
+
+export async function loadWallets(): Promise<WalletsCollection> {
+  return loadContent("wallets.json", WalletsCollectionSchema);
+}
+
+export async function loadWallet(slug: string): Promise<Wallet | undefined> {
+  const { wallets } = await loadWallets();
+  return wallets.find((w) => w.slug === slug);
 }

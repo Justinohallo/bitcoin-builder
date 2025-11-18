@@ -1,0 +1,71 @@
+{
+  "title": "Getting Started with Lightning",
+  "slug": "lightning-getting-started",
+  "description": "A beginner-friendly guide to installing a Lightning wallet and making your first payments. Learn how to receive and send Lightning payments.",
+  "sections": [
+    {
+      "title": "What is Lightning Network?",
+      "body": "The Lightning Network is Bitcoin's Layer 2 payment protocol that enables instant, low-cost transactions. Think of it as Bitcoin's everyday payment layer - perfect for buying coffee, tipping creators, or sending money to friends.\n\nIf you're new to Lightning, check out our Lightning 101 page for a deeper technical explanation. This guide focuses on getting you set up and making your first payment."
+    },
+    {
+      "title": "Why Use Lightning?",
+      "body": "Lightning makes Bitcoin practical for everyday use:\n\n• Instant Payments: Transactions settle in seconds, not minutes\n• Low Fees: Typically less than a penny per transaction\n• Micropayments: Send tiny amounts that wouldn't be practical on-chain\n• Privacy: Payments don't broadcast to the entire network\n• Global: Works anywhere with an internet connection\n\nWhether you're paying for lunch, supporting a creator, or sending money to family abroad, Lightning makes it fast and affordable."
+    },
+    {
+      "title": "Installing Your First Wallet",
+      "body": "The first step is choosing and installing a Lightning wallet. We've curated a list of trusted wallets with direct download links.\n\n**Choosing a Wallet:**\n\n• **Custodial Wallets**: Easy to use, but you don't control your private keys. Good for beginners.\n• **Non-Custodial Wallets**: You control your keys, but require more technical knowledge. Better for experienced users.\n• **Hybrid Wallets**: Offer both options, giving you flexibility.\n\nVisit our Wallets page to browse options, compare features, and find download links for iOS, Android, and desktop platforms.",
+      "links": [
+        {
+          "text": "Browse Lightning Wallets",
+          "url": "/wallets",
+          "external": false
+        }
+      ]
+    },
+    {
+      "title": "Understanding Your Wallet",
+      "body": "Once you've installed a wallet, take time to understand its features:\n\n**Security Considerations:**\n\n• **Backup Your Wallet**: Most wallets provide a recovery phrase (seed words). Write this down and store it securely. Without it, you'll lose access to your funds.\n• **Custodial vs Non-Custodial**: Custodial wallets hold your keys (like a bank). Non-custodial wallets give you full control but require you to manage security.\n• **Start Small**: When first learning, only put in what you're comfortable potentially losing.\n\n**Key Features to Look For:**\n\n• Invoice generation (for receiving)\n• QR code scanning (for sending)\n• Transaction history\n• Channel management (for advanced users)\n• Backup and recovery options"
+    },
+    {
+      "title": "Receiving Lightning Payments",
+      "body": "Receiving Lightning payments is straightforward:\n\n**Step 1: Generate an Invoice**\n\nOpen your wallet and look for \"Receive\" or \"Request Payment\". Enter the amount you want to receive (in Bitcoin or your local currency).\n\n**Step 2: Share Your Invoice**\n\nYour wallet will generate either:\n• A QR code you can show someone to scan\n• An invoice string (starts with \"lnbc\") you can copy and share\n\n**Step 3: Wait for Payment**\n\nOnce someone pays your invoice, the funds appear in your wallet instantly. Most wallets will notify you when payment is received.\n\n**Tips:**\n\n• Invoices expire after a set time (usually 1 hour)\n• Each invoice is for a specific amount - you can't reuse them\n• For recurring payments, generate new invoices each time"
+    },
+    {
+      "title": "Sending Lightning Payments",
+      "body": "Sending Lightning payments is just as easy:\n\n**Method 1: Scan QR Code**\n\n1. Open your wallet's \"Send\" or \"Pay\" feature\n2. Tap the camera/scan icon\n3. Point your camera at the QR code\n4. Confirm the amount and recipient\n5. Tap \"Send\"\n\n**Method 2: Paste Invoice**\n\n1. Copy the Lightning invoice (the \"lnbc\" string)\n2. Open your wallet's \"Send\" feature\n3. Paste the invoice\n4. Review the details (amount, recipient)\n5. Confirm and send\n\n**What Happens Next:**\n\n• The payment processes instantly (usually under 5 seconds)\n• You'll see a confirmation in your wallet\n• The recipient receives the funds immediately\n\n**Common Issues:**\n\n• \"Insufficient balance\": You need enough funds in your Lightning balance\n• \"Invoice expired\": Ask the recipient to generate a new invoice\n• \"Route not found\": Sometimes the network can't find a path. Try again or use a different invoice"
+    },
+    {
+      "title": "Next Steps",
+      "body": "Congratulations! You're now ready to use Lightning Network. Here's what to explore next:\n\n• **Browse Wallets**: Check out our curated list of Lightning wallets with detailed reviews and download links\n• **Learn More**: Deep dive into Lightning Network technology with our Lightning 101 guide\n• **Join Events**: Attend our workshops to learn about running nodes, channel management, and building Lightning applications\n• **Practice**: Start with small amounts to get comfortable with the interface\n• **Explore Use Cases**: Try tipping creators, paying merchants, or sending money to friends\n\nRemember: Start small, learn gradually, and always back up your wallet!",
+      "links": [
+        {
+          "text": "Browse Lightning Wallets",
+          "url": "/wallets",
+          "external": false
+        },
+        {
+          "text": "Lightning 101 Guide",
+          "url": "/lightning-101",
+          "external": false
+        },
+        {
+          "text": "Upcoming Events",
+          "url": "/events",
+          "external": false
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Getting Started with Lightning | Builder Vancouver",
+    "description": "Learn how to install a Lightning wallet and make your first payments. Beginner-friendly guide to receiving and sending Lightning Network payments.",
+    "keywords": [
+      "lightning wallet",
+      "getting started lightning",
+      "lightning network tutorial",
+      "bitcoin wallet",
+      "lightning payments",
+      "how to use lightning"
+    ]
+  }
+}

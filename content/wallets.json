@@ -1,0 +1,445 @@
+{
+  "title": "Lightning Wallets",
+  "slug": "wallets",
+  "description": "Curated list of Lightning Network wallets with download links, features, and detailed information. Find the perfect wallet for iOS, Android, desktop, or web.",
+  "wallets": [
+    {
+      "id": "wallet-of-satoshi",
+      "name": "Wallet of Satoshi",
+      "slug": "wallet-of-satoshi",
+      "description": "A user-friendly custodial Lightning wallet perfect for beginners. Simple interface, instant payments, and easy onboarding make it ideal for first-time Lightning users.",
+      "shortDescription": "User-friendly custodial wallet perfect for beginners",
+      "type": "custodial",
+      "platforms": {
+        "ios": true,
+        "android": true,
+        "desktop": false,
+        "web": false
+      },
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/app/wallet-of-satoshi/id1395224150",
+        "android": "https://play.google.com/store/apps/details?id=com.livingroomofsatoshi.wallet",
+        "website": "https://www.walletofsatoshi.com"
+      },
+      "features": [
+        "Custodial wallet - easy to use",
+        "Instant Lightning payments",
+        "Simple, clean interface",
+        "No technical knowledge required",
+        "Built-in Bitcoin and Lightning support"
+      ],
+      "website": "https://www.walletofsatoshi.com",
+      "twitter": "walletofsatoshi",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": "Wallet of Satoshi is one of the most popular Lightning wallets, especially among beginners. As a custodial wallet, it handles all the technical complexity for you, making it incredibly easy to get started with Lightning payments.\n\nThe wallet supports both Bitcoin and Lightning Network, allowing you to seamlessly switch between on-chain and Lightning transactions. Its simple interface focuses on ease of use rather than advanced features."
+        },
+        {
+          "title": "Best For",
+          "body": "• First-time Lightning users\n• People who want simplicity over control\n• Quick, everyday payments\n• Users who don't want to manage technical details"
+        },
+        {
+          "title": "Security Notes",
+          "body": "As a custodial wallet, Wallet of Satoshi holds your private keys. This means you're trusting them with your funds, similar to how you trust a bank. For small amounts and everyday use, this is often acceptable, but consider non-custodial options for larger holdings."
+        }
+      ],
+      "meta": {
+        "title": "Wallet of Satoshi | Lightning Wallets | Builder Vancouver",
+        "description": "User-friendly custodial Lightning wallet for iOS and Android. Perfect for beginners getting started with Lightning Network payments.",
+        "keywords": ["wallet of satoshi", "lightning wallet", "custodial wallet", "bitcoin wallet"]
+      }
+    },
+    {
+      "id": "zeus",
+      "name": "ZEUS",
+      "slug": "zeus",
+      "description": "A powerful non-custodial Lightning wallet that gives you full control. Connect to your own Lightning node or use their node service. Advanced features for power users.",
+      "shortDescription": "Non-custodial wallet with advanced features and node control",
+      "type": "non-custodial",
+      "platforms": {
+        "ios": true,
+        "android": true,
+        "desktop": false,
+        "web": false
+      },
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/app/zeus-ln/id1488504393",
+        "android": "https://play.google.com/store/apps/details?id=app.zeusln.zeus",
+        "website": "https://zeusln.app"
+      },
+      "features": [
+        "Non-custodial - you control your keys",
+        "Connect to your own Lightning node",
+        "Advanced channel management",
+        "Full control over your funds",
+        "Open source"
+      ],
+      "website": "https://zeusln.app",
+      "twitter": "ZeusLN",
+      "github": "https://github.com/ZeusLN/zeus",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": "ZEUS is a non-custodial Lightning wallet that puts you in full control. You can connect it to your own Lightning node for maximum sovereignty, or use their node service if you prefer convenience.\n\nThe wallet offers advanced features like channel management, detailed transaction history, and full control over your Lightning channels. It's designed for users who want sovereignty over their funds."
+        },
+        {
+          "title": "Best For",
+          "body": "• Users who want full control\n• People running their own Lightning nodes\n• Advanced Lightning users\n• Those prioritizing sovereignty over convenience"
+        },
+        {
+          "title": "Technical Requirements",
+          "body": "ZEUS can connect to your own Lightning node (LND, CLN, or Eclair) or use their hosted node service. For maximum control, you'll need to run your own node, which requires technical knowledge."
+        }
+      ],
+      "meta": {
+        "title": "ZEUS Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "description": "Non-custodial Lightning wallet with advanced features. Connect to your own node or use their service. Full control over your funds.",
+        "keywords": ["zeus wallet", "non-custodial wallet", "lightning node", "lightning wallet"]
+      }
+    },
+    {
+      "id": "phoenix",
+      "name": "Phoenix",
+      "slug": "phoenix",
+      "description": "A non-custodial Lightning wallet that automatically manages channels for you. No technical knowledge required, but you maintain full control of your keys.",
+      "shortDescription": "Non-custodial wallet with automatic channel management",
+      "type": "non-custodial",
+      "platforms": {
+        "ios": true,
+        "android": true,
+        "desktop": false,
+        "web": false
+      },
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/app/phoenix-wallet/id1544097028",
+        "android": "https://play.google.com/store/apps/details?id=acinq.phoenix",
+        "website": "https://phoenix.acinq.co"
+      },
+      "features": [
+        "Non-custodial - you control your keys",
+        "Automatic channel management",
+        "No technical knowledge required",
+        "Open source",
+        "Built by ACINQ (Lightning Labs)"
+      ],
+      "website": "https://phoenix.acinq.co",
+      "twitter": "phoenixwallet",
+      "github": "https://github.com/ACINQ/phoenix",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": "Phoenix strikes an excellent balance between convenience and control. It's a non-custodial wallet (you control your keys), but it automatically manages Lightning channels for you, eliminating the technical complexity.\n\nBuilt by ACINQ, the team behind Lightning Network development, Phoenix is a trusted, open-source wallet that combines ease of use with non-custodial security."
+        },
+        {
+          "title": "Best For",
+          "body": "• Users who want non-custodial security\n• People who don't want to manage channels manually\n• Those seeking a balance of control and convenience\n• Users who value open-source software"
+        },
+        {
+          "title": "How It Works",
+          "body": "Phoenix automatically opens and manages Lightning channels in the background. When you receive funds, it opens a channel automatically. When you send payments, it routes through existing channels or opens new ones as needed. You don't need to understand the technical details."
+        }
+      ],
+      "meta": {
+        "title": "Phoenix Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "description": "Non-custodial Lightning wallet with automatic channel management. Full control of your keys without technical complexity.",
+        "keywords": ["phoenix wallet", "non-custodial wallet", "lightning wallet", "acinq"]
+      }
+    },
+    {
+      "id": "breez",
+      "name": "Breez",
+      "slug": "breez",
+      "description": "A non-custodial Lightning wallet with a focus on user experience. Features include podcast streaming, POS integration, and automatic channel management.",
+      "shortDescription": "Non-custodial wallet with podcast streaming and POS features",
+      "type": "non-custodial",
+      "platforms": {
+        "ios": true,
+        "android": true,
+        "desktop": false,
+        "web": false
+      },
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/app/breez-lightning-client/id1463604142",
+        "android": "https://play.google.com/store/apps/details?id=com.breez.client",
+        "website": "https://breez.technology"
+      },
+      "features": [
+        "Non-custodial - you control your keys",
+        "Podcast streaming with Lightning payments",
+        "Point-of-sale integration",
+        "Automatic channel management",
+        "Open source"
+      ],
+      "website": "https://breez.technology",
+      "twitter": "Breez_Tech",
+      "github": "https://github.com/breez/breezmobile",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": "Breez is a non-custodial Lightning wallet that goes beyond basic payments. It includes unique features like podcast streaming (pay creators as you listen) and point-of-sale integration for merchants.\n\nThe wallet automatically manages Lightning channels while giving you full control over your keys. It's designed for both consumers and merchants who want to use Lightning Network."
+        },
+        {
+          "title": "Best For",
+          "body": "• Content creators and podcast listeners\n• Merchants accepting Lightning payments\n• Users who want non-custodial security\n• People interested in Lightning-powered apps"
+        },
+        {
+          "title": "Unique Features",
+          "body": "Breez stands out with its podcast streaming feature, allowing you to pay creators in real-time as you listen. It also offers merchant tools for accepting Lightning payments, making it useful for both consumers and businesses."
+        }
+      ],
+      "meta": {
+        "title": "Breez Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "description": "Non-custodial Lightning wallet with podcast streaming and POS features. Full control with automatic channel management.",
+        "keywords": ["breez wallet", "lightning wallet", "podcast streaming", "non-custodial wallet"]
+      }
+    },
+    {
+      "id": "strike",
+      "name": "Strike",
+      "slug": "strike",
+      "description": "A custodial Lightning wallet focused on remittances and global payments. Easy to use with features like salary payments and global transfers.",
+      "shortDescription": "Custodial wallet focused on remittances and global payments",
+      "type": "custodial",
+      "platforms": {
+        "ios": true,
+        "android": true,
+        "desktop": false,
+        "web": false
+      },
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/app/strike-bitcoin-payments/id1488724463",
+        "android": "https://play.google.com/store/apps/details?id=me.strike",
+        "website": "https://strike.me"
+      },
+      "features": [
+        "Custodial wallet - easy to use",
+        "Global remittances",
+        "Salary payments",
+        "Instant Lightning payments",
+        "Fiat on/off ramps"
+      ],
+      "website": "https://strike.me",
+      "twitter": "strike",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": "Strike is a custodial Lightning wallet with a focus on global payments and remittances. It makes it easy to send money internationally using Lightning Network, often at lower costs than traditional remittance services.\n\nThe wallet integrates fiat on/off ramps, allowing you to convert between traditional currency and Bitcoin/Lightning easily. It's particularly popular for cross-border payments."
+        },
+        {
+          "title": "Best For",
+          "body": "• People sending money internationally\n• Users who want fiat integration\n• Remittances and global transfers\n• Those who prefer custodial convenience"
+        },
+        {
+          "title": "Use Cases",
+          "body": "Strike excels at remittances - sending money across borders quickly and cheaply. It also supports features like salary payments in Bitcoin, making it useful for both personal and business use."
+        }
+      ],
+      "meta": {
+        "title": "Strike Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "description": "Custodial Lightning wallet for global payments and remittances. Easy fiat integration and instant cross-border transfers.",
+        "keywords": ["strike wallet", "lightning wallet", "remittances", "global payments"]
+      }
+    },
+    {
+      "id": "blue-wallet",
+      "name": "Blue Wallet",
+      "slug": "blue-wallet",
+      "description": "A hybrid wallet supporting both Bitcoin and Lightning. Offers both custodial and non-custodial options, giving users flexibility.",
+      "shortDescription": "Hybrid wallet with custodial and non-custodial options",
+      "type": "hybrid",
+      "platforms": {
+        "ios": true,
+        "android": true,
+        "desktop": false,
+        "web": false
+      },
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/app/bluewallet-bitcoin-wallet/id1376878040",
+        "android": "https://play.google.com/store/apps/details?id=io.bluewallet.bluewallet",
+        "website": "https://bluewallet.io"
+      },
+      "features": [
+        "Hybrid - custodial and non-custodial options",
+        "Bitcoin and Lightning support",
+        "Open source",
+        "Multi-signature support",
+        "Watch-only wallets"
+      ],
+      "website": "https://bluewallet.io",
+      "twitter": "bluewalletio",
+      "github": "https://github.com/BlueWallet/BlueWallet",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": "Blue Wallet is a versatile Bitcoin and Lightning wallet that offers both custodial and non-custodial options. This flexibility allows you to choose the level of control you want.\n\nThe wallet supports advanced features like multi-signature wallets and watch-only wallets, making it useful for both beginners and advanced users."
+        },
+        {
+          "title": "Best For",
+          "body": "• Users who want flexibility\n• People who want both Bitcoin and Lightning\n• Advanced users needing multi-sig\n• Those who want to start custodial and move to non-custodial"
+        },
+        {
+          "title": "Flexibility",
+          "body": "Blue Wallet's hybrid approach lets you start with their custodial Lightning service for ease of use, then migrate to non-custodial options as you become more comfortable. This makes it a great wallet for learning and growing."
+        }
+      ],
+      "meta": {
+        "title": "Blue Wallet | Lightning Wallets | Builder Vancouver",
+        "description": "Hybrid Bitcoin and Lightning wallet with custodial and non-custodial options. Flexible and feature-rich.",
+        "keywords": ["blue wallet", "lightning wallet", "hybrid wallet", "bitcoin wallet"]
+      }
+    },
+    {
+      "id": "muun",
+      "name": "Muun",
+      "slug": "muun",
+      "description": "A non-custodial wallet that seamlessly combines Bitcoin and Lightning. No separate balances - everything works together automatically.",
+      "shortDescription": "Non-custodial wallet with unified Bitcoin and Lightning",
+      "type": "non-custodial",
+      "platforms": {
+        "ios": true,
+        "android": true,
+        "desktop": false,
+        "web": false
+      },
+      "downloadLinks": {
+        "ios": "https://apps.apple.com/app/muun-wallet/id1489027866",
+        "android": "https://play.google.com/store/apps/details?id=io.muun.wallet",
+        "website": "https://muun.com"
+      },
+      "features": [
+        "Non-custodial - you control your keys",
+        "Unified Bitcoin and Lightning balance",
+        "No separate Lightning balance",
+        "Automatic channel management",
+        "Open source"
+      ],
+      "website": "https://muun.com",
+      "twitter": "muunwallet",
+      "github": "https://github.com/muun",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": "Muun is unique among Lightning wallets because it doesn't separate Bitcoin and Lightning balances. Everything works together seamlessly - you don't need to think about whether you're using Bitcoin or Lightning.\n\nAs a non-custodial wallet, you maintain full control over your keys while enjoying the convenience of automatic Lightning channel management."
+        },
+        {
+          "title": "Best For",
+          "body": "• Users who want simplicity\n• People who don't want to manage separate balances\n• Those seeking non-custodial security\n• Users who want everything to \"just work\""
+        },
+        {
+          "title": "How It Works",
+          "body": "Muun automatically handles the complexity of Lightning channels behind the scenes. When you receive a Lightning payment, it's added to your unified balance. When you send, it uses Lightning if possible, falling back to on-chain Bitcoin if needed. You don't need to think about it."
+        }
+      ],
+      "meta": {
+        "title": "Muun Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "description": "Non-custodial wallet with unified Bitcoin and Lightning balance. Seamless experience with full control.",
+        "keywords": ["muun wallet", "lightning wallet", "non-custodial wallet", "unified balance"]
+      }
+    },
+    {
+      "id": "blixt",
+      "name": "Blixt",
+      "slug": "blixt",
+      "description": "A non-custodial Lightning wallet for Android that runs its own Lightning node. Full control with advanced features.",
+      "shortDescription": "Non-custodial Android wallet with built-in Lightning node",
+      "type": "non-custodial",
+      "platforms": {
+        "ios": false,
+        "android": true,
+        "desktop": false,
+        "web": false
+      },
+      "downloadLinks": {
+        "android": "https://play.google.com/store/apps/details?id=com.blixtwallet",
+        "website": "https://blixtwallet.github.io"
+      },
+      "features": [
+        "Non-custodial - you control your keys",
+        "Runs its own Lightning node",
+        "Full node control",
+        "Advanced channel management",
+        "Open source"
+      ],
+      "website": "https://blixtwallet.github.io",
+      "twitter": "BlixtWallet",
+      "github": "https://github.com/hsjoberg/blixt-wallet",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": "Blixt is a non-custodial Lightning wallet for Android that runs its own Lightning node directly on your device. This gives you maximum sovereignty - you're running a full Lightning node, not just connecting to someone else's.\n\nThe wallet is designed for users who want complete control and are comfortable with more technical aspects of Lightning Network."
+        },
+        {
+          "title": "Best For",
+          "body": "• Android users who want full sovereignty\n• People comfortable with technical details\n• Users who want to run their own node\n• Advanced Lightning users"
+        },
+        {
+          "title": "Technical Requirements",
+          "body": "Blixt runs a Lightning node on your Android device, which requires more resources than typical wallets. Your device needs to stay online for the node to function properly, and initial sync can take time."
+        }
+      ],
+      "meta": {
+        "title": "Blixt Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "description": "Non-custodial Android Lightning wallet that runs its own node. Full sovereignty and control.",
+        "keywords": ["blixt wallet", "lightning wallet", "android wallet", "lightning node"]
+      }
+    },
+    {
+      "id": "alby",
+      "name": "Alby",
+      "slug": "alby",
+      "description": "A browser extension Lightning wallet that integrates with web applications. Perfect for tipping creators, supporting websites, and web-based Lightning payments.",
+      "shortDescription": "Browser extension wallet for web Lightning payments",
+      "type": "non-custodial",
+      "platforms": {
+        "ios": false,
+        "android": false,
+        "desktop": true,
+        "web": true
+      },
+      "downloadLinks": {
+        "website": "https://getalby.com"
+      },
+      "features": [
+        "Browser extension (Chrome, Firefox, Safari)",
+        "Non-custodial options available",
+        "Web integration",
+        "Creator tipping",
+        "Open source"
+      ],
+      "website": "https://getalby.com",
+      "twitter": "getAlby",
+      "github": "https://github.com/getAlby/lightning-browser-extension",
+      "sections": [
+        {
+          "title": "Overview",
+          "body": "Alby is a Lightning wallet that lives in your browser as an extension. It's designed for web-based Lightning payments, making it easy to tip creators, support websites, and interact with Lightning-powered web applications.\n\nThe wallet integrates seamlessly with websites that support Lightning payments, allowing you to pay with a single click without leaving the page."
+        },
+        {
+          "title": "Best For",
+          "body": "• Web users and creators\n• People who want browser integration\n• Users tipping online creators\n• Those using Lightning-powered websites"
+        },
+        {
+          "title": "Use Cases",
+          "body": "Alby excels at web-based Lightning interactions. Use it to tip creators on platforms like Twitter/X, support independent websites, or interact with Lightning-powered web applications. It brings Lightning payments directly into your browsing experience."
+        }
+      ],
+      "meta": {
+        "title": "Alby Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "description": "Browser extension Lightning wallet for web payments. Perfect for tipping creators and web-based Lightning interactions.",
+        "keywords": ["alby wallet", "lightning wallet", "browser extension", "web payments"]
+      }
+    }
+  ],
+  "meta": {
+    "title": "Lightning Wallets | Builder Vancouver",
+    "description": "Curated list of Lightning Network wallets with download links, features, and detailed information. Find the perfect wallet for iOS, Android, desktop, or web.",
+    "keywords": [
+      "lightning wallets",
+      "bitcoin wallets",
+      "lightning network",
+      "wallet comparison",
+      "lightning apps"
+    ]
+  }
+}
