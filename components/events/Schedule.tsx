@@ -62,26 +62,21 @@ function getTypeColorClasses(type?: ScheduleItem["type"]) {
  */
 function formatTime(time: string): string {
   // If already in readable format (contains AM/PM), return as-is
-  if (time.includes("AM") || time.includes("PM") || time.includes("am") || time.includes("pm")) {
+  if (
+    time.includes("AM") ||
+    time.includes("PM") ||
+    time.includes("am") ||
+    time.includes("pm")
+  ) {
     return time;
   }
-  
+
   // Otherwise, assume 24-hour format and convert
   const [hours, minutes] = time.split(":");
   const hour = parseInt(hours, 10);
   const ampm = hour >= 12 ? "PM" : "AM";
   const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
   return `${displayHour}:${minutes || "00"} ${ampm}`;
-}
-
-/**
- * Format time range
- */
-function formatTimeRange(startTime: string, endTime?: string): string {
-  const start = formatTime(startTime);
-  if (!endTime) return start;
-  const end = formatTime(endTime);
-  return `${start} - ${end}`;
 }
 
 /**
