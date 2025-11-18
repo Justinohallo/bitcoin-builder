@@ -1,60 +1,42 @@
 {
   "title": "Get Involved with Builder Vancouver",
   "slug": "get-involved",
-  "description": "Builder Vancouver runs on hands-on contributors who bring energy to our meetups, workshops, and open-source experiments. There is room for every skill set-from logistics wranglers to protocol nerds.",
-  "impactStatement": "Every successful session, presentation, and builder win in Vancouver traces back to volunteers who decided to reach out and take ownership.",
+  "description": "Builder Vancouver runs because people pitch in with their time, gear, and ideas. If you want to help—even for a single meetup—we will plug you in quickly.",
+  "impactStatement": "A lighter lift still matters: greeting guests, taking notes, or sending one recap email keeps the flywheel turning for the next builder night.",
   "sections": [
     {
       "title": "What We Need Right Now",
-      "body": "As we scale from monthly gatherings to a weekly builder cadence, the core team is looking for contributors who can own defined outcomes. Whether you want to host lightning labs, document demos, ship social updates, or manage partner outreach, we have real responsibilities ready on day one.",
+      "body": "We stay small on purpose, so clear ownership beats a long volunteer checklist. Pick one thing, own it for a month, and hand off notes to the next person.",
       "highlights": [
         {
           "title": "Weekly Sessions",
-          "description": "Keep recurring Tuesday work sessions on track with agendas, project updates, and demo slots."
+          "description": "Set up chairs, welcome newcomers, and make sure demos run on time."
         },
         {
-          "title": "Content Lab",
-          "description": "Turn raw builder wins into recaps, newsletters, and talk proposals the wider Bitcoin scene can consume."
+          "title": "Builder Notes",
+          "description": "Summarize wins in 3 bullet points so we can share them on social later."
         },
         {
-          "title": "Ecosystem Partners",
-          "description": "Coordinate with merchants, wallets, and lightning service providers who want to test in Vancouver."
+          "title": "Sponsor Touchpoints",
+          "description": "Send a short thank-you after an event and capture what worked."
         }
       ]
     },
     {
       "title": "How You'll Plug In",
-      "body": "Start by emailing the organizers with a short introduction, what excites you about Bitcoin right now, and the type of contribution you want to own. We set up a 15-minute call, orient you to active tracks, then pair you with a buddy so you can deliver value within the first week.",
+      "body": "Send the organizers a note with the role you want to try. We set up a quick call, add you to a signal thread, and walk through the single document you need for that role.",
       "highlights": [
         {
           "title": "Fast Ramp",
-          "description": "Expect a response within 48 hours and an onboarding chat the same week."
+          "description": "Expect a response within 48 hours with a 15 minute calendar link."
         },
         {
           "title": "Transparent Scope",
-          "description": "We document current needs, success metrics, and support resources for each track."
+          "description": "Every role has three bullet point outcomes and an owner for questions."
         },
         {
           "title": "Builder Credit",
-          "description": "Ship meaningful work and we highlight you in recaps, newsletters, and sponsor briefs."
-        }
-      ]
-    },
-    {
-      "title": "What You Get",
-      "body": "Contributors get a front-row seat to the latest Lightning experiments, access to visiting speakers, and priority access to our closed-door product testing nights. More importantly, you join a trusted crew that keeps Vancouver on the Bitcoin map.",
-      "highlights": [
-        {
-          "title": "Direct Impact",
-          "description": "See your work turn into filled venues, better educational material, and new builders."
-        },
-        {
-          "title": "Network Effects",
-          "description": "Collaborate with founders, researchers, and protocol engineers who drop into Vancouver."
-        },
-        {
-          "title": "Portfolio-Ready Work",
-          "description": "Documented wins you can point to when pitching clients, partners, or future roles."
+          "description": "We shout out volunteers in recaps, newsletters, and sponsor notes."
         }
       ]
     }
@@ -63,85 +45,39 @@
     {
       "id": "events",
       "title": "Event & Operations Crew",
-      "summary": "Own the logistics that make our meetups smooth: venue prep, check-in, AV, and hospitality.",
-      "commitment": "4-6 hours per month, clustered around event weeks.",
+      "summary": "Keep the room ready, speakers mic'd, and the schedule on track.",
+      "commitment": "2 hours on event night + 30 minutes of prep.",
       "sampleContributions": [
-        "Create run-of-show checklists and confirm them with speakers by Monday.",
-        "Coordinate lightning demo sign-ups and keep a timing clock during the event.",
-        "Capture attendee feedback and summarize improvements for the next meetup."
+        "Bring signage and make sure the check-in sheet is printed.",
+        "Run a two minute welcome so speakers can stay focused on content."
       ],
       "supportOffered": [
-        "Templates for runbooks, checklists, and vendor outreach",
-        "Direct mentorship from the current production lead"
-      ],
-      "starterLinks": [
-        {
-          "text": "Volunteer Playbook (Doc)",
-          "url": "https://builder-vancouver.notion.site/event-playbook",
-          "external": true
-        }
+        "Run-of-show template",
+        "Slack thread with the core team"
       ]
     },
     {
       "id": "content",
       "title": "Content & Storytelling Guild",
-      "summary": "Turn experiments, talks, and deep dives into public artifacts that grow the community.",
-      "commitment": "2-4 hours per week, remote-friendly.",
+      "summary": "Capture a quick recap so the wider community knows what shipped.",
+      "commitment": "1 hour per week, remote friendly.",
       "sampleContributions": [
-        "Interview speakers right after a talk and ship a 200-word recap within 48 hours.",
-        "Publish a monthly digest covering projects coming out of Vancouver.",
-        "Clip short-form video snippets from recordings and schedule social drops."
+        "Draft a 5 sentence event recap for the newsletter.",
+        "Clip one speaker quote for social and schedule it in Buffer."
       ],
-      "supportOffered": [
-        "Editorial guidelines and brand voice cheat sheet",
-        "Access to shared photo/video archives"
-      ],
-      "starterLinks": [
-        {
-          "text": "Story Pitch Form",
-          "url": "https://builder-vancouver.typeform.com/to/storypitch",
-          "external": true
-        }
-      ]
-    },
-    {
-      "id": "builders",
-      "title": "Builder Success Pod",
-      "summary": "Pair new contributors with mentors, unblock projects, and surface demos for upcoming meetups.",
-      "commitment": "1 hour per week async + monthly sync.",
-      "sampleContributions": [
-        "Maintain the builder pipeline and ensure newcomers have a project within their first month.",
-        "Organize quarterly build sprints focused on Lightning, Nostr, or Layer 2 ideas.",
-        "Track project milestones and coordinate showcase slots with the event crew."
-      ],
-      "supportOffered": [
-        "Shared CRM of active builders and interests",
-        "Signal groups with experienced mentors"
-      ],
-      "starterLinks": [
-        {
-          "text": "Builder Intake Sheet",
-          "url": "https://builder-vancouver.notion.site/builder-intake",
-          "external": true
-        }
-      ]
+      "supportOffered": ["Simple recap template", "Shared photo folder"]
     }
   ],
   "quickStats": [
     {
       "label": "Active Contributors",
-      "value": "42",
-      "description": "Volunteers rotating through operations, content, and builder pods over the last 6 months."
+      "value": "12",
+      "description": "People currently rotating through light operations and content roles."
     },
     {
-      "label": "Projects Incubated",
-      "value": "18",
-      "description": "Lightning tools, open-source repos, and civic experiments launched through the meetup."
-    },
-    {
-      "label": "Average Response",
-      "value": "36 hrs",
-      "description": "Typical turnaround time once you email the organizers."
+      "label": "Response Time",
+      "value": "48 hrs",
+      "description": "We reply within two days with a short call invite."
     }
   ],
   "contact": {
