@@ -211,6 +211,15 @@ export function loadLayer2(): EducationalContent {
 }
 
 /**
+ * Loads open source development and Bitcoin projects content
+ * @returns Open source educational content
+ * @throws {Error} If open-source.json is invalid or missing
+ */
+export function loadOpenSource(): EducationalContent {
+  return loadContent("open-source.json", EducationalContentSchema);
+}
+
+/**
  * Loads curated learning resources and tools
  * @returns Collection of categorized resources
  * @throws {Error} If resources.json is invalid or missing
@@ -434,6 +443,8 @@ export const loadLightning101Async = () =>
   loadContentAsync("lightning101.json", EducationalContentSchema);
 export const loadLayer2Async = () =>
   loadContentAsync("layer2.json", EducationalContentSchema);
+export const loadOpenSourceAsync = () =>
+  loadContentAsync("open-source.json", EducationalContentSchema);
 export const loadResourcesAsync = () =>
   loadContentAsync("resources.json", ResourcesCollectionSchema);
 export const loadRecapsAsync = () =>

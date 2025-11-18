@@ -145,6 +145,13 @@ export const CONTENT_REGISTRY = {
     category: "education",
   } as ContentEntry<EducationalContent>,
 
+  openSource: {
+    filename: "open-source.json",
+    schema: EducationalContentSchema,
+    description: "Open source development and Bitcoin projects",
+    category: "education",
+  } as ContentEntry<EducationalContent>,
+
   onboarding: {
     filename: "onboarding.json",
     schema: OnboardingSchema,
