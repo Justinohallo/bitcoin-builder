@@ -9,6 +9,9 @@ import {
   EventsCollectionSchema,
   HomeSchema,
   MeetupSchema,
+  MemberPersonaSchema,
+  MemberResourceSchema,
+  MembersCollectionSchema,
   MerchantSchema,
   MissionSchema,
   NewsTopicSchema,
@@ -62,6 +65,10 @@ export type VibeAppsCollection = z.infer<typeof VibeAppsCollectionSchema>;
 export type WhatToExpect = z.infer<typeof WhatToExpectSchema>;
 
 export type Home = z.infer<typeof HomeSchema>;
+
+export type MemberPersona = z.infer<typeof MemberPersonaSchema>;
+export type MembersCollection = z.infer<typeof MembersCollectionSchema>;
+export type MemberResource = z.infer<typeof MemberResourceSchema>;
 
 // News Topics types
 export type NewsTopic = z.infer<typeof NewsTopicSchema>;

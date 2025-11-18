@@ -26,28 +26,6 @@
           "external": false
         }
       ]
-    },
-    {
-      "title": "Who Thrives at Builder",
-      "body": "Our meetups are intentionally cross-disciplinary so every member sees the bigger picture. These are the four core builder personas we support and how Builder accelerates their work.",
-      "highlights": [
-        {
-          "title": "Product Managers",
-          "description": "Pressure-test roadmap ideas with subject-matter experts, surface real user problems, and leave with validated feature hypotheses."
-        },
-        {
-          "title": "Developers",
-          "description": "Pair up on Lightning, Nostr, and L2 code, share tooling, and get code-level feedback from engineers shipping Bitcoin infrastructure."
-        },
-        {
-          "title": "UI/UX Designers",
-          "description": "Prototype wallet flows, usability-test new concepts with the community, and learn how to translate complex crypto UX into clear stories."
-        },
-        {
-          "title": "Entrepreneurs",
-          "description": "Meet co-founders, find early adopters, and understand the regulatory and market realities for Bitcoin-first businesses in Vancouver."
-        }
-      ]
     }
   ],
   "meta": {

@@ -41,6 +41,7 @@ export function Footer() {
     community: [
       { href: paths.cities.list(), label: "Cities" },
       { href: paths.sponsors.list(), label: "Sponsors" },
+      { href: paths.members.list(), label: "Members" },
     ],
   };
 

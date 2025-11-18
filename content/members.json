@@ -1,0 +1,415 @@
+{
+  "title": "Member Personas",
+  "description": "Four types of builders show up every month. Each one gets tailored sessions, discussions, and take-home resources so their Bitcoin work moves faster.",
+  "members": [
+    {
+      "id": "product-managers",
+      "slug": "product-managers",
+      "title": "Product Managers",
+      "tagline": "Turn Lightning research into shippable specs.",
+      "summary": "Builder meetups bundle real Lightning Network operations with macro research so you can validate a roadmap in a single evening. Watch channel operators configure nodes during the Lightning Network Workshop, absorb the \"Introduction to Lightning Network\" presentation details, and then pressure-test feature bets against news topics like Lightning Network growth and Taproot Assets adoption.",
+      "focusAreas": [
+        {
+          "title": "See Lightning friction live",
+          "description": "Follow the Lightning Network Workshop schedule to observe how operators juggle liquidity, routing, and Docker setups before you write a single requirement."
+        },
+        {
+          "title": "Translate presentations into user stories",
+          "description": "The “Introduction to Lightning Network” presentation outlines payment channel flows that map directly to onboarding, retry, and support tickets."
+        },
+        {
+          "title": "Use news topics to size demand",
+          "description": "Discussions on Lightning Network Capacity Growth and Taproot Assets show where merchants and wallets are feeling the most pressure."
+        }
+      ],
+      "meetupWins": [
+        {
+          "title": "Spec features with maintainers",
+          "description": "Borrow the Lightning Tip Bot backlog to understand which customer problems already have reproducible steps and rough acceptance criteria."
+        },
+        {
+          "title": "Prioritize with real data",
+          "description": "News topic breakdowns (e.g., Lightning Network Growth 2024) provide metrics you can paste straight into an OKR, milestone, or PRD."
+        },
+        {
+          "title": "Align launch playbooks",
+          "description": "Entrepreneurs in the room share go-to-market realities for Bitcoin-first products in Vancouver so your release checklist covers regulation, custody, and education."
+        }
+      ],
+      "recommendedSessions": [
+        {
+          "title": "Lightning Network Workshop",
+          "description": "Hands-on walkthrough of node setup, liquidity management, and routing that exposes the exact user journeys your roadmap must support.",
+          "href": "/events/lightning-network-workshop"
+        },
+        {
+          "title": "Introduction to Lightning Network Presentation",
+          "description": "Deep dive talk that clarifies what your onboarding, billing, and support tickets will look like once users rely on Lightning.",
+          "href": "/presentations/intro-to-lightning-2025"
+        },
+        {
+          "title": "Taproot Assets Roundtable",
+          "description": "Join the discussion sparked by our Taproot Assets protocol news topic to explore asset issuance features and compliance questions.",
+          "href": "/news-topics/taproot-assets-protocol"
+        }
+      ],
+      "resources": [
+        {
+          "title": "Lightning Network Workshop Guide",
+          "description": "Event agenda covering prerequisites, lab steps, and Q&A topics—perfect for framing discovery interviews.",
+          "url": "/events/lightning-network-workshop",
+          "type": "event",
+          "external": false
+        },
+        {
+          "title": "Lightning Tip Bot Backlog",
+          "description": "Builder Vancouver’s open-source project with labeled issues you can turn into feature validation sessions.",
+          "url": "https://github.com/builder-vancouver/lightning-tip-bot",
+          "type": "project",
+          "external": true
+        },
+        {
+          "title": "Lightning Network Growth 2024 Briefing",
+          "description": "News topic with adoption metrics, sample questions, and merchant pain points.",
+          "url": "/news-topics/lightning-network-growth-2024",
+          "type": "news",
+          "external": false
+        },
+        {
+          "title": "Taproot Assets Launch Notes",
+          "description": "Understand how Taproot Assets expands Lightning payment surface area before you commit roadmap scope.",
+          "url": "/news-topics/taproot-assets-protocol",
+          "type": "news",
+          "external": false
+        },
+        {
+          "title": "Lightning Labs Documentation",
+          "description": "Official product docs covering node management, APIs, and Taproot Assets—great for writing acceptance criteria.",
+          "url": "https://docs.lightning.engineering/",
+          "type": "guide",
+          "external": true
+        }
+      ],
+      "cta": {
+        "primary": {
+          "text": "Plan your first Builder visit",
+          "href": "/onboarding"
+        },
+        "secondary": {
+          "text": "See what to expect at an event",
+          "href": "/what-to-expect"
+        }
+      }
+    },
+    {
+      "id": "developers",
+      "slug": "developers",
+      "title": "Developers",
+      "tagline": "Pair-program Lightning, Taproot, and Nostr primitives.",
+      "summary": "The Lightning Network Workshop gives you hands-on channel operations, while presentations like “Taproot and Schnorr Signatures” unpack protocol details you can immediately deploy. Combine that with project time on the Lightning Tip Bot and you leave every meetup having shipped something—or at least opened a compelling PR.",
+      "focusAreas": [
+        {
+          "title": "Hands-on Lightning channels",
+          "description": "Spin up nodes, rebalance channels, and debug routing live with other builders during the workshop lab block."
+        },
+        {
+          "title": "Protocol-level mastery",
+          "description": "Taproot and Schnorr sessions cover script paths, key aggregation, and fee impacts so your code stays future proof."
+        },
+        {
+          "title": "Collaborate on open-source",
+          "description": "Lightning Tip Bot and other community repos are actively developed at the meetup, so you can claim issues on-site."
+        }
+      ],
+      "meetupWins": [
+        {
+          "title": "Route-payments with peers",
+          "description": "You’ll test channel liquidity and failure scenarios with the exact people operating local nodes."
+        },
+        {
+          "title": "Audit Taproot upgrades",
+          "description": "Deep dives cite BIP-340/341 so you can verify your wallet or service implementation on the spot."
+        },
+        {
+          "title": "Ship to actual users",
+          "description": "Entrepreneurs and PMs bring real customer asks, meaning your hack can hit production through a partner immediately."
+        }
+      ],
+      "recommendedSessions": [
+        {
+          "title": "Lightning Network Workshop",
+          "description": "Guided lab for Docker-based node setup, channel management, and payment testing.",
+          "href": "/events/lightning-network-workshop"
+        },
+        {
+          "title": "Taproot and Schnorr Signatures Deep Dive",
+          "description": "Walk through signature aggregation, script paths, and Taproot benefits directly from protocol specialists.",
+          "href": "/presentations/taproot-deep-dive-2025"
+        },
+        {
+          "title": "Lightning 101 Curriculum",
+          "description": "Refresh the fundamentals before you dive into advanced BOLT specs or custom node services.",
+          "href": "/lightning-101"
+        }
+      ],
+      "resources": [
+        {
+          "title": "Lightning Network Specification (BOLTs)",
+          "description": "Primary reference for channel states, HTLCs, and gossip—keep it open while hacking.",
+          "url": "https://github.com/lightning/bolts",
+          "type": "resource",
+          "external": true
+        },
+        {
+          "title": "Lightning Labs Engineering Docs",
+          "description": "API surface, node configuration, and Taproot Assets references used in our workshops.",
+          "url": "https://lightning.engineering/",
+          "type": "guide",
+          "external": true
+        },
+        {
+          "title": "Nostr Protocol Adoption Notes",
+          "description": "Explore Lightning-powered social tipping patterns you can build into apps.",
+          "url": "/news-topics/nostr-protocol-adoption",
+          "type": "news",
+          "external": false
+        },
+        {
+          "title": "Mastering Bitcoin (GitHub)",
+          "description": "Deep technical reference covering scripts, networking, and examples for Bitcoin Core integrations.",
+          "url": "https://github.com/bitcoinbook/bitcoinbook",
+          "type": "resource",
+          "external": true
+        },
+        {
+          "title": "Lightning Tip Bot Repository",
+          "description": "Active Builder Vancouver project—pair up on bots, wallet integrations, and deployment scripts.",
+          "url": "https://github.com/builder-vancouver/lightning-tip-bot",
+          "type": "project",
+          "external": true
+        }
+      ],
+      "cta": {
+        "primary": {
+          "text": "RSVP for the next workshop",
+          "href": "/events"
+        },
+        "secondary": {
+          "text": "Review onboarding requirements",
+          "href": "/onboarding"
+        }
+      }
+    },
+    {
+      "id": "designers",
+      "slug": "ui-ux-designers",
+      "title": "UI/UX Designers",
+      "tagline": "Prototype Bitcoin flows that regular humans understand.",
+      "summary": "Designer feedback loops are short at Builder: observe Lightning payment journeys, map them against our What to Expect and Onboarding guides, and test prototypes with people who build wallets, bots, and BTC-powered businesses. We unpack debates like Ordinals vs. block space so you can explain trade-offs to stakeholders visually.",
+      "focusAreas": [
+        {
+          "title": "Field-test onboarding",
+          "description": "Use the What to Expect and Onboarding guides to understand every touchpoint attendees hit before they ever scan a QR."
+        },
+        {
+          "title": "Map service blueprints",
+          "description": "Lightning Tip Bot and city ecosystem stories show end-to-end support flows, not just screen states."
+        },
+        {
+          "title": "Narrate complex debates",
+          "description": "News topics like the Ordinals & inscriptions debate equip you with real quotes and data for storyboards."
+        }
+      ],
+      "meetupWins": [
+        {
+          "title": "Live usability sessions",
+          "description": "Watch newcomers try Bitcoin 101 material, then iterate on copy and UI with immediate feedback."
+        },
+        {
+          "title": "Service design partners",
+          "description": "Entrepreneurs share operational constraints (custody, compliance, education) so your prototypes reflect reality."
+        },
+        {
+          "title": "UX research shortcuts",
+          "description": "Leverage news topic question lists as ready-made interview guides."
+        }
+      ],
+      "recommendedSessions": [
+        {
+          "title": "Lightning Network Workshop (observer track)",
+          "description": "Shadow builders as they set up channels to document pain points and mental models.",
+          "href": "/events/lightning-network-workshop"
+        },
+        {
+          "title": "Lightning Workshop Recap",
+          "description": "Review the recap article to see which narratives resonated with attendees.",
+          "href": "/recaps/lightning-network-workshop-recap"
+        },
+        {
+          "title": "What to Expect",
+          "description": "Align your event journey maps with the actual experience we promise to new members.",
+          "href": "/what-to-expect"
+        }
+      ],
+      "resources": [
+        {
+          "title": "Onboarding Guide",
+          "description": "Step-by-step instructions that highlight the terminology, tone, and reassurance first-time attendees need.",
+          "url": "/onboarding",
+          "type": "guide",
+          "external": false
+        },
+        {
+          "title": "What to Expect Checklist",
+          "description": "Use this as the backbone for journey maps or welcome flows.",
+          "url": "/what-to-expect",
+          "type": "guide",
+          "external": false
+        },
+        {
+          "title": "Ordinals & Inscriptions Debate Notes",
+          "description": "Balanced talking points about block space usage that help you craft more informative UI copy.",
+          "url": "/news-topics/ordinals-inscriptions-debate",
+          "type": "news",
+          "external": false
+        },
+        {
+          "title": "Lightning Network Explorer (1ML)",
+          "description": "Visualize real network topology for inspiration when designing dashboards.",
+          "url": "https://1ml.com/",
+          "type": "tool",
+          "external": true
+        },
+        {
+          "title": "Lightning Tip Bot User Stories",
+          "description": "GitHub issues describing conversational UX and wallet handoffs ready for prototyping.",
+          "url": "https://github.com/builder-vancouver/lightning-tip-bot",
+          "type": "project",
+          "external": true
+        }
+      ],
+      "cta": {
+        "primary": {
+          "text": "Download the onboarding kit",
+          "href": "/onboarding"
+        },
+        "secondary": {
+          "text": "Book a usability slot at the next meetup",
+          "href": "/events"
+        }
+      }
+    },
+    {
+      "id": "entrepreneurs",
+      "slug": "entrepreneurs",
+      "title": "Entrepreneurs",
+      "tagline": "Pressure-test Bitcoin business models with the community.",
+      "summary": "Founders get macro, technical, and go-to-market context in one place: see Lightning payments in action, hear investors and operators decode Bitcoin ETF approvals, and explore new revenue models via Taproot Assets or Nostr integrations. You leave with better forecasts, trusted collaborators, and vetted pitches.",
+      "focusAreas": [
+        {
+          "title": "Validate market timing",
+          "description": "Use news topic briefings on Bitcoin ETF approvals and the 2024 halving to justify your pitch metrics."
+        },
+        {
+          "title": "Identify revenue channels",
+          "description": "Taproot Assets and Lightning capacity growth unlock merchant services, remittance, and loyalty programs you can pilot immediately."
+        },
+        {
+          "title": "Find builders and PMs",
+          "description": "Developers, designers, and product leaders are already prototyping tools like Lightning Tip Bot—hire or partner with them on the spot."
+        }
+      ],
+      "meetupWins": [
+        {
+          "title": "Realistic compliance planning",
+          "description": "Mission, charter, and city data give you a grounded view of local regulation and partner expectations."
+        },
+        {
+          "title": "Live product validation",
+          "description": "Show demos during the workshop breakouts and collect feedback from multiple personas at once."
+        },
+        {
+          "title": "Investor-ready narrative",
+          "description": "Use our recap articles and news topic summaries as evidence in your investor memos or grant applications."
+        }
+      ],
+      "recommendedSessions": [
+        {
+          "title": "Lightning Network Workshop",
+          "description": "Understand the operational cost of running Lightning infrastructure before budgeting.",
+          "href": "/events/lightning-network-workshop"
+        },
+        {
+          "title": "Bitcoin ETF Approval Discussion",
+          "description": "Join the conversation around institutional adoption and capital flows triggered by U.S. ETFs.",
+          "href": "/news-topics/bitcoin-etf-approval-2024"
+        },
+        {
+          "title": "Taproot & Schnorr Deep Dive",
+          "description": "See how privacy and multi-party contracts open new business models.",
+          "href": "/presentations/taproot-deep-dive-2025"
+        }
+      ],
+      "resources": [
+        {
+          "title": "Bitcoin ETF Approval Brief",
+          "description": "Talking points, regulatory context, and questions to arm your investor updates.",
+          "url": "/news-topics/bitcoin-etf-approval-2024",
+          "type": "news",
+          "external": false
+        },
+        {
+          "title": "Bitcoin Halving 2024 Analysis",
+          "description": "Macro supply dynamics that influence miner costs, fees, and your pricing models.",
+          "url": "/news-topics/bitcoin-halving-2024",
+          "type": "news",
+          "external": false
+        },
+        {
+          "title": "Taproot Assets Protocol Overview",
+          "description": "Lightning Labs resources for issuing assets—ideal for loyalty, stable-value credits, or ticketing ideas.",
+          "url": "/news-topics/taproot-assets-protocol",
+          "type": "news",
+          "external": false
+        },
+        {
+          "title": "Lightning Tip Bot Case Study",
+          "description": "Community project demonstrating how Lightning tips drive engagement; fork it or partner with the team.",
+          "url": "https://github.com/builder-vancouver/lightning-tip-bot",
+          "type": "project",
+          "external": true
+        },
+        {
+          "title": "Cities Directory",
+          "description": "Explore the Vancouver city profile to understand merchant density, ecosystem players, and co-working partners.",
+          "url": "/cities/vancouver",
+          "type": "guide",
+          "external": false
+        }
+      ],
+      "cta": {
+        "primary": {
+          "text": "Share your pitch with the community",
+          "href": "/events"
+        },
+        "secondary": {
+          "text": "Review the Builder charter",
+          "href": "/about/charter"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "title": "Member Personas | Builder Vancouver",
+    "description": "See how product managers, developers, designers, and entrepreneurs each benefit from Builder Vancouver meetups with curated sessions and resources.",
+    "keywords": [
+      "bitcoin community",
+      "lightning network workshop",
+      "builder personas",
+      "product managers",
+      "developers",
+      "entrepreneurs",
+      "ui ux designers"
+    ]
+  }
+}

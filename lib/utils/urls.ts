@@ -220,6 +220,20 @@ export const urls = {
      */
     detail: (slug: string) => buildUrl(`/presenters/${slug}`),
   },
+
+  /**
+   * Member personas URLs
+   */
+  members: {
+    /**
+     * Member listing page
+     */
+    list: () => buildUrl("/members"),
+    /**
+     * Individual member persona
+     */
+    detail: (slug: string) => buildUrl(`/members/${slug}`),
+  },
 } as const;
 
 /**
@@ -281,5 +295,10 @@ export const paths = {
   presenters: {
     list: () => "/presenters",
     detail: (slug: string) => `/presenters/${slug}`,
+  },
+
+  members: {
+    list: () => "/members",
+    detail: (slug: string) => `/members/${slug}`,
   },
 } as const;

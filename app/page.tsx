@@ -4,7 +4,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { loadCities, loadHome } from "@/lib/content";
+import { loadCities, loadHome, loadMembers } from "@/lib/content";
 import { generateHomeMetadata } from "@/lib/seo";
 
 export const metadata = generateHomeMetadata();
@@ -12,6 +12,7 @@ export const metadata = generateHomeMetadata();
 export default function Home() {
   const content = loadHome();
   const { cities } = loadCities();
+  const memberContent = loadMembers();
 
   return (
     <PageContainer>
@@ -40,21 +41,6 @@ export default function Home() {
           <p className="text-lg text-neutral-300 mb-6 leading-relaxed">
             {section.body}
           </p>
-          {section.highlights && section.highlights.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              {section.highlights.map((highlight, highlightIndex) => (
-                <div
-                  key={highlightIndex}
-                  className="p-6 bg-neutral-900 border border-neutral-800 rounded-xl"
-                >
-                  <h3 className="text-xl font-bold text-neutral-100 mb-2">
-                    {highlight.title}
-                  </h3>
-                  <p className="text-neutral-300">{highlight.description}</p>
-                </div>
-              ))}
-            </div>
-          )}
           {section.links && section.links.length > 0 && (
             <div className="flex flex-wrap gap-4">
               {section.links.map((link, linkIndex) => (
@@ -73,6 +59,48 @@ export default function Home() {
           )}
         </Section>
       ))}
+
+      {/* Member Personas Snapshot */}
+      <Section>
+        <Heading level="h2" className="text-neutral-100 mb-4">
+          Member Spotlights
+        </Heading>
+        <p className="text-lg text-neutral-300 mb-8 leading-relaxed max-w-3xl">
+          {memberContent.description}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {memberContent.members.map((member) => (
+            <article
+              key={member.id}
+              className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 flex flex-col gap-4 hover:border-orange-400 transition-colors"
+            >
+              <div>
+                <h3 className="text-2xl font-bold text-neutral-100 mb-2">
+                  {member.title}
+                </h3>
+                <p className="text-neutral-300">{member.tagline}</p>
+              </div>
+              <p className="text-neutral-400">{member.summary}</p>
+              <ul className="space-y-2">
+                {member.focusAreas.slice(0, 2).map((focus) => (
+                  <li key={focus.title} className="text-sm text-neutral-400">
+                    <span className="font-semibold text-neutral-100">
+                      {focus.title}:{" "}
+                    </span>
+                    {focus.description}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href={`/members/${member.slug}`}
+                className="inline-flex items-center text-orange-400 hover:text-orange-300 font-medium transition-colors"
+              >
+                View the {member.title} guide →
+              </Link>
+            </article>
+          ))}
+        </div>
+      </Section>
 
       {/* Quick Links Grid */}
       <Section>
@@ -114,6 +142,11 @@ export default function Home() {
             title="Cities"
             description="Explore Bitcoin Builder cities worldwide"
             href="/cities"
+          />
+          <QuickLinkCard
+            title="Members"
+            description="See how each persona thrives at Builder"
+            href="/members"
           />
         </div>
       </Section>

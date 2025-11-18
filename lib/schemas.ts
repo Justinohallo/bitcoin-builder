@@ -29,12 +29,64 @@ const HighlightSchema = z.object({
   description: z.string(),
 });
 
+export const MemberReferenceSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  href: z.string(),
+});
+
+export const MemberResourceSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  url: z.string(),
+  type: z.enum([
+    "event",
+    "presentation",
+    "project",
+    "news",
+    "resource",
+    "guide",
+    "video",
+    "blog",
+    "tool",
+  ]),
+  external: z.boolean().optional(),
+});
+
+const MemberCallToActionSchema = z.object({
+  text: z.string(),
+  href: z.string(),
+});
+
 export const SectionSchema = z.object({
   title: z.string(),
   body: z.string(),
   links: z.array(LinkSchema).optional(),
   images: z.array(ImageSchema).optional(),
   highlights: z.array(HighlightSchema).optional(),
+});
+
+export const MemberPersonaSchema = z.object({
+  id: z.string(),
+  slug: z.string(),
+  title: z.string(),
+  tagline: z.string(),
+  summary: z.string(),
+  focusAreas: z.array(HighlightSchema),
+  meetupWins: z.array(HighlightSchema),
+  recommendedSessions: z.array(MemberReferenceSchema),
+  resources: z.array(MemberResourceSchema),
+  cta: z.object({
+    primary: MemberCallToActionSchema,
+    secondary: MemberCallToActionSchema.optional(),
+  }),
+});
+
+export const MembersCollectionSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  members: z.array(MemberPersonaSchema),
+  meta: MetaSchema,
 });
 
 // Sponsors Schema

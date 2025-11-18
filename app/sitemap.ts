@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import {
   loadCities,
   loadEvents,
+  loadMembers,
   loadPresentations,
   loadPresenters,
   loadRecaps,
@@ -21,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const { cities } = loadCities();
   const { presentations } = loadPresentations();
   const { presenters } = loadPresenters();
+  const { members } = loadMembers();
 
   // Static pages
   const staticPages = [
@@ -144,6 +146,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    {
+      url: urls.members.list(),
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
   ];
 
   // Event pages
@@ -186,6 +194,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const memberPages = members.map((member) => ({
+    url: urls.members.detail(member.slug),
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticPages,
     ...eventPages,
@@ -193,5 +208,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cityPages,
     ...presentationPages,
     ...presenterPages,
+    ...memberPages,
   ];
 }

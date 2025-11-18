@@ -10,6 +10,7 @@ import {
   EducationalContentSchema,
   EventsCollectionSchema,
   HomeSchema,
+  MembersCollectionSchema,
   MissionSchema,
   NewsTopicsCollectionSchema,
   OnboardingSchema,
@@ -34,6 +35,8 @@ import type {
   Event,
   EventsCollection,
   Home,
+  MemberPersona,
+  MembersCollection,
   Mission,
   NewsTopic,
   NewsTopicsCollection,
@@ -124,6 +127,25 @@ export async function loadContentAsync<T>(
  */
 export function loadHome(): Home {
   return loadContent("home.json", HomeSchema);
+}
+
+/**
+ * Loads member personas content
+ * @returns Member personas collection
+ * @throws {Error} If members.json is invalid or missing
+ */
+export function loadMembers(): MembersCollection {
+  return loadContent("members.json", MembersCollectionSchema);
+}
+
+/**
+ * Loads a single member persona by slug
+ * @param slug - URL-safe member identifier
+ * @returns Member persona object if found
+ */
+export function loadMember(slug: string): MemberPersona | undefined {
+  const { members } = loadMembers();
+  return members.find((member) => member.slug === slug);
 }
 
 /**

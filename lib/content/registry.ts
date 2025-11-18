@@ -11,6 +11,7 @@ import {
   EducationalContentSchema,
   EventsCollectionSchema,
   HomeSchema,
+  MembersCollectionSchema,
   MissionSchema,
   NewsTopicsCollectionSchema,
   OnboardingSchema,
@@ -32,6 +33,7 @@ import type {
   EducationalContent,
   EventsCollection,
   Home,
+  MembersCollection,
   Mission,
   NewsTopicsCollection,
   Onboarding,
@@ -73,6 +75,12 @@ export const CONTENT_REGISTRY = {
     description: "Homepage content and hero section",
     category: "pages",
   } as ContentEntry<Home>,
+  members: {
+    filename: "members.json",
+    schema: MembersCollectionSchema,
+    description: "Member personas and tailored benefits",
+    category: "pages",
+  } as ContentEntry<MembersCollection>,
 
   events: {
     filename: "events.json",
