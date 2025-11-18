@@ -1,0 +1,416 @@
+{
+  "title": "Frequently Asked Questions",
+  "slug": "faq",
+  "description": "Common questions about Bitcoin, Lightning Network, Builder Vancouver, and our community.",
+  "categories": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Questions for newcomers to Builder Vancouver",
+      "faqs": [
+        {
+          "id": "faq-001",
+          "question": "What is Builder Vancouver?",
+          "answer": "Builder Vancouver is a community-driven meetup focused on Bitcoin education, Lightning Network development, and Layer 2 exploration. We bring together developers, enthusiasts, and curious minds to learn, build, and advance Bitcoin technology together.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "about",
+            "title": "About Builder Vancouver"
+          },
+          "tags": ["community", "getting-started", "builder-vancouver"]
+        },
+        {
+          "id": "faq-002",
+          "question": "Do I need prior Bitcoin knowledge to attend?",
+          "answer": "No preparation required! Builder Vancouver welcomes everyone interested in Bitcoin, from complete beginners to experienced developers. Our meetups include context for beginners while diving deep enough to engage experienced developers.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "onboarding",
+            "title": "Onboarding"
+          },
+          "tags": ["getting-started", "community"]
+        },
+        {
+          "id": "faq-003",
+          "question": "What should I bring to my first meetup?",
+          "answer": "Yourself and your curiosity! For workshop sessions, bring a laptop. Having a Bitcoin wallet (mobile or hardware) can be useful but isn't required. We'll provide any other materials needed.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "what-to-expect",
+            "title": "What to Expect"
+          },
+          "tags": ["getting-started", "meetups", "events"]
+        },
+        {
+          "id": "faq-004",
+          "question": "What is the meetup format?",
+          "answer": "Our meetups typically run 2-3 hours and include a mix of presentations, hands-on activities, and networking. We start with introductions, followed by the main content, and end with open discussion and collaboration time.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "what-to-expect",
+            "title": "What to Expect"
+          },
+          "tags": ["meetups", "events", "format"]
+        },
+        {
+          "id": "faq-005",
+          "question": "What level of technical depth should I expect?",
+          "answer": "We cater to all skill levels. Presentations include context for beginners while diving deep enough to engage experienced developers. Don't worry if you don't understand everything - questions are encouraged and learning is collaborative.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "what-to-expect",
+            "title": "What to Expect"
+          },
+          "tags": ["meetups", "technical", "learning"]
+        },
+        {
+          "id": "faq-006",
+          "question": "What are the community guidelines?",
+          "answer": "Builder Vancouver is an inclusive, respectful community. We welcome all experience levels and backgrounds. Be kind, ask questions, share knowledge, and help others learn. All meetups follow the Chatham House Rule for open discussion.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "onboarding",
+            "title": "Onboarding"
+          },
+          "tags": ["community", "guidelines"]
+        }
+      ]
+    },
+    {
+      "id": "bitcoin-basics",
+      "title": "Bitcoin Basics",
+      "description": "Fundamental questions about Bitcoin",
+      "faqs": [
+        {
+          "id": "faq-101",
+          "question": "What is Bitcoin?",
+          "answer": "Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without intermediaries. Created in 2009 by Satoshi Nakamoto, it operates on a distributed network maintained by thousands of nodes worldwide.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "bitcoin-101",
+            "title": "Bitcoin 101"
+          },
+          "tags": ["bitcoin", "basics", "fundamentals"]
+        },
+        {
+          "id": "faq-102",
+          "question": "How does Bitcoin work?",
+          "answer": "Bitcoin uses blockchain technology - a public ledger of all transactions. The network is secured through proof-of-work mining, where miners compete to validate transactions and create new blocks. This process ensures security and consensus without central authority.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "bitcoin-101",
+            "title": "Bitcoin 101"
+          },
+          "tags": ["bitcoin", "blockchain", "mining"]
+        },
+        {
+          "id": "faq-103",
+          "question": "What are private keys?",
+          "answer": "Private keys are secret codes that prove ownership of bitcoin. They must be kept secure and never shared. If you lose your private key, you lose access to your bitcoin permanently.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "bitcoin-101",
+            "title": "Bitcoin 101"
+          },
+          "tags": ["bitcoin", "security", "wallets"]
+        },
+        {
+          "id": "faq-104",
+          "question": "What is mining?",
+          "answer": "Mining is the process of validating transactions and securing the Bitcoin network. Miners compete to solve cryptographic puzzles, and the first to solve it gets to add a new block of transactions to the blockchain and receives a reward in bitcoin.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "bitcoin-101",
+            "title": "Bitcoin 101"
+          },
+          "tags": ["bitcoin", "mining", "blockchain"]
+        },
+        {
+          "id": "faq-105",
+          "question": "Why does Bitcoin matter?",
+          "answer": "Bitcoin provides financial sovereignty, censorship resistance, and a fixed supply (21 million coins). It enables permissionless innovation and financial inclusion globally. As a neutral, open protocol, Bitcoin serves as the foundation for a new financial system.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "bitcoin-101",
+            "title": "Bitcoin 101"
+          },
+          "tags": ["bitcoin", "philosophy", "value"]
+        }
+      ]
+    },
+    {
+      "id": "lightning-network",
+      "title": "Lightning Network",
+      "description": "Questions about Lightning Network technology and usage",
+      "faqs": [
+        {
+          "id": "faq-201",
+          "question": "What is Lightning Network?",
+          "answer": "The Lightning Network is a Layer 2 protocol built on top of Bitcoin that enables instant, low-cost payments. By creating payment channels between users, Lightning allows transactions to occur off-chain while maintaining Bitcoin's security guarantees.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "lightning-101",
+            "title": "Lightning Network 101"
+          },
+          "tags": ["lightning", "layer-2", "payments"]
+        },
+        {
+          "id": "faq-202",
+          "question": "How does Lightning Network work?",
+          "answer": "Lightning uses payment channels - two parties lock bitcoin in a multisig address and can transact unlimited times off-chain. Only the opening and closing transactions are recorded on the Bitcoin blockchain. Channels can be connected to route payments across the network.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "lightning-101",
+            "title": "Lightning Network 101"
+          },
+          "tags": ["lightning", "channels", "technical"]
+        },
+        {
+          "id": "faq-203",
+          "question": "What are the benefits of Lightning Network?",
+          "answer": "Lightning enables instant payments (settling in milliseconds), low fees (typically fractions of a cent), scalability (millions of transactions per second possible), privacy (payments don't broadcast to entire network), and micropayments (sub-satoshi payments for streaming and metered services).",
+          "sourceContent": {
+            "type": "page",
+            "slug": "lightning-101",
+            "title": "Lightning Network 101"
+          },
+          "tags": ["lightning", "benefits", "features"]
+        },
+        {
+          "id": "faq-204",
+          "question": "What are Lightning payment channels?",
+          "answer": "Payment channels are two-way payment channels between two parties on the Lightning Network. They allow unlimited transactions off-chain, with only the opening and closing transactions recorded on the Bitcoin blockchain. Channels can route payments to other nodes in the network.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "lightning-101",
+            "title": "Lightning Network 101"
+          },
+          "tags": ["lightning", "channels", "technical"]
+        },
+        {
+          "id": "faq-205",
+          "question": "How do Lightning payments work?",
+          "answer": "To send a Lightning payment, you scan a QR code or paste an invoice (starting with 'lnbc'). Your wallet routes the payment through existing channels or opens new ones as needed. Payments typically complete in under 5 seconds. To receive, you generate an invoice that others can pay.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "lightning-getting-started",
+            "title": "Getting Started with Lightning"
+          },
+          "tags": ["lightning", "payments", "how-to"]
+        },
+        {
+          "id": "faq-206",
+          "question": "Why use Lightning Network?",
+          "answer": "Lightning makes Bitcoin practical for everyday use with instant payments (settling in seconds), low fees (typically less than a penny), micropayments (send tiny amounts), privacy (payments don't broadcast to entire network), and global reach (works anywhere with internet). Perfect for buying coffee, tipping creators, or sending money to friends.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "lightning-getting-started",
+            "title": "Getting Started with Lightning"
+          },
+          "tags": ["lightning", "benefits", "use-cases"]
+        }
+      ]
+    },
+    {
+      "id": "wallets",
+      "title": "Wallets",
+      "description": "Questions about Bitcoin and Lightning wallets",
+      "faqs": [
+        {
+          "id": "faq-301",
+          "question": "What is a Custodial Lightning Wallet?",
+          "answer": "A custodial Lightning wallet is one where the service provider holds your private keys and manages your Lightning channels for you. This makes it very easy to use - similar to how a bank holds your money - but means you're trusting them with your funds. Examples include Wallet of Satoshi and Strike. Good for beginners and small amounts.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "lightning-getting-started",
+            "title": "Getting Started with Lightning"
+          },
+          "tags": ["wallets", "custodial", "lightning"]
+        },
+        {
+          "id": "faq-302",
+          "question": "What is a Non-Custodial Lightning Wallet?",
+          "answer": "A non-custodial Lightning wallet gives you full control over your private keys. You maintain sovereignty over your funds, but may need to manage Lightning channels yourself (though some wallets automate this). Examples include Phoenix, Breez, ZEUS, and Muun. Better for larger amounts and users who value sovereignty.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "lightning-getting-started",
+            "title": "Getting Started with Lightning"
+          },
+          "tags": ["wallets", "non-custodial", "lightning", "security"]
+        },
+        {
+          "id": "faq-303",
+          "question": "What is a Hybrid Wallet?",
+          "answer": "A hybrid wallet offers both custodial and non-custodial options, giving you flexibility. You can start with their custodial service for ease of use, then migrate to non-custodial options as you become more comfortable. Blue Wallet is an example of a hybrid wallet.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "wallets",
+            "title": "Lightning Wallets"
+          },
+          "tags": ["wallets", "hybrid", "lightning"]
+        },
+        {
+          "id": "faq-304",
+          "question": "How do I choose a Lightning wallet?",
+          "answer": "Consider your priorities: ease of use vs. control, technical comfort level, and use case. Custodial wallets (like Wallet of Satoshi) are easiest for beginners. Non-custodial wallets (like Phoenix, Breez) offer more control. Hybrid wallets (like Blue Wallet) give you flexibility. Visit our Wallets page to compare features and find download links.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "wallets",
+            "title": "Lightning Wallets"
+          },
+          "tags": ["wallets", "choosing", "comparison"]
+        },
+        {
+          "id": "faq-305",
+          "question": "What are the security considerations for wallets?",
+          "answer": "Always backup your wallet recovery phrase (seed words) and store it securely. Without it, you'll lose access to your funds. For custodial wallets, you're trusting the service with your funds (like a bank). For non-custodial wallets, you're responsible for security. Start with small amounts when learning, and never share your private keys or recovery phrase with anyone.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "lightning-getting-started",
+            "title": "Getting Started with Lightning"
+          },
+          "tags": ["wallets", "security", "backup"]
+        },
+        {
+          "id": "faq-306",
+          "question": "What's the difference between Bitcoin and Lightning balances?",
+          "answer": "Bitcoin balance is your on-chain bitcoin stored on the Bitcoin blockchain. Lightning balance is bitcoin locked in Lightning payment channels for instant payments. Some wallets (like Muun) unify these balances, while others keep them separate. You can move funds between Bitcoin and Lightning, though this requires opening/closing channels.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "wallets",
+            "title": "Lightning Wallets"
+          },
+          "tags": ["wallets", "lightning", "bitcoin", "balance"]
+        }
+      ]
+    },
+    {
+      "id": "layer-2",
+      "title": "Layer 2 Solutions",
+      "description": "Questions about Bitcoin Layer 2 scaling solutions",
+      "faqs": [
+        {
+          "id": "faq-401",
+          "question": "What are Layer 2 solutions?",
+          "answer": "Layer 2 protocols are built on top of Bitcoin's base layer (Layer 1) to enable new functionality and scalability. They inherit Bitcoin's security while enabling features like instant payments, smart contracts, and increased transaction throughput.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "layer-2-overview",
+            "title": "Layer 2 Overview"
+          },
+          "tags": ["layer-2", "scaling", "bitcoin"]
+        },
+        {
+          "id": "faq-402",
+          "question": "What's the difference between Lightning and other Layer 2s?",
+          "answer": "Lightning Network is the most established Layer 2, focused on instant payments. Other Layer 2s include RGB (client-side validated smart contracts), Stacks (smart contracts with Bitcoin finality), Liquid (federated sidechain), Rollups (various scaling proposals), and Fedimint (federated Chaumian e-cash mints). Each offers different trade-offs between security, decentralization, and functionality.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "layer-2-overview",
+            "title": "Layer 2 Overview"
+          },
+          "tags": ["layer-2", "lightning", "comparison"]
+        },
+        {
+          "id": "faq-403",
+          "question": "Why do Layer 2 solutions matter?",
+          "answer": "Bitcoin's base layer prioritizes security and decentralization. Layer 2s enable scaling without compromising these properties. They unlock new use cases while keeping the base layer stable and secure.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "layer-2-overview",
+            "title": "Layer 2 Overview"
+          },
+          "tags": ["layer-2", "scaling", "bitcoin"]
+        },
+        {
+          "id": "faq-404",
+          "question": "When should I use Layer 2?",
+          "answer": "Use Layer 2 when you need faster transactions, lower fees, or new functionality not available on Bitcoin's base layer. Lightning is ideal for everyday payments. Other Layer 2s enable smart contracts, faster settlements, or specialized use cases. The base layer remains best for large, infrequent transactions where maximum security is paramount.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "layer-2-overview",
+            "title": "Layer 2 Overview"
+          },
+          "tags": ["layer-2", "use-cases", "when-to-use"]
+        }
+      ]
+    },
+    {
+      "id": "development",
+      "title": "Development & Open Source",
+      "description": "Questions about contributing to Bitcoin projects and open source development",
+      "faqs": [
+        {
+          "id": "faq-501",
+          "question": "What is open source development?",
+          "answer": "Open source development is a collaborative approach where source code is made publicly available under licenses that allow others to view, use, modify, and distribute the software. Key principles include transparency, collaboration, meritocracy, decentralization, and freedom. In Bitcoin, open source enables trustless verification - users can verify software does what it claims without relying on trust.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "open-source",
+            "title": "Open Source & Bitcoin"
+          },
+          "tags": ["open-source", "development", "bitcoin"]
+        },
+        {
+          "id": "faq-502",
+          "question": "How do I contribute to Bitcoin open source projects?",
+          "answer": "Start by choosing a project that interests you, reading contribution guidelines and code of conduct, starting small (fix documentation, report bugs, tackle 'good first issue' labels), joining the community (participate in discussions, ask questions), and building your reputation through consistent, quality contributions. Every expert was once a beginner.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "open-source",
+            "title": "Open Source & Bitcoin"
+          },
+          "tags": ["open-source", "contributing", "how-to"]
+        },
+        {
+          "id": "faq-503",
+          "question": "Can I get paid for contributing to open source?",
+          "answer": "Yes! Many Bitcoin companies hire developers to work full-time on open source projects. You can also receive grants from organizations like Human Rights Foundation and OpenSats, work on bounties for specific features, offer consulting services based on your expertise, or build your own product using open source projects. Start contributing, build a reputation, and opportunities will follow.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "open-source",
+            "title": "Open Source & Bitcoin"
+          },
+          "tags": ["open-source", "getting-paid", "grants"]
+        },
+        {
+          "id": "faq-504",
+          "question": "What is vibe coding?",
+          "answer": "Vibe coding is a collaborative programming approach that emphasizes flow state, creative experimentation, and community-driven development. It brings developers together in a relaxed, supportive environment where ideas flow freely and learning happens organically. It's less about deadlines and deliverables, and more about the joy of coding, discovery, and connection.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "vibe-coding",
+            "title": "Vibe Coding"
+          },
+          "tags": ["vibe-coding", "collaboration", "development"]
+        },
+        {
+          "id": "faq-505",
+          "question": "What are some top open source Bitcoin projects?",
+          "answer": "Key projects include Bitcoin Core (reference implementation), Lightning Network (Layer 2 payments), LND and Core Lightning (Lightning implementations), BTCPay Server (self-hosted payment processor), Bitcoin Dev Kit (BDK) for building wallets, Rust Bitcoin, BitcoinJS, and wallet software like Electrum, Sparrow Wallet, and BlueWallet. These represent thousands of contributors building the future of money.",
+          "sourceContent": {
+            "type": "page",
+            "slug": "open-source",
+            "title": "Open Source & Bitcoin"
+          },
+          "tags": ["open-source", "projects", "bitcoin"]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "title": "FAQ | Builder Vancouver",
+    "description": "Frequently asked questions about Bitcoin, Lightning Network, Builder Vancouver, and our community. Find answers about wallets, Layer 2 solutions, development, and more.",
+    "keywords": [
+      "faq",
+      "frequently asked questions",
+      "bitcoin",
+      "lightning network",
+      "wallets",
+      "layer 2",
+      "open source",
+      "help",
+      "questions"
+    ]
+  }
+}

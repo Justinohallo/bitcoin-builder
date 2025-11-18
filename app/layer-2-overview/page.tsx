@@ -1,11 +1,12 @@
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { FAQSection } from "@/components/faq/FAQSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { loadLayer2 } from "@/lib/content";
+import { loadLayer2, getFAQsByTags } from "@/lib/content";
 import {
   createBreadcrumbList,
   createCourseSchema,
@@ -21,6 +22,7 @@ export async function generateMetadata() {
 
 export default async function Layer2OverviewPage() {
   const content = await loadLayer2();
+  const layer2Faqs = await getFAQsByTags(["layer-2"]);
 
   // Generate structured data
   const courseSchema = createCourseSchema({
@@ -72,6 +74,12 @@ export default async function Layer2OverviewPage() {
             )}
           </Section>
         ))}
+
+        <FAQSection
+          faqs={layer2Faqs}
+          title="Frequently Asked Questions"
+          limit={4}
+        />
       </PageContainer>
     </>
   );

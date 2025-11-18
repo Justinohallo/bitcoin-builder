@@ -276,6 +276,27 @@ export function createCitySchema(city: {
 }
 
 /**
+ * Creates a FAQPage schema for SEO rich snippets
+ */
+export function createFAQPageSchema(faqs: Array<{ question: string; answer: string }>) {
+  const url = `${SITE_URL}/faq`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": url,
+    url,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+/**
  * Helper to combine multiple schemas into a graph
  */
 export function createSchemaGraph(...schemas: Record<string, unknown>[]) {

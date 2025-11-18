@@ -1,11 +1,12 @@
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { FAQSection } from "@/components/faq/FAQSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { loadLightningGettingStarted } from "@/lib/content";
+import { loadLightningGettingStarted, getFAQsByTags } from "@/lib/content";
 import {
   createBreadcrumbList,
   createCourseSchema,
@@ -21,6 +22,7 @@ export async function generateMetadata() {
 
 export default async function LightningGettingStartedPage() {
   const content = await loadLightningGettingStarted();
+  const lightningFaqs = await getFAQsByTags(["lightning", "wallets"]);
 
   // Generate structured data
   const courseSchema = createCourseSchema({
@@ -108,6 +110,12 @@ export default async function LightningGettingStartedPage() {
             </Link>
           </div>
         </Section>
+
+        <FAQSection
+          faqs={lightningFaqs}
+          title="Frequently Asked Questions"
+          limit={5}
+        />
       </PageContainer>
     </>
   );

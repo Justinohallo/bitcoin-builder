@@ -91,6 +91,10 @@ export const urls = {
     list: () => buildUrl("/wallets"),
     detail: (slug: string) => buildUrl(`/wallets/${slug}`),
   },
+
+  faq: () => buildUrl("/faq"),
+
+  page: (slug: string) => buildUrl(`/${slug}`),
 } as const;
 
 /**
@@ -160,4 +164,8 @@ export const paths = {
     list: () => "/wallets",
     detail: (slug: string) => `/wallets/${slug}`,
   },
+
+  faq: () => "/faq",
+
+  page: (slug: string) => `/${slug}`,
 } as const;

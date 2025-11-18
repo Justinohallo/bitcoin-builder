@@ -1,11 +1,12 @@
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { FAQSection } from "@/components/faq/FAQSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { loadOnboarding } from "@/lib/content";
+import { loadOnboarding, getFAQsByTags } from "@/lib/content";
 import {
   createBreadcrumbList,
   createHowToSchema,
@@ -21,6 +22,7 @@ export async function generateMetadata() {
 
 export default async function OnboardingPage() {
   const content = await loadOnboarding();
+  const gettingStartedFaqs = await getFAQsByTags(["getting-started", "community"]);
 
   // Generate structured data
   const howToSchema = createHowToSchema({
@@ -75,6 +77,12 @@ export default async function OnboardingPage() {
             )}
           </Section>
         ))}
+
+        <FAQSection
+          faqs={gettingStartedFaqs}
+          title="Frequently Asked Questions"
+          limit={4}
+        />
       </PageContainer>
     </>
   );

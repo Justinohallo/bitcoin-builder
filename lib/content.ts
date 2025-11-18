@@ -33,6 +33,7 @@ import {
   WalletSchema,
   WalletsCollectionSchema,
   WhatToExpectSchema,
+  FAQsCollectionSchema,
 } from "./schemas";
 import type {
   Charter,
@@ -70,6 +71,9 @@ import type {
   Wallet,
   WalletsCollection,
   WhatToExpect,
+  FAQsCollection,
+  FAQItem,
+  FAQCategory,
 } from "./types";
 
 const CONTENT_DIR = join(process.cwd(), "content");
@@ -308,4 +312,29 @@ export async function loadWallets(): Promise<WalletsCollection> {
 export async function loadWallet(slug: string): Promise<Wallet | undefined> {
   const { wallets } = await loadWallets();
   return wallets.find((w) => w.slug === slug);
+}
+
+export async function loadFAQs(): Promise<FAQsCollection> {
+  return loadContent("faq.json", FAQsCollectionSchema);
+}
+
+export async function getFAQsByCategory(
+  categoryId: string
+): Promise<FAQCategory | undefined> {
+  const { categories } = await loadFAQs();
+  return categories.find((c) => c.id === categoryId);
+}
+
+export async function getFAQsByTags(tags: string[]): Promise<FAQItem[]> {
+  const { categories } = await loadFAQs();
+  const allFaqs = categories.flatMap((c) => c.faqs);
+  return allFaqs.filter((faq) =>
+    faq.tags?.some((tag) => tags.includes(tag))
+  );
+}
+
+export async function getFAQById(id: string): Promise<FAQItem | undefined> {
+  const { categories } = await loadFAQs();
+  const allFaqs = categories.flatMap((c) => c.faqs);
+  return allFaqs.find((faq) => faq.id === id);
 }
