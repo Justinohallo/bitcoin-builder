@@ -15,6 +15,21 @@
       "type": "food-and-drink",
       "description": "Providing refreshments for our community events",
       "website": "https://localcoffee.example.com"
+    },
+    {
+      "id": "sponsor-funk-coffee",
+      "name": "Funk Coffee",
+      "type": "food-and-drink",
+      "description": "Local roastery keeping our builders caffeinated with high-quality beans.",
+      "website": "https://funk.coffee/"
+    },
+    {
+      "id": "sponsor-spiral",
+      "name": "Spiral",
+      "type": "technology",
+      "description": "Bitcoin-focused team at Block funding open-source development and Lightning builders.",
+      "website": "https://spiral.xyz/",
+      "twitter": "@spiralbtc"
     }
   ]
 }
