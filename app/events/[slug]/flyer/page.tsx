@@ -72,6 +72,13 @@ export default async function EventFlyerPage({ params }: EventFlyerPageProps) {
     ? new Map(presentersData.presenters.map((p) => [p.id, p]))
     : new Map();
 
+  // Truncate description if too long
+  const maxDescriptionLength = 300;
+  const truncatedDescription =
+    event.description.length > maxDescriptionLength
+      ? `${event.description.substring(0, maxDescriptionLength)}...`
+      : event.description;
+
   return (
     <div className={styles.flyerContainer}>
       <div className={styles.flyerPrintNotice}>
@@ -82,141 +89,128 @@ export default async function EventFlyerPage({ params }: EventFlyerPageProps) {
         <DownloadPdfButton slug={slug} />
       </div>
       <div className={styles.flyerContent}>
-        {/* Header */}
+        {/* Header with decorative elements */}
         <header className={styles.flyerHeader}>
+          <div className={styles.flyerHeaderDecoration}></div>
           <h1 className={styles.flyerTitle}>{event.title}</h1>
-          <div className={styles.flyerMeta}>
-            <div className={styles.flyerMetaItem}>
-              <span className={styles.flyerMetaLabel}>Date:</span>
-              <span className={styles.flyerMetaValue}>{event.date}</span>
-            </div>
-            <div className={styles.flyerMetaItem}>
-              <span className={styles.flyerMetaLabel}>Time:</span>
-              <span className={styles.flyerMetaValue}>{event.time}</span>
-            </div>
-            <div className={styles.flyerMetaItem}>
-              <span className={styles.flyerMetaLabel}>Location:</span>
-              <span className={styles.flyerMetaValue}>{event.location}</span>
-            </div>
-            {city && (
-              <div className={styles.flyerMetaItem}>
-                <span className={styles.flyerMetaLabel}>City:</span>
-                <span className={styles.flyerMetaValue}>{city.name}</span>
-              </div>
-            )}
-          </div>
+          <div className={styles.flyerHeaderDecoration}></div>
         </header>
 
-        {/* Description */}
-        <section className={styles.flyerSection}>
-          <p className={styles.flyerDescription}>{event.description}</p>
+        {/* Key Info Section */}
+        <section className={styles.flyerKeyInfo}>
+          <div className={styles.flyerInfoCard}>
+            <div className={styles.flyerInfoIcon}>📅</div>
+            <div className={styles.flyerInfoContent}>
+              <div className={styles.flyerInfoLabel}>Date</div>
+              <div className={styles.flyerInfoValue}>{event.date}</div>
+            </div>
+          </div>
+          <div className={styles.flyerInfoCard}>
+            <div className={styles.flyerInfoIcon}>🕐</div>
+            <div className={styles.flyerInfoContent}>
+              <div className={styles.flyerInfoLabel}>Time</div>
+              <div className={styles.flyerInfoValue}>{event.time}</div>
+            </div>
+          </div>
+          <div className={styles.flyerInfoCard}>
+            <div className={styles.flyerInfoIcon}>📍</div>
+            <div className={styles.flyerInfoContent}>
+              <div className={styles.flyerInfoLabel}>Location</div>
+              <div className={styles.flyerInfoValue}>{event.location}</div>
+            </div>
+          </div>
+          {city && (
+            <div className={styles.flyerInfoCard}>
+              <div className={styles.flyerInfoIcon}>🏙️</div>
+              <div className={styles.flyerInfoContent}>
+                <div className={styles.flyerInfoLabel}>City</div>
+                <div className={styles.flyerInfoValue}>{city.name}</div>
+              </div>
+            </div>
+          )}
         </section>
 
-        {/* Event Sections */}
-        {event.sections.map((section, index) => (
-          <section key={index} className={styles.flyerSection}>
-            <h2 className={styles.flyerSectionTitle}>{section.title}</h2>
-            <div className={styles.flyerSectionBody}>{section.body}</div>
-            {section.links && section.links.length > 0 && (
-              <div className={styles.flyerLinks}>
-                {section.links.map((link, linkIndex) => (
-                  <div key={linkIndex} className={styles.flyerLink}>
-                    <span className={styles.flyerLinkText}>{link.text}</span>
-                    <span className={styles.flyerLinkUrl}>{link.url}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </section>
-        ))}
+        {/* Description */}
+        <section className={styles.flyerDescriptionSection}>
+          <h2 className={styles.flyerSectionTitle}>About This Event</h2>
+          <p className={styles.flyerDescription}>{truncatedDescription}</p>
+        </section>
 
-        {/* Presentations */}
-        {presentations.length > 0 && (
-          <section className={styles.flyerSection}>
-            <h2 className={styles.flyerSectionTitle}>Presentations</h2>
-            <div className={styles.flyerPresentations}>
-              {presentations.map((presentation) => {
+        {/* Highlights Grid */}
+        <div className={styles.flyerHighlights}>
+          {presentations.length > 0 && (
+            <div className={styles.flyerHighlightCard}>
+              <div className={styles.flyerHighlightIcon}>🎤</div>
+              <div className={styles.flyerHighlightTitle}>
+                {presentations.length} Presentation
+                {presentations.length !== 1 ? "s" : ""}
+              </div>
+              {presentations.slice(0, 2).map((presentation) => {
                 const presenter = presentersById.get(presentation.presenterId);
                 return (
-                  <div key={presentation.id} className={styles.flyerPresentation}>
-                    <h3 className={styles.flyerPresentationTitle}>
-                      {presentation.title}
-                    </h3>
+                  <div key={presentation.id} className={styles.flyerHighlightItem}>
+                    <strong>{presentation.title}</strong>
                     {presenter && (
-                      <p className={styles.flyerPresentationPresenter}>
-                        Presented by {presenter.name}
-                        {presenter.title && `, ${presenter.title}`}
-                        {presenter.company && ` at ${presenter.company}`}
-                      </p>
-                    )}
-                    <p className={styles.flyerPresentationDescription}>
-                      {presentation.description}
-                    </p>
-                    {presentation.duration && (
-                      <p className={styles.flyerPresentationDuration}>
-                        Duration: {presentation.duration}
-                      </p>
+                      <span className={styles.flyerHighlightSubtext}>
+                        {" "}
+                        by {presenter.name}
+                      </span>
                     )}
                   </div>
                 );
               })}
+              {presentations.length > 2 && (
+                <div className={styles.flyerHighlightMore}>
+                  +{presentations.length - 2} more
+                </div>
+              )}
             </div>
-          </section>
-        )}
+          )}
 
-        {/* Discussion Topics */}
-        {newsTopics.length > 0 && (
-          <section className={styles.flyerSection}>
-            <h2 className={styles.flyerSectionTitle}>Discussion Topics</h2>
-            <div className={styles.flyerTopics}>
-              {newsTopics.map((topic) => (
-                <div key={topic.id} className={styles.flyerTopic}>
-                  <h3 className={styles.flyerTopicTitle}>{topic.title}</h3>
-                  <p className={styles.flyerTopicSummary}>{topic.summary}</p>
-                  {topic.tags && topic.tags.length > 0 && (
-                    <div className={styles.flyerTopicTags}>
-                      {topic.tags.map((tag) => (
-                        <span key={tag} className={styles.flyerTag}>
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+          {newsTopics.length > 0 && (
+            <div className={styles.flyerHighlightCard}>
+              <div className={styles.flyerHighlightIcon}>💬</div>
+              <div className={styles.flyerHighlightTitle}>
+                Discussion Topics
+              </div>
+              {newsTopics.slice(0, 3).map((topic) => (
+                <div key={topic.id} className={styles.flyerHighlightItem}>
+                  {topic.title}
                 </div>
               ))}
+              {newsTopics.length > 3 && (
+                <div className={styles.flyerHighlightMore}>
+                  +{newsTopics.length - 3} more
+                </div>
+              )}
             </div>
-          </section>
-        )}
+          )}
 
-        {/* Sponsors */}
-        {sponsors.length > 0 && (
-          <section className={styles.flyerSection}>
-            <h2 className={styles.flyerSectionTitle}>Event Sponsors</h2>
-            <div className={styles.flyerSponsors}>
-              {sponsors.map((sponsor) => (
-                <div key={sponsor.id} className={styles.flyerSponsor}>
-                  <h3 className={styles.flyerSponsorName}>{sponsor.name}</h3>
-                  <span className={styles.flyerSponsorType}>
-                    {sponsor.type.replace("-", " ")}
-                  </span>
-                  {sponsor.description && (
-                    <p className={styles.flyerSponsorDescription}>
-                      {sponsor.description}
-                    </p>
-                  )}
-                  {sponsor.website && (
-                    <p className={styles.flyerSponsorWebsite}>{sponsor.website}</p>
-                  )}
+          {sponsors.length > 0 && (
+            <div className={styles.flyerHighlightCard}>
+              <div className={styles.flyerHighlightIcon}>🤝</div>
+              <div className={styles.flyerHighlightTitle}>
+                Sponsored By
+              </div>
+              {sponsors.slice(0, 3).map((sponsor) => (
+                <div key={sponsor.id} className={styles.flyerHighlightItem}>
+                  <strong>{sponsor.name}</strong>
                 </div>
               ))}
+              {sponsors.length > 3 && (
+                <div className={styles.flyerHighlightMore}>
+                  +{sponsors.length - 3} more
+                </div>
+              )}
             </div>
-          </section>
-        )}
+          )}
+        </div>
 
         {/* Footer */}
         <footer className={styles.flyerFooter}>
+          <div className={styles.flyerFooterDecoration}></div>
           <p className={styles.flyerFooterText}>
-            For more information, visit our website or contact us directly.
+            Join us for an engaging discussion about Bitcoin and Lightning Network
           </p>
         </footer>
       </div>
