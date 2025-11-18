@@ -93,6 +93,7 @@ export function Navbar() {
         { href: "/lightning-101", label: "Lightning 101" },
         { href: "/layer-2-overview", label: "Layer 2 Overview" },
         { href: "/open-source", label: "Open Source" },
+        { href: "/vibe-coding", label: "Vibe Coding" },
         { href: "/onboarding", label: "Onboarding" },
         { href: "/what-to-expect", label: "What to Expect" },
       ],
