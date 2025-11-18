@@ -40,6 +40,21 @@ export default function Home() {
           <p className="text-lg text-neutral-300 mb-6 leading-relaxed">
             {section.body}
           </p>
+          {section.highlights && section.highlights.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              {section.highlights.map((highlight, highlightIndex) => (
+                <div
+                  key={highlightIndex}
+                  className="p-6 bg-neutral-900 border border-neutral-800 rounded-xl"
+                >
+                  <h3 className="text-xl font-bold text-neutral-100 mb-2">
+                    {highlight.title}
+                  </h3>
+                  <p className="text-neutral-300">{highlight.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
           {section.links && section.links.length > 0 && (
             <div className="flex flex-wrap gap-4">
               {section.links.map((link, linkIndex) => (
