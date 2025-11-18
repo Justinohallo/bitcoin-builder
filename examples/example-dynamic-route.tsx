@@ -26,6 +26,7 @@ import {
   createSchemaGraph,
   generateMetadata as generateMeta,
 } from "@/lib/seo";
+import type { Event } from "@/lib/types";
 import { paths, urls } from "@/lib/utils/urls";
 
 /**
@@ -48,7 +49,7 @@ export async function generateMetadata({ params }: EventPageProps) {
   const { slug } = await params;
 
   // Load the specific content item
-  const event = loadEvent(slug);
+  const event = await loadEvent(slug);
 
   // Handle not found case
   if (!event) {
@@ -69,9 +70,9 @@ export async function generateMetadata({ params }: EventPageProps) {
  * Returns an array of param objects.
  */
 export async function generateStaticParams() {
-  const { events } = loadEvents();
+  const { events } = await loadEvents();
 
-  return events.map((event) => ({
+  return events.map((event: Event) => ({
     slug: event.slug,
   }));
 }
@@ -86,7 +87,7 @@ export default async function EventPage({ params }: EventPageProps) {
   const { slug } = await params;
 
   // Load the specific content
-  const event = loadEvent(slug);
+  const event = await loadEvent(slug);
 
   // Handle not found case
   // This triggers Next.js 404 page
@@ -144,7 +145,7 @@ export default async function EventPage({ params }: EventPageProps) {
         <p className="text-xl text-neutral-300 mb-12">{event.description}</p>
 
         {/* Sections */}
-        {event.sections.map((section, index) => (
+        {event.sections.map((section, index: number) => (
           <Section key={index}>
             <Heading level="h2" className="text-neutral-100 mb-4">
               {section.title}
@@ -154,7 +155,7 @@ export default async function EventPage({ params }: EventPageProps) {
             </div>
             {section.links && section.links.length > 0 && (
               <div className="flex flex-wrap gap-4">
-                {section.links.map((link, linkIndex) => (
+                {section.links.map((link, linkIndex: number) => (
                   <a
                     key={linkIndex}
                     href={link.url}

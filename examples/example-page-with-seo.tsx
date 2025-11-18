@@ -24,6 +24,7 @@ import {
   createSchemaGraph,
   generateMetadata as generateMeta,
 } from "@/lib/seo";
+import type { EducationalContent } from "@/lib/types";
 import { urls } from "@/lib/utils/urls";
 
 /**
@@ -33,7 +34,7 @@ import { urls } from "@/lib/utils/urls";
  * Use the content's meta object for consistency.
  */
 export async function generateMetadata() {
-  const content = loadBitcoin101();
+  const content = await loadBitcoin101();
   return generateMeta(content.meta);
 }
 
@@ -44,9 +45,9 @@ export async function generateMetadata() {
  * - Generate structured data (JSON-LD)
  * - Render content with semantic HTML
  */
-export default function ExamplePage() {
+export default async function ExamplePage() {
   // Load content - this happens at build time (SSG)
-  const content = loadBitcoin101();
+  const content = await loadBitcoin101();
 
   // Generate structured data for SEO
   // Choose the appropriate schema for your content type:
@@ -87,7 +88,7 @@ export default function ExamplePage() {
         <p className="text-xl text-neutral-300 mb-12">{content.description}</p>
 
         {/* Content sections */}
-        {content.sections.map((section, index) => (
+        {content.sections.map((section, index: number) => (
           <Section key={index}>
             {/* Section heading - should be H2 */}
             <Heading level="h2" className="text-neutral-100 mb-4">
@@ -102,7 +103,7 @@ export default function ExamplePage() {
             {/* Optional: Section links */}
             {section.links && section.links.length > 0 && (
               <div className="flex flex-wrap gap-4">
-                {section.links.map((link, linkIndex) => (
+                {section.links.map((link, linkIndex: number) => (
                   <Link
                     key={linkIndex}
                     href={link.url}
