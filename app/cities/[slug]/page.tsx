@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
-import { getCityWithEvents, loadCities, loadCity } from "@/lib/content";
+import { getCityEvents, loadCities, loadCity } from "@/lib/content";
 import {
   createBreadcrumbList,
   createCitySchema,
@@ -23,7 +23,7 @@ interface CityPageProps {
 
 export async function generateMetadata({ params }: CityPageProps) {
   const { slug } = await params;
-  const city = loadCity(slug);
+  const city = await loadCity(slug);
 
   if (!city) {
     return {};
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: CityPageProps) {
 }
 
 export async function generateStaticParams() {
-  const { cities } = loadCities();
+  const { cities } = await loadCities();
   return cities.map((city) => ({
     slug: city.slug,
   }));
@@ -45,32 +45,34 @@ export async function generateStaticParams() {
 
 export default async function CityPage({ params }: CityPageProps) {
   const { slug } = await params;
-  const cityData = getCityWithEvents(slug);
+  const city = await loadCity(slug);
 
-  if (!cityData) {
+  if (!city) {
     notFound();
   }
 
+  const events = await getCityEvents(city.id);
+
   const pageSchema = createWebPageSchema(
-    urls.cities.detail(cityData.slug),
-    `${cityData.name} | Bitcoin Builder Cities`,
-    cityData.meta.longDescription
+    urls.cities.detail(city.slug),
+    `${city.name} | Bitcoin Builder Cities`,
+    city.meta.longDescription
   );
 
   const citySchema = createCitySchema({
-    name: cityData.name,
-    slug: cityData.slug,
-    description: cityData.meta.longDescription,
-    country: cityData.country,
-    region: cityData.region,
-    latitude: cityData.maps.center.lat,
-    longitude: cityData.maps.center.lng,
+    name: city.name,
+    slug: city.slug,
+    description: city.meta.longDescription,
+    country: city.country,
+    region: city.region,
+    latitude: city.maps.center.lat,
+    longitude: city.maps.center.lng,
   });
 
   const breadcrumbSchema = createBreadcrumbList([
     { name: "Home", url: urls.home() },
     { name: "Cities", url: urls.cities.list() },
-    { name: cityData.name },
+    { name: city.name },
   ]);
 
   const structuredData = createSchemaGraph(
@@ -91,20 +93,20 @@ export default async function CityPage({ params }: CityPageProps) {
         </Link>
 
         <Heading level="h1" className="text-orange-400 mb-4">
-          {cityData.name}
+          {city.name}
         </Heading>
 
         <p className="text-lg text-neutral-400 mb-8">
-          {cityData.region}, {cityData.country}
+          {city.region}, {city.country}
         </p>
 
         {/* Hero Image */}
-        {cityData.meta.heroImage && (
+        {city.meta.heroImage && (
           <Section>
             <div className="w-full h-64 md:h-96 rounded-lg overflow-hidden mb-8">
               <img
-                src={cityData.meta.heroImage}
-                alt={`${cityData.name} skyline`}
+                src={city.meta.heroImage}
+                alt={`${city.name} skyline`}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -114,7 +116,7 @@ export default async function CityPage({ params }: CityPageProps) {
         {/* Long Description */}
         <Section>
           <p className="text-xl text-neutral-300 mb-8 whitespace-pre-line">
-            {cityData.meta.longDescription}
+            {city.meta.longDescription}
           </p>
         </Section>
 
@@ -127,43 +129,43 @@ export default async function CityPage({ params }: CityPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
               <div className="text-3xl font-bold text-orange-400 mb-2">
-                {cityData.bitcoinEcosystem.merchantCount}
+                {city.bitcoinEcosystem.merchantCount}
               </div>
               <div className="text-sm text-neutral-400">Merchants</div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
               <div className="text-3xl font-bold text-orange-400 mb-2">
-                {cityData.bitcoinEcosystem.notableBuilders.length}
+                {city.bitcoinEcosystem.notableBuilders.length}
               </div>
               <div className="text-sm text-neutral-400">Notable Builders</div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
               <div className="text-3xl font-bold text-orange-400 mb-2">
-                {cityData.bitcoinEcosystem.meetups.length}
+                {city.bitcoinEcosystem.meetups.length}
               </div>
               <div className="text-sm text-neutral-400">Meetups</div>
             </div>
           </div>
 
           {/* Merchant Map */}
-          {cityData.bitcoinEcosystem.merchantList.length > 0 && (
+          {city.bitcoinEcosystem.merchantList.length > 0 && (
             <div className="mb-8">
               <Heading level="h3" className="text-neutral-100 mb-4">
                 Merchant Map
               </Heading>
-              <CityMapClient city={cityData} />
+              <CityMapClient city={city} />
             </div>
           )}
         </Section>
 
         {/* Notable Builders */}
-        {cityData.bitcoinEcosystem.notableBuilders.length > 0 && (
+        {city.bitcoinEcosystem.notableBuilders.length > 0 && (
           <Section>
             <Heading level="h2" className="text-neutral-100 mb-4">
               Notable Builders
             </Heading>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {cityData.bitcoinEcosystem.notableBuilders.map((builder) => (
+              {city.bitcoinEcosystem.notableBuilders.map((builder) => (
                 <div
                   key={`${builder.name}-${builder.project}`}
                   className="bg-neutral-900 border border-neutral-800 rounded-lg p-6"
@@ -253,13 +255,13 @@ export default async function CityPage({ params }: CityPageProps) {
         )}
 
         {/* Events Hosted in This City */}
-        {cityData.events && cityData.events.length > 0 && (
+        {events.length > 0 && (
           <Section>
             <Heading level="h2" className="text-neutral-100 mb-4">
               Upcoming Events
             </Heading>
             <div className="space-y-4">
-              {cityData.events.map((event) => (
+              {events.map((event) => (
                 <Link
                   key={event.slug}
                   href={`/events/${event.slug}`}
@@ -289,7 +291,7 @@ export default async function CityPage({ params }: CityPageProps) {
             Builder City Scores
           </Heading>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {Object.entries(cityData.builderCityScores).map(([key, value]) => (
+            {Object.entries(city.builderCityScores).map(([key, value]) => (
               <div
                 key={key}
                 className="bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-center"
@@ -308,10 +310,10 @@ export default async function CityPage({ params }: CityPageProps) {
         {/* Why This City Is Great For Bitcoin */}
         <Section>
           <Heading level="h2" className="text-neutral-100 mb-4">
-            Why {cityData.name} Is Great For Bitcoin
+            Why {city.name} Is Great For Bitcoin
           </Heading>
 
-          {cityData.whyThisCityIsGreatForBitcoin.economicStrengths.length >
+          {city.whyThisCityIsGreatForBitcoin.economicStrengths.length >
             0 && (
             <div className="mb-6">
               <Heading
@@ -321,7 +323,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 Economic Strengths
               </Heading>
               <ul className="list-disc list-inside space-y-2 text-neutral-300">
-                {cityData.whyThisCityIsGreatForBitcoin.economicStrengths.map(
+                {city.whyThisCityIsGreatForBitcoin.economicStrengths.map(
                   (strength, idx) => (
                     <li key={idx}>{strength}</li>
                   )
@@ -330,7 +332,7 @@ export default async function CityPage({ params }: CityPageProps) {
             </div>
           )}
 
-          {cityData.whyThisCityIsGreatForBitcoin.techEcosystem.length > 0 && (
+          {city.whyThisCityIsGreatForBitcoin.techEcosystem.length > 0 && (
             <div className="mb-6">
               <Heading
                 level="h3"
@@ -339,7 +341,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 Tech Ecosystem
               </Heading>
               <ul className="list-disc list-inside space-y-2 text-neutral-300">
-                {cityData.whyThisCityIsGreatForBitcoin.techEcosystem.map(
+                {city.whyThisCityIsGreatForBitcoin.techEcosystem.map(
                   (item, idx) => (
                     <li key={idx}>{item}</li>
                   )
@@ -357,7 +359,7 @@ export default async function CityPage({ params }: CityPageProps) {
             </Heading>
             <p className="text-neutral-300 mb-2">
               {
-                cityData.whyThisCityIsGreatForBitcoin.regulatoryEnvironment
+                city.whyThisCityIsGreatForBitcoin.regulatoryEnvironment
                   .summary
               }
             </p>
@@ -367,7 +369,7 @@ export default async function CityPage({ params }: CityPageProps) {
               </span>
               <span className="text-lg font-bold text-orange-400">
                 {
-                  cityData.whyThisCityIsGreatForBitcoin.regulatoryEnvironment
+                  city.whyThisCityIsGreatForBitcoin.regulatoryEnvironment
                     .friendlyScore
                 }
                 /10
@@ -390,10 +392,10 @@ export default async function CityPage({ params }: CityPageProps) {
               >
                 Airport
               </Heading>
-              <p className="text-neutral-300">{cityData.travelGuide.airport}</p>
+              <p className="text-neutral-300">{city.travelGuide.airport}</p>
             </div>
 
-            {cityData.travelGuide.transportation.length > 0 && (
+            {city.travelGuide.transportation.length > 0 && (
               <div>
                 <Heading
                   level="h3"
@@ -402,14 +404,14 @@ export default async function CityPage({ params }: CityPageProps) {
                   Transportation
                 </Heading>
                 <ul className="list-disc list-inside space-y-2 text-neutral-300">
-                  {cityData.travelGuide.transportation.map((item, idx) => (
+                  {city.travelGuide.transportation.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
                 </ul>
               </div>
             )}
 
-            {cityData.travelGuide.bestAreasToStay.length > 0 && (
+            {city.travelGuide.bestAreasToStay.length > 0 && (
               <div>
                 <Heading
                   level="h3"
@@ -418,7 +420,7 @@ export default async function CityPage({ params }: CityPageProps) {
                   Best Areas to Stay
                 </Heading>
                 <ul className="list-disc list-inside space-y-2 text-neutral-300">
-                  {cityData.travelGuide.bestAreasToStay.map((area, idx) => (
+                  {city.travelGuide.bestAreasToStay.map((area, idx) => (
                     <li key={idx}>{area}</li>
                   ))}
                 </ul>
@@ -433,11 +435,11 @@ export default async function CityPage({ params }: CityPageProps) {
                 Safety Notes
               </Heading>
               <p className="text-neutral-300">
-                {cityData.travelGuide.safetyNotes}
+                {city.travelGuide.safetyNotes}
               </p>
             </div>
 
-            {cityData.travelGuide.localTips.length > 0 && (
+            {city.travelGuide.localTips.length > 0 && (
               <div>
                 <Heading
                   level="h3"
@@ -446,7 +448,7 @@ export default async function CityPage({ params }: CityPageProps) {
                   Local Tips
                 </Heading>
                 <ul className="list-disc list-inside space-y-2 text-neutral-300">
-                  {cityData.travelGuide.localTips.map((tip, idx) => (
+                  {city.travelGuide.localTips.map((tip, idx) => (
                     <li key={idx}>{tip}</li>
                   ))}
                 </ul>
@@ -456,20 +458,20 @@ export default async function CityPage({ params }: CityPageProps) {
         </Section>
 
         {/* Links */}
-        {(cityData.links.officialWebsite ||
-          cityData.links.github ||
-          cityData.links.meetupPage ||
-          cityData.links.twitter ||
-          cityData.links.nostr ||
-          cityData.links.resources.length > 0) && (
+        {(city.links.officialWebsite ||
+          city.links.github ||
+          city.links.meetupPage ||
+          city.links.twitter ||
+          city.links.nostr ||
+          city.links.resources.length > 0) && (
           <Section>
             <Heading level="h2" className="text-neutral-100 mb-4">
               Links & Resources
             </Heading>
             <div className="flex flex-wrap gap-4">
-              {cityData.links.officialWebsite && (
+              {city.links.officialWebsite && (
                 <a
-                  href={cityData.links.officialWebsite}
+                  href={city.links.officialWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-orange-400 hover:text-orange-300 transition-colors"
@@ -477,9 +479,9 @@ export default async function CityPage({ params }: CityPageProps) {
                   Official Website →
                 </a>
               )}
-              {cityData.links.github && (
+              {city.links.github && (
                 <a
-                  href={cityData.links.github}
+                  href={city.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-orange-400 hover:text-orange-300 transition-colors"
@@ -487,9 +489,9 @@ export default async function CityPage({ params }: CityPageProps) {
                   GitHub →
                 </a>
               )}
-              {cityData.links.meetupPage && (
+              {city.links.meetupPage && (
                 <a
-                  href={cityData.links.meetupPage}
+                  href={city.links.meetupPage}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-orange-400 hover:text-orange-300 transition-colors"
@@ -497,12 +499,12 @@ export default async function CityPage({ params }: CityPageProps) {
                   Meetup Page →
                 </a>
               )}
-              {cityData.links.twitter && (
+              {city.links.twitter && (
                 <a
                   href={
-                    cityData.links.twitter.startsWith("http")
-                      ? cityData.links.twitter
-                      : `https://twitter.com/${cityData.links.twitter.replace("@", "").replace("https://twitter.com/", "")}`
+                    city.links.twitter.startsWith("http")
+                      ? city.links.twitter
+                      : `https://twitter.com/${city.links.twitter.replace("@", "").replace("https://twitter.com/", "")}`
                   }
                   target="_blank"
                   rel="noopener noreferrer"
@@ -511,9 +513,9 @@ export default async function CityPage({ params }: CityPageProps) {
                   Twitter →
                 </a>
               )}
-              {cityData.links.nostr && (
+              {city.links.nostr && (
                 <a
-                  href={cityData.links.nostr}
+                  href={city.links.nostr}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-orange-400 hover:text-orange-300 transition-colors"
@@ -521,7 +523,7 @@ export default async function CityPage({ params }: CityPageProps) {
                   Nostr →
                 </a>
               )}
-              {cityData.links.resources.map((resource, idx) => (
+              {city.links.resources.map((resource, idx) => (
                 <a
                   key={resource}
                   href={resource}

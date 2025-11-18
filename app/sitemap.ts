@@ -15,14 +15,14 @@ import { urls } from "@/lib/utils/urls";
  * Automatically includes all routes and content
  */
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Load dynamic content
-  const { events } = loadEvents();
-  const { recaps } = loadRecaps();
-  const { cities } = loadCities();
-  const { presentations } = loadPresentations();
-  const { presenters } = loadPresenters();
-  const { members } = loadMembers();
+  const { events } = await loadEvents();
+  const { recaps } = await loadRecaps();
+  const { cities } = await loadCities();
+  const { presentations } = await loadPresentations();
+  const { presenters } = await loadPresenters();
+  const { members } = await loadMembers();
 
   // Static pages
   const staticPages = [

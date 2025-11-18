@@ -9,10 +9,10 @@ import { generateHomeMetadata } from "@/lib/seo";
 
 export const metadata = generateHomeMetadata();
 
-export default function Home() {
-  const content = loadHome();
-  const { cities } = loadCities();
-  const memberContent = loadMembers();
+export default async function Home() {
+  const content = await loadHome();
+  const { cities } = await loadCities();
+  const memberContent = await loadMembers();
 
   return (
     <PageContainer>

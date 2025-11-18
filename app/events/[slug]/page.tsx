@@ -7,13 +7,13 @@ import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
 import {
-  getEventWithCity,
-  getEventWithNewsTopics,
-  getEventWithPresentations,
-  getEventWithSponsors,
+  loadCityById,
   loadEvent,
   loadEvents,
-  loadPresenterById,
+  loadNewsTopics,
+  loadPresentations,
+  loadPresenters,
+  loadSponsors,
 } from "@/lib/content";
 import {
   createBreadcrumbList,
@@ -29,7 +29,7 @@ interface EventPageProps {
 
 export async function generateMetadata({ params }: EventPageProps) {
   const { slug } = await params;
-  const event = loadEvent(slug);
+  const event = await loadEvent(slug);
 
   if (!event) {
     return {};
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: EventPageProps) {
 }
 
 export async function generateStaticParams() {
-  const { events } = loadEvents();
+  const { events } = await loadEvents();
   return events.map((event) => ({
     slug: event.slug,
   }));
@@ -47,16 +47,29 @@ export async function generateStaticParams() {
 
 export default async function EventPage({ params }: EventPageProps) {
   const { slug } = await params;
-  const eventData = getEventWithNewsTopics(slug);
+  const event = await loadEvent(slug);
 
-  if (!eventData) {
+  if (!event) {
     notFound();
   }
 
-  const event = eventData;
-  const eventWithCity = getEventWithCity(slug);
-  const eventWithSponsors = getEventWithSponsors(slug);
-  const eventWithPresentations = getEventWithPresentations(slug);
+  // Resolve relationships inline
+  const city = event.cityId ? await loadCityById(event.cityId) : undefined;
+  const sponsors = event.sponsorIds
+    ? (await loadSponsors()).sponsors.filter((s) => event.sponsorIds!.includes(s.id))
+    : [];
+  const presentations = event.presentationIds
+    ? (await loadPresentations()).presentations.filter((p) => event.presentationIds!.includes(p.id))
+    : [];
+  const newsTopics = event.newsTopicIds
+    ? (await loadNewsTopics()).newsTopics.filter((t) => event.newsTopicIds!.includes(t.id))
+    : [];
+  
+  // Pre-load presenters for presentations
+  const presentersData = presentations.length > 0 ? await loadPresenters() : null;
+  const presentersById = presentersData
+    ? new Map(presentersData.presenters.map((p) => [p.id, p]))
+    : new Map();
 
   // Generate structured data
   const eventSchema = createEventSchema({
@@ -95,14 +108,14 @@ export default async function EventPage({ params }: EventPageProps) {
           <p>📅 {event.date}</p>
           <p>🕐 {event.time}</p>
           <p>📍 {event.location}</p>
-          {eventWithCity?.city && (
+          {city && (
             <p>
               🏙️ Hosted in{" "}
               <Link
-                href={`/cities/${eventWithCity.city.slug}`}
+                href={`/cities/${city.slug}`}
                 className="text-orange-400 hover:text-orange-300 transition-colors"
               >
-                {eventWithCity.city.name}
+                {city.name}
               </Link>
             </p>
           )}
@@ -137,7 +150,7 @@ export default async function EventPage({ params }: EventPageProps) {
           </Section>
         ))}
 
-        {eventData.newsTopics && eventData.newsTopics.length > 0 && (
+        {newsTopics.length > 0 && (
           <Section>
             <Heading level="h2" className="text-neutral-100 mb-4">
               Discussion Topics
@@ -147,7 +160,7 @@ export default async function EventPage({ params }: EventPageProps) {
               topics at this event:
             </p>
             <div className="space-y-4">
-              {eventData.newsTopics.map((topic) => (
+              {newsTopics.map((topic) => (
                 <article
                   key={topic.id}
                   className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors"
@@ -188,8 +201,7 @@ export default async function EventPage({ params }: EventPageProps) {
           </Section>
         )}
 
-        {eventWithSponsors?.sponsors &&
-          eventWithSponsors.sponsors.length > 0 && (
+        {sponsors.length > 0 && (
             <Section>
               <Heading level="h2" className="text-neutral-100 mb-4">
                 Event Sponsors
@@ -198,7 +210,7 @@ export default async function EventPage({ params }: EventPageProps) {
                 We are grateful to our sponsors for making this event possible:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {eventWithSponsors.sponsors.map((sponsor) => (
+                {sponsors.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="bg-neutral-900 border border-neutral-800 rounded-lg p-4 hover:border-orange-400 transition-colors"
@@ -232,8 +244,7 @@ export default async function EventPage({ params }: EventPageProps) {
             </Section>
           )}
 
-        {eventWithPresentations?.presentations &&
-          eventWithPresentations.presentations.length > 0 && (
+        {presentations.length > 0 && (
             <Section>
               <Heading level="h2" className="text-neutral-100 mb-4">
                 Presentations
@@ -242,8 +253,8 @@ export default async function EventPage({ params }: EventPageProps) {
                 Presentations and talks from this event:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {eventWithPresentations.presentations.map((presentation) => {
-                  const presenter = loadPresenterById(presentation.presenterId);
+                {presentations.map((presentation) => {
+                  const presenter = presentersById.get(presentation.presenterId);
                   return (
                     <article
                       key={presentation.id}

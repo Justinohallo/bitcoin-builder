@@ -20,9 +20,9 @@ export const metadata = generatePageMetadata(
   ["events", "bitcoin", "meetups", "vancouver", "workshops"]
 );
 
-export default function EventsPage() {
-  const { events } = loadEvents();
-  const { cities } = loadCities();
+export default async function EventsPage() {
+  const { events } = await loadEvents();
+  const { cities } = await loadCities();
 
   // Pre-load cities for efficient lookup
   const citiesById = new Map(cities.map((city) => [city.id, city]));

@@ -7,8 +7,8 @@ import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
 import {
-  getPresentationWithPresenter,
   loadEvent,
+  loadPresenterById,
   loadPresentation,
   loadPresentations,
 } from "@/lib/content";
@@ -26,7 +26,7 @@ interface PresentationPageProps {
 
 export async function generateMetadata({ params }: PresentationPageProps) {
   const { slug } = await params;
-  const presentation = loadPresentation(slug);
+  const presentation = await loadPresentation(slug);
 
   if (!presentation) {
     return {};
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PresentationPageProps) {
 }
 
 export async function generateStaticParams() {
-  const { presentations } = loadPresentations();
+  const { presentations } = await loadPresentations();
   return presentations.map((presentation) => ({
     slug: presentation.slug,
   }));
@@ -46,15 +46,15 @@ export default async function PresentationPage({
   params,
 }: PresentationPageProps) {
   const { slug } = await params;
-  const presentationData = getPresentationWithPresenter(slug);
+  const presentation = await loadPresentation(slug);
 
-  if (!presentationData) {
+  if (!presentation) {
     notFound();
   }
 
-  const presentation = presentationData;
+  const presenter = await loadPresenterById(presentation.presenterId);
   const event = presentation.eventId
-    ? loadEvent(presentation.eventId)
+    ? await loadEvent(presentation.eventId)
     : undefined;
 
   // Generate structured data
@@ -90,19 +90,19 @@ export default async function PresentationPage({
         </Heading>
 
         <div className="text-lg text-neutral-300 mb-8 space-y-2">
-          {presentation.presenter && (
+          {presenter && (
             <p>
               by{" "}
               <Link
-                href={`/presenters/${presentation.presenter.slug}`}
+                href={`/presenters/${presenter.slug}`}
                 className="text-orange-400 hover:text-orange-300 transition-colors"
               >
-                {presentation.presenter.name}
+                {presenter.name}
               </Link>
-              {presentation.presenter.title && (
+              {presenter.title && (
                 <span className="text-neutral-400">
                   {" "}
-                  - {presentation.presenter.title}
+                  - {presenter.title}
                 </span>
               )}
             </p>

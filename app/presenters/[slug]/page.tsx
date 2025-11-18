@@ -26,7 +26,7 @@ interface PresenterPageProps {
 
 export async function generateMetadata({ params }: PresenterPageProps) {
   const { slug } = await params;
-  const presenter = loadPresenterBySlug(slug);
+  const presenter = await loadPresenterBySlug(slug);
 
   if (!presenter) {
     return {};
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PresenterPageProps) {
 }
 
 export async function generateStaticParams() {
-  const { presenters } = loadPresenters();
+  const { presenters } = await loadPresenters();
   return presenters.map((presenter) => ({
     slug: presenter.slug,
   }));
@@ -48,14 +48,14 @@ export async function generateStaticParams() {
 
 export default async function PresenterPage({ params }: PresenterPageProps) {
   const { slug } = await params;
-  const presenter = loadPresenterBySlug(slug);
+  const presenter = await loadPresenterBySlug(slug);
 
   if (!presenter) {
     notFound();
   }
 
-  const presentations = getPresentationsByPresenter(presenter.id);
-  const { events } = loadEvents();
+  const presentations = await getPresentationsByPresenter(presenter.id);
+  const { events } = await loadEvents();
   const eventsById = new Map(events.map((event) => [event.slug, event]));
 
   // Generate structured data
