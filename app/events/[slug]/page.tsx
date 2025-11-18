@@ -5,12 +5,14 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { Schedule } from "@/components/events/Schedule";
 
 import {
   loadCityById,
   loadEvent,
   loadEvents,
   loadNewsTopics,
+  loadPresentationById,
   loadPresentations,
   loadPresenters,
   loadSponsors,
@@ -65,11 +67,28 @@ export default async function EventPage({ params }: EventPageProps) {
     ? (await loadNewsTopics()).newsTopics.filter((t) => event.newsTopicIds!.includes(t.id))
     : [];
   
-  // Pre-load presenters for presentations
-  const presentersData = presentations.length > 0 ? await loadPresenters() : null;
-  const presentersById = presentersData
-    ? new Map(presentersData.presenters.map((p) => [p.id, p]))
-    : new Map();
+  // Pre-load presenters for presentations and schedule
+  const presentersData = await loadPresenters();
+  const presentersById = new Map(
+    presentersData.presenters.map((p) => [p.id, p])
+  );
+  
+  // Pre-load presentations for schedule items
+  const presentationsById = new Map(
+    presentations.map((p) => [p.id, p])
+  );
+  
+  // Also load any presentations referenced in schedule items
+  if (event.schedule) {
+    for (const scheduleItem of event.schedule) {
+      if (scheduleItem.presentationId && !presentationsById.has(scheduleItem.presentationId)) {
+        const presentation = await loadPresentationById(scheduleItem.presentationId);
+        if (presentation) {
+          presentationsById.set(presentation.id, presentation);
+        }
+      }
+    }
+  }
 
   // Generate structured data
   const eventSchema = createEventSchema({
@@ -122,6 +141,19 @@ export default async function EventPage({ params }: EventPageProps) {
         </div>
 
         <p className="text-xl text-neutral-300 mb-12">{event.description}</p>
+
+        {event.schedule && event.schedule.length > 0 && (
+          <Section>
+            <Heading level="h2" className="text-neutral-100 mb-4">
+              Schedule
+            </Heading>
+            <Schedule
+              items={event.schedule}
+              presentersById={presentersById}
+              presentationsById={presentationsById}
+            />
+          </Section>
+        )}
 
         {event.sections.map((section, index) => (
           <Section key={index}>
