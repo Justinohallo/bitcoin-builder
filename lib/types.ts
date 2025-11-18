@@ -23,6 +23,8 @@ import {
   ResourceSchema,
   ResourcesCollectionSchema,
   SectionSchema,
+  SponsorSchema,
+  SponsorsCollectionSchema,
   VibeAppSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
@@ -82,3 +84,7 @@ export type NotableBuilder = z.infer<typeof NotableBuilderSchema>;
 export type Meetup = z.infer<typeof MeetupSchema>;
 export type City = z.infer<typeof CitySchema>;
 export type CitiesCollection = z.infer<typeof CitiesCollectionSchema>;
+
+// Sponsors types
+export type Sponsor = z.infer<typeof SponsorSchema>;
+export type SponsorsCollection = z.infer<typeof SponsorsCollectionSchema>;

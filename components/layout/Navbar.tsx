@@ -23,6 +23,7 @@ export function Navbar() {
     { href: "/about", label: "About" },
     { href: "/cities", label: "Cities" },
     { href: "/events", label: "Events" },
+    { href: "/sponsors", label: "Sponsors" },
     { href: "/news-topics", label: "News Topics" },
     { href: "/onboarding", label: "Onboarding" },
     { href: "/what-to-expect", label: "What to Expect" },

@@ -29,6 +29,7 @@ import {
   ProjectsCollectionSchema,
   RecapsCollectionSchema,
   ResourcesCollectionSchema,
+  SponsorsCollectionSchema,
   VibeAppsCollectionSchema,
   VisionSchema,
   WhatToExpectSchema,
@@ -55,6 +56,7 @@ const CONTENT_SCHEMAS: Record<string, z.ZodSchema<unknown>> = {
   "charter.json": CharterSchema,
   "philosophy.json": PhilosophySchema,
   "cities.json": CitiesCollectionSchema,
+  "sponsors.json": SponsorsCollectionSchema,
 };
 
 interface ValidationResult {

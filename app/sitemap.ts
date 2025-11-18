@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
 
-import { loadCities, loadEvents, loadRecaps } from "@/lib/content";
+import {
+  loadCities,
+  loadEvents,
+  loadRecaps,
+  loadSponsors,
+} from "@/lib/content";
 import { urls } from "@/lib/utils/urls";
 
 /**
@@ -13,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const { events } = loadEvents();
   const { recaps } = loadRecaps();
   const { cities } = loadCities();
+  const { sponsors } = loadSponsors();
 
   // Static pages
   const staticPages = [
@@ -117,6 +123,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
+    },
+    {
+      url: urls.sponsors.list(),
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     },
   ];
 
