@@ -159,6 +159,26 @@ export const PresentationsCollectionSchema = z.object({
   presentations: z.array(PresentationSchema),
 });
 
+// Schedule Schema
+export const ScheduleItemSchema = z.object({
+  startTime: z.string(), // e.g., "18:00" (24-hour format) or "6:00 PM"
+  endTime: z.string().optional(), // e.g., "18:30" or "6:30 PM"
+  title: z.string(),
+  description: z.string().optional(),
+  type: z.enum([
+    "presentation",
+    "workshop",
+    "break",
+    "networking",
+    "q-and-a",
+    "introduction",
+    "closing",
+    "other",
+  ]).optional(),
+  presenterId: z.string().optional(), // Reference to Presenter by ID
+  presentationId: z.string().optional(), // Reference to Presentation by ID
+});
+
 // Events Schema
 export const EventSchema = z.object({
   title: z.string(),
@@ -171,6 +191,7 @@ export const EventSchema = z.object({
   sponsorIds: z.array(z.string()).optional(), // References to Sponsors by ID
   presentationIds: z.array(z.string()).optional(), // References to Presentations by ID
   newsTopicIds: z.array(z.string()).optional(), // References to NewsTopics by ID
+  schedule: z.array(ScheduleItemSchema).optional(), // Structured schedule items
   sections: z.array(SectionSchema),
   meta: MetaSchema,
 });

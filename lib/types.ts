@@ -32,6 +32,7 @@ import {
   ResourcesCollectionSchema,
   RoadmapItemSchema,
   RoadmapMilestoneSchema,
+  ScheduleItemSchema,
   SectionSchema,
   SlideDeckSchema,
   SlideSchema,
@@ -56,6 +57,7 @@ import {
  * These are automatically inferred and type-safe
  */
 
+export type ScheduleItem = z.infer<typeof ScheduleItemSchema>;
 export type Event = z.infer<typeof EventSchema>;
 export type EventsCollection = z.infer<typeof EventsCollectionSchema>;
 

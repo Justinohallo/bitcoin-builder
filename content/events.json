@@ -15,6 +15,37 @@
         "taproot-assets-protocol",
         "nostr-protocol-adoption"
       ],
+      "schedule": [
+        {
+          "startTime": "6:00 PM",
+          "endTime": "6:30 PM",
+          "title": "Introduction and Setup",
+          "description": "Welcome and introduction to the workshop. Get your development environment set up.",
+          "type": "introduction"
+        },
+        {
+          "startTime": "6:30 PM",
+          "endTime": "7:00 PM",
+          "title": "Lightning Network Fundamentals",
+          "description": "Learn the core concepts of Lightning Network including payment channels, routing, and network architecture.",
+          "type": "presentation",
+          "presentationId": "presentation-intro-to-lightning-2025"
+        },
+        {
+          "startTime": "7:00 PM",
+          "endTime": "8:00 PM",
+          "title": "Hands-on Lab",
+          "description": "Practical workshop session. Set up your own Lightning node on testnet and make your first Lightning payments.",
+          "type": "workshop"
+        },
+        {
+          "startTime": "8:00 PM",
+          "endTime": "8:30 PM",
+          "title": "Q&A and Networking",
+          "description": "Open discussion, questions, and networking with fellow builders.",
+          "type": "networking"
+        }
+      ],
       "sections": [
         {
           "title": "What You'll Learn",
@@ -30,10 +61,6 @@
               "external": true
             }
           ]
-        },
-        {
-          "title": "Schedule",
-          "body": "6:00 PM - Introduction and Setup\n6:30 PM - Lightning Network Fundamentals\n7:00 PM - Hands-on Lab\n8:00 PM - Q&A and Networking"
         }
       ],
       "meta": {
