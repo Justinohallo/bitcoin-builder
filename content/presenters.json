@@ -35,6 +35,17 @@
       "title": "Project Manager",
       "company": "Rabble Labs",
       "links": {}
+    },
+    {
+      "id": "presenter-jp",
+      "name": "JP",
+      "slug": "jp",
+      "bio": "Founder of Bitpoints.me, a Bitcoin-native rewards system that transforms traditional loyalty points into sats. JP manages btlearn.org and built Bitpoints.me from a local coffeeshop hobby project, merging Cashu with Bitchat to create an interoperable, educational rewards platform that teaches people about Bitcoin through familiar UX patterns.",
+      "title": "Founder",
+      "company": "Bitpoints.me",
+      "links": {
+        "website": "https://bitpoints.me"
+      }
     }
   ]
 }

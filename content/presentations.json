@@ -182,6 +182,84 @@
           "bitcoin payments"
         ]
       }
+    },
+    {
+      "id": "presentation-bitpoints-me",
+      "title": "Introducing Bitpoints.me – A Bitcoin-native rewards system",
+      "slug": "bitpoints-me",
+      "description": "A Bitcoin-native rewards system born from a coffeeshop hobby project that transforms traditional loyalty points into sats, teaching people about Bitcoin through familiar UX patterns.",
+      "overview": "JP shares the story of Bitpoints.me, a Bitcoin-native rewards system that started as a simple idea: give customers rewards at a local coffeeshop. Instead of airline miles or hotel points, JP wanted something better—something that teaches people about Bitcoin. The presentation covers how Bitpoints.me merges Cashu with Bitchat to create an interoperable, educational rewards platform where users see 'points' but behind the scenes they're 1:1 pegged to sats. Learn how this community-first, not corporate, system enables offline use for kids, offers discounts when paying with Points/sats, and creates a model where rewards gain value over time.",
+      "presenterId": "presenter-jp",
+      "links": [
+        {
+          "text": "Bitpoints.me",
+          "url": "https://bitpoints.me",
+          "external": true
+        },
+        {
+          "text": "Cashu",
+          "url": "https://cashu.me",
+          "external": true
+        },
+        {
+          "text": "btclearn.org",
+          "url": "https://btclearn.org",
+          "external": true
+        },
+        {
+          "text": "nodeacademy.org",
+          "url": "https://nodeacademy.org",
+          "external": true
+        }
+      ],
+      "sections": [
+        {
+          "title": "The Problem with Traditional Rewards",
+          "body": "Everyone knows how to use points. But what they don't realize is: points get devalued in fiat terms, then they get devalued again by the issuer, and they're locked into platforms with zero interoperability. Traditional rewards systems like airline miles and hotel points are essentially the biggest shitcoins of all time—they lose value and trap users in closed ecosystems."
+        },
+        {
+          "title": "The Coffeeshop Origin Story",
+          "body": "It all started with a simple idea: give customers rewards at my local coffeeshop. But instead of airline miles or hotel points, I wanted something better—something that teaches people about Bitcoin. The question became: what if coffeeshop points were actually sats?"
+        },
+        {
+          "title": "Enter Cashu",
+          "body": "Cashu proved to be a perfect fit. Custodial? Sure. But so are all rewards systems. And for a coffeeshop, rugging users is bad business. So I forked cashu.me, rebranded it, and launched a quick PWA: points.trailscoffee.com. Users see 'points.' But behind the scenes, they're 1:1 pegged to sats. The mint shows sats. The wallet shows points. Simple UX. No friction. Just like a gift card—no login, just a code."
+        },
+        {
+          "title": "Community Support and Development",
+          "body": "Not a dev myself. I leaned heavily on nodeacademy.org and the amazing Vancouver-based Pacific Nodewest community. Their ideas, feedback, and support were invaluable. This project demonstrates how community collaboration can turn ideas into reality, even when you're not a traditional software developer."
+        },
+        {
+          "title": "The Vision: Three Key Features",
+          "body": "I wanted three things: offer a 10% discount when paying with Points/sats, create a model where rewards gain value over time (flipping the traditional system), and enable a way for local kids to use their points—without needing a phone. This required exploring new technical approaches beyond traditional mobile apps."
+        },
+        {
+          "title": "Exploring Offline Solutions",
+          "body": "I explored Bolt Cards. Cool tech, but still phone-dependent. Tried Lightning Piggy on ESP32, but micropython was beyond my AI-vibe coding skills. Then came the crazy idea: merge Bitchat with Cashu. Why? So kids could use their balance at the coffeeshop offline. Cashu tokens are bearer instruments. As long as the POS is online, they clear."
+        },
+        {
+          "title": "Birth of Bitpoints.me",
+          "body": "After some effort, I merged bitchat-android with cashu.me, and that's how Bitpoints.me was born. A Bitcoin-native rewards system that's interoperable with Lightning, has familiar UX (points/gift cards), is educational for pre-coiners, and is community-first, not corporate."
+        },
+        {
+          "title": "What's Next",
+          "body": "This is just the beginning. If you're building, curious, or want to bring sats to your local community, let's connect. Bitpoints.me represents a new model for rewards systems—one that educates, empowers, and creates real value for users while supporting the Bitcoin ecosystem."
+        }
+      ],
+      "meta": {
+        "title": "Introducing Bitpoints.me – A Bitcoin-native rewards system | Builder Vancouver",
+        "description": "JP presents Bitpoints.me, a Bitcoin-native rewards system that transforms traditional loyalty points into sats, teaching people about Bitcoin through familiar UX patterns.",
+        "keywords": [
+          "bitpoints",
+          "cashu",
+          "bitcoin rewards",
+          "lightning network",
+          "bitcoin education",
+          "loyalty points",
+          "bitcoin native",
+          "bitchat"
+        ]
+      }
     }
   ]
 }
