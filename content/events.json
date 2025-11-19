@@ -7,7 +7,7 @@
       "time": "6:00 PM - 9:00 PM",
       "location": "TBD, Vancouver",
       "cityId": "city-vancouver",
-      "presentationIds": ["presentation-builder-vancouver-intro"],
+      "presentationIds": ["presentation-builder-vancouver-intro", "presentation-martin-montero-nostr-vancouver"],
       "description": "Join us for the inaugural Builder Vancouver event! We'll introduce the Builder movement, explore Vancouver's Bitcoin ecosystem, and kick off our monthly meetup series. This is the perfect opportunity to meet fellow builders, learn about our community, and get involved.",
       "schedule": [
         {
@@ -35,12 +35,20 @@
         {
           "startTime": "7:30 PM",
           "endTime": "8:15 PM",
-          "title": "Open Discussion & Q&A",
-          "description": "Open discussion about Bitcoin building, Lightning Network, and what you'd like to see in future meetups.",
-          "type": "q-and-a"
+          "title": "Nostr and Building Community in Vancouver",
+          "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver.",
+          "type": "presentation",
+          "presentationId": "presentation-martin-montero-nostr-vancouver"
         },
         {
           "startTime": "8:15 PM",
+          "endTime": "8:30 PM",
+          "title": "Open Discussion & Q&A",
+          "description": "Open discussion about Bitcoin building, Lightning Network, Nostr, and what you'd like to see in future meetups.",
+          "type": "q-and-a"
+        },
+        {
+          "startTime": "8:30 PM",
           "endTime": "9:00 PM",
           "title": "Networking & Collaboration",
           "description": "Continue the conversation, share ideas, and connect with fellow builders.",
