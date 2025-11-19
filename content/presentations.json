@@ -182,6 +182,62 @@
           "bitcoin payments"
         ]
       }
+    },
+    {
+      "id": "presentation-bepsi-machine-eric-chennels",
+      "title": "The Bepsi Machine: Building a Bitcoin Vending Machine",
+      "slug": "bepsi-machine-bitcoin-vending",
+      "description": "Eric Chennels discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
+      "overview": "Eric Chennels presents a deep dive into building the Bepsi machine, a Bitcoin vending machine that demonstrates practical Bitcoin and Lightning integration in a physical device. The presentation covers the hardware and software tools used in the project, the technical challenges encountered, and how vibe coding methodologies helped streamline development. Attendees will learn about the practical aspects of building Bitcoin-native hardware, the integration of Lightning payments, and how modern development workflows can accelerate Bitcoin product development.",
+      "presenterId": "presenter-eric-chennels",
+      "duration": "30-45 minutes",
+      "links": [
+        {
+          "text": "Vibe Coding Guide",
+          "url": "/vibe-coding",
+          "external": false
+        }
+      ],
+      "slidesUrl": "https://docs.google.com/presentation/d/e/2PACX-1vTDt8lRiQdNFNaudd6YAFuMC_cGgudtl61X3f-Z5zIq6R7EGj3zRvh8TYKO2KkITvq6sfLpdWozxlyC/pub?start=true&loop=false&delayms=5000&slide=id.gc6f73a04f_0_0",
+      "sections": [
+        {
+          "title": "Introducing the Bepsi Machine",
+          "body": "The Bepsi machine is a Bitcoin vending machine that accepts Lightning payments for physical products. This project demonstrates how Bitcoin and Lightning can be integrated into everyday commerce, making Bitcoin spending tangible and accessible. The machine serves as both a practical tool and an educational demonstration of Bitcoin's real-world utility."
+        },
+        {
+          "title": "Hardware and Tools",
+          "body": "Building a Bitcoin vending machine requires careful selection of hardware components. Eric discusses the physical components used—from the vending mechanism itself to the computing hardware that powers the Bitcoin and Lightning integration. The presentation covers the trade-offs between different hardware options, cost considerations, and reliability requirements for a production-ready device."
+        },
+        {
+          "title": "Software Stack and Integration",
+          "body": "The software side of the Bepsi machine involves integrating Lightning payment processing with vending machine control systems. Eric walks through the software tools and libraries used to handle Lightning invoices, payment verification, and machine operation. This includes the Bitcoin and Lightning SDKs, payment processing workflows, and the interface between payment systems and physical hardware controls."
+        },
+        {
+          "title": "Vibe Coding in Practice",
+          "body": "Vibe coding played a crucial role in accelerating the Bepsi machine's development. Eric demonstrates how AI-assisted development workflows helped iterate quickly on payment integration, debug hardware-software interactions, and refine the user experience. The presentation shows how structured development approaches, combined with AI pair programming, enabled rapid prototyping and testing of Bitcoin payment flows."
+        },
+        {
+          "title": "Challenges and Solutions",
+          "body": "Building Bitcoin hardware presents unique challenges—from handling network connectivity issues to ensuring reliable payment processing. Eric shares the technical hurdles encountered during development and the solutions that emerged. This includes strategies for handling Lightning payment timeouts, managing offline scenarios, and ensuring the machine operates reliably in real-world conditions."
+        },
+        {
+          "title": "Lessons Learned and Future Directions",
+          "body": "The Bepsi machine project offers valuable insights into Bitcoin hardware development. Eric reflects on what worked well, what could be improved, and how the project informs future Bitcoin hardware initiatives. The presentation concludes with thoughts on how vibe coding and modern development tools can help more builders create Bitcoin-native products."
+        }
+      ],
+      "meta": {
+        "title": "The Bepsi Machine: Building a Bitcoin Vending Machine | Builder Vancouver",
+        "description": "Eric Chennels discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
+        "keywords": [
+          "bepsi machine",
+          "bitcoin vending machine",
+          "lightning network",
+          "bitcoin hardware",
+          "vibe coding",
+          "bitcoin payments",
+          "hardware integration"
+        ]
+      }
     }
   ]
 }
