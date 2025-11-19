@@ -8,6 +8,8 @@ import {
   CitiesCollectionSchema,
   EducationalContentSchema,
   EventsCollectionSchema,
+  FAQsCollectionSchema,
+  GetInvolvedSchema,
   HomeSchema,
   MembersCollectionSchema,
   MissionSchema,
@@ -33,7 +35,6 @@ import {
   WalletSchema,
   WalletsCollectionSchema,
   WhatToExpectSchema,
-  FAQsCollectionSchema,
 } from "./schemas";
 import type {
   Charter,
@@ -42,6 +43,10 @@ import type {
   EducationalContent,
   Event,
   EventsCollection,
+  FAQCategory,
+  FAQItem,
+  FAQsCollection,
+  GetInvolved,
   Home,
   MemberPersona,
   MembersCollection,
@@ -71,9 +76,6 @@ import type {
   Wallet,
   WalletsCollection,
   WhatToExpect,
-  FAQsCollection,
-  FAQItem,
-  FAQCategory,
 } from "./types";
 
 const CONTENT_DIR = join(process.cwd(), "content");
@@ -126,6 +128,10 @@ export async function loadOnboarding(): Promise<Onboarding> {
   return loadContent("onboarding.json", OnboardingSchema);
 }
 
+export async function loadGetInvolved(): Promise<GetInvolved> {
+  return loadContent("get-involved.json", GetInvolvedSchema);
+}
+
 export async function loadBitcoin101(): Promise<EducationalContent> {
   return loadContent("bitcoin101.json", EducationalContentSchema);
 }
@@ -135,7 +141,10 @@ export async function loadLightning101(): Promise<EducationalContent> {
 }
 
 export async function loadLightningGettingStarted(): Promise<EducationalContent> {
-  return loadContent("lightning-getting-started.json", EducationalContentSchema);
+  return loadContent(
+    "lightning-getting-started.json",
+    EducationalContentSchema
+  );
 }
 
 export async function loadLayer2(): Promise<EducationalContent> {
@@ -328,9 +337,7 @@ export async function getFAQsByCategory(
 export async function getFAQsByTags(tags: string[]): Promise<FAQItem[]> {
   const { categories } = await loadFAQs();
   const allFaqs = categories.flatMap((c) => c.faqs);
-  return allFaqs.filter((faq) =>
-    faq.tags?.some((tag) => tags.includes(tag))
-  );
+  return allFaqs.filter((faq) => faq.tags?.some((tag) => tags.includes(tag)));
 }
 
 export async function getFAQById(id: string): Promise<FAQItem | undefined> {
