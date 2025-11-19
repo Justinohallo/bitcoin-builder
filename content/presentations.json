@@ -184,6 +184,73 @@
       }
     },
     {
+      "id": "presentation-martin-montero-nostr-vancouver",
+      "title": "Nostr and Building Community in Vancouver",
+      "slug": "nostr-building-community-vancouver",
+      "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver.",
+      "overview": "Martin Montero presents on Nostr, a decentralized social protocol that pairs naturally with Bitcoin. The presentation explores how Nostr enables censorship-resistant social networking, integrates with Lightning payments for micropayments and tips, and how it's being used to build community in Vancouver. Attendees will learn about Nostr's architecture, its advantages over traditional social media, and how builders can leverage Nostr to create decentralized social and economic interactions.",
+      "presenterId": "presenter-martin-montero",
+      "eventId": "event-builder-vancouver-launch",
+      "date": "2025-02-15",
+      "duration": "45 minutes",
+      "links": [
+        {
+          "text": "Rabble Labs",
+          "url": "https://www.rabblelabs.xyz/",
+          "external": true
+        },
+        {
+          "text": "Nostr Protocol",
+          "url": "https://nostr.com/",
+          "external": true
+        },
+        {
+          "text": "Nostr News Topic",
+          "url": "/news-topics/nostr-protocol-adoption",
+          "external": false
+        }
+      ],
+      "sections": [
+        {
+          "title": "What is Nostr?",
+          "body": "Nostr (Notes and Other Stuff Transmitted by Relays) is a decentralized social protocol that enables censorship-resistant social networking. Unlike traditional social media platforms, Nostr operates on a relay-based architecture where users control their identity through cryptographic keys, and content is distributed through independent relay servers. This architecture ensures that no single entity can control or censor the network."
+        },
+        {
+          "title": "Nostr's Architecture and Advantages",
+          "body": "Nostr's relay architecture provides several key advantages over traditional social media. Users maintain full control of their identity through cryptographic keys, ensuring portability and sovereignty. The protocol is simple and extensible, allowing for rapid innovation. Most importantly, Nostr is censorship-resistant—since content flows through multiple independent relays, no single point of failure or control exists. This makes it ideal for communities that value free speech and decentralization."
+        },
+        {
+          "title": "Lightning Integration and Micropayments",
+          "body": "Nostr's native integration with Bitcoin Lightning Network enables seamless micropayments and tips. Users can send small payments directly through Nostr clients, creating new economic models for content creators and community builders. This integration makes Nostr particularly powerful for Bitcoin communities, as it combines decentralized social networking with decentralized payments in a single protocol."
+        },
+        {
+          "title": "Building Community in Vancouver",
+          "body": "Martin shares how Nostr is being used to build and strengthen the Bitcoin community in Vancouver. Through Rabble Labs' work, Nostr is helping connect Bitcoin builders, facilitate collaboration, and create new forms of community engagement. The presentation covers practical examples of how Nostr communities operate, how they differ from traditional social media groups, and how builders can leverage Nostr for their own projects."
+        },
+        {
+          "title": "Privacy and Censorship Resistance",
+          "body": "Nostr's design prioritizes privacy and censorship resistance. Users can choose which relays to use, implement encryption for private messages, and maintain pseudonymous identities. This makes Nostr particularly valuable for communities that face censorship or value privacy. The protocol's decentralized nature means that even if some relays are blocked or shut down, the network continues to function through other relays."
+        },
+        {
+          "title": "Future of Decentralized Social",
+          "body": "Nostr represents a new paradigm for social networking—one that aligns with Bitcoin's values of decentralization, sovereignty, and censorship resistance. As the protocol continues to evolve and gain adoption, it offers builders new opportunities to create social and economic interactions that aren't possible on traditional platforms. The presentation concludes with thoughts on how Nostr and Bitcoin together can reshape how communities connect and collaborate."
+        }
+      ],
+      "meta": {
+        "title": "Nostr and Building Community in Vancouver | Builder Vancouver",
+        "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver.",
+        "keywords": [
+          "nostr",
+          "decentralized social",
+          "lightning network",
+          "bitcoin community",
+          "censorship resistance",
+          "vancouver",
+          "rabble labs"
+        ]
+      }
+    },
+    {
       "id": "presentation-bepsi-machine-eric-chennels",
       "title": "The Bepsi Machine: Building a Bitcoin Vending Machine",
       "slug": "bepsi-machine-bitcoin-vending",
