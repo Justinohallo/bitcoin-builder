@@ -182,6 +182,65 @@
           "bitcoin payments"
         ]
       }
+    },
+    {
+      "id": "presentation-martin-montero-nostr-vancouver",
+      "title": "Nostr and Building Community in Vancouver",
+      "slug": "nostr-vancouver-community",
+      "description": "An introduction to Nostr and the community being built in Vancouver, exploring how decentralized social protocols can strengthen local Bitcoin builder networks.",
+      "overview": "Martin Montero from Rabble Labs presents on Nostr—a decentralized social protocol that aligns perfectly with Bitcoin's values of sovereignty and censorship resistance. This presentation covers what Nostr is, why it matters for Bitcoin builders, and how Martin is working to build a vibrant Nostr community in Vancouver. Learn about the intersection of decentralized social networking and Bitcoin, and discover how you can get involved in Vancouver's growing Nostr ecosystem.",
+      "presenterId": "presenter-martin-montero",
+      "eventId": "event-builder-vancouver-launch",
+      "date": "2025-02-15",
+      "duration": "30-45 minutes",
+      "links": [
+        {
+          "text": "Rabble Labs",
+          "url": "https://www.rabblelabs.xyz/",
+          "external": true
+        },
+        {
+          "text": "and other stuff group",
+          "url": "https://andotherstuff.org/",
+          "external": true
+        }
+      ],
+      "sections": [
+        {
+          "title": "What is Nostr?",
+          "body": "Nostr (Notes and Other Stuff Transmitted by Relays) is a decentralized social protocol that enables censorship-resistant communication and social networking. Unlike traditional social media platforms, Nostr operates on a simple protocol where users control their identity through cryptographic keys, and content is distributed through independent relay servers. This architecture aligns perfectly with Bitcoin's values of sovereignty, decentralization, and resistance to censorship."
+        },
+        {
+          "title": "Why Nostr Matters for Bitcoin Builders",
+          "body": "Nostr and Bitcoin share fundamental principles: both are decentralized, censorship-resistant, and put users in control. For Bitcoin builders, Nostr offers a natural platform for community building, knowledge sharing, and collaboration that doesn't rely on centralized platforms. The protocol enables direct communication, event coordination, and resource sharing—all essential for thriving builder communities. As Bitcoin adoption grows, having decentralized communication infrastructure becomes increasingly important."
+        },
+        {
+          "title": "Building the Vancouver Nostr Community",
+          "body": "Martin Montero is working to build a vibrant Nostr community in Vancouver that connects Bitcoin builders, developers, and enthusiasts. This initiative focuses on creating spaces for local builders to connect, share knowledge, and collaborate on Bitcoin and Lightning projects. By leveraging Nostr's decentralized architecture, the Vancouver community can grow organically without relying on traditional social media platforms, fostering stronger connections and more authentic collaboration."
+        },
+        {
+          "title": "Rabble Labs and and other stuff group",
+          "body": "Rabble Labs, part of the and other stuff group, is dedicated to building tools and communities that advance decentralized technologies. The organization works at the intersection of Bitcoin, Nostr, and other open protocols, creating infrastructure and fostering communities that prioritize sovereignty and user control. Through projects like the Vancouver Nostr community, Rabble Labs helps bridge the gap between protocol development and real-world community building."
+        },
+        {
+          "title": "Getting Involved",
+          "body": "Whether you're new to Nostr or already using it, there are many ways to get involved in Vancouver's Nostr community. Join local relays, connect with other builders, share your projects, and participate in discussions about Bitcoin development. The community welcomes builders at all levels—from those just getting started with Bitcoin to experienced developers working on production applications. Together, we're building a stronger, more decentralized future for Bitcoin in Vancouver."
+        }
+      ],
+      "meta": {
+        "title": "Nostr and Building Community in Vancouver | Builder Vancouver",
+        "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver, exploring how decentralized social protocols can strengthen local Bitcoin builder networks.",
+        "keywords": [
+          "nostr",
+          "vancouver",
+          "bitcoin",
+          "community",
+          "decentralized",
+          "rabble labs",
+          "social protocol",
+          "builder"
+        ]
+      }
     }
   ]
 }
