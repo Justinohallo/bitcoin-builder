@@ -2,7 +2,6 @@
  * Centralized URL Builder Utilities
  * Type-safe URL generation for all routes
  */
-
 import { SITE_URL } from "../constants";
 
 export function getSiteUrl(): string {
@@ -53,6 +52,7 @@ export const urls = {
 
   resources: () => buildUrl("/resources"),
   projects: () => buildUrl("/projects"),
+  getInvolved: () => buildUrl("/get-involved"),
   vibeApps: () => buildUrl("/vibe-apps"),
   vibeCoding: () => buildUrl("/vibe-coding"),
   onboarding: () => buildUrl("/onboarding"),
@@ -132,6 +132,7 @@ export const paths = {
   },
   resources: () => "/resources",
   projects: () => "/projects",
+  getInvolved: () => "/get-involved",
   vibeApps: () => "/vibe-apps",
   vibeCoding: () => "/vibe-coding",
   onboarding: () => "/onboarding",
