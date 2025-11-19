@@ -34,7 +34,9 @@
       "bio": "Project manager at Rabble Labs working on Nostr community development and coordinating open collaboration across Bitcoin builders.",
       "title": "Project Manager",
       "company": "Rabble Labs",
-      "links": {}
+      "links": {
+        "website": "https://www.rabblelabs.xyz/"
+      }
     },
     {
       "id": "presenter-jp",

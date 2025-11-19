@@ -7,6 +7,10 @@ import {
   EducationalContentSchema,
   EventSchema,
   EventsCollectionSchema,
+  FAQCategorySchema,
+  FAQItemSchema,
+  FAQsCollectionSchema,
+  GetInvolvedSchema,
   HomeSchema,
   MeetupSchema,
   MemberPersonaSchema,
@@ -47,9 +51,6 @@ import {
   WalletSchema,
   WalletsCollectionSchema,
   WhatToExpectSchema,
-  FAQItemSchema,
-  FAQCategorySchema,
-  FAQsCollectionSchema,
 } from "./schemas";
 
 /**
@@ -62,6 +63,7 @@ export type Event = z.infer<typeof EventSchema>;
 export type EventsCollection = z.infer<typeof EventsCollectionSchema>;
 
 export type Onboarding = z.infer<typeof OnboardingSchema>;
+export type GetInvolved = z.infer<typeof GetInvolvedSchema>;
 
 export type EducationalContent = z.infer<typeof EducationalContentSchema>;
 

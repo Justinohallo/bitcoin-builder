@@ -184,6 +184,129 @@
       }
     },
     {
+      "id": "presentation-martin-montero-nostr-vancouver",
+      "title": "Nostr and Building Community in Vancouver",
+      "slug": "nostr-building-community-vancouver",
+      "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver.",
+      "overview": "Martin Montero presents on Nostr, a decentralized social protocol that pairs naturally with Bitcoin. The presentation explores how Nostr enables censorship-resistant social networking, integrates with Lightning payments for micropayments and tips, and how it's being used to build community in Vancouver. Attendees will learn about Nostr's architecture, its advantages over traditional social media, and how builders can leverage Nostr to create decentralized social and economic interactions.",
+      "presenterId": "presenter-martin-montero",
+      "eventId": "event-builder-vancouver-launch",
+      "date": "2025-02-15",
+      "duration": "45 minutes",
+      "links": [
+        {
+          "text": "Rabble Labs",
+          "url": "https://www.rabblelabs.xyz/",
+          "external": true
+        },
+        {
+          "text": "Nostr Protocol",
+          "url": "https://nostr.com/",
+          "external": true
+        },
+        {
+          "text": "Nostr News Topic",
+          "url": "/news-topics/nostr-protocol-adoption",
+          "external": false
+        }
+      ],
+      "sections": [
+        {
+          "title": "What is Nostr?",
+          "body": "Nostr (Notes and Other Stuff Transmitted by Relays) is a decentralized social protocol that enables censorship-resistant social networking. Unlike traditional social media platforms, Nostr operates on a relay-based architecture where users control their identity through cryptographic keys, and content is distributed through independent relay servers. This architecture ensures that no single entity can control or censor the network."
+        },
+        {
+          "title": "Nostr's Architecture and Advantages",
+          "body": "Nostr's relay architecture provides several key advantages over traditional social media. Users maintain full control of their identity through cryptographic keys, ensuring portability and sovereignty. The protocol is simple and extensible, allowing for rapid innovation. Most importantly, Nostr is censorship-resistant—since content flows through multiple independent relays, no single point of failure or control exists. This makes it ideal for communities that value free speech and decentralization."
+        },
+        {
+          "title": "Lightning Integration and Micropayments",
+          "body": "Nostr's native integration with Bitcoin Lightning Network enables seamless micropayments and tips. Users can send small payments directly through Nostr clients, creating new economic models for content creators and community builders. This integration makes Nostr particularly powerful for Bitcoin communities, as it combines decentralized social networking with decentralized payments in a single protocol."
+        },
+        {
+          "title": "Building Community in Vancouver",
+          "body": "Martin shares how Nostr is being used to build and strengthen the Bitcoin community in Vancouver. Through Rabble Labs' work, Nostr is helping connect Bitcoin builders, facilitate collaboration, and create new forms of community engagement. The presentation covers practical examples of how Nostr communities operate, how they differ from traditional social media groups, and how builders can leverage Nostr for their own projects."
+        },
+        {
+          "title": "Privacy and Censorship Resistance",
+          "body": "Nostr's design prioritizes privacy and censorship resistance. Users can choose which relays to use, implement encryption for private messages, and maintain pseudonymous identities. This makes Nostr particularly valuable for communities that face censorship or value privacy. The protocol's decentralized nature means that even if some relays are blocked or shut down, the network continues to function through other relays."
+        },
+        {
+          "title": "Future of Decentralized Social",
+          "body": "Nostr represents a new paradigm for social networking—one that aligns with Bitcoin's values of decentralization, sovereignty, and censorship resistance. As the protocol continues to evolve and gain adoption, it offers builders new opportunities to create social and economic interactions that aren't possible on traditional platforms. The presentation concludes with thoughts on how Nostr and Bitcoin together can reshape how communities connect and collaborate."
+        }
+      ],
+      "meta": {
+        "title": "Nostr and Building Community in Vancouver | Builder Vancouver",
+        "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver.",
+        "keywords": [
+          "nostr",
+          "decentralized social",
+          "lightning network",
+          "bitcoin community",
+          "censorship resistance",
+          "vancouver",
+          "rabble labs"
+        ]
+      }
+    },
+    {
+      "id": "presentation-bepsi-machine-eric-chennels",
+      "title": "The Bepsi Machine: Building a Bitcoin Vending Machine",
+      "slug": "bepsi-machine-bitcoin-vending",
+      "description": "Eric Chennels discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
+      "overview": "Eric Chennels presents a deep dive into building the Bepsi machine, a Bitcoin vending machine that demonstrates practical Bitcoin and Lightning integration in a physical device. The presentation covers the hardware and software tools used in the project, the technical challenges encountered, and how vibe coding methodologies helped streamline development. Attendees will learn about the practical aspects of building Bitcoin-native hardware, the integration of Lightning payments, and how modern development workflows can accelerate Bitcoin product development.",
+      "presenterId": "presenter-eric-chennels",
+      "duration": "30-45 minutes",
+      "links": [
+        {
+          "text": "Vibe Coding Guide",
+          "url": "/vibe-coding",
+          "external": false
+        }
+      ],
+      "slidesUrl": "https://docs.google.com/presentation/d/e/2PACX-1vTDt8lRiQdNFNaudd6YAFuMC_cGgudtl61X3f-Z5zIq6R7EGj3zRvh8TYKO2KkITvq6sfLpdWozxlyC/pub?start=true&loop=false&delayms=5000&slide=id.gc6f73a04f_0_0",
+      "sections": [
+        {
+          "title": "Introducing the Bepsi Machine",
+          "body": "The Bepsi machine is a Bitcoin vending machine that accepts Lightning payments for physical products. This project demonstrates how Bitcoin and Lightning can be integrated into everyday commerce, making Bitcoin spending tangible and accessible. The machine serves as both a practical tool and an educational demonstration of Bitcoin's real-world utility."
+        },
+        {
+          "title": "Hardware and Tools",
+          "body": "Building a Bitcoin vending machine requires careful selection of hardware components. Eric discusses the physical components used—from the vending mechanism itself to the computing hardware that powers the Bitcoin and Lightning integration. The presentation covers the trade-offs between different hardware options, cost considerations, and reliability requirements for a production-ready device."
+        },
+        {
+          "title": "Software Stack and Integration",
+          "body": "The software side of the Bepsi machine involves integrating Lightning payment processing with vending machine control systems. Eric walks through the software tools and libraries used to handle Lightning invoices, payment verification, and machine operation. This includes the Bitcoin and Lightning SDKs, payment processing workflows, and the interface between payment systems and physical hardware controls."
+        },
+        {
+          "title": "Vibe Coding in Practice",
+          "body": "Vibe coding played a crucial role in accelerating the Bepsi machine's development. Eric demonstrates how AI-assisted development workflows helped iterate quickly on payment integration, debug hardware-software interactions, and refine the user experience. The presentation shows how structured development approaches, combined with AI pair programming, enabled rapid prototyping and testing of Bitcoin payment flows."
+        },
+        {
+          "title": "Challenges and Solutions",
+          "body": "Building Bitcoin hardware presents unique challenges—from handling network connectivity issues to ensuring reliable payment processing. Eric shares the technical hurdles encountered during development and the solutions that emerged. This includes strategies for handling Lightning payment timeouts, managing offline scenarios, and ensuring the machine operates reliably in real-world conditions."
+        },
+        {
+          "title": "Lessons Learned and Future Directions",
+          "body": "The Bepsi machine project offers valuable insights into Bitcoin hardware development. Eric reflects on what worked well, what could be improved, and how the project informs future Bitcoin hardware initiatives. The presentation concludes with thoughts on how vibe coding and modern development tools can help more builders create Bitcoin-native products."
+        }
+      ],
+      "meta": {
+        "title": "The Bepsi Machine: Building a Bitcoin Vending Machine | Builder Vancouver",
+        "description": "Eric Chennels discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
+        "keywords": [
+          "bepsi machine",
+          "bitcoin vending machine",
+          "lightning network",
+          "bitcoin hardware",
+          "vibe coding",
+          "bitcoin payments",
+          "hardware integration"
+        ]
+      }
+    },
+    {
       "id": "presentation-bitpoints-me",
       "title": "Introducing Bitpoints.me – A Bitcoin-native rewards system",
       "slug": "bitpoints-me",

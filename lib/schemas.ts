@@ -212,6 +212,42 @@ export const OnboardingSchema = z.object({
   meta: MetaSchema,
 });
 
+// Get Involved Schema
+const ContributionTrackSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  summary: z.string(),
+  commitment: z.string(),
+  sampleContributions: z.array(z.string()),
+  supportOffered: z.array(z.string()).optional(),
+  starterLinks: z.array(LinkSchema).optional(),
+});
+
+const EngagementStatSchema = z.object({
+  label: z.string(),
+  value: z.string(),
+  description: z.string(),
+});
+
+const ContactInfoSchema = z.object({
+  email: z.string().email(),
+  label: z.string(),
+  responseTime: z.string(),
+  instructions: z.array(z.string()),
+});
+
+export const GetInvolvedSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  impactStatement: z.string(),
+  sections: z.array(SectionSchema),
+  tracks: z.array(ContributionTrackSchema),
+  quickStats: z.array(EngagementStatSchema),
+  contact: ContactInfoSchema,
+  meta: MetaSchema,
+});
+
 // Educational Content Schema (Bitcoin 101, Lightning 101, Layer 2)
 export const EducationalContentSchema = z.object({
   title: z.string(),
