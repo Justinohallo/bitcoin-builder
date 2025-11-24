@@ -25,6 +25,7 @@ import {
   ResourcesCollectionSchema,
   RoadmapItemSchema,
   RoadmapMilestoneSchema,
+  SatoshiSessionsCollectionSchema,
   SlideDeckSchema,
   SlidesCollectionSchema,
   SponsorsCollectionSchema,
@@ -65,6 +66,8 @@ import type {
   ResourcesCollection,
   RoadmapItem,
   RoadmapMilestone,
+  SatoshiSession,
+  SatoshiSessionsCollection,
   SlideDeck,
   SlidesCollection,
   Sponsor,
@@ -344,4 +347,25 @@ export async function getFAQById(id: string): Promise<FAQItem | undefined> {
   const { categories } = await loadFAQs();
   const allFaqs = categories.flatMap((c) => c.faqs);
   return allFaqs.find((faq) => faq.id === id);
+}
+
+export async function loadSatoshiSessions(): Promise<SatoshiSessionsCollection> {
+  return loadContent(
+    "satoshi-sessions.json",
+    SatoshiSessionsCollectionSchema
+  );
+}
+
+export async function loadSatoshiSession(
+  slug: string
+): Promise<SatoshiSession | undefined> {
+  const { sessions } = await loadSatoshiSessions();
+  return sessions.find((s) => s.slug === slug);
+}
+
+export async function loadSatoshiSessionById(
+  id: string
+): Promise<SatoshiSession | undefined> {
+  const { sessions } = await loadSatoshiSessions();
+  return sessions.find((s) => s.id === id);
 }

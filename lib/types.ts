@@ -36,6 +36,8 @@ import {
   ResourcesCollectionSchema,
   RoadmapItemSchema,
   RoadmapMilestoneSchema,
+  SatoshiSessionSchema,
+  SatoshiSessionsCollectionSchema,
   ScheduleItemSchema,
   SectionSchema,
   SlideDeckSchema,
@@ -141,3 +143,9 @@ export type WalletsCollection = z.infer<typeof WalletsCollectionSchema>;
 export type FAQItem = z.infer<typeof FAQItemSchema>;
 export type FAQCategory = z.infer<typeof FAQCategorySchema>;
 export type FAQsCollection = z.infer<typeof FAQsCollectionSchema>;
+
+// Satoshi Sessions types
+export type SatoshiSession = z.infer<typeof SatoshiSessionSchema>;
+export type SatoshiSessionsCollection = z.infer<
+  typeof SatoshiSessionsCollectionSchema
+>;

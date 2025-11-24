@@ -1,0 +1,82 @@
+{
+  "sessions": [
+    {
+      "id": "satoshi-session-office-hours-2025-01",
+      "title": "Satoshi Sessions: Open Office Hours",
+      "slug": "office-hours-january-2025",
+      "type": "office-hours",
+      "date": "2025-01-15",
+      "time": "2:00 PM - 5:00 PM",
+      "location": "Funk Cafe, Vancouver",
+      "cityId": "city-vancouver",
+      "description": "Drop by for informal open office hours! Bring your Bitcoin project questions, get help with Lightning integration, or just chat about what you're building. No agenda, no presentations—just builders helping builders.",
+      "sections": [
+        {
+          "title": "What to Expect",
+          "body": "These are casual, drop-in sessions. Come whenever you can, stay as long as you like. Whether you need help debugging a Lightning invoice, want feedback on your UX design, or just want to talk through an idea, we're here to help."
+        },
+        {
+          "title": "Who Should Come",
+          "body": "Anyone working on Bitcoin projects—whether you're building a Lightning app, designing Bitcoin UX, working on protocol development, or just getting started. All skill levels welcome!"
+        },
+        {
+          "title": "What to Bring",
+          "body": "Your laptop (if you want to code), your questions, and your project ideas. We'll have WiFi and a space to work."
+        }
+      ],
+      "meta": {
+        "title": "Satoshi Sessions: Open Office Hours | Builder Vancouver",
+        "description": "Drop-in open office hours for Bitcoin builders. Get help with your project, ask questions, or just chat about what you're building.",
+        "keywords": [
+          "satoshi sessions",
+          "office hours",
+          "bitcoin",
+          "lightning",
+          "vancouver",
+          "builders",
+          "help"
+        ]
+      }
+    },
+    {
+      "id": "satoshi-session-hack-january-2025",
+      "title": "Satoshi Sessions: Lightning Payment Flow Hack",
+      "slug": "lightning-payment-flow-hack-january-2025",
+      "type": "hack-session",
+      "date": "2025-01-22",
+      "time": "6:00 PM - 9:00 PM",
+      "location": "Bitcoin Commons, Vancouver",
+      "cityId": "city-vancouver",
+      "description": "Join us for a focused hack session on building better Lightning payment flows. We'll spend a few hours hacking on ideas, then share what we built. All code goes on GitHub and we'll write up an article about the session.",
+      "sections": [
+        {
+          "title": "Session Focus",
+          "body": "This session is all about improving Lightning payment UX. We'll explore different approaches to invoice generation, payment confirmation, error handling, and user feedback. Bring your ideas and let's build something together."
+        },
+        {
+          "title": "What We'll Build",
+          "body": "We'll break into small groups and each tackle a different aspect of Lightning payment flows. At the end of the session, we'll share what we built, discuss what worked, and document everything for the community."
+        },
+        {
+          "title": "After the Session",
+          "body": "All code will be pushed to GitHub and made available to the community. We'll also write an article documenting the session, what we learned, and what we built. This helps future builders learn from our experiments."
+        }
+      ],
+      "githubRepoUrl": "https://github.com/builder-van/lightning-payment-flow-hack",
+      "articleUrl": "https://builder.van/articles/lightning-payment-flow-hack-january-2025",
+      "meta": {
+        "title": "Satoshi Sessions: Lightning Payment Flow Hack | Builder Vancouver",
+        "description": "Join us for a focused hack session on building better Lightning payment flows. Code goes on GitHub, session gets documented.",
+        "keywords": [
+          "satoshi sessions",
+          "hack session",
+          "lightning",
+          "payment flows",
+          "bitcoin",
+          "vancouver",
+          "builders"
+        ]
+      }
+    }
+  ]
+}
