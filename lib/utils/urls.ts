@@ -95,6 +95,11 @@ export const urls = {
 
   faq: () => buildUrl("/faq"),
 
+  satoshiSessions: {
+    list: () => buildUrl("/satoshi-sessions"),
+    detail: (slug: string) => buildUrl(`/satoshi-sessions/${slug}`),
+  },
+
   page: (slug: string) => buildUrl(`/${slug}`),
 } as const;
 
@@ -169,6 +174,11 @@ export const paths = {
   },
 
   faq: () => "/faq",
+
+  satoshiSessions: {
+    list: () => "/satoshi-sessions",
+    detail: (slug: string) => `/satoshi-sessions/${slug}`,
+  },
 
   page: (slug: string) => `/${slug}`,
 } as const;

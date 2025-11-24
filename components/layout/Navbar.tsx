@@ -75,6 +75,7 @@ export function Navbar() {
       label: "Events",
       children: [
         { href: "/events", label: "Upcoming Events" },
+        { href: "/satoshi-sessions", label: "Satoshi Sessions" },
         { href: "/recaps", label: "Event Recaps" },
         { href: "/news-topics", label: "News Topics" },
       ],

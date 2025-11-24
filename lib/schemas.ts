@@ -708,3 +708,25 @@ export const FAQsCollectionSchema = z.object({
   categories: z.array(FAQCategorySchema),
   meta: MetaSchema,
 });
+
+// Satoshi Sessions Schema
+export const SatoshiSessionSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  slug: z.string(),
+  type: z.enum(["office-hours", "hack-session"]),
+  date: z.string(),
+  time: z.string(),
+  location: z.string(),
+  description: z.string(),
+  cityId: z.string().optional(), // Reference to City by ID
+  sections: z.array(SectionSchema).optional(),
+  // Hack session specific fields
+  githubRepoUrl: z.string().url().optional(), // GitHub repository for hack session
+  articleUrl: z.string().url().optional(), // Article/blog post about the session
+  meta: MetaSchema,
+});
+
+export const SatoshiSessionsCollectionSchema = z.object({
+  sessions: z.array(SatoshiSessionSchema),
+});
