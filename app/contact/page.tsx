@@ -1,10 +1,9 @@
-import { headers } from "next/headers";
-
 import { PageContainer } from "@/components/layout/PageContainer";
 import { QRCodeDisplay } from "@/components/contact/QRCodeDisplay";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 
+import { SITE_URL } from "@/lib/constants";
 import {
   createBreadcrumbList,
   createSchemaGraph,
@@ -24,11 +23,9 @@ export async function generateMetadata() {
  * Contact page with real-time QR code and social links
  * Optimized for mobile sharing and showcasing work
  */
-export default async function ContactPage() {
-  const headersList = await headers();
-  const host = headersList.get("host") || "";
-  const protocol = headersList.get("x-forwarded-proto") || "https";
-  const currentUrl = `${protocol}://${host}${paths.contact()}`;
+export default function ContactPage() {
+  // Use SITE_URL as fallback, QRCodeDisplay will update with actual URL on client
+  const fallbackUrl = `${SITE_URL}${paths.contact()}`;
 
   const breadcrumbSchema = createBreadcrumbList([
     { name: "Home", url: urls.home() },
@@ -106,7 +103,7 @@ export default async function ContactPage() {
         {/* QR Code Section - Mobile Optimized */}
         <div className="mb-12">
           <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-2xl p-8 border border-neutral-700 shadow-2xl">
-            <QRCodeDisplay url={currentUrl} />
+            <QRCodeDisplay url={fallbackUrl} />
           </div>
         </div>
 
