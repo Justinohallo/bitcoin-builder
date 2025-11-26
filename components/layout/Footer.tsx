@@ -44,6 +44,9 @@ export function Footer() {
       { href: paths.sponsors.list(), label: "Sponsors" },
       { href: paths.members.list(), label: "Members" },
     ],
+    newsletter: [
+      { href: "/newsletter", label: "Newsletter" },
+    ],
   };
 
   // Social media links - update these with actual URLs
@@ -99,7 +102,7 @@ export function Footer() {
   return (
     <footer className="border-t border-neutral-800 bg-neutral-950">
       <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-7">
           {/* About Section */}
           <div>
             <h3 className="text-sm font-semibold text-neutral-100 mb-4">
@@ -183,6 +186,25 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {footerLinks.community.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-400 hover:text-orange-400 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter Section */}
+          <div>
+            <h3 className="text-sm font-semibold text-neutral-100 mb-4">
+              Newsletter
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.newsletter.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

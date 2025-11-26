@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { NewsletterSubscriptionForm } from "@/components/newsletter/NewsletterSubscriptionForm";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
@@ -188,6 +189,18 @@ export default async function Home() {
           </Link>
         </Section>
       )}
+
+      {/* Newsletter Subscription Section */}
+      <Section>
+        <Heading level="h2" className="text-neutral-100 mb-4">
+          Stay Updated
+        </Heading>
+        <p className="text-lg text-neutral-300 mb-6">
+          Subscribe to our newsletter for updates on events, recaps, and Bitcoin
+          community news.
+        </p>
+        <NewsletterSubscriptionForm source="homepage" />
+      </Section>
     </PageContainer>
   );
 }

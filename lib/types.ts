@@ -21,6 +21,8 @@ import {
   MissionSchema,
   NewsTopicSchema,
   NewsTopicsCollectionSchema,
+  NewsletterSubscriptionSchema,
+  NewsletterSubscriptionsCollectionSchema,
   NotableBuilderSchema,
   OnboardingSchema,
   PhilosophySchema,
@@ -141,3 +143,11 @@ export type WalletsCollection = z.infer<typeof WalletsCollectionSchema>;
 export type FAQItem = z.infer<typeof FAQItemSchema>;
 export type FAQCategory = z.infer<typeof FAQCategorySchema>;
 export type FAQsCollection = z.infer<typeof FAQsCollectionSchema>;
+
+// Newsletter types
+export type NewsletterSubscription = z.infer<
+  typeof NewsletterSubscriptionSchema
+>;
+export type NewsletterSubscriptionsCollection = z.infer<
+  typeof NewsletterSubscriptionsCollectionSchema
+>;

@@ -708,3 +708,16 @@ export const FAQsCollectionSchema = z.object({
   categories: z.array(FAQCategorySchema),
   meta: MetaSchema,
 });
+
+// Newsletter Subscription Schemas
+export const NewsletterSubscriptionSchema = z.object({
+  email: z.string().email(),
+  subscribedAt: z.string(), // ISO date format
+  status: z.enum(["active", "unsubscribed"]),
+  unsubscribeToken: z.string(), // Unique token for unsubscribe links
+  source: z.string().optional(), // Where they subscribed from (e.g., "homepage", "events-page")
+});
+
+export const NewsletterSubscriptionsCollectionSchema = z.object({
+  subscriptions: z.array(NewsletterSubscriptionSchema),
+});
