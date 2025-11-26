@@ -60,6 +60,7 @@ export function Navbar() {
 
   const navItems: NavItem[] = [
     { href: "/", label: "Home" },
+    { href: "/contact", label: "Contact" },
     {
       label: "About",
       children: [

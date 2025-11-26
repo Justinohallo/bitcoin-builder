@@ -211,6 +211,14 @@ export function Footer() {
                 </a>
               ))}
             </div>
+            <div className="space-y-3 mb-4">
+              <Link
+                href={paths.contact()}
+                className="text-sm text-neutral-400 hover:text-orange-400 transition-colors block"
+              >
+                Contact Us
+              </Link>
+            </div>
             <div className="text-xs text-neutral-500 space-y-2">
               <p>Builder Vancouver</p>
               <p>Bitcoin Meetups & Education</p>
