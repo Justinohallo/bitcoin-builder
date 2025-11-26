@@ -60,6 +60,7 @@ export function Navbar() {
 
   const navItems: NavItem[] = [
     { href: "/", label: "Home" },
+    { href: "/contact", label: "Contact" },
     {
       label: "About",
       children: [
@@ -116,6 +117,7 @@ export function Navbar() {
         { href: "/sponsors", label: "Sponsors" },
         { href: "/members", label: "Members" },
         { href: "/get-involved", label: "Get Involved" },
+        { href: "/contact", label: "Contact" },
       ],
     },
   ];
