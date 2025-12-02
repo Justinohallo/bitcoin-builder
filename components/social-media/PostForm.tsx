@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { X_MAX_CHARACTERS } from "@/lib/constants";
 import type { PostResponse } from "@/lib/types";
 
 /**
@@ -54,8 +55,7 @@ export function PostForm() {
   };
 
   const characterCount = content.length;
-  const maxLength = 280;
-  const isOverLimit = characterCount > maxLength;
+  const isOverLimit = characterCount > X_MAX_CHARACTERS;
 
   return (
     <div className="w-full max-w-2xl mx-auto p-6 bg-neutral-900 border border-neutral-800 rounded-lg">
@@ -103,7 +103,7 @@ export function PostForm() {
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            maxLength={maxLength}
+            maxLength={X_MAX_CHARACTERS}
             placeholder="What's happening?"
             rows={6}
             className={`w-full p-4 bg-neutral-950 border rounded-lg text-neutral-100 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-400 ${
@@ -117,7 +117,7 @@ export function PostForm() {
               isOverLimit ? "text-red-500" : "text-neutral-400"
             }`}
           >
-            {characterCount}/{maxLength} characters
+            {characterCount}/{X_MAX_CHARACTERS} characters
           </div>
         </div>
 
