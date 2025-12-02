@@ -1,7 +1,9 @@
-import { PageContainer } from "@/components/layout/PageContainer";
+import type { Metadata } from "next";
+
 import { FAQPageContent } from "@/components/faq/FAQPageContent";
-import { Heading } from "@/components/ui/Heading";
+import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Heading } from "@/components/ui/Heading";
 
 import { loadFAQs } from "@/lib/content";
 import {
@@ -13,11 +15,11 @@ import {
 } from "@/lib/seo";
 import { urls } from "@/lib/utils/urls";
 
-import type { Metadata } from "next";
-
 export async function generateMetadata(): Promise<Metadata> {
   const content = await loadFAQs();
-  return generateMeta(content.meta);
+  return generateMeta(content.meta, {
+    canonicalUrl: urls.faq(),
+  });
 }
 
 export default async function FAQPage() {

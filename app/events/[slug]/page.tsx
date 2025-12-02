@@ -38,7 +38,11 @@ export async function generateMetadata({ params }: EventPageProps) {
     return {};
   }
 
-  return generateMeta(event.meta);
+  const canonicalUrl = urls.events.detail(slug);
+  return generateMeta(event.meta, {
+    canonicalUrl,
+    type: "website",
+  });
 }
 
 export async function generateStaticParams() {
@@ -215,12 +219,14 @@ export default async function EventPage({ params }: EventPageProps) {
               presenterIds.add(presentation.presenterId);
             }
           });
-          
+
           // Also check presentations in schedule items
           if (event.schedule) {
             for (const scheduleItem of event.schedule) {
               if (scheduleItem.presentationId) {
-                const presentation = presentationsById.get(scheduleItem.presentationId);
+                const presentation = presentationsById.get(
+                  scheduleItem.presentationId
+                );
                 if (presentation?.presenterId) {
                   presenterIds.add(presentation.presenterId);
                 }
@@ -308,41 +314,41 @@ export default async function EventPage({ params }: EventPageProps) {
               </p>
               <div className="space-y-4">
                 {newsTopics.map((topic) => (
-                <article
-                  key={topic.id}
-                  className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors"
-                >
-                  <Link href={`/news-topics/${topic.slug}`}>
-                    <Heading
-                      level="h3"
-                      className="text-neutral-100 mb-2 hover:text-orange-400 transition-colors"
-                    >
-                      {topic.title}
-                    </Heading>
-                  </Link>
-
-                  {topic.tags && topic.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {topic.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs bg-neutral-800 text-neutral-400 px-2 py-1 rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  <p className="text-neutral-300 mb-3">{topic.summary}</p>
-
-                  <Link
-                    href={`/news-topics/${topic.slug}`}
-                    className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
+                  <article
+                    key={topic.id}
+                    className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors"
                   >
-                    View Discussion Questions →
-                  </Link>
-                </article>
+                    <Link href={`/news-topics/${topic.slug}`}>
+                      <Heading
+                        level="h3"
+                        className="text-neutral-100 mb-2 hover:text-orange-400 transition-colors"
+                      >
+                        {topic.title}
+                      </Heading>
+                    </Link>
+
+                    {topic.tags && topic.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {topic.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-xs bg-neutral-800 text-neutral-400 px-2 py-1 rounded"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <p className="text-neutral-300 mb-3">{topic.summary}</p>
+
+                    <Link
+                      href={`/news-topics/${topic.slug}`}
+                      className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
+                    >
+                      View Discussion Questions →
+                    </Link>
+                  </article>
                 ))}
               </div>
             </>
@@ -366,34 +372,34 @@ export default async function EventPage({ params }: EventPageProps) {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {sponsors.map((sponsor) => (
-                <div
-                  key={sponsor.id}
-                  className="bg-neutral-900 border border-neutral-800 rounded-lg p-4 hover:border-orange-400 transition-colors"
-                >
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="font-semibold text-neutral-100">
-                      {sponsor.name}
-                    </h3>
-                    <span className="text-xs text-neutral-500 capitalize">
-                      {sponsor.type.replace("-", " ")}
-                    </span>
+                  <div
+                    key={sponsor.id}
+                    className="bg-neutral-900 border border-neutral-800 rounded-lg p-4 hover:border-orange-400 transition-colors"
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="font-semibold text-neutral-100">
+                        {sponsor.name}
+                      </h3>
+                      <span className="text-xs text-neutral-500 capitalize">
+                        {sponsor.type.replace("-", " ")}
+                      </span>
+                    </div>
+                    {sponsor.description && (
+                      <p className="text-sm text-neutral-400 mb-2">
+                        {sponsor.description}
+                      </p>
+                    )}
+                    {sponsor.website && (
+                      <a
+                        href={sponsor.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-orange-400 hover:text-orange-300 transition-colors"
+                      >
+                        Visit Website →
+                      </a>
+                    )}
                   </div>
-                  {sponsor.description && (
-                    <p className="text-sm text-neutral-400 mb-2">
-                      {sponsor.description}
-                    </p>
-                  )}
-                  {sponsor.website && (
-                    <a
-                      href={sponsor.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-orange-400 hover:text-orange-300 transition-colors"
-                    >
-                      Visit Website →
-                    </a>
-                  )}
-                </div>
                 ))}
               </div>
             </>
@@ -417,60 +423,62 @@ export default async function EventPage({ params }: EventPageProps) {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {presentations.map((presentation) => {
-                const presenter = presentersById.get(presentation.presenterId);
-                return (
-                  <article
-                    key={presentation.id}
-                    className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors"
-                  >
-                    <Link href={`/presentations/${presentation.slug}`}>
-                      <Heading
-                        level="h3"
-                        className="text-neutral-100 mb-2 hover:text-orange-400 transition-colors"
-                      >
-                        {presentation.title}
-                      </Heading>
-                    </Link>
-                    {presenter && (
-                      <p className="text-sm text-neutral-400 mb-3">
-                        by{" "}
-                        <Link
-                          href={`/presenters/${presenter.slug}`}
-                          className="text-orange-400 hover:text-orange-300 transition-colors"
+                  const presenter = presentersById.get(
+                    presentation.presenterId
+                  );
+                  return (
+                    <article
+                      key={presentation.id}
+                      className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors"
+                    >
+                      <Link href={`/presentations/${presentation.slug}`}>
+                        <Heading
+                          level="h3"
+                          className="text-neutral-100 mb-2 hover:text-orange-400 transition-colors"
                         >
-                          {presenter.name}
-                        </Link>
-                      </p>
-                    )}
-                    <p className="text-neutral-300 mb-4">
-                      {presentation.description}
-                    </p>
-                    {presentation.duration && (
-                      <p className="text-xs text-neutral-500 mb-4">
-                        ⏱️ {presentation.duration}
-                      </p>
-                    )}
-                    <div className="flex flex-wrap gap-4">
-                      <Link
-                        href={`/presentations/${presentation.slug}`}
-                        className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
-                      >
-                        View Presentation →
+                          {presentation.title}
+                        </Heading>
                       </Link>
-                      {presentation.slideDeckSlug && (
+                      {presenter && (
+                        <p className="text-sm text-neutral-400 mb-3">
+                          by{" "}
+                          <Link
+                            href={`/presenters/${presenter.slug}`}
+                            className="text-orange-400 hover:text-orange-300 transition-colors"
+                          >
+                            {presenter.name}
+                          </Link>
+                        </p>
+                      )}
+                      <p className="text-neutral-300 mb-4">
+                        {presentation.description}
+                      </p>
+                      {presentation.duration && (
+                        <p className="text-xs text-neutral-500 mb-4">
+                          ⏱️ {presentation.duration}
+                        </p>
+                      )}
+                      <div className="flex flex-wrap gap-4">
                         <Link
-                          href={paths.slides.present(
-                            presentation.slideDeckSlug
-                          )}
+                          href={`/presentations/${presentation.slug}`}
                           className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
                         >
-                          📊 View Slides →
+                          View Presentation →
                         </Link>
-                      )}
-                    </div>
-                  </article>
-                );
-              })}
+                        {presentation.slideDeckSlug && (
+                          <Link
+                            href={paths.slides.present(
+                              presentation.slideDeckSlug
+                            )}
+                            className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm"
+                          >
+                            📊 View Slides →
+                          </Link>
+                        )}
+                      </div>
+                    </article>
+                  );
+                })}
               </div>
             </>
           ) : (

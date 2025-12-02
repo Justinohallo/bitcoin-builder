@@ -32,7 +32,18 @@ export async function generateMetadata({ params }: PresentationPageProps) {
     return {};
   }
 
-  return generateMeta(presentation.meta);
+  const presenter = await loadPresenterById(presentation.presenterId);
+  const canonicalUrl = urls.presentations.detail(slug);
+  const publishedTime = presentation.date
+    ? new Date(presentation.date).toISOString()
+    : undefined;
+
+  return generateMeta(presentation.meta, {
+    canonicalUrl,
+    type: "article",
+    publishedTime,
+    authors: presenter ? [presenter.name] : undefined,
+  });
 }
 
 export async function generateStaticParams() {
@@ -64,6 +75,10 @@ export default async function PresentationPage({
     summary: presentation.description,
     date: presentation.date || new Date().toISOString().split("T")[0],
     eventTitle: event?.title || "Builder Vancouver",
+    authorId: presenter?.id,
+    authorName: presenter?.name,
+    authorUrl: presenter ? urls.presenters.detail(presenter.slug) : undefined,
+    imageUrl: presenter?.avatar,
   });
 
   const breadcrumbSchema = createBreadcrumbList([

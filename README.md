@@ -355,6 +355,26 @@ Required environment variables:
 NEXT_PUBLIC_SITE_URL=https://builder.van
 ```
 
+Optional environment variables for social media cross-posting:
+
+```env
+# X (Twitter) API Credentials
+# Get these from https://developer.twitter.com/en/portal/dashboard
+X_API_KEY=your_api_key
+X_API_SECRET=your_api_secret
+X_ACCESS_TOKEN=your_access_token
+X_ACCESS_TOKEN_SECRET=your_access_token_secret
+X_BEARER_TOKEN=your_bearer_token
+
+# Nostr Configuration
+# Generate a private key using a Nostr client or tool
+NOSTR_PRIVATE_KEY=your_hex_encoded_private_key
+# JSON array of relay URLs (defaults to ["wss://relay.damus.io"] if not set)
+NOSTR_RELAYS=["wss://relay.damus.io","wss://nos.lol"]
+```
+
+**Note**: These are optional and only needed if you want to use the social media posting features. The API route will gracefully handle missing credentials.
+
 ## Examples & Reference Implementations
 
 The `/examples` directory contains annotated example files demonstrating best practices for the Bitcoin Builder Vancouver codebase.

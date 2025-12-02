@@ -2,7 +2,6 @@
  * Structured Data Builders for Schema.org JSON-LD
  * Type-safe builders for all schema types used in Builder Vancouver
  */
-
 import { SITE_NAME, SITE_URL } from "./constants";
 
 /**
@@ -109,15 +108,39 @@ export function createEventSchema(event: {
   date: string;
   time: string;
   location: string;
+  endDate?: string;
+  imageUrl?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }) {
   const url = `${SITE_URL}/events/${event.slug}`;
+  const startDate = new Date(event.date);
+
+  // Parse time if provided (format: "HH:MM" or "HH:MM AM/PM")
+  let startDateTime = startDate;
+  if (event.time) {
+    const timeMatch = event.time.match(/(\d{1,2}):(\d{2})\s*(AM|PM)?/i);
+    if (timeMatch) {
+      let hours = parseInt(timeMatch[1], 10);
+      const minutes = parseInt(timeMatch[2], 10);
+      const ampm = timeMatch[3]?.toUpperCase();
+
+      if (ampm === "PM" && hours !== 12) hours += 12;
+      if (ampm === "AM" && hours === 12) hours = 0;
+
+      startDateTime = new Date(startDate);
+      startDateTime.setHours(hours, minutes, 0, 0);
+    }
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": "Event",
     "@id": url,
     name: event.title,
     description: event.description,
-    startDate: new Date(event.date).toISOString(),
+    startDate: startDateTime.toISOString(),
+    ...(event.endDate && { endDate: new Date(event.endDate).toISOString() }),
     location: {
       "@type": "Place",
       name: event.location,
@@ -132,21 +155,45 @@ export function createEventSchema(event: {
     eventStatus: "EventScheduled",
     eventAttendanceMode: "OfflineEventAttendanceMode",
     isAccessibleForFree: true,
+    ...(event.imageUrl && {
+      image: {
+        "@type": "ImageObject",
+        url: event.imageUrl,
+        width: event.imageWidth || 1200,
+        height: event.imageHeight || 630,
+      },
+    }),
     url,
   };
 }
 
 /**
- * Creates an Article schema (for recaps)
+ * Creates an Article schema (for recaps and presentations)
  */
 export function createArticleSchema(article: {
   title: string;
   slug: string;
   summary: string;
   date: string;
-  eventTitle: string;
+  eventTitle?: string;
+  authorId?: string;
+  authorName?: string;
+  authorUrl?: string;
+  imageUrl?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }) {
   const url = `${SITE_URL}/recaps/${article.slug}`;
+  const author =
+    article.authorId && article.authorName
+      ? {
+          "@type": "Person",
+          "@id":
+            article.authorUrl || `${SITE_URL}/presenters/${article.authorId}`,
+          name: article.authorName,
+        }
+      : organizationRef();
+
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -155,9 +202,20 @@ export function createArticleSchema(article: {
     description: article.summary,
     datePublished: new Date(article.date).toISOString(),
     dateModified: new Date(article.date).toISOString(),
-    author: organizationRef(),
+    author,
     publisher: organizationRef(),
-    mainEntityOfPage: url,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    ...(article.imageUrl && {
+      image: {
+        "@type": "ImageObject",
+        url: article.imageUrl,
+        width: article.imageWidth || 1200,
+        height: article.imageHeight || 630,
+      },
+    }),
     url,
   };
 }
@@ -278,7 +336,9 @@ export function createCitySchema(city: {
 /**
  * Creates a FAQPage schema for SEO rich snippets
  */
-export function createFAQPageSchema(faqs: Array<{ question: string; answer: string }>) {
+export function createFAQPageSchema(
+  faqs: Array<{ question: string; answer: string }>
+) {
   const url = `${SITE_URL}/faq`;
   return {
     "@context": "https://schema.org",
@@ -293,6 +353,99 @@ export function createFAQPageSchema(faqs: Array<{ question: string; answer: stri
         text: faq.answer,
       },
     })),
+  };
+}
+
+/**
+ * Creates a Person schema for presenters and authors
+ */
+export function createPersonSchema(person: {
+  name: string;
+  slug: string;
+  bio?: string;
+  title?: string;
+  company?: string;
+  avatar?: string;
+  email?: string;
+  sameAs?: string[]; // Social media URLs
+}) {
+  const url = `${SITE_URL}/presenters/${person.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": url,
+    name: person.name,
+    ...(person.bio && { description: person.bio }),
+    ...(person.title && { jobTitle: person.title }),
+    ...(person.company && {
+      worksFor: { "@type": "Organization", name: person.company },
+    }),
+    ...(person.email && { email: person.email }),
+    ...(person.avatar && {
+      image: {
+        "@type": "ImageObject",
+        url: person.avatar,
+      },
+    }),
+    ...(person.sameAs && person.sameAs.length > 0 && { sameAs: person.sameAs }),
+    url,
+  };
+}
+
+/**
+ * Creates a VideoObject schema for video presentations
+ */
+export function createVideoSchema(video: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  contentUrl: string;
+  embedUrl?: string;
+  duration?: string; // ISO 8601 duration format (e.g., "PT1H30M")
+  uploadDate?: string;
+  authorName?: string;
+  authorUrl?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: video.name,
+    description: video.description,
+    thumbnailUrl: video.thumbnailUrl,
+    contentUrl: video.contentUrl,
+    ...(video.embedUrl && { embedUrl: video.embedUrl }),
+    ...(video.duration && { duration: video.duration }),
+    ...(video.uploadDate && {
+      uploadDate: new Date(video.uploadDate).toISOString(),
+    }),
+    ...(video.authorName && {
+      author: {
+        "@type": "Person",
+        name: video.authorName,
+        ...(video.authorUrl && { url: video.authorUrl }),
+      },
+    }),
+  };
+}
+
+/**
+ * Creates an ImageObject schema for better image understanding
+ */
+export function createImageSchema(image: {
+  url: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+  alt?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    url: image.url,
+    ...(image.width && { width: image.width }),
+    ...(image.height && { height: image.height }),
+    ...(image.caption && { caption: image.caption }),
+    ...(image.alt && { alternateName: image.alt }),
   };
 }
 

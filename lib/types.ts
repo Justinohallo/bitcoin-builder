@@ -141,3 +141,11 @@ export type WalletsCollection = z.infer<typeof WalletsCollectionSchema>;
 export type FAQItem = z.infer<typeof FAQItemSchema>;
 export type FAQCategory = z.infer<typeof FAQCategorySchema>;
 export type FAQsCollection = z.infer<typeof FAQsCollectionSchema>;
+
+// Social Media types
+export type {
+  SocialMediaPost,
+  PostResult,
+  PostResponse,
+  PlatformConfig,
+} from "./social-media";

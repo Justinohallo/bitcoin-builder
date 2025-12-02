@@ -15,6 +15,7 @@ import {
 } from "@/lib/content";
 import {
   createBreadcrumbList,
+  createPersonSchema,
   createSchemaGraph,
   createWebPageSchema,
   generatePageMetadata,
@@ -33,10 +34,22 @@ export async function generateMetadata({ params }: PresenterPageProps) {
     return {};
   }
 
+  const canonicalUrl = urls.presenters.detail(slug);
+  const sameAs: string[] = [];
+  if (presenter.links?.twitter) sameAs.push(presenter.links.twitter);
+  if (presenter.links?.github) sameAs.push(presenter.links.github);
+  if (presenter.links?.website) sameAs.push(presenter.links.website);
+
   return generatePageMetadata(
     `${presenter.name} | Presenters | Builder Vancouver`,
-    presenter.bio,
-    ["presenter", "speaker", presenter.name.toLowerCase()]
+    presenter.bio || `${presenter.name} is a presenter at Builder Vancouver`,
+    ["presenter", "speaker", presenter.name.toLowerCase()],
+    {
+      canonicalUrl,
+      images: presenter.avatar
+        ? [{ url: presenter.avatar, alt: presenter.name }]
+        : undefined,
+    }
   );
 }
 
@@ -63,7 +76,7 @@ export default async function PresenterPage({ params }: PresenterPageProps) {
   const pageSchema = createWebPageSchema(
     urls.presenters.detail(presenter.slug),
     `${presenter.name} | Presenters | Builder Vancouver`,
-    presenter.bio
+    presenter.bio || `${presenter.name} is a presenter at Builder Vancouver`
   );
 
   const breadcrumbSchema = createBreadcrumbList([
@@ -72,7 +85,26 @@ export default async function PresenterPage({ params }: PresenterPageProps) {
     { name: presenter.name },
   ]);
 
-  const structuredData = createSchemaGraph(pageSchema, breadcrumbSchema);
+  const sameAs: string[] = [];
+  if (presenter.links?.twitter) sameAs.push(presenter.links.twitter);
+  if (presenter.links?.github) sameAs.push(presenter.links.github);
+  if (presenter.links?.website) sameAs.push(presenter.links.website);
+
+  const personSchema = createPersonSchema({
+    name: presenter.name,
+    slug: presenter.slug,
+    bio: presenter.bio,
+    title: presenter.title,
+    company: presenter.company,
+    avatar: presenter.avatar,
+    sameAs: sameAs.length > 0 ? sameAs : undefined,
+  });
+
+  const structuredData = createSchemaGraph(
+    pageSchema,
+    breadcrumbSchema,
+    personSchema
+  );
 
   return (
     <>
@@ -154,7 +186,8 @@ export default async function PresenterPage({ params }: PresenterPageProps) {
 
         <Section>
           <Heading level="h2" className="text-neutral-100 mb-4">
-            Presentations {presentations.length > 0 && `(${presentations.length})`}
+            Presentations{" "}
+            {presentations.length > 0 && `(${presentations.length})`}
           </Heading>
           {presentations.length > 0 ? (
             <div className="space-y-6">
