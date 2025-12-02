@@ -17,6 +17,7 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.35.5",
     "leaflet": "^1.9.4",
     "next": "16.0.3",
     "nostr-tools": "^2.0.0",
