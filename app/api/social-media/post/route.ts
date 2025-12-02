@@ -55,10 +55,18 @@ export async function POST(request: NextRequest) {
     const isAdmin = userRole === "admin" || userRole === "super_admin";
 
     if (!isAdmin) {
+      // Log for debugging
+      console.log("Access denied - user role check:", {
+        userId,
+        userRole,
+        publicMetadata: user?.publicMetadata,
+      });
+
       return NextResponse.json(
         {
           error: "Forbidden",
-          message: "Admin access required",
+          message:
+            "Admin access required. Please ensure your user has 'admin' or 'super_admin' role set in Clerk public metadata.",
         },
         { status: 403 }
       );
