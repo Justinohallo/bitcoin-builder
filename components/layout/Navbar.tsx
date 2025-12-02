@@ -5,6 +5,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+
 /**
  * Navigation item with optional children
  */
@@ -306,6 +308,32 @@ export function Navbar() {
                   </div>
                 );
               })}
+
+              {/* Auth Section */}
+              <div className="flex items-center gap-2">
+                <SignedOut>
+                  <SignInButton mode="modal">
+                    <button className="text-sm font-medium text-neutral-300 hover:text-orange-400 transition-colors">
+                      Sign In
+                    </button>
+                  </SignInButton>
+                </SignedOut>
+                <SignedIn>
+                  <UserButton
+                    appearance={{
+                      elements: {
+                        avatarBox: "w-8 h-8",
+                        userButtonPopoverCard:
+                          "bg-neutral-900 border-neutral-800",
+                        userButtonPopoverActionButton:
+                          "text-neutral-200 hover:bg-neutral-800",
+                        userButtonPopoverActionButtonText: "text-neutral-200",
+                        userButtonPopoverFooter: "hidden",
+                      },
+                    }}
+                  />
+                </SignedIn>
+              </div>
             </div>
           </div>
 
@@ -365,6 +393,35 @@ export function Navbar() {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex flex-col p-4">
+          {/* Mobile Auth Section */}
+          <div className="mb-4 pb-4 border-b border-neutral-800">
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="w-full rounded-md px-4 py-3 text-base font-medium transition-colors bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-orange-400">
+                  Sign In
+                </button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <div className="flex items-center justify-between">
+                <span className="text-neutral-300 text-sm">Account</span>
+                <UserButton
+                  appearance={{
+                    elements: {
+                      avatarBox: "w-8 h-8",
+                      userButtonPopoverCard:
+                        "bg-neutral-900 border-neutral-800",
+                      userButtonPopoverActionButton:
+                        "text-neutral-200 hover:bg-neutral-800",
+                      userButtonPopoverActionButtonText: "text-neutral-200",
+                      userButtonPopoverFooter: "hidden",
+                    },
+                  }}
+                />
+              </div>
+            </SignedIn>
+          </div>
+
           {navItems.map((item) => {
             if (item.href) {
               // Simple link

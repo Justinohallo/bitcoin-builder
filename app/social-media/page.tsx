@@ -1,3 +1,7 @@
+import { redirect } from "next/navigation";
+
+import { auth } from "@clerk/nextjs/server";
+
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PostForm } from "@/components/social-media/PostForm";
@@ -21,6 +25,12 @@ export async function generateMetadata() {
 }
 
 export default async function SocialMediaPage() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    redirect("/login");
+  }
+
   const canonicalUrl = urls.socialMedia();
 
   // Generate structured data

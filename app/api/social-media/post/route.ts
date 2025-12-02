@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { z } from "zod";
 
 import {
@@ -35,6 +36,42 @@ import { loadSocialMediaConfig } from "@/lib/social-media-config";
  */
 export async function POST(request: NextRequest) {
   try {
+    // Check authentication
+    const { userId } = await auth();
+
+    if (!userId) {
+      return NextResponse.json(
+        {
+          error: "Unauthorized",
+          message: "Authentication required",
+        },
+        { status: 401 }
+      );
+    }
+
+    // Check for admin role
+    const user = await currentUser();
+    const userRole = user?.publicMetadata?.role as string | undefined;
+    const isAdmin = userRole === "admin" || userRole === "super_admin";
+
+    if (!isAdmin) {
+      // Log for debugging
+      console.log("Access denied - user role check:", {
+        userId,
+        userRole,
+        publicMetadata: user?.publicMetadata,
+      });
+
+      return NextResponse.json(
+        {
+          error: "Forbidden",
+          message:
+            "Admin access required. Please ensure your user has 'admin' or 'super_admin' role set in Clerk public metadata.",
+        },
+        { status: 403 }
+      );
+    }
+
     // Parse and validate request body
     const body = await request.json();
     const postData = SocialMediaPostSchema.parse(body);
