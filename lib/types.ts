@@ -149,3 +149,11 @@ export type {
   PostResponse,
   PlatformConfig,
 } from "./social-media";
+
+// Weekly Report types
+export type {
+  WeeklyReport,
+  PRCategory,
+  CategorizedPR,
+} from "./reports/buildReport";
+export type { MergedPR } from "./github/fetchMergedPRs";
