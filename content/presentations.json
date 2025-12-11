@@ -491,8 +491,8 @@
           "body": "Lightning is becoming an interoperability layer for Bitcoin payment protocols. Several newer payment approaches use Lightning for settlement while offering different developer experiences and trust models.\n\nThis is why alternatives like Spark are emerging: they abstract away Lightning's operational complexity while maintaining interoperability with the broader Lightning network. You can receive payments from any Lightning wallet, but you don't have to manage channels yourself.\n\nThese protocols don't require running your own node or managing channels, but they involve different trust models and tradeoffs."
         },
         {
-          "title": "Two Lightning Integration Approaches",
-          "body": "There are two main approaches to integrating Lightning payments, each with different trust models and tradeoffs:\n\n**Spark**\nSelf-custodial Lightning with simplified developer experience. Different trust model than running your own node - you don't manage channels or liquidity yourself. Has swap fees. Works for production.\n\n**Self-Sovereign Lightning**\nRun your own Lightning node. You control everything: channels, keys, liquidity, backups. Complex to operate but fully sovereign.\n\nPick based on what trust model works for your app and users."
+          "title": "Spark vs Self-Sovereign Lightning",
+          "body": "Today we'll focus on comparing two approaches - Spark and running your own Lightning node. There are other options in the ecosystem, but these represent the spectrum of tradeoffs:\n\n**Spark**\nSelf-custodial Lightning with simplified developer experience. Different trust model than running your own node - you don't manage channels or liquidity yourself. Has swap fees. Works for production.\n\n**Self-Sovereign Lightning**\nRun your own Lightning node. You control everything: channels, keys, liquidity, backups. Complex to operate but fully sovereign.\n\nPick based on what trust model works for your app and users."
         }
       ],
       "meta": {
@@ -537,11 +537,7 @@
       "sections": [
         {
           "title": "Why Spark for Lightning Integration?",
-          "body": "Most developers want to add Lightning payments without becoming Lightning experts. Spark provides:\n\n• Simple API - no channel management, no liquidity concerns\n• Fast integration - from zero to Lightning payments in minutes\n• Lower barrier to entry - no node operation required\n• Focus on app logic - not Lightning network topology\n\nTradeoff: You're using a custodial service (Spark holds the Lightning channels), which means different trust model than self-sovereign Lightning. For prototypes, MVPs, and learning - this is often the right choice."
-        },
-        {
-          "title": "Understanding Lightning Invoices",
-          "body": "Lightning invoices are the foundation of Lightning payments. Key concepts:\n\n• Can have an amount specified, or be amount-flexible\n• Can't be overpaid or underpaid if amount is fixed\n• Some types can only be paid once (single-use)\n• Some can be paid multiple times (reusable)\n• Can be used to push money to the person who scans the invoice\n• Invoices encode: payment amount, destination, description, expiry\n\nSpark abstracts much of this complexity while still giving you control over invoice creation and payment verification."
+          "body": "Most developers want to add Lightning payments without becoming Lightning experts. Spark provides:\n\n• Simple API - no channel management, no liquidity concerns\n• Fast integration - from zero to Lightning payments in minutes\n• Lower barrier to entry - no node operation required\n• Focus on app logic - not Lightning network topology\n\nTradeoff: Spark is self-custodial (you hold your keys), but it's a Layer 2 protocol with different trust assumptions than running your own Lightning node. Spark handles the Lightning channels and liquidity management for you, which simplifies development but introduces additional protocol-level trust."
         },
         {
           "title": "Demo: Spark Soundboard Architecture",
