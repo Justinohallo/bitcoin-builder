@@ -537,7 +537,7 @@
       "sections": [
         {
           "title": "Why Spark for Lightning Integration?",
-          "body": "Most developers want to add Lightning payments without becoming Lightning experts. Spark provides:\n\n• Simple API - no channel management, no liquidity concerns\n• Fast integration - from zero to Lightning payments in minutes\n• Lower barrier to entry - no node operation required\n• Focus on app logic - not Lightning network topology\n\nTradeoff: You're using a custodial service (Spark holds the Lightning channels), which means different trust model than self-custody. For prototypes, MVPs, and learning - this is often the right choice."
+          "body": "Most developers want to add Lightning payments without becoming Lightning experts. Spark provides:\n\n• Simple API - no channel management, no liquidity concerns\n• Fast integration - from zero to Lightning payments in minutes\n• Lower barrier to entry - no node operation required\n• Focus on app logic - not Lightning network topology\n\nTradeoff: You're using a custodial service (Spark holds the Lightning channels), which means different trust model than self-sovereign Lightning. For prototypes, MVPs, and learning - this is often the right choice."
         },
         {
           "title": "Understanding Lightning Invoices",
@@ -560,7 +560,7 @@
         },
         {
           "title": "Getting Started with Spark",
-          "body": "Ready to integrate Lightning payments with Spark?\n\n1. Review the Spark Soundboard code for real-world examples\n2. Check Spark documentation for API details and SDK setup\n3. Start with a simple proof-of-concept in your app\n4. Test with small amounts on testnet first\n5. Iterate and refine based on user feedback\n\nRemember: Spark is one tool in the Lightning ecosystem. As you grow, you can migrate to self-custody Lightning if needed. Start simple, ship fast, and learn as you build.",
+          "body": "Ready to integrate Lightning payments with Spark?\n\n1. Review the Spark Soundboard code for real-world examples\n2. Check Spark documentation for API details and SDK setup\n3. Start with a simple proof-of-concept in your app\n4. Test with small amounts on testnet first\n5. Iterate and refine based on user feedback\n\nRemember: Spark is one tool in the Lightning ecosystem. As you grow, you can migrate to self-sovereign Lightning if needed. Start simple, ship fast, and learn as you build.",
           "links": [
             {
               "text": "Spark Soundboard Demo",
