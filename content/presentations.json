@@ -465,6 +465,11 @@
           "external": false
         },
         {
+          "text": "Spark by Lightspark",
+          "url": "https://www.lightspark.com/spark",
+          "external": true
+        },
+        {
           "text": "Spark Soundboard Demo",
           "url": "https://github.com/echennells/spark-soundboard/",
           "external": true
@@ -477,14 +482,7 @@
         },
         {
           "title": "Lightning Network: The Power and the Complexity",
-          "body": "Lightning Network solves Bitcoin's payment limitations with instant, low-fee transactions. However, being a full peer in the Lightning network comes with operational complexity:\n\n• Funds at risk if data not secured and backed up properly\n• Liveliness requirements - node must be online to accept payments and maintain security\n• Channel liquidity management - balancing inbound/outbound capacity\n• Channel opening/closing costs - on-chain fees required\n• Technical knowledge required - understanding routing, watchtowers, backups\n\nFor many applications and developers, this complexity is a barrier to adoption.",
-          "links": [
-            {
-              "text": "Lightning 101 Guide",
-              "url": "/lightning-101",
-              "external": false
-            }
-          ]
+          "body": "Lightning Network solves Bitcoin's payment limitations with instant, low-fee transactions. However, being a full peer in the Lightning network comes with operational complexity:\n\n• Funds at risk if data not secured and backed up properly\n• Liveliness requirements - node must be online to accept payments and maintain security\n• Channel liquidity management - balancing inbound/outbound capacity\n• Channel opening/closing costs - on-chain fees required\n• Technical knowledge required - understanding routing, watchtowers, backups\n\nFor many applications and developers, this complexity is a barrier to adoption."
         },
         {
           "title": "Lightning as an Interoperability Layer",
@@ -492,7 +490,7 @@
         },
         {
           "title": "Spark vs Self-Sovereign Lightning",
-          "body": "Today we'll focus on comparing two approaches - Spark and running your own Lightning node. There are other options in the ecosystem, but these represent the spectrum of tradeoffs:\n\n**Spark**\nSelf-custodial Lightning with simplified developer experience. Different trust model than running your own node - you don't manage channels or liquidity yourself. Has swap fees. Works for production.\n\n**Self-Sovereign Lightning**\nRun your own Lightning node. You control everything: channels, keys, liquidity, backups. Complex to operate but fully sovereign.\n\nPick based on what trust model works for your app and users."
+          "body": "Today we'll focus on comparing two approaches - Spark and running your own Lightning node. There are other options in the ecosystem, but these represent the spectrum of tradeoffs:\n\n**Spark**\nSelf-custodial Lightning with simplified developer experience. Spark is a Layer 2 with different trust assumptions than Lightning and Layer 1 Bitcoin. Has swap fees. Works for production.\n\n**Self-Sovereign Lightning**\nRun your own Lightning node. You control everything: channels, keys, liquidity, backups. Complex to operate but fully sovereign.\n\nPick based on what trust model works for your app and users."
         }
       ],
       "meta": {

@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+        - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+        - NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
+      - X_API_KEY=${X_API_KEY}
+      - X_API_SECRET=${X_API_SECRET}
+      - X_ACCESS_TOKEN=${X_ACCESS_TOKEN}
+      - X_ACCESS_TOKEN_SECRET=${X_ACCESS_TOKEN_SECRET}
+      - X_BEARER_TOKEN=${X_BEARER_TOKEN}
+      - NOSTR_PRIVATE_KEY=${NOSTR_PRIVATE_KEY}
+      - NOSTR_RELAYS=${NOSTR_RELAYS}
+    restart: unless-stopped

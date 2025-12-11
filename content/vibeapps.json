@@ -8,14 +8,14 @@
       "title": "Spark Soundboard",
       "slug": "spark-soundboard",
       "description": "Demo app demonstrating Lightning payments integration using Spark. Pay with Lightning to trigger sound effects - showcasing instant Bitcoin payments with minimal code.",
-      "github": "https://github.com/echennells/spark-soundboard/",
+      "url": "https://github.com/echennells/spark-soundboard/",
       "category": "Demo App",
       "technologies": ["Spark", "Lightning", "Bitcoin", "Web"],
       "presentationSlugs": [
         "lightning-integration-options",
         "building-lightning-spark"
       ],
-      "status": "Active",
+      "status": "development",
       "creator": "Eric Chennells",
       "createdDate": "2024-12-09",
       "features": [
