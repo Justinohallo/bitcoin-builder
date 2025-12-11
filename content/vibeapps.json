@@ -2,7 +2,32 @@
   "title": "Vibe Apps",
   "slug": "vibe-apps",
   "description": "Experimental apps and tools for Builder Vancouver events and community.",
-  "apps": [],
+  "apps": [
+    {
+      "id": "app-spark-soundboard",
+      "title": "Spark Soundboard",
+      "slug": "spark-soundboard",
+      "description": "Demo app demonstrating Lightning payments integration using Spark. Pay with Lightning to trigger sound effects - showcasing instant Bitcoin payments with minimal code.",
+      "github": "https://github.com/echennells/spark-soundboard/",
+      "category": "Demo App",
+      "technologies": ["Spark", "Lightning", "Bitcoin", "Web"],
+      "presentationSlugs": [
+        "lightning-integration-options",
+        "building-lightning-spark"
+      ],
+      "status": "Active",
+      "creator": "Eric Chennells",
+      "createdDate": "2024-12-09",
+      "features": [
+        "Lightning invoice generation",
+        "QR code payment display",
+        "Instant payment verification",
+        "Sound effect triggers on payment",
+        "Clean developer integration example"
+      ],
+      "useCase": "Educational demo showing how to integrate Lightning payments without running a node. Perfect for developers learning Spark or prototyping Lightning payment flows."
+    }
+  ],
   "meta": {
     "title": "Vibe Apps | Builder Vancouver",
     "description": "Experimental Bitcoin and Lightning apps for Builder Vancouver community.",
