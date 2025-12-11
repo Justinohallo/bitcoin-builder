@@ -310,8 +310,8 @@
       "id": "presentation-bepsi-machine-eric-chennels",
       "title": "The Bepsi Machine: Building a Bitcoin Vending Machine",
       "slug": "bepsi-machine-bitcoin-vending",
-      "description": "Eric Chennels discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
-      "overview": "Eric Chennels presents a deep dive into building the Bepsi machine, a Bitcoin vending machine that demonstrates practical Bitcoin and Lightning integration in a physical device. The presentation covers the hardware and software tools used in the project, the technical challenges encountered, and how vibe coding methodologies helped streamline development. Attendees will learn about the practical aspects of building Bitcoin-native hardware, the integration of Lightning payments, and how modern development workflows can accelerate Bitcoin product development.",
+      "description": "Eric Chennells discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
+      "overview": "Eric Chennells presents a deep dive into building the Bepsi machine, a Bitcoin vending machine that demonstrates practical Bitcoin and Lightning integration in a physical device. The presentation covers the hardware and software tools used in the project, the technical challenges encountered, and how vibe coding methodologies helped streamline development. Attendees will learn about the practical aspects of building Bitcoin-native hardware, the integration of Lightning payments, and how modern development workflows can accelerate Bitcoin product development.",
       "presenterId": "presenter-eric-chennels",
       "eventId": "event-builder-vancouver-launch",
       "date": "2025-11-18",
@@ -352,7 +352,7 @@
       ],
       "meta": {
         "title": "The Bepsi Machine: Building a Bitcoin Vending Machine | Builder Vancouver",
-        "description": "Eric Chennels discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
+        "description": "Eric Chennells discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
         "keywords": [
           "bepsi machine",
           "bitcoin vending machine",
@@ -441,6 +441,135 @@
           "loyalty points",
           "bitcoin native",
           "bitchat"
+        ]
+      }
+    },
+    {
+      "id": "presentation-lightning-integration-options",
+      "title": "Lightning Integration: Understanding Your Options",
+      "slug": "lightning-integration-options",
+      "description": "An overview of Lightning integration approaches - comparing Spark and self-sovereign Lightning for developers building Bitcoin payment apps.",
+      "overview": "Running a full Lightning node has operational complexity that many apps don't need. This presentation explores two approaches to Lightning integration: Spark (self-custodial with simplified developer experience) and self-sovereign Lightning (full node operation). Learn the tradeoffs in trust models, developer experience, and operational complexity.",
+      "presenterId": "presenter-eric-chennels",
+      "date": "2024-12-09",
+      "duration": "10-15 minutes",
+      "links": [
+        {
+          "text": "Lightning 101",
+          "url": "/lightning-101",
+          "external": false
+        },
+        {
+          "text": "Layer 2 Overview",
+          "url": "/layer-2-overview",
+          "external": false
+        },
+        {
+          "text": "Spark Soundboard Demo",
+          "url": "https://github.com/echennells/spark-soundboard/",
+          "external": true
+        }
+      ],
+      "sections": [
+        {
+          "title": "The Problem: Bitcoin L1 Doesn't Work for Payments",
+          "body": "Bitcoin's base layer (L1) has significant limitations for everyday payments:\n\n• High fees during congestion (can exceed payment value for small transactions)\n• Slow confirmation times (10+ minutes average, sometimes hours)\n• Poor merchant acceptance for L1 (most want instant finality)\n• Impractical for low-value payments (fees often higher than payment amount)\n• Difficult to scale globally (7 transactions per second maximum)\n\nThese constraints make Bitcoin L1 unsuitable for point-of-sale, streaming payments, or micropayments. This is why Lightning Network was created."
+        },
+        {
+          "title": "Lightning Network: The Power and the Complexity",
+          "body": "Lightning Network solves Bitcoin's payment limitations with instant, low-fee transactions. However, being a full peer in the Lightning network comes with operational complexity:\n\n• Funds at risk if data not secured and backed up properly\n• Liveliness requirements - node must be online to accept payments and maintain security\n• Channel liquidity management - balancing inbound/outbound capacity\n• Channel opening/closing costs - on-chain fees required\n• Technical knowledge required - understanding routing, watchtowers, backups\n\nFor many applications and developers, this complexity is a barrier to adoption."
+        },
+        {
+          "title": "Lightning as an Interoperability Layer",
+          "body": "Lightning is becoming an interoperability layer for Bitcoin payment protocols. Several newer payment approaches use Lightning for settlement while offering different developer experiences and trust models.\n\nThis is why alternatives like Spark are emerging: they abstract away Lightning's operational complexity while maintaining interoperability with the broader Lightning network. You can receive payments from any Lightning wallet, but you don't have to manage channels yourself.\n\nThese protocols don't require running your own node or managing channels, but they involve different trust models and tradeoffs."
+        },
+        {
+          "title": "Spark vs Self-Sovereign Lightning",
+          "body": "Today we'll focus on comparing two approaches - Spark and running your own Lightning node. There are other options in the ecosystem, but these represent the spectrum of tradeoffs:\n\n**Spark**\nSelf-custodial Lightning with simplified developer experience. Different trust model than running your own node - you don't manage channels or liquidity yourself. Has swap fees. Works for production.\n\n**Self-Sovereign Lightning**\nRun your own Lightning node. You control everything: channels, keys, liquidity, backups. Complex to operate but fully sovereign.\n\nPick based on what trust model works for your app and users."
+        }
+      ],
+      "meta": {
+        "title": "Lightning Integration: Understanding Your Options | Builder Vancouver",
+        "description": "Compare Lightning integration approaches: Spark vs self-sovereign Lightning. Learn the tradeoffs for Bitcoin payment apps.",
+        "keywords": [
+          "lightning network",
+          "spark",
+          "bitcoin payments",
+          "lightning integration",
+          "bitcoin layer 2",
+          "self-sovereign lightning"
+        ]
+      }
+    },
+    {
+      "id": "presentation-building-lightning-spark",
+      "title": "Building Lightning Payments with Spark",
+      "slug": "building-lightning-spark",
+      "description": "A hands-on developer demo showing how to integrate Lightning payments using Spark - featuring the Spark Soundboard demo app.",
+      "overview": "Want to add Lightning payments to your app but don't want to run a node? This presentation demonstrates integrating Lightning payments using Spark, a developer-friendly protocol that abstracts away channel management and node operation. We'll walk through the Spark Soundboard demo app, showing real code and integration patterns to get you building quickly.",
+      "presenterId": "presenter-eric-chennels",
+      "date": "2024-12-09",
+      "duration": "10-15 minutes",
+      "links": [
+        {
+          "text": "Spark Soundboard GitHub",
+          "url": "https://github.com/echennells/spark-soundboard/",
+          "external": true
+        },
+        {
+          "text": "Lightning Integration Options",
+          "url": "/presentations/lightning-integration-options",
+          "external": false
+        },
+        {
+          "text": "Lightning 101",
+          "url": "/lightning-101",
+          "external": false
+        }
+      ],
+      "sections": [
+        {
+          "title": "Why Spark for Lightning Integration?",
+          "body": "Most developers want to add Lightning payments without becoming Lightning experts. Spark provides:\n\n• Simple API - no channel management, no liquidity concerns\n• Fast integration - from zero to Lightning payments in minutes\n• Lower barrier to entry - no node operation required\n• Focus on app logic - not Lightning network topology\n\nTradeoff: Spark is self-custodial (you hold your keys), but it's a Layer 2 protocol with different trust assumptions than running your own Lightning node. Spark handles the Lightning channels and liquidity management for you, which simplifies development but introduces additional protocol-level trust."
+        },
+        {
+          "title": "Demo: Spark Soundboard Architecture",
+          "body": "The Spark Soundboard is a Lightning-enabled soundboard that charges 100 sats per sound effect:\n\n**User Flow:**\n1. User clicks a sound button (airhorn, drumroll, tada, or crickets)\n2. Backend creates Lightning invoice using Spark SDK\n3. QR code modal appears with the invoice\n4. User pays with any Lightning wallet\n5. Backend polls wallet transfers every 3 seconds to detect payment\n6. Frontend polls payment status every second\n7. When payment confirmed, sound plays automatically\n\n**Tech Stack:**\n• Node.js + Express backend\n• Vanilla HTML/CSS/JavaScript frontend\n• @buildonspark/spark-sdk for wallet and invoices\n• qrcodejs for QR code generation\n• In-memory payment tracking (Map)\n\nNo login required, no database needed - just Lightning payments and sound effects.",
+          "links": [
+            {
+              "text": "View Code on GitHub",
+              "url": "https://github.com/echennells/spark-soundboard/",
+              "external": true
+            }
+          ]
+        },
+        {
+          "title": "Code Walkthrough: How It Actually Works",
+          "body": "The Spark Soundboard demonstrates a complete Lightning payment flow:\n\n**Backend (Node.js + Express):**\n• Initialize Spark wallet using @buildonspark/spark-sdk\n• Create Lightning invoices via sparkWallet.createLightningInvoice()\n• Poll for payment confirmation by checking wallet transfers every 3 seconds\n• Store pending payments in-memory (Map)\n• Serve static frontend files\n\n**Frontend (Vanilla HTML/CSS/JS):**\n• Display sound buttons (airhorn, drumroll, tada, crickets)\n• Generate QR code for invoice using qrcodejs library\n• Poll backend for payment status\n• Auto-play sound when payment confirmed\n\n**Key Integration Points:**\n1. Wallet initialization with mnemonic phrase\n2. Invoice creation (100 sats per sound)\n3. Payment monitoring via sparkWallet.getTransfers()\n4. Payment status polling (frontend checks every second)\n\nCheck the GitHub repo for the complete source code."
+        },
+        {
+          "title": "Getting Started with Spark",
+          "body": "Ready to integrate Lightning payments with Spark?\n\n1. Review the Spark Soundboard code for real-world examples\n2. Check Spark documentation for API details and SDK setup\n3. Start with a simple proof-of-concept in your app\n4. Test with small amounts on testnet first\n5. Iterate and refine based on user feedback\n\nRemember: Spark is one tool in the Lightning ecosystem. As you grow, you can migrate to self-sovereign Lightning if needed. Start simple, ship fast, and learn as you build.",
+          "links": [
+            {
+              "text": "Spark Soundboard Demo",
+              "url": "https://github.com/echennells/spark-soundboard/",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "title": "Building Lightning Payments with Spark | Builder Vancouver",
+        "description": "Hands-on developer demo showing how to integrate Lightning payments using Spark. Features the Spark Soundboard demo app with real code examples.",
+        "keywords": [
+          "spark",
+          "lightning network",
+          "lightning payments",
+          "bitcoin development",
+          "lightning integration",
+          "demo app",
+          "spark soundboard"
         ]
       }
     }

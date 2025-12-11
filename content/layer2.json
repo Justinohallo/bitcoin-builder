@@ -19,6 +19,17 @@
       ]
     },
     {
+      "title": "Spark",
+      "body": "Spark is a self-custodial Lightning Layer 2 that simplifies Bitcoin and Lightning payments for developers. It provides a managed infrastructure while you maintain control of your keys. Spark handles the complexity of channel management, liquidity, and routing, making Lightning accessible without running your own node.",
+      "links": [
+        {
+          "text": "Lightspark Spark",
+          "url": "https://www.lightspark.com/spark",
+          "external": true
+        }
+      ]
+    },
+    {
       "title": "Emerging Layer 2s",
       "body": "RGB: Client-side validated smart contracts on Bitcoin.\nStacks: Smart contracts with Bitcoin finality.\nLiquid: Federated sidechain for fast settlements.\nRollups: Various rollup proposals for Bitcoin scaling.\nFedimint: Federated Chaumian e-cash mints.\n\nEach approach offers different trade-offs between security, decentralization, and functionality."
     },
