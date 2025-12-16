@@ -17,7 +17,7 @@
         "presentation-bitpoints-me",
         "presentation-vibe-coding-builder-2025"
       ],
-      "description": "Join us for the inaugural Builder Vancouver event! We'll introduce the Builder movement, explore Vancouver's Bitcoin ecosystem, and kick off our monthly meetup series. This is the perfect opportunity to meet fellow builders, learn about our community, and get involved.",
+      "description": "Join us for the inaugural Builder Vancouver event! We'll introduce the Builder movement, explore Vancouver's Bitcoin ecosystem, and kick off our monthly meetup series. This is the perfect opportunity to meet fellow builders, learn about our community, and get involved. Events are hosted by local chapters globally—find your nearest chapter or join remotely.",
       "schedule": [
         {
           "startTime": "6:00 PM",
@@ -37,8 +37,8 @@
         {
           "startTime": "6:40 PM",
           "endTime": "6:50 PM",
-          "title": "Introduction to Builder Vancouver",
-          "description": "Introduction to Builder Vancouver and what to expect at our meetups.",
+          "title": "Introduction to Builder",
+          "description": "Introduction to Builder as a global network and our Vancouver chapter, and what to expect at our meetups.",
           "type": "presentation",
           "presentationId": "presentation-builder-vancouver-intro"
         },
@@ -100,7 +100,7 @@
       "sections": [
         {
           "title": "What to Expect",
-          "body": "This inaugural event will introduce you to Builder Vancouver and our community. We'll cover what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at future meetups. There will be plenty of time for questions, discussion, and networking."
+          "body": "This inaugural event will introduce you to Builder and our Vancouver chapter. We'll cover what Builder is as a global network, why Vancouver is a great Bitcoin builder city (as an example of the many great builder cities worldwide), and what to expect at future meetups. There will be plenty of time for questions, discussion, and networking."
         },
         {
           "title": "Who Should Attend",
@@ -119,8 +119,8 @@
         }
       ],
       "meta": {
-        "title": "Builder Vancouver Launch Event | Builder Vancouver",
-        "description": "Join us for the inaugural Builder Vancouver event! Introduction to Builder, Vancouver's Bitcoin ecosystem, and kick off our monthly meetup series.",
+        "title": "Builder Vancouver Launch Event | Builder Network",
+        "description": "Join us for the inaugural Builder Vancouver chapter event! Introduction to Builder as a global network, Vancouver's Bitcoin ecosystem (as an example), and kick off our monthly meetup series.",
         "keywords": [
           "builder",
           "vancouver",

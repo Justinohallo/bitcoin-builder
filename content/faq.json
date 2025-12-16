@@ -1,28 +1,28 @@
 {
   "title": "Frequently Asked Questions",
   "slug": "faq",
-  "description": "Common questions about Bitcoin, Lightning Network, Builder Vancouver, and our community.",
+  "description": "Common questions about Bitcoin, Lightning Network, Builder Network, and our global community.",
   "categories": [
     {
       "id": "getting-started",
       "title": "Getting Started",
-      "description": "Questions for newcomers to Builder Vancouver",
+      "description": "Questions for newcomers to Builder",
       "faqs": [
         {
           "id": "faq-001",
-          "question": "What is Builder Vancouver?",
-          "answer": "Builder Vancouver is a community-driven meetup focused on Bitcoin education, Lightning Network development, and Layer 2 exploration. We bring together developers, enthusiasts, and curious minds to learn, build, and advance Bitcoin technology together.",
+          "question": "What is Builder?",
+          "answer": "Builder is a global network of community-driven chapters focused on Bitcoin education, Lightning Network development, and Layer 2 exploration. Each chapter brings together developers, enthusiasts, and curious minds to learn, build, and advance Bitcoin technology together. Chapters operate independently while sharing knowledge and resources across the network.",
           "sourceContent": {
             "type": "page",
             "slug": "about",
-            "title": "About Builder Vancouver"
+            "title": "About Builder"
           },
-          "tags": ["community", "getting-started", "builder-vancouver"]
+          "tags": ["community", "getting-started", "builder-network"]
         },
         {
           "id": "faq-002",
           "question": "Do I need prior Bitcoin knowledge to attend?",
-          "answer": "No preparation required! Builder Vancouver welcomes everyone interested in Bitcoin, from complete beginners to experienced developers. Our meetups include context for beginners while diving deep enough to engage experienced developers.",
+          "answer": "No preparation required! Builder welcomes everyone interested in Bitcoin, from complete beginners to experienced developers. Our meetups across all chapters include context for beginners while diving deep enough to engage experienced developers.",
           "sourceContent": {
             "type": "page",
             "slug": "onboarding",
@@ -66,7 +66,7 @@
         {
           "id": "faq-006",
           "question": "What are the community guidelines?",
-          "answer": "Builder Vancouver is an inclusive, respectful community. We welcome all experience levels and backgrounds. Be kind, ask questions, share knowledge, and help others learn. All meetups follow the Chatham House Rule for open discussion.",
+          "answer": "Builder is an inclusive, respectful global community. We welcome all experience levels and backgrounds. Be kind, ask questions, share knowledge, and help others learn. All meetups across Builder chapters follow the Chatham House Rule for open discussion.",
           "sourceContent": {
             "type": "page",
             "slug": "onboarding",
@@ -399,8 +399,8 @@
     }
   ],
   "meta": {
-    "title": "FAQ | Builder Vancouver",
-    "description": "Frequently asked questions about Bitcoin, Lightning Network, Builder Vancouver, and our community. Find answers about wallets, Layer 2 solutions, development, and more.",
+    "title": "FAQ | Builder Network",
+    "description": "Frequently asked questions about Bitcoin, Lightning Network, Builder Network, and our global community. Find answers about wallets, Layer 2 solutions, development, and more.",
     "keywords": [
       "faq",
       "frequently asked questions",

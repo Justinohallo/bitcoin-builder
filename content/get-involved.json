@@ -1,7 +1,7 @@
 {
-  "title": "Get Involved with Builder Vancouver",
+  "title": "Get Involved with Builder",
   "slug": "get-involved",
-  "description": "Want to help keep Builder Vancouver running? We are always looking for extra hands to welcome people, jot down wins, or send a short recap.",
+  "description": "Want to help keep Builder chapters running? We are always looking for extra hands to welcome people, jot down wins, or send a short recap. Each chapter operates independently—contact your local chapter organizers or reach out to start a new chapter in your city.",
   "impactStatement": "If you can spare an hour, that is enough to keep the next builder night rolling.",
   "sections": [],
   "tracks": [],
@@ -11,12 +11,13 @@
     "label": "Reach the organizing team",
     "responseTime": "Expect a reply within 48 hours.",
     "instructions": [
-      "Use the subject line \"I Want to Help\" so we can triage fast."
+      "Use the subject line \"I Want to Help\" so we can triage fast.",
+      "Note: This contact is for the Vancouver chapter. To reach other chapters or start a new one, check the chapters directory."
     ]
   },
   "meta": {
-    "title": "Get Involved | Builder Vancouver",
-    "description": "Quick note on how to help Builder Vancouver and where to email the organizers.",
-    "keywords": ["volunteer", "builder vancouver", "get involved"]
+    "title": "Get Involved | Builder Network",
+    "description": "Learn how to help Builder chapters and where to contact organizers. Join the global Builder Network or start a chapter in your city.",
+    "keywords": ["volunteer", "builder network", "get involved", "chapters"]
   }
 }

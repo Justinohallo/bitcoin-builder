@@ -1,19 +1,19 @@
 {
-  "title": "Builder Vancouver",
+  "title": "Builder",
   "hero": {
-    "heading": "Build the Future of Bitcoin in Vancouver",
-    "subheading": "Join our community of builders, learners, and Bitcoin enthusiasts exploring Layer 2 solutions and Lightning Network",
+    "heading": "Build the Future of Bitcoin",
+    "subheading": "A global network of builders, learners, and Bitcoin enthusiasts exploring Layer 2 solutions and Lightning Network",
     "ctaText": "Get Started",
     "ctaLink": "/onboarding"
   },
   "sections": [
     {
-      "title": "Welcome to Builder Vancouver",
-      "body": "Builder Vancouver is a community-driven meetup focused on Bitcoin education, Lightning Network development, and Layer 2 exploration. We bring together developers, enthusiasts, and curious minds to learn, build, and advance Bitcoin technology together."
+      "title": "Welcome to Builder",
+      "body": "Builder is a global network of community-driven chapters focused on Bitcoin education, Lightning Network development, and Layer 2 exploration. Our chapters bring together developers, enthusiasts, and curious minds to learn, build, and advance Bitcoin technology together. Each chapter operates independently while sharing knowledge, resources, and best practices across the network."
     },
     {
       "title": "What We Do",
-      "body": "We host regular meetups featuring technical presentations, hands-on workshops, and collaborative building sessions. Whether you're a seasoned Bitcoin developer or just getting started, there's a place for you in our community.",
+      "body": "Builder chapters host regular meetups featuring technical presentations, hands-on workshops, and collaborative building sessions. Whether you're a seasoned Bitcoin developer or just getting started, there's a place for you in our global community. Find a chapter near you or start your own.",
       "links": [
         {
           "text": "View Upcoming Events",
@@ -29,15 +29,16 @@
     }
   ],
   "meta": {
-    "title": "Builder Vancouver | Bitcoin Meetups & Education",
-    "description": "Join Builder Vancouver for Bitcoin meetups, Lightning Network education, and Layer 2 exploration. Connect with the local Bitcoin community.",
+    "title": "Builder | Global Bitcoin Builder Network",
+    "description": "Join the Builder Network for Bitcoin meetups, Lightning Network education, and Layer 2 exploration. Connect with Bitcoin builders in chapters around the world.",
     "keywords": [
       "bitcoin",
-      "vancouver",
+      "builder network",
       "meetup",
       "lightning network",
       "layer 2",
-      "bitcoin education"
+      "bitcoin education",
+      "global community"
     ]
   }
 }

@@ -45,7 +45,7 @@
         }
       ],
       "meta": {
-        "title": "Wallet of Satoshi | Lightning Wallets | Builder Vancouver",
+        "title": "Wallet of Satoshi | Lightning Wallets | Builder Network",
         "description": "User-friendly custodial Lightning wallet for iOS and Android. Perfect for beginners getting started with Lightning Network payments.",
         "keywords": ["wallet of satoshi", "lightning wallet", "custodial wallet", "bitcoin wallet"]
       }
@@ -93,7 +93,7 @@
         }
       ],
       "meta": {
-        "title": "ZEUS Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "title": "ZEUS Lightning Wallet | Lightning Wallets | Builder Network",
         "description": "Non-custodial Lightning wallet with advanced features. Connect to your own node or use their service. Full control over your funds.",
         "keywords": ["zeus wallet", "non-custodial wallet", "lightning node", "lightning wallet"]
       }
@@ -141,7 +141,7 @@
         }
       ],
       "meta": {
-        "title": "Phoenix Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "title": "Phoenix Lightning Wallet | Lightning Wallets | Builder Network",
         "description": "Non-custodial Lightning wallet with automatic channel management. Full control of your keys without technical complexity.",
         "keywords": ["phoenix wallet", "non-custodial wallet", "lightning wallet", "acinq"]
       }
@@ -189,7 +189,7 @@
         }
       ],
       "meta": {
-        "title": "Breez Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "title": "Breez Lightning Wallet | Lightning Wallets | Builder Network",
         "description": "Non-custodial Lightning wallet with podcast streaming and POS features. Full control with automatic channel management.",
         "keywords": ["breez wallet", "lightning wallet", "podcast streaming", "non-custodial wallet"]
       }
@@ -236,7 +236,7 @@
         }
       ],
       "meta": {
-        "title": "Strike Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "title": "Strike Lightning Wallet | Lightning Wallets | Builder Network",
         "description": "Custodial Lightning wallet for global payments and remittances. Easy fiat integration and instant cross-border transfers.",
         "keywords": ["strike wallet", "lightning wallet", "remittances", "global payments"]
       }
@@ -284,7 +284,7 @@
         }
       ],
       "meta": {
-        "title": "Blue Wallet | Lightning Wallets | Builder Vancouver",
+        "title": "Blue Wallet | Lightning Wallets | Builder Network",
         "description": "Hybrid Bitcoin and Lightning wallet with custodial and non-custodial options. Flexible and feature-rich.",
         "keywords": ["blue wallet", "lightning wallet", "hybrid wallet", "bitcoin wallet"]
       }
@@ -332,7 +332,7 @@
         }
       ],
       "meta": {
-        "title": "Muun Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "title": "Muun Lightning Wallet | Lightning Wallets | Builder Network",
         "description": "Non-custodial wallet with unified Bitcoin and Lightning balance. Seamless experience with full control.",
         "keywords": ["muun wallet", "lightning wallet", "non-custodial wallet", "unified balance"]
       }
@@ -379,7 +379,7 @@
         }
       ],
       "meta": {
-        "title": "Blixt Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "title": "Blixt Lightning Wallet | Lightning Wallets | Builder Network",
         "description": "Non-custodial Android Lightning wallet that runs its own node. Full sovereignty and control.",
         "keywords": ["blixt wallet", "lightning wallet", "android wallet", "lightning node"]
       }
@@ -425,14 +425,14 @@
         }
       ],
       "meta": {
-        "title": "Alby Lightning Wallet | Lightning Wallets | Builder Vancouver",
+        "title": "Alby Lightning Wallet | Lightning Wallets | Builder Network",
         "description": "Browser extension Lightning wallet for web payments. Perfect for tipping creators and web-based Lightning interactions.",
         "keywords": ["alby wallet", "lightning wallet", "browser extension", "web payments"]
       }
     }
   ],
   "meta": {
-    "title": "Lightning Wallets | Builder Vancouver",
+    "title": "Lightning Wallets | Builder Network",
     "description": "Curated list of Lightning Network wallets with download links, features, and detailed information. Find the perfect wallet for iOS, Android, desktop, or web.",
     "keywords": [
       "lightning wallets",

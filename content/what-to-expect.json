@@ -1,7 +1,7 @@
 {
   "title": "What to Expect at Builder Meetups",
   "slug": "what-to-expect",
-  "description": "Learn about the format, structure, and atmosphere of Builder Vancouver meetups.",
+  "description": "Learn about the format, structure, and atmosphere of Builder meetups hosted by chapters around the world.",
   "sections": [
     {
       "title": "Meetup Format",
@@ -25,13 +25,14 @@
     }
   ],
   "meta": {
-    "title": "What to Expect | Builder Vancouver",
-    "description": "Learn about Builder Vancouver meetup format, schedule, and atmosphere. Know what to bring and what to expect.",
+    "title": "What to Expect | Builder Network",
+    "description": "Learn about Builder meetup format, schedule, and atmosphere across our global network. Know what to bring and what to expect.",
     "keywords": [
       "what to expect",
       "meetup format",
-      "builder vancouver",
-      "bitcoin events"
+      "builder network",
+      "bitcoin events",
+      "chapters"
     ]
   }
 }

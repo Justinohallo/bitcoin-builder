@@ -136,17 +136,17 @@
     },
     {
       "id": "deck-builder-vancouver-intro",
-      "title": "Welcome to Builder Vancouver",
+      "title": "Welcome to Builder",
       "slug": "builder-vancouver-intro",
-      "description": "A comprehensive introduction to Builder Vancouver, covering what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at meetups.",
+      "description": "A comprehensive introduction to Builder as a global network, covering what Builder is, why Vancouver is a great Bitcoin builder city (as an example), and what to expect at meetups.",
       "createdAt": "2025-01-20T10:00:00Z",
       "updatedAt": "2025-01-20T10:00:00Z",
       "slides": [
         {
           "id": "slide-builder-intro-1",
           "type": "title",
-          "title": "Welcome to Builder Vancouver",
-          "subtitle": "Building the Future of Bitcoin Together",
+          "title": "Welcome to Builder",
+          "subtitle": "Building the Future of Bitcoin Together - A Global Network"
           "order": 1
         },
         {
@@ -194,15 +194,15 @@
         {
           "id": "slide-builder-intro-8",
           "type": "content",
-          "title": "Why Vancouver?",
-          "body": "Vancouver is one of the most Bitcoin-friendly cities in North America.\n\n• Highly active and fast-growing Bitcoin builder city\n• Strong Lightning adoption\n• Entrepreneurial culture\n• Vibrant builder community\n• Over 100 Lightning-enabled merchants\n• Deep culture of experimentation and sovereignty",
+          "title": "Why Vancouver? (An Example)",
+          "body": "Vancouver is one of the most Bitcoin-friendly cities in North America.\n\n• Highly active and fast-growing Bitcoin builder city\n• Strong Lightning adoption\n• Entrepreneurial culture\n• Vibrant builder community\n• Over 100 Lightning-enabled merchants\n• Deep culture of experimentation and sovereignty\n\nThis is just one example—Builder chapters exist globally, each contributing to the network.",
           "order": 8
         },
         {
           "id": "slide-builder-intro-9",
           "type": "content",
-          "title": "Vancouver's Bitcoin Ecosystem",
-          "body": "Merchant Activity\n• 100+ Lightning-enabled merchants\n• Strong point-of-sale experimentation\n• Local push for Bitcoin-native design\n\nWallet Ecosystem\n• Dominant wallets: Coinos, Phoenix, Muun, Zeus\n• Active node communities\n• Growing self-custody adoption\n\nNotable Builders\n• Coinos Team - Lightning backend powering hundreds of merchants\n• Builder Vancouver Crew - Building structured product-focused community",
+          "title": "Vancouver's Bitcoin Ecosystem (Example)",
+          "body": "Merchant Activity\n• 100+ Lightning-enabled merchants\n• Strong point-of-sale experimentation\n• Local push for Bitcoin-native design\n\nWallet Ecosystem\n• Dominant wallets: Coinos, Phoenix, Muun, Zeus\n• Active node communities\n• Growing self-custody adoption\n\nNotable Builders\n• Coinos Team - Lightning backend powering hundreds of merchants\n• Builder Vancouver Crew - Building structured product-focused community\n\nSimilar ecosystems exist in Builder chapters worldwide.",
           "order": 9
         },
         {
@@ -270,8 +270,8 @@
         }
       ],
       "meta": {
-        "title": "Welcome to Builder Vancouver | Slides | Builder Vancouver",
-        "description": "A comprehensive introduction to Builder Vancouver, covering what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at meetups.",
+        "title": "Welcome to Builder | Slides | Builder Network",
+        "description": "A comprehensive introduction to Builder as a global network, covering what Builder is, why Vancouver is a great Bitcoin builder city (as an example), and what to expect at meetups.",
         "keywords": [
           "builder",
           "vancouver",
