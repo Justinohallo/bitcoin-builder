@@ -7,6 +7,8 @@ import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 
 import { loadCities, loadEvents } from "@/lib/content";
+import { LumaClient } from "@/lib/luma";
+import { loadLumaConfig } from "@/lib/luma-config";
 import {
   createBreadcrumbList,
   createCollectionPageSchema,
@@ -27,6 +29,17 @@ export default async function EventsPage() {
 
   // Pre-load cities for efficient lookup
   const citiesById = new Map(cities.map((city) => [city.id, city]));
+
+  const lumaConfig = loadLumaConfig();
+  const lumaEvents = lumaConfig.apiKey
+    ? await new LumaClient(lumaConfig).listManagedEvents({
+        // Public-facing section can be lightly cached.
+        revalidateSeconds: 300,
+        pagination_limit: 10,
+        sort_column: "start_at",
+        sort_direction: "asc",
+      })
+    : null;
 
   // Generate structured data
   const collectionSchema = createCollectionPageSchema(
@@ -57,6 +70,51 @@ export default async function EventsPage() {
         <p className="text-xl text-neutral-300 mb-12">
           Join us for upcoming Bitcoin meetups, workshops, and community events.
         </p>
+
+        {lumaEvents && lumaEvents.entries.length > 0 && (
+          <Section>
+            <Heading level="h2" className="text-neutral-100 mb-4">
+              Managed on Luma
+            </Heading>
+            <div className="space-y-4">
+              {lumaEvents.entries.map((entry) => (
+                <article
+                  key={entry.api_id}
+                  className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors"
+                >
+                  <a
+                    href={entry.event.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block"
+                  >
+                    <Heading
+                      level="h3"
+                      className="text-neutral-100 mb-2 hover:text-orange-400 transition-colors"
+                    >
+                      {entry.event.name}
+                    </Heading>
+                  </a>
+                  <div className="text-sm text-neutral-400 mb-4 space-y-1">
+                    <p>📅 {new Date(entry.event.start_at).toLocaleString()}</p>
+                    <p>🕐 {entry.event.timezone}</p>
+                  </div>
+                  <p className="text-neutral-300 mb-4">
+                    {entry.event.description}
+                  </p>
+                  <a
+                    href={entry.event.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors"
+                  >
+                    View on Luma →
+                  </a>
+                </article>
+              ))}
+            </div>
+          </Section>
+        )}
 
         {events.length === 0 ? (
           <Section>
