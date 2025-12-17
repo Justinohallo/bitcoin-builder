@@ -2,10 +2,11 @@ import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SlideDeckCard } from "@/components/slides/SlideDeckCard";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
-import { SlideDeckCard } from "@/components/slides/SlideDeckCard";
+
 import { loadSlides } from "@/lib/content";
 import {
   createBreadcrumbList,
@@ -58,7 +59,8 @@ export default async function SlidesPage() {
               Slides
             </Heading>
             <p className="text-xl text-neutral-300">
-              Create, manage, and present slide decks. Click "View Presentation" to enter full-screen presentation mode.
+              Create, manage, and present slide decks. Click &quot;View
+              Presentation&quot; to enter full-screen presentation mode.
             </p>
           </div>
           <Link

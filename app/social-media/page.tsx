@@ -25,6 +25,11 @@ export async function generateMetadata() {
 }
 
 export default async function SocialMediaPage() {
+  // If Clerk is not configured, redirect to home
+  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
+    redirect("/");
+  }
+
   const { userId } = await auth();
 
   if (!userId) {

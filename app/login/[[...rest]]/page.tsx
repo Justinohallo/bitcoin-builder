@@ -1,6 +1,22 @@
 import { SignIn } from "@clerk/nextjs";
 
 export default function LoginPage() {
+  // If Clerk is not configured, show a message
+  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-neutral-950 px-4">
+        <div className="w-full max-w-md text-center">
+          <h1 className="text-2xl font-bold text-neutral-100 mb-4">
+            Authentication Not Configured
+          </h1>
+          <p className="text-neutral-400">
+            Clerk authentication is not set up in this environment.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-neutral-950 px-4">
       <div className="w-full max-w-md">
