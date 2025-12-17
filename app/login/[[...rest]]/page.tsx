@@ -1,10 +1,26 @@
+import type { Metadata } from "next";
+
 import { SignIn } from "@clerk/nextjs";
+
+import { SITE_URL } from "@/lib/constants";
+import { generatePageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = generatePageMetadata(
+  "Sign In | Builder Vancouver",
+  "Sign in to Builder Vancouver to access member resources, event management, and community features.",
+  ["login", "sign in", "authentication", "builder vancouver"],
+  {
+    canonicalUrl: `${SITE_URL}/login`,
+  }
+);
 
 export default function LoginPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-neutral-950 px-4">
+    <div className="flex min-h-screen items-center justify-center bg-neutral-950 px-4 py-12">
       <div className="w-full max-w-md">
         <SignIn
+          routing="path"
+          path="/login"
           appearance={{
             elements: {
               rootBox: "mx-auto",
