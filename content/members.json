@@ -33,7 +33,7 @@
         },
         {
           "title": "Align launch playbooks",
-          "description": "Entrepreneurs in the room share go-to-market realities for Bitcoin-first products in Vancouver so your release checklist covers regulation, custody, and education."
+          "description": "Entrepreneurs in the room share go-to-market realities for Bitcoin-first products so your release checklist covers regulation, custody, and education. Examples from Vancouver and other Builder chapters provide global context."
         }
       ],
       "recommendedSessions": [
@@ -183,7 +183,7 @@
         },
         {
           "title": "Lightning Tip Bot Repository",
-          "description": "Active Builder Vancouver project—pair up on bots, wallet integrations, and deployment scripts.",
+          "description": "Active Builder chapter project—pair up on bots, wallet integrations, and deployment scripts.",
           "url": "https://github.com/builder-vancouver/lightning-tip-bot",
           "type": "project",
           "external": true
@@ -381,7 +381,7 @@
         },
         {
           "title": "Cities Directory",
-          "description": "Explore the Vancouver city profile to understand merchant density, ecosystem players, and co-working partners.",
+          "description": "Explore city profiles to understand merchant density, ecosystem players, and co-working partners across Builder chapters.",
           "url": "/cities/vancouver",
           "type": "guide",
           "external": false
@@ -400,8 +400,8 @@
     }
   ],
   "meta": {
-    "title": "Member Personas | Builder Vancouver",
-    "description": "See how product managers, developers, designers, and entrepreneurs each benefit from Builder Vancouver meetups with curated sessions and resources.",
+    "title": "Member Personas | Builder Network",
+    "description": "See how product managers, developers, designers, and entrepreneurs each benefit from Builder meetups across our global network with curated sessions and resources.",
     "keywords": [
       "bitcoin community",
       "lightning network workshop",

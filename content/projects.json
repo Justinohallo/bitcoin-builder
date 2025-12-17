@@ -1,11 +1,11 @@
 {
   "title": "Builder Projects",
   "slug": "projects",
-  "description": "Community projects and collaborative builds from Builder Vancouver members.",
+  "description": "Community projects and collaborative builds from Builder Network members across all chapters.",
   "projects": [],
   "meta": {
-    "title": "Projects | Builder Vancouver",
-    "description": "Explore community projects and collaborative builds from Builder Vancouver members.",
+    "title": "Projects | Builder Network",
+    "description": "Explore community projects and collaborative builds from Builder Network members across all chapters.",
     "keywords": ["projects", "builder", "bitcoin", "lightning", "open source"]
   }
 }

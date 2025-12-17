@@ -352,7 +352,7 @@ vercel --prod
 Required environment variables:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://builder.van
+NEXT_PUBLIC_SITE_URL=https://bitcoinbuidlr.xyz
 ```
 
 Optional environment variables for social media cross-posting:
@@ -464,8 +464,8 @@ const event = loadEvent(slug);
 
 ```typescript
 // For structured data (full URLs)
-urls.events.list(); // "https://builder.van/events"
-urls.events.detail(slug); // "https://builder.van/events/lightning-workshop"
+urls.events.list(); // "https://bitcoinbuidlr.xyz/events"
+urls.events.detail(slug); // "https://bitcoinbuidlr.xyz/events/lightning-workshop"
 
 // For Next.js Link (paths only)
 paths.events.list(); // "/events"
@@ -542,7 +542,7 @@ Comprehensive guides for working with the codebase:
 
 Builder Vancouver
 
-- Website: https://builder.van
+- Website: https://bitcoinbuidlr.xyz
 - [Add social media links]
 
 ---

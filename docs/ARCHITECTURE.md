@@ -230,8 +230,8 @@ All URLs are generated through utility functions to ensure consistency:
 import { paths, urls } from "@/lib/utils/urls";
 
 // For structured data (full URLs)
-urls.events.list(); // "https://builder.van/events"
-urls.events.detail(slug); // "https://builder.van/events/workshop"
+urls.events.list(); // "https://bitcoinbuidlr.xyz/events"
+urls.events.detail(slug); // "https://bitcoinbuidlr.xyz/events/workshop"
 
 // For Next.js Link (paths only)
 paths.events.list(); // "/events"

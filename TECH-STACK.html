@@ -1,0 +1,1506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin Builder Vancouver - Complete Tech Stack Documentation</title>
+    <style>
+      @media print {
+        @page {
+          margin: 1in;
+          size: letter;
+        }
+        body {
+          font-size: 10pt;
+        }
+        h1 {
+          page-break-after: avoid;
+        }
+        h2 {
+          page-break-after: avoid;
+        }
+        h3 {
+          page-break-after: avoid;
+        }
+        table {
+          page-break-inside: avoid;
+        }
+        pre {
+          page-break-inside: avoid;
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background: #fff;
+      }
+
+      h1 {
+        color: #f97316;
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+        border-bottom: 3px solid #f97316;
+        padding-bottom: 0.3em;
+      }
+
+      h2 {
+        color: #ea580c;
+        font-size: 1.8em;
+        margin-top: 1.5em;
+        margin-bottom: 0.8em;
+        border-bottom: 2px solid #f97316;
+        padding-bottom: 0.2em;
+      }
+
+      h3 {
+        color: #fb923c;
+        font-size: 1.3em;
+        margin-top: 1.2em;
+        margin-bottom: 0.6em;
+      }
+
+      h4 {
+        color: #fdba74;
+        font-size: 1.1em;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+      }
+
+      p {
+        margin-bottom: 1em;
+      }
+
+      ul,
+      ol {
+        margin-left: 2em;
+        margin-bottom: 1em;
+      }
+
+      li {
+        margin-bottom: 0.5em;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5em 0;
+        font-size: 0.95em;
+      }
+
+      th {
+        background-color: #f97316;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+      }
+
+      td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      tr:hover {
+        background-color: #fff7ed;
+      }
+
+      code {
+        background-color: #f3f4f6;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+        font-size: 0.9em;
+        color: #dc2626;
+      }
+
+      pre {
+        background-color: #1f2937;
+        color: #f9fafb;
+        padding: 1.2em;
+        border-radius: 6px;
+        overflow-x: auto;
+        margin: 1.5em 0;
+        font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+        font-size: 0.85em;
+        line-height: 1.5;
+      }
+
+      pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+      }
+
+      blockquote {
+        border-left: 4px solid #f97316;
+        padding-left: 1em;
+        margin: 1.5em 0;
+        color: #6b7280;
+        font-style: italic;
+      }
+
+      hr {
+        border: none;
+        border-top: 2px solid #f97316;
+        margin: 2em 0;
+      }
+
+      .header-info {
+        background-color: #fff7ed;
+        padding: 1em;
+        border-radius: 6px;
+        margin-bottom: 2em;
+        border-left: 4px solid #f97316;
+      }
+
+      .header-info p {
+        margin-bottom: 0.3em;
+      }
+
+      .toc {
+        background-color: #f9fafb;
+        padding: 1.5em;
+        border-radius: 6px;
+        margin: 2em 0;
+      }
+
+      .toc ol {
+        margin-left: 1.5em;
+      }
+
+      .toc li {
+        margin-bottom: 0.4em;
+      }
+
+      .toc a {
+        color: #ea580c;
+        text-decoration: none;
+      }
+
+      .toc a:hover {
+        text-decoration: underline;
+      }
+
+      .conclusion {
+        background-color: #fff7ed;
+        padding: 1.5em;
+        border-radius: 6px;
+        margin-top: 2em;
+        border-left: 4px solid #f97316;
+      }
+
+      strong {
+        color: #ea580c;
+        font-weight: 600;
+      }
+
+      .footer {
+        margin-top: 3em;
+        padding-top: 2em;
+        border-top: 2px solid #f97316;
+        text-align: center;
+        color: #6b7280;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bitcoin Builder Vancouver - Complete Tech Stack Documentation</h1>
+
+    <div class="header-info">
+      <p><strong>Document Version:</strong> 1.0</p>
+      <p><strong>Last Updated:</strong> January 2025</p>
+      <p>
+        <strong>Purpose:</strong> Comprehensive technical documentation for
+        ChatGPT and AI agents
+      </p>
+    </div>
+
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#executive-summary">Executive Summary</a></li>
+        <li><a href="#core-technologies">Core Technologies</a></li>
+        <li><a href="#frontend-stack">Frontend Stack</a></li>
+        <li><a href="#backend-api-stack">Backend & API Stack</a></li>
+        <li>
+          <a href="#content-management-system">Content Management System</a>
+        </li>
+        <li><a href="#styling-ui-framework">Styling & UI Framework</a></li>
+        <li><a href="#type-safety-validation">Type Safety & Validation</a></li>
+        <li><a href="#seo-structured-data">SEO & Structured Data</a></li>
+        <li>
+          <a href="#social-media-integration">Social Media Integration</a>
+        </li>
+        <li>
+          <a href="#development-tools-workflow">Development Tools & Workflow</a>
+        </li>
+        <li>
+          <a href="#deployment-infrastructure">Deployment & Infrastructure</a>
+        </li>
+        <li><a href="#architecture-patterns">Architecture Patterns</a></li>
+        <li><a href="#project-structure">Project Structure</a></li>
+        <li><a href="#dependencies-reference">Dependencies Reference</a></li>
+      </ol>
+    </div>
+
+    <hr />
+
+    <h2 id="executive-summary">Executive Summary</h2>
+    <p>
+      Bitcoin Builder Vancouver is a modern, content-driven web application
+      built as a <strong>TurboRepo monorepo</strong> using
+      <strong>Next.js 16</strong> with the <strong>App Router</strong>. The
+      application emphasizes:
+    </p>
+    <ul>
+      <li>
+        <strong>Type Safety</strong>: Full TypeScript coverage with Zod runtime
+        validation
+      </li>
+      <li>
+        <strong>Performance</strong>: Server Components, Static Site Generation
+        (SSG), minimal client JavaScript
+      </li>
+      <li>
+        <strong>SEO Optimization</strong>: Comprehensive metadata and Schema.org
+        structured data
+      </li>
+      <li>
+        <strong>Developer Experience</strong>: Type-safe content management,
+        automated validation, pre-commit hooks
+      </li>
+      <li>
+        <strong>Modern Stack</strong>: React 19, TypeScript 5, Tailwind CSS 4
+      </li>
+    </ul>
+    <p>
+      The application is optimized for static hosting and can be deployed to
+      Vercel, Netlify, or any static hosting provider.
+    </p>
+
+    <hr />
+
+    <h2 id="core-technologies">Core Technologies</h2>
+
+    <h3>Framework & Runtime</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Technology</th>
+          <th>Version</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Next.js</strong></td>
+          <td>16.0.3</td>
+          <td>React framework with App Router, Server Components, and SSG</td>
+        </tr>
+        <tr>
+          <td><strong>React</strong></td>
+          <td>19.2.0</td>
+          <td>UI library with latest Server Components support</td>
+        </tr>
+        <tr>
+          <td><strong>React DOM</strong></td>
+          <td>19.2.0</td>
+          <td>React rendering for web</td>
+        </tr>
+        <tr>
+          <td><strong>Node.js</strong></td>
+          <td>20+</td>
+          <td>Runtime environment (recommended)</td>
+        </tr>
+        <tr>
+          <td><strong>TypeScript</strong></td>
+          <td>5.x</td>
+          <td>Type-safe JavaScript with strict mode</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li>
+        <strong>App Router</strong>: Next.js 16 App Router with file-based
+        routing
+      </li>
+      <li>
+        <strong>Server Components</strong>: Default rendering strategy (no
+        client JS unless needed)
+      </li>
+      <li>
+        <strong>Static Site Generation</strong>: Pre-rendered at build time for
+        optimal performance
+      </li>
+      <li>
+        <strong>Turbopack</strong>: Fast bundler (configured in next.config.ts)
+      </li>
+      <li>
+        <strong>TypeScript Strict Mode</strong>: Full type safety with strict
+        compiler options
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2 id="frontend-stack">Frontend Stack</h2>
+
+    <h3>React Architecture</h3>
+    <p>
+      <strong>Component Pattern</strong>: Functional components with named
+      exports (project convention)
+    </p>
+    <pre><code>// Standard component pattern
+export function MyComponent() {
+  return &lt;div&gt;Content&lt;/div&gt;;
+}</code></pre>
+
+    <p><strong>Server Components (Default)</strong>:</p>
+    <ul>
+      <li>Most components are Server Components</li>
+      <li>Direct data access without client-side fetching</li>
+      <li>Zero JavaScript shipped to client</li>
+      <li>SEO-friendly and fast initial load</li>
+    </ul>
+
+    <p><strong>Client Components</strong> (when needed):</p>
+    <ul>
+      <li>Marked with <code>"use client"</code> directive</li>
+      <li>Used for interactivity (forms, maps, etc.)</li>
+      <li>
+        Examples: <code>PostForm.tsx</code>, <code>CityMapClient.tsx</code>
+      </li>
+    </ul>
+
+    <h3>Routing</h3>
+    <ul>
+      <li>
+        <strong>File-based routing</strong>: Routes defined by file structure in
+        <code>/app</code> directory
+      </li>
+      <li>
+        <strong>Dynamic routes</strong>: <code>[slug]</code> pattern for dynamic
+        pages
+      </li>
+      <li>
+        <strong>Route groups</strong>: Organized with parentheses
+        <code>(routes)</code>
+      </li>
+      <li>
+        <strong>Async params</strong>: Always await params in Next.js 15+
+        (required)
+      </li>
+    </ul>
+
+    <h3>Key Frontend Libraries</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Library</th>
+          <th>Version</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>leaflet</strong></td>
+          <td>1.9.4</td>
+          <td>Interactive maps (city locations)</td>
+        </tr>
+        <tr>
+          <td><strong>react-leaflet</strong></td>
+          <td>5.0.0</td>
+          <td>React bindings for Leaflet</td>
+        </tr>
+        <tr>
+          <td><strong>@clerk/nextjs</strong></td>
+          <td>6.35.5</td>
+          <td>Authentication and user management</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h2 id="backend-api-stack">Backend & API Stack</h2>
+
+    <h3>API Routes</h3>
+    <p><strong>Location</strong>: <code>/app/api/*</code></p>
+    <p><strong>Current Endpoints</strong>:</p>
+    <ul>
+      <li>
+        <code>/api/social-media/post</code> - Cross-platform social media
+        posting
+      </li>
+    </ul>
+
+    <h3>API Architecture</h3>
+    <ul>
+      <li>
+        <strong>Route Handlers</strong>: Next.js Route Handlers (App Router)
+      </li>
+      <li><strong>Server-side only</strong>: No client-side API calls</li>
+      <li><strong>Type-safe</strong>: Request/response validation with Zod</li>
+      <li><strong>Error handling</strong>: Comprehensive error responses</li>
+    </ul>
+
+    <h3>Example API Route Structure</h3>
+    <pre><code>// app/api/social-media/post/route.ts
+export async function POST(request: Request) {
+  // Server-side logic
+  // Type validation with Zod
+  // Platform integrations (X/Twitter, Nostr)
+}</code></pre>
+
+    <h3>Firebase Functions (Mentioned in Guidelines)</h3>
+    <ul>
+      <li>
+        <strong>Middleware constraints</strong>: Cannot use Firebase SDK in
+        middleware
+      </li>
+      <li>
+        <strong>Data availability</strong>: Required data must be available
+        through middleware constructs
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2 id="content-management-system">Content Management System</h2>
+
+    <h3>Architecture Overview</h3>
+    <p>
+      The application uses a
+      <strong>JSON-based, schema-validated content management system</strong>:
+    </p>
+    <pre><code>Content File (JSON) → Zod Schema Validation → TypeScript Types → React Components</code></pre>
+
+    <h3>Content Storage</h3>
+    <ul>
+      <li><strong>Location</strong>: <code>/content/*.json</code></li>
+      <li><strong>Format</strong>: JSON files with structured data</li>
+      <li><strong>Validation</strong>: Runtime validation with Zod schemas</li>
+      <li>
+        <strong>Type Safety</strong>: TypeScript types inferred from schemas
+      </li>
+    </ul>
+
+    <h3>Content Types</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Schema</th>
+          <th>File</th>
+          <th>Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Events</td>
+          <td><code>EventsCollectionSchema</code></td>
+          <td><code>events.json</code></td>
+          <td>Meetups, workshops</td>
+        </tr>
+        <tr>
+          <td>Recaps</td>
+          <td><code>RecapsCollectionSchema</code></td>
+          <td><code>recaps.json</code></td>
+          <td>Past event summaries</td>
+        </tr>
+        <tr>
+          <td>Educational</td>
+          <td><code>EducationalContentSchema</code></td>
+          <td><code>bitcoin101.json</code>, <code>lightning101.json</code></td>
+          <td>Learning content</td>
+        </tr>
+        <tr>
+          <td>Resources</td>
+          <td><code>ResourcesCollectionSchema</code></td>
+          <td><code>resources.json</code></td>
+          <td>Curated links</td>
+        </tr>
+        <tr>
+          <td>Projects</td>
+          <td><code>ProjectsCollectionSchema</code></td>
+          <td><code>projects.json</code></td>
+          <td>Community projects</td>
+        </tr>
+        <tr>
+          <td>Foundation</td>
+          <td>Various schemas</td>
+          <td><code>mission.json</code>, <code>vision.json</code>, etc.</td>
+          <td>Organization info</td>
+        </tr>
+        <tr>
+          <td>Members</td>
+          <td><code>MembersCollectionSchema</code></td>
+          <td><code>members.json</code></td>
+          <td>Community members</td>
+        </tr>
+        <tr>
+          <td>Cities</td>
+          <td><code>CitiesCollectionSchema</code></td>
+          <td><code>cities.json</code></td>
+          <td>City locations</td>
+        </tr>
+        <tr>
+          <td>Wallets</td>
+          <td><code>WalletsCollectionSchema</code></td>
+          <td><code>wallets.json</code></td>
+          <td>Wallet recommendations</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Content Loading Pattern</h3>
+    <p><strong>Synchronous Loading</strong> (default for Server Components):</p>
+    <pre><code>export default function EventsPage() {
+  const { events } = loadEvents(); // Synchronous
+  return &lt;div&gt;{/* render */}&lt;/div&gt;;
+}</code></pre>
+
+    <p><strong>Asynchronous Loading</strong> (when needed):</p>
+    <pre><code>export default async function EventsPage() {
+  const { events } = await loadEventsAsync(); // Async
+  return &lt;div&gt;{/* render */}&lt;/div&gt;;
+}</code></pre>
+
+    <p><strong>Dynamic Loading</strong> (for [slug] routes):</p>
+    <pre><code>export default async function EventPage({ params }: Props) {
+  const { slug } = await params; // Always await params!
+  const event = loadEvent(slug);
+  if (!event) notFound(); // Trigger 404
+  return &lt;div&gt;{/* render */}&lt;/div&gt;;
+}</code></pre>
+
+    <h3>Content Validation</h3>
+    <ul>
+      <li>
+        <strong>Build-time validation</strong>:
+        <code>pnpm validate:content</code> script
+      </li>
+      <li>
+        <strong>Runtime validation</strong>: Zod schemas catch errors at load
+        time
+      </li>
+      <li>
+        <strong>Type checking</strong>: <code>pnpm tsc</code> ensures
+        compile-time safety
+      </li>
+      <li>
+        <strong>Pre-commit hooks</strong>: Automatic validation before commits
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2 id="styling-ui-framework">Styling & UI Framework</h2>
+
+    <h3>Tailwind CSS</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Technology</th>
+          <th>Version</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tailwind CSS</strong></td>
+          <td>4.x</td>
+          <td>Utility-first CSS framework</td>
+        </tr>
+        <tr>
+          <td><strong>@tailwindcss/postcss</strong></td>
+          <td>4.x</td>
+          <td>PostCSS plugin for Tailwind</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Design System</h3>
+    <p><strong>Color Palette</strong>:</p>
+    <ul>
+      <li>
+        <strong>Primary</strong>: <code>orange-400</code> (Bitcoin orange)
+      </li>
+      <li>
+        <strong>Background</strong>: <code>neutral-950</code> (dark theme)
+      </li>
+      <li><strong>Text</strong>: <code>neutral-100</code> (light text)</li>
+      <li><strong>Borders</strong>: <code>neutral-800</code></li>
+    </ul>
+
+    <p><strong>Styling Approach</strong>:</p>
+    <ul>
+      <li>Utility-first classes</li>
+      <li>Mobile-first responsive design</li>
+      <li>Consistent spacing and typography</li>
+      <li>Smooth transitions and hover effects</li>
+    </ul>
+
+    <h3>UI Components</h3>
+    <p><strong>Location</strong>: <code>/components/ui/</code></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>Heading</code></td>
+          <td>Semantic headings with consistent styling</td>
+        </tr>
+        <tr>
+          <td><code>Section</code></td>
+          <td>Content sections with proper spacing</td>
+        </tr>
+        <tr>
+          <td><code>PageContainer</code></td>
+          <td>Main page wrapper with responsive padding</td>
+        </tr>
+        <tr>
+          <td><code>EmptyState</code></td>
+          <td>Empty state displays</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>PostCSS Configuration</h3>
+    <pre><code>// postcss.config.mjs
+{
+  plugins: {
+    "@tailwindcss/postcss": {}
+  }
+}</code></pre>
+
+    <hr />
+
+    <h2 id="type-safety-validation">Type Safety & Validation</h2>
+
+    <h3>Three-Layer Type Safety</h3>
+    <ol>
+      <li><strong>Zod Schemas</strong>: Runtime validation</li>
+      <li><strong>TypeScript Types</strong>: Compile-time checking</li>
+      <li><strong>Type Inference</strong>: Automatic type derivation</li>
+    </ol>
+
+    <h3>Zod Integration</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Library</th>
+          <th>Version</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>zod</strong></td>
+          <td>3.24.1</td>
+          <td>Runtime type validation and schema definition</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Schema Definition Pattern</h3>
+    <pre><code>// 1. Define schema
+const EventSchema = z.object({
+  title: z.string(),
+  date: z.string(),
+});
+
+// 2. Infer type (automatic)
+type Event = z.infer&lt;typeof EventSchema&gt;;
+
+// 3. Use in function
+function loadEvent(slug: string): Event | undefined {
+  // TypeScript ensures type safety
+}</code></pre>
+
+    <h3>Benefits</h3>
+    <ul>
+      <li><strong>Catch errors early</strong>: Before deployment</li>
+      <li><strong>Refactoring confidence</strong>: Types guide changes</li>
+      <li><strong>Documentation</strong>: Types serve as inline docs</li>
+      <li><strong>IDE support</strong>: Autocomplete and hints</li>
+    </ul>
+
+    <hr />
+
+    <h2 id="seo-structured-data">SEO & Structured Data</h2>
+
+    <h3>Metadata Strategy</h3>
+    <p>
+      Every page generates comprehensive metadata using Next.js Metadata API:
+    </p>
+    <pre><code>export const metadata = generatePageMetadata(
+  "Page Title | Builder Vancouver",
+  "Page description for search results",
+  ["keyword1", "keyword2"]
+);</code></pre>
+
+    <h3>Structured Data (JSON-LD)</h3>
+    <p><strong>Purpose</strong>:</p>
+    <ul>
+      <li>Rich search results (enhanced Google snippets)</li>
+      <li>AI understanding (better context for LLMs)</li>
+      <li>Knowledge graphs (Google Knowledge Graph integration)</li>
+    </ul>
+
+    <h3>Available Schema Builders</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Schema Type</th>
+          <th>Function</th>
+          <th>Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Organization</td>
+          <td><code>createOrganizationSchema()</code></td>
+          <td>Site-wide organization info</td>
+        </tr>
+        <tr>
+          <td>Website</td>
+          <td><code>createWebSiteSchema()</code></td>
+          <td>Website metadata</td>
+        </tr>
+        <tr>
+          <td>WebPage</td>
+          <td><code>createWebPageSchema()</code></td>
+          <td>Individual pages</td>
+        </tr>
+        <tr>
+          <td>Event</td>
+          <td><code>createEventSchema()</code></td>
+          <td>Events and meetups</td>
+        </tr>
+        <tr>
+          <td>Article</td>
+          <td><code>createArticleSchema()</code></td>
+          <td>Recaps and articles</td>
+        </tr>
+        <tr>
+          <td>Course</td>
+          <td><code>createCourseSchema()</code></td>
+          <td>Educational content</td>
+        </tr>
+        <tr>
+          <td>HowTo</td>
+          <td><code>createHowToSchema()</code></td>
+          <td>Step-by-step guides</td>
+        </tr>
+        <tr>
+          <td>BreadcrumbList</td>
+          <td><code>createBreadcrumbList()</code></td>
+          <td>Navigation breadcrumbs</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>SEO Best Practices</h3>
+    <ol>
+      <li>
+        <strong>Every page has metadata</strong>: Use
+        <code>generateMetadata()</code> or <code>metadata</code> export
+      </li>
+      <li>
+        <strong>Structured data on all pages</strong>: Include relevant JSON-LD
+        schemas
+      </li>
+      <li>
+        <strong>Breadcrumbs everywhere</strong>: Help users and search engines
+        navigate
+      </li>
+      <li>
+        <strong>Semantic HTML</strong>: Proper heading hierarchy (H1 → H2 → H3)
+      </li>
+      <li>
+        <strong>Canonical URLs</strong>: Use URL builders to ensure consistency
+      </li>
+    </ol>
+
+    <h3>URL Management</h3>
+    <p><strong>Centralized URL Generation</strong>:</p>
+    <pre><code>import { paths, urls } from "@/lib/utils/urls";
+
+// For structured data (full URLs)
+urls.events.list(); // "https://bitcoinbuidlr.xyz/events"
+urls.events.detail(slug); // "https://bitcoinbuidlr.xyz/events/workshop"
+
+// For Next.js Link (paths only)
+paths.events.list(); // "/events"
+paths.events.detail(slug); // "/events/workshop"</code></pre>
+
+    <p><strong>Benefits</strong>:</p>
+    <ul>
+      <li>No hardcoded URLs</li>
+      <li>Type-safe with IDE autocomplete</li>
+      <li>Environment-aware (uses correct domain)</li>
+      <li>Consistent format</li>
+    </ul>
+
+    <hr />
+
+    <h2 id="social-media-integration">Social Media Integration</h2>
+
+    <h3>Supported Platforms</h3>
+    <ol>
+      <li>
+        <strong>X (Twitter)</strong>: Via <code>twitter-api-v2</code> library
+      </li>
+      <li><strong>Nostr</strong>: Via <code>nostr-tools</code> library</li>
+    </ol>
+
+    <h3>Libraries</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Library</th>
+          <th>Version</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>twitter-api-v2</strong></td>
+          <td>1.28.0</td>
+          <td>X/Twitter API client</td>
+        </tr>
+        <tr>
+          <td><strong>nostr-tools</strong></td>
+          <td>2.0.0</td>
+          <td>Nostr protocol implementation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>API Endpoint</h3>
+    <p><strong>Route</strong>: <code>/api/social-media/post</code></p>
+    <p><strong>Features</strong>:</p>
+    <ul>
+      <li>Cross-platform posting (X and/or Nostr)</li>
+      <li>Content validation with Zod</li>
+      <li>Image support (up to 4 images for X)</li>
+      <li>Hashtag/tag support</li>
+      <li>Reply functionality</li>
+      <li>Error handling per platform</li>
+    </ul>
+
+    <h3>Configuration</h3>
+    <p><strong>Environment Variables</strong> (optional):</p>
+    <pre><code># X (Twitter) API Credentials
+X_API_KEY=your_api_key
+X_API_SECRET=your_api_secret
+X_ACCESS_TOKEN=your_access_token
+X_ACCESS_TOKEN_SECRET=your_access_token_secret
+X_BEARER_TOKEN=your_bearer_token
+
+# Nostr Configuration
+NOSTR_PRIVATE_KEY=your_hex_encoded_private_key
+NOSTR_RELAYS=["wss://relay.damus.io","wss://nos.lol"]</code></pre>
+
+    <p>
+      <strong>Note</strong>: These are optional and only needed for social media
+      posting features. The API gracefully handles missing credentials.
+    </p>
+
+    <h3>Content Validation</h3>
+    <ul>
+      <li><strong>Max characters</strong>: 280 for X (configurable)</li>
+      <li><strong>Max images</strong>: 4 for X</li>
+      <li>
+        <strong>Content sanitization</strong>: Automatic sanitization for
+        platform compatibility
+      </li>
+      <li>
+        <strong>Tag validation</strong>: Hashtags and Nostr tags validated
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2 id="development-tools-workflow">Development Tools & Workflow</h2>
+
+    <h3>Package Manager</h3>
+    <ul>
+      <li><strong>pnpm</strong> (recommended), npm, or yarn</li>
+      <li>Lock file: <code>pnpm-lock.yaml</code></li>
+    </ul>
+
+    <h3>Code Quality Tools</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Version</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ESLint</strong></td>
+          <td>9.x</td>
+          <td>Code linting</td>
+        </tr>
+        <tr>
+          <td><strong>eslint-config-next</strong></td>
+          <td>16.0.3</td>
+          <td>Next.js ESLint config</td>
+        </tr>
+        <tr>
+          <td><strong>eslint-config-prettier</strong></td>
+          <td>9.1.0</td>
+          <td>Prettier integration</td>
+        </tr>
+        <tr>
+          <td><strong>Prettier</strong></td>
+          <td>3.4.2</td>
+          <td>Code formatting</td>
+        </tr>
+        <tr>
+          <td><strong>@trivago/prettier-plugin-sort-imports</strong></td>
+          <td>4.3.0</td>
+          <td>Import sorting</td>
+        </tr>
+        <tr>
+          <td><strong>Husky</strong></td>
+          <td>9.1.7</td>
+          <td>Git hooks</td>
+        </tr>
+        <tr>
+          <td><strong>lint-staged</strong></td>
+          <td>15.2.11</td>
+          <td>Run linters on staged files</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Development Scripts</h3>
+    <pre><code># Development
+pnpm dev              # Start dev server (includes content validation)
+pnpm build            # Build for production
+pnpm start            # Start production server
+
+# Code Quality
+pnpm lint             # Run ESLint
+pnpm lint:fix         # Fix ESLint issues
+pnpm format           # Format with Prettier
+pnpm format:check     # Check formatting
+pnpm tsc              # Type check
+pnpm validate:content # Validate content files
+pnpm content:check    # Validate + type check</code></pre>
+
+    <h3>Git Hooks</h3>
+    <p><strong>Pre-commit Hook</strong> (via Husky):</p>
+    <ul>
+      <li>Automatically formats code with Prettier</li>
+      <li>Runs ESLint on staged files</li>
+      <li>Validates content files</li>
+      <li>Ensures code quality before commits</li>
+    </ul>
+
+    <h3>TypeScript Configuration</h3>
+    <p><strong>Key Settings</strong>:</p>
+    <ul>
+      <li><strong>Target</strong>: ES2017</li>
+      <li><strong>Module</strong>: ESNext</li>
+      <li><strong>Module Resolution</strong>: Bundler</li>
+      <li><strong>Strict Mode</strong>: Enabled</li>
+      <li><strong>JSX</strong>: React JSX</li>
+      <li>
+        <strong>Path Aliases</strong>: <code>@/*</code> → <code>./*</code>
+      </li>
+    </ul>
+
+    <h3>Build Tools</h3>
+    <ul>
+      <li>
+        <strong>Turbopack</strong>: Fast bundler (configured in next.config.ts)
+      </li>
+      <li><strong>TypeScript Compiler</strong>: Type checking</li>
+      <li>
+        <strong>Content Validator</strong>: Custom script
+        (<code>scripts/validate-content.ts</code>)
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2 id="deployment-infrastructure">Deployment & Infrastructure</h2>
+
+    <h3>Deployment Target</h3>
+    <p>
+      <strong>Optimized for</strong>: Static hosting (Vercel, Netlify, or any
+      static host)
+    </p>
+
+    <h3>Build Process</h3>
+    <pre><code># 1. Validate content
+pnpm validate:content
+
+# 2. Type check
+pnpm tsc
+
+# 3. Build site
+pnpm build</code></pre>
+
+    <h3>Static Site Generation</h3>
+    <ul>
+      <li>
+        <strong>All pages pre-rendered</strong>: Static HTML at build time
+      </li>
+      <li><strong>No server runtime required</strong>: Can be hosted on CDN</li>
+      <li>
+        <strong>Dynamic routes</strong>: Pre-generated with
+        <code>generateStaticParams()</code>
+      </li>
+      <li>
+        <strong>404 handling</strong>: Custom <code>not-found.tsx</code> page
+      </li>
+    </ul>
+
+    <h3>Environment Variables</h3>
+    <p><strong>Required</strong>:</p>
+    <pre><code>NEXT_PUBLIC_SITE_URL=https://bitcoinbuidlr.xyz</code></pre>
+
+    <p><strong>Optional</strong> (for social media features):</p>
+    <ul>
+      <li>X/Twitter API credentials</li>
+      <li>Nostr configuration</li>
+    </ul>
+
+    <h3>Deployment Platforms</h3>
+    <ul>
+      <li><strong>Vercel</strong> (recommended): Native Next.js support</li>
+      <li><strong>Netlify</strong>: Static site hosting</li>
+      <li><strong>Any static host</strong>: CDN-compatible hosting</li>
+    </ul>
+
+    <hr />
+
+    <h2 id="architecture-patterns">Architecture Patterns</h2>
+
+    <h3>Server Components (Default)</h3>
+    <p><strong>Pattern</strong>:</p>
+    <pre><code>export function EventsList() {
+  const { events } = loadEvents(); // Direct data access
+  return &lt;div&gt;{/* render */}&lt;/div&gt;;
+}</code></pre>
+
+    <p><strong>Benefits</strong>:</p>
+    <ul>
+      <li>No client JavaScript</li>
+      <li>Direct data access</li>
+      <li>SEO-friendly</li>
+      <li>Fast initial load</li>
+    </ul>
+
+    <h3>Component Composition</h3>
+    <pre><code>export function EventsPage() {
+  return (
+    &lt;PageContainer&gt;      {/* Layout wrapper */}
+      &lt;Heading level="h1"&gt;Events&lt;/Heading&gt;  {/* Semantic */}
+      &lt;Section&gt;          {/* Content section */}
+        {/* Content */}
+      &lt;/Section&gt;
+    &lt;/PageContainer&gt;
+  );
+}</code></pre>
+
+    <h3>Error Handling</h3>
+    <p><strong>Content Loading Errors</strong>:</p>
+    <pre><code>try {
+  const content = loadContent("file.json", Schema);
+} catch (error) {
+  if (error instanceof z.ZodError) {
+    // Validation error - check schema
+  } else if (error.code === "ENOENT") {
+    // File not found
+  }
+}</code></pre>
+
+    <p><strong>404 Handling</strong>:</p>
+    <pre><code>const event = loadEvent(slug);
+if (!event) {
+  notFound(); // Triggers Next.js 404 page
+}</code></pre>
+
+    <h3>Performance Optimization</h3>
+    <p><strong>Static Generation</strong>:</p>
+    <pre><code>// Automatically static (no params)
+export default function EventsPage() {
+  const { events } = loadEvents();
+  return &lt;div&gt;{/* render */}&lt;/div&gt;;
+}
+
+// Static with dynamic paths
+export async function generateStaticParams() {
+  const { events } = loadEvents();
+  return events.map(e => ({ slug: e.slug }));
+}</code></pre>
+
+    <p><strong>Benefits</strong>:</p>
+    <ul>
+      <li>Fast loading (pre-rendered HTML)</li>
+      <li>CDN-friendly (static files cached globally)</li>
+      <li>SEO-optimal (content immediately available)</li>
+      <li>Low server load (no runtime rendering)</li>
+    </ul>
+
+    <hr />
+
+    <h2 id="project-structure">Project Structure</h2>
+    <pre><code>bitcoin-builder/
+├── app/                      # Next.js App Router pages
+│   ├── about/               # About pages (mission, vision, etc.)
+│   ├── api/                 # API routes
+│   │   └── social-media/   # Social media API
+│   ├── events/             # Events pages
+│   ├── members/            # Member profiles
+│   ├── cities/             # City pages
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Home page
+│   ├── sitemap.ts          # Dynamic sitemap
+│   └── robots.ts           # Robots.txt
+├── components/             # React components
+│   ├── events/            # Event-specific components
+│   ├── faq/               # FAQ components
+│   ├── layout/            # Layout components (Navbar, Footer)
+│   ├── maps/              # Map components
+│   ├── seo/               # SEO components (JsonLd)
+│   ├── slides/            # Presentation components
+│   ├── social-media/      # Social media components
+│   └── ui/                # UI components (Heading, Section)
+├── content/               # JSON content files
+│   ├── events.json
+│   ├── recaps.json
+│   ├── members.json
+│   └── ...
+├── docs/                  # Documentation
+│   ├── ARCHITECTURE.md
+│   ├── CONTENT-GUIDE.md
+│   └── ...
+├── examples/              # Reference implementations
+│   ├── example-content-file.json
+│   ├── example-dynamic-route.tsx
+│   └── example-page-with-seo.tsx
+├── lib/                   # Core utilities
+│   ├── content.ts        # Content loaders
+│   ├── schemas.ts        # Zod schemas
+│   ├── types.ts          # TypeScript types
+│   ├── seo.ts            # SEO utilities
+│   ├── structured-data.ts # JSON-LD builders
+│   ├── social-media.ts   # Social media integration
+│   ├── constants.ts      # Constants
+│   └── utils/            # Helper functions
+│       └── urls.ts       # URL builders
+├── public/               # Static assets
+├── scripts/             # Build scripts
+│   └── validate-content.ts
+├── next.config.ts       # Next.js configuration
+├── tsconfig.json        # TypeScript configuration
+├── postcss.config.mjs   # PostCSS configuration
+├── eslint.config.mjs    # ESLint configuration
+└── package.json         # Dependencies</code></pre>
+
+    <hr />
+
+    <h2 id="dependencies-reference">Dependencies Reference</h2>
+
+    <h3>Production Dependencies</h3>
+    <pre><code>{
+  "@clerk/nextjs": "^6.35.5",        // Authentication
+  "leaflet": "^1.9.4",                // Maps
+  "next": "16.0.3",                   // Framework
+  "nostr-tools": "^2.0.0",           // Nostr protocol
+  "react": "19.2.0",                  // UI library
+  "react-dom": "19.2.0",              // React rendering
+  "react-leaflet": "^5.0.0",          // React maps
+  "twitter-api-v2": "^1.28.0",       // X/Twitter API
+  "zod": "^3.24.1"                    // Validation
+}</code></pre>
+
+    <h3>Development Dependencies</h3>
+    <pre><code>{
+  "@tailwindcss/postcss": "^4",                    // Tailwind PostCSS
+  "@trivago/prettier-plugin-sort-imports": "^4.3.0", // Import sorting
+  "@types/leaflet": "^1.9.21",                     // Leaflet types
+  "@types/node": "^20",                            // Node types
+  "@types/react": "^19",                          // React types
+  "@types/react-dom": "^19",                      // React DOM types
+  "eslint": "^9",                                  // Linter
+  "eslint-config-next": "16.0.3",                 // Next.js ESLint
+  "eslint-config-prettier": "^9.1.0",             // Prettier ESLint
+  "husky": "^9.1.7",                               // Git hooks
+  "lint-staged": "^15.2.11",                      // Staged linting
+  "prettier": "^3.4.2",                           // Formatter
+  "tailwindcss": "^4",                            // CSS framework
+  "tsx": "^4.19.2",                               // TypeScript execution
+  "typescript": "^5"                               // Type checker
+}</code></pre>
+
+    <hr />
+
+    <h2>Key Architectural Decisions</h2>
+
+    <h3>Why JSON for Content?</h3>
+    <ul>
+      <li><strong>Version control</strong>: Easy to diff and track changes</li>
+      <li><strong>Type-safe</strong>: Zod validation ensures correctness</li>
+      <li><strong>No database</strong>: Simpler deployment and hosting</li>
+      <li><strong>Git workflow</strong>: Standard PR review process</li>
+    </ul>
+
+    <h3>Why Zod?</h3>
+    <ul>
+      <li><strong>Runtime validation</strong>: Catches errors at load time</li>
+      <li><strong>Type inference</strong>: Single source of truth</li>
+      <li><strong>Better errors</strong>: Detailed validation messages</li>
+      <li><strong>Composable</strong>: Easy to build complex schemas</li>
+    </ul>
+
+    <h3>Why Server Components?</h3>
+    <ul>
+      <li><strong>Performance</strong>: Less JavaScript to client</li>
+      <li><strong>SEO</strong>: Content immediately available</li>
+      <li><strong>Simplicity</strong>: No client state management</li>
+      <li><strong>Security</strong>: Sensitive code stays on server</li>
+    </ul>
+
+    <h3>Why Tailwind?</h3>
+    <ul>
+      <li>
+        <strong>Consistency</strong>: Utility classes ensure uniform design
+      </li>
+      <li><strong>Speed</strong>: Fast development iteration</li>
+      <li><strong>Bundle size</strong>: Unused styles purged</li>
+      <li><strong>Maintainability</strong>: Easy to update design system</li>
+    </ul>
+
+    <h3>Why TurboRepo?</h3>
+    <ul>
+      <li>
+        <strong>Monorepo support</strong>: Multiple applications in one repo
+      </li>
+      <li><strong>Code sharing</strong>: Shared components and utilities</li>
+      <li><strong>Build optimization</strong>: Incremental builds</li>
+      <li>
+        <strong>Dependency management</strong>: Centralized dependency
+        resolution
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2>Development Workflow</h2>
+
+    <h3>Adding a New Page</h3>
+    <ol>
+      <li>Create content file in <code>/content</code> (if needed)</li>
+      <li>Add schema to <code>/lib/schemas.ts</code> (if new type)</li>
+      <li>Create loader in <code>/lib/content.ts</code></li>
+      <li>Create page in <code>/app</code></li>
+      <li>Run validation: <code>pnpm validate:content</code></li>
+      <li>Test locally: <code>pnpm dev</code></li>
+      <li>Build: <code>pnpm build</code></li>
+    </ol>
+
+    <h3>Adding New Content Type</h3>
+    <ol>
+      <li>Define Zod schema in <code>/lib/schemas.ts</code></li>
+      <li>Infer TypeScript type in <code>/lib/types.ts</code></li>
+      <li>Create loader function in <code>/lib/content.ts</code></li>
+      <li>Add to content registry</li>
+      <li>Update validation script if needed</li>
+      <li>Create example in <code>/examples</code></li>
+    </ol>
+
+    <h3>Code Style Conventions</h3>
+    <ul>
+      <li>
+        <strong>Named exports</strong>: Always use named exports, never default
+        exports
+      </li>
+      <li>
+        <strong>Functional components</strong>: Use functional React components
+      </li>
+      <li><strong>TypeScript strict</strong>: No <code>any</code> types</li>
+      <li><strong>Async params</strong>: Always await params in Next.js 15+</li>
+      <li>
+        <strong>URL builders</strong>: Never hardcode URLs, use
+        <code>@/lib/utils/urls</code>
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2>Testing & Validation</h2>
+
+    <h3>Content Validation</h3>
+    <ul>
+      <li>
+        <strong>Build-time</strong>: <code>pnpm validate:content</code> script
+      </li>
+      <li><strong>Runtime</strong>: Zod schema validation</li>
+      <li><strong>Pre-commit</strong>: Automatic validation via Husky</li>
+    </ul>
+
+    <h3>Type Checking</h3>
+    <ul>
+      <li>
+        <strong>Compile-time</strong>: <code>pnpm tsc</code> ensures type safety
+      </li>
+      <li>
+        <strong>IDE integration</strong>: Real-time type checking in editors
+      </li>
+      <li><strong>Build-time</strong>: Type errors prevent builds</li>
+    </ul>
+
+    <h3>Code Quality</h3>
+    <ul>
+      <li><strong>Linting</strong>: ESLint catches code issues</li>
+      <li><strong>Formatting</strong>: Prettier ensures consistent style</li>
+      <li><strong>Pre-commit</strong>: Automatic formatting and linting</li>
+    </ul>
+
+    <hr />
+
+    <h2>Future Considerations</h2>
+
+    <h3>Potential Enhancements</h3>
+    <ol>
+      <li><strong>Content Collections</strong>: Group related content types</li>
+      <li><strong>Image Optimization</strong>: Automatic image processing</li>
+      <li><strong>Search</strong>: Client-side or API-based search</li>
+      <li><strong>i18n</strong>: Multi-language support</li>
+      <li>
+        <strong>CMS Integration</strong>: Headless CMS for non-technical editors
+      </li>
+    </ol>
+
+    <h3>Scaling Strategies</h3>
+    <ol>
+      <li>
+        <strong>Incremental Static Regeneration (ISR)</strong>: Update pages
+        without full rebuild
+      </li>
+      <li><strong>Edge Functions</strong>: Dynamic content at the edge</li>
+      <li>
+        <strong>Content Delivery Network (CDN)</strong>: Global distribution
+      </li>
+      <li><strong>Build Caching</strong>: Faster subsequent builds</li>
+    </ol>
+
+    <hr />
+
+    <h2>Additional Resources</h2>
+
+    <h3>Internal Documentation</h3>
+    <ul>
+      <li>
+        <code>docs/ARCHITECTURE.md</code> - Detailed architecture documentation
+      </li>
+      <li>
+        <code>docs/SCHEMA-DEVELOPMENT.md</code> - Schema development guide
+      </li>
+      <li><code>docs/CONTENT-GUIDE.md</code> - Content authoring guide</li>
+      <li><code>docs/FORMATTING-LINTING.md</code> - Code quality standards</li>
+      <li>
+        <code>docs/GOOGLE-SEO-OPTIMIZATION.md</code> - SEO optimization guide
+      </li>
+    </ul>
+
+    <h3>Example Files</h3>
+    <ul>
+      <li>
+        <code>examples/example-page-with-seo.tsx</code> - Complete page
+        implementation
+      </li>
+      <li>
+        <code>examples/example-dynamic-route.tsx</code> - Dynamic route handling
+      </li>
+      <li>
+        <code>examples/example-content-file.json</code> - Content file structure
+      </li>
+    </ul>
+
+    <h3>External Resources</h3>
+    <ul>
+      <li><a href="https://nextjs.org/docs">Next.js Documentation</a></li>
+      <li><a href="https://zod.dev">Zod Documentation</a></li>
+      <li><a href="https://tailwindcss.com">Tailwind CSS</a></li>
+      <li><a href="https://schema.org">Schema.org</a></li>
+      <li>
+        <a
+          href="https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components"
+          >React Server Components</a
+        >
+      </li>
+    </ul>
+
+    <hr />
+
+    <div class="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        This tech stack documentation provides a comprehensive overview of the
+        Bitcoin Builder Vancouver application. The stack is designed for:
+      </p>
+      <ul>
+        <li><strong>Type Safety</strong>: Full TypeScript + Zod validation</li>
+        <li>
+          <strong>Performance</strong>: Server Components and Static Site
+          Generation
+        </li>
+        <li>
+          <strong>SEO</strong>: Comprehensive metadata and structured data
+        </li>
+        <li>
+          <strong>Developer Experience</strong>: Type-safe content management
+          and automated validation
+        </li>
+        <li>
+          <strong>Modern Standards</strong>: Latest React, Next.js, and
+          TypeScript features
+        </li>
+      </ul>
+      <p>
+        For specific implementation details, refer to the codebase and example
+        files in the <code>/examples</code> directory.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p><strong>Document prepared for:</strong> ChatGPT and AI agents</p>
+      <p>
+        <strong>Maintained by:</strong> Bitcoin Builder Vancouver Development
+        Team
+      </p>
+      <p><strong>Last Review:</strong> January 2025</p>
+    </div>
+  </body>
+</html>

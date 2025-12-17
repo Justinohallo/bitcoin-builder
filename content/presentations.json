@@ -4,8 +4,8 @@
       "id": "presentation-event-kickoff",
       "title": "Event Kickoff & Housekeeping",
       "slug": "event-kickoff-housekeeping",
-      "description": "Welcome and housekeeping for Builder Vancouver's launch event, including agenda overview and community guidelines.",
-      "overview": "A friendly welcome presentation to kick off Builder Vancouver's launch event. We'll thank everyone for coming, acknowledge our host Funk Coffee, go over housekeeping rules, discuss the evening's agenda, and establish our community guidelines for respectful and productive discussion.",
+      "description": "Welcome and housekeeping for the Builder Vancouver chapter's launch event, including agenda overview and community guidelines.",
+      "overview": "A friendly welcome presentation to kick off the Builder Vancouver chapter's launch event. We'll thank everyone for coming, acknowledge our host Funk Coffee, go over housekeeping rules, discuss the evening's agenda, and establish our community guidelines for respectful and productive discussion.",
       "presenterId": "presenter-justin-ohalloran",
       "eventId": "event-builder-vancouver-launch",
       "date": "2025-11-18",
@@ -13,7 +13,7 @@
       "sections": [
         {
           "title": "Welcome & Thank You",
-          "body": "Thank you all for coming out tonight! We're thrilled to have you here for Builder Vancouver's launch event. A special thank you to Funk Coffee for hosting us and providing this wonderful space. We're grateful for their support of the Bitcoin builder community in Vancouver."
+          "body": "Thank you all for coming out tonight! We're thrilled to have you here for the Builder Vancouver chapter's launch event. A special thank you to Funk Coffee for hosting us and providing this wonderful space. We're grateful for their support of the Bitcoin builder community in Vancouver."
         },
         {
           "title": "Housekeeping",
@@ -21,7 +21,7 @@
         },
         {
           "title": "Tonight's Agenda",
-          "body": "Here's what we have planned for the evening: We'll start with a brief introduction to Builder Vancouver, followed by six lightning presentations covering Spiral, Nostr, the Bepsi Machine, Bitpoints.me, and Vibe Coding. After the presentations, we'll dive into news topics discussion, and then open the floor for questions and topic suggestions."
+          "body": "Here's what we have planned for the evening: We'll start with a brief introduction to Builder as a global network and our Vancouver chapter, followed by six lightning presentations covering Spiral, Nostr, the Bepsi Machine, Bitpoints.me, and Vibe Coding. After the presentations, we'll dive into news topics discussion, and then open the floor for questions and topic suggestions."
         },
         {
           "title": "Community Guidelines: We're All Learning",
@@ -56,10 +56,10 @@
     },
     {
       "id": "presentation-builder-vancouver-intro",
-      "title": "Welcome to Builder Vancouver",
+      "title": "Welcome to Builder",
       "slug": "builder-vancouver-intro",
-      "description": "A comprehensive introduction to Builder Vancouver, covering what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at meetups.",
-      "overview": "This presentation serves as the opening session for Builder Vancouver's first event. We'll introduce attendees to the Builder movement, explain our mission and vision, explore why Vancouver is an exceptional Bitcoin builder city, and outline what to expect at our meetups. Perfect for newcomers and existing community members alike.",
+      "description": "A comprehensive introduction to Builder as a global network, covering what Builder is, why Vancouver is a great Bitcoin builder city (as an example), and what to expect at meetups.",
+      "overview": "This presentation serves as the opening session for the Builder Vancouver chapter's first event. We'll introduce attendees to Builder as a global network, explain our mission and vision, explore why Vancouver is an exceptional Bitcoin builder city (as one example among many great builder cities worldwide), and outline what to expect at our meetups. Perfect for newcomers and existing community members alike.",
       "presenterId": "presenter-builder-vancouver-organizer",
       "eventId": "event-builder-vancouver-launch",
       "date": "2025-11-18",
@@ -67,7 +67,7 @@
       "links": [
         {
           "text": "Builder Vancouver Website",
-          "url": "https://builder.van",
+          "url": "https://bitcoinbuidlr.xyz",
           "external": true
         },
         {
@@ -92,8 +92,8 @@
           "body": "Our mission is to accelerate the creation of Bitcoin products by fostering an open, neutral, sovereign, and collaborative builder ecosystem. Our vision is a world where Bitcoin builders have the tools, knowledge, and community to create the next generation of open financial products."
         },
         {
-          "title": "Why Vancouver?",
-          "body": "Vancouver is one of the most Bitcoin-friendly cities in North America, with a vibrant builder community, over 100 Lightning-enabled merchants, and a deep culture of experimentation and sovereignty. The local ecosystem benefits from strong tech talent, established Bitcoin meetups, and a culture that values privacy and open digital systems."
+          "title": "Why Vancouver? (An Example)",
+          "body": "Vancouver is one of the most Bitcoin-friendly cities in North America, with a vibrant builder community, over 100 Lightning-enabled merchants, and a deep culture of experimentation and sovereignty. The local ecosystem benefits from strong tech talent, established Bitcoin meetups, and a culture that values privacy and open digital systems. This is just one example of the many great Bitcoin builder cities around the world—Builder chapters exist globally, each contributing to the network."
         },
         {
           "title": "What to Expect",
@@ -101,8 +101,8 @@
         }
       ],
       "meta": {
-        "title": "Welcome to Builder Vancouver | Builder Vancouver",
-        "description": "A comprehensive introduction to Builder Vancouver, covering what Builder is, why Vancouver is a great Bitcoin builder city, and what to expect at meetups.",
+        "title": "Welcome to Builder | Builder Network",
+        "description": "A comprehensive introduction to Builder as a global network, covering what Builder is, why Vancouver is a great Bitcoin builder city (as an example), and what to expect at meetups.",
         "keywords": [
           "builder",
           "vancouver",
@@ -145,7 +145,7 @@
           "external": true
         }
       ],
-      "slidesUrl": "https://builder.van/slides/vibe-coding-builder",
+      "slidesUrl": "https://bitcoinbuidlr.xyz/slides/vibe-coding-builder",
       "sections": [
         {
           "title": "Education as Bitcoin Value",
@@ -241,10 +241,10 @@
     },
     {
       "id": "presentation-martin-montero-nostr-vancouver",
-      "title": "Nostr and Building Community in Vancouver",
+      "title": "Nostr and Building Community",
       "slug": "nostr-building-community-vancouver",
-      "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver.",
-      "overview": "Martin Montero presents on Nostr, a decentralized social protocol that pairs naturally with Bitcoin. The presentation explores how Nostr enables censorship-resistant social networking, integrates with Lightning payments for micropayments and tips, and how it's being used to build community in Vancouver. Attendees will learn about Nostr's architecture, its advantages over traditional social media, and how builders can leverage Nostr to create decentralized social and economic interactions.",
+      "description": "Martin Montero from Rabble Labs presents on Nostr and how it's being used to build Bitcoin communities, with examples from Vancouver.",
+      "overview": "Martin Montero presents on Nostr, a decentralized social protocol that pairs naturally with Bitcoin. The presentation explores how Nostr enables censorship-resistant social networking, integrates with Lightning payments for micropayments and tips, and how it's being used to build Bitcoin communities globally, with examples from Vancouver. Attendees will learn about Nostr's architecture, its advantages over traditional social media, and how builders can leverage Nostr to create decentralized social and economic interactions.",
       "presenterId": "presenter-martin-montero",
       "eventId": "event-builder-vancouver-launch",
       "date": "2025-11-18",
@@ -280,8 +280,8 @@
           "body": "Nostr's native integration with Bitcoin Lightning Network enables seamless micropayments and tips. Users can send small payments directly through Nostr clients, creating new economic models for content creators and community builders. This integration makes Nostr particularly powerful for Bitcoin communities, as it combines decentralized social networking with decentralized payments in a single protocol."
         },
         {
-          "title": "Building Community in Vancouver",
-          "body": "Martin shares how Nostr is being used to build and strengthen the Bitcoin community in Vancouver. Through Rabble Labs' work, Nostr is helping connect Bitcoin builders, facilitate collaboration, and create new forms of community engagement. The presentation covers practical examples of how Nostr communities operate, how they differ from traditional social media groups, and how builders can leverage Nostr for their own projects."
+          "title": "Building Community with Nostr",
+          "body": "Martin shares how Nostr is being used to build and strengthen Bitcoin communities globally, with examples from Vancouver. Through Rabble Labs' work, Nostr is helping connect Bitcoin builders, facilitate collaboration, and create new forms of community engagement. The presentation covers practical examples of how Nostr communities operate, how they differ from traditional social media groups, and how builders can leverage Nostr for their own projects."
         },
         {
           "title": "Privacy and Censorship Resistance",
@@ -293,8 +293,8 @@
         }
       ],
       "meta": {
-        "title": "Nostr and Building Community in Vancouver | Builder Vancouver",
-        "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver.",
+        "title": "Nostr and Building Community | Builder Network",
+        "description": "Martin Montero from Rabble Labs presents on Nostr and how it's being used to build Bitcoin communities globally, with examples from Vancouver.",
         "keywords": [
           "nostr",
           "decentralized social",

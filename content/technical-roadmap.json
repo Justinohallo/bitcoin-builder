@@ -1,7 +1,7 @@
 {
   "title": "Technical Roadmap",
   "slug": "technical-roadmap",
-  "description": "Our technical roadmap outlines the planned improvements, features, and milestones for Builder Vancouver's platform and community initiatives.",
+  "description": "Our technical roadmap outlines the planned improvements, features, and milestones for Builder Network's platform and community initiatives.",
   "overview": "This roadmap represents our commitment to building a world-class platform for the Bitcoin builder community. We're focused on improving user experience, expanding educational resources, and creating tools that empower builders to create innovative Bitcoin applications.",
   "milestones": [
     {
@@ -171,8 +171,8 @@
     }
   ],
   "meta": {
-    "title": "Technical Roadmap | Builder Vancouver",
-    "description": "Explore Builder Vancouver's technical roadmap featuring planned improvements, features, and milestones for our platform and community initiatives.",
+    "title": "Technical Roadmap | Builder Network",
+    "description": "Explore Builder Network's technical roadmap featuring planned improvements, features, and milestones for our platform and community initiatives.",
     "keywords": [
       "bitcoin",
       "roadmap",

@@ -39,7 +39,7 @@
             "name": "Builder Vancouver Crew",
             "description": "Local organizers building a structured product-focused meetup community.",
             "project": "Builder Vancouver",
-            "website": "https://builder.van",
+            "website": "https://bitcoinbuidlr.xyz",
             "twitter": "https://twitter.com/builder_van"
           }
         ],
@@ -48,7 +48,7 @@
             "name": "Builder Vancouver",
             "type": "builder",
             "frequency": "Monthly",
-            "website": "https://builder.van/events",
+            "website": "https://bitcoinbuidlr.xyz/events",
             "description": "Product, design, and engineering meetup for people building on Bitcoin."
           },
           {
@@ -142,7 +142,7 @@
         "globalVisibility": 6
       },
       "links": {
-        "officialWebsite": "https://builder.van",
+        "officialWebsite": "https://bitcoinbuidlr.xyz",
         "github": "",
         "meetupPage": "",
         "twitter": "https://twitter.com/builder_van",

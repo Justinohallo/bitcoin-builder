@@ -1,7 +1,7 @@
 {
   "title": "Vibe Apps",
   "slug": "vibe-apps",
-  "description": "Experimental apps and tools for Builder Vancouver events and community.",
+  "description": "Experimental apps and tools for Builder events and community across our global network.",
   "apps": [
     {
       "id": "app-spark-soundboard",
@@ -29,8 +29,8 @@
     }
   ],
   "meta": {
-    "title": "Vibe Apps | Builder Vancouver",
-    "description": "Experimental Bitcoin and Lightning apps for Builder Vancouver community.",
+    "title": "Vibe Apps | Builder Network",
+    "description": "Experimental Bitcoin and Lightning apps for Builder community across our global network.",
     "keywords": ["vibe apps", "bitcoin apps", "lightning apps", "experimental"]
   }
 }

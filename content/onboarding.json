@@ -1,11 +1,11 @@
 {
-  "title": "Welcome to Builder Vancouver",
+  "title": "Welcome to Builder",
   "slug": "onboarding",
-  "description": "Everything you need to know to get started with Builder Vancouver meetups and the Bitcoin community.",
+  "description": "Everything you need to know to get started with Builder meetups and the global Bitcoin builder community.",
   "sections": [
     {
       "title": "Getting Started",
-      "body": "Builder Vancouver welcomes everyone interested in Bitcoin, from complete beginners to experienced developers. Our community is built on collaboration, learning, and building together."
+      "body": "Builder welcomes everyone interested in Bitcoin, from complete beginners to experienced developers. Our global network of chapters is built on collaboration, learning, and building together. Find a chapter near you or connect with builders worldwide."
     },
     {
       "title": "Before Your First Meetup",
@@ -25,21 +25,22 @@
     },
     {
       "title": "Community Guidelines",
-      "body": "Builder Vancouver is an inclusive, respectful community. We welcome all experience levels and backgrounds. Be kind, ask questions, share knowledge, and help others learn. All meetups follow the Chatham House Rule for open discussion."
+      "body": "Builder is an inclusive, respectful global community. We welcome all experience levels and backgrounds. Be kind, ask questions, share knowledge, and help others learn. All meetups follow the Chatham House Rule for open discussion. These guidelines apply across all Builder chapters worldwide."
     },
     {
       "title": "Stay Connected",
-      "body": "Join our community channels to stay updated on events, technical discussions, and announcements. Follow us on social media and subscribe to our newsletter for the latest updates."
+      "body": "Join your local chapter's community channels to stay updated on events, technical discussions, and announcements. Follow Builder chapters on social media and connect with the global network. Each chapter operates independently while sharing knowledge across the network."
     }
   ],
   "meta": {
-    "title": "Onboarding | Builder Vancouver",
-    "description": "Get started with Builder Vancouver. Learn what to expect and how to join the Bitcoin community.",
+    "title": "Onboarding | Builder Network",
+    "description": "Get started with Builder. Learn what to expect and how to join the global Bitcoin builder community.",
     "keywords": [
       "onboarding",
       "getting started",
-      "builder vancouver",
-      "bitcoin community"
+      "builder network",
+      "bitcoin community",
+      "chapters"
     ]
   }
 }
