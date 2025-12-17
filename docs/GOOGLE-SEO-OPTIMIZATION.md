@@ -261,7 +261,7 @@ Add these to your `.env.local`:
 
 ```bash
 # Site URL (required)
-NEXT_PUBLIC_SITE_URL=https://builder.van
+NEXT_PUBLIC_SITE_URL=https://bitcoinbuidlr.xyz
 
 # Google Search Console verification (optional)
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-verification-code

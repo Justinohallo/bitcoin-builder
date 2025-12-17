@@ -4,7 +4,7 @@
 
 export const SITE_NAME = "Builder Vancouver";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://builder.van";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://bitcoinbuidlr.xyz";
 export const DEFAULT_IMAGE = "/og-image.png";
 
 // Google Search Console verification code (optional)
