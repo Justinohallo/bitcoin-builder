@@ -236,6 +236,13 @@ const ContactInfoSchema = z.object({
   instructions: z.array(z.string()),
 });
 
+const SocialProfileSchema = z.object({
+  platform: z.string(),
+  handle: z.string(),
+  url: z.string().url(),
+  description: z.string().optional(),
+});
+
 export const GetInvolvedSchema = z.object({
   title: z.string(),
   slug: z.string(),
@@ -245,6 +252,17 @@ export const GetInvolvedSchema = z.object({
   tracks: z.array(ContributionTrackSchema),
   quickStats: z.array(EngagementStatSchema),
   contact: ContactInfoSchema,
+  meta: MetaSchema,
+});
+
+// Contact Page Schema
+export const ContactPageSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  email: z.string().email(),
+  responseTime: z.string(),
+  socialProfiles: z.array(SocialProfileSchema),
   meta: MetaSchema,
 });
 

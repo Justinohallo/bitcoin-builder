@@ -4,6 +4,7 @@ import {
   CharterSchema,
   CitiesCollectionSchema,
   CitySchema,
+  ContactPageSchema,
   EducationalContentSchema,
   EventSchema,
   EventsCollectionSchema,
@@ -64,6 +65,7 @@ export type EventsCollection = z.infer<typeof EventsCollectionSchema>;
 
 export type Onboarding = z.infer<typeof OnboardingSchema>;
 export type GetInvolved = z.infer<typeof GetInvolvedSchema>;
+export type ContactPage = z.infer<typeof ContactPageSchema>;
 
 export type EducationalContent = z.infer<typeof EducationalContentSchema>;
 
