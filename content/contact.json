@@ -7,9 +7,15 @@
   "socialProfiles": [
     {
       "platform": "X (Twitter)",
-      "handle": "@builder_van",
-      "url": "https://twitter.com/builder_van",
+      "handle": "@BTCBuilderVan",
+      "url": "https://x.com/BTCBuilderVan",
       "description": "Event updates, live coverage, and community announcements."
+    },
+    {
+      "platform": "Luma Events",
+      "handle": "BTCBuilderVan",
+      "url": "https://luma.com/user/BTCBuilderVan",
+      "description": "Event calendar, RSVPs, and upcoming Builder Vancouver meetups."
     }
   ],
   "meta": {
