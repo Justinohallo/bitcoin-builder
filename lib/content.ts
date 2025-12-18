@@ -6,6 +6,7 @@ import { createContentError, formatContentError } from "./errors";
 import {
   CharterSchema,
   CitiesCollectionSchema,
+  ContactPageSchema,
   EducationalContentSchema,
   EventsCollectionSchema,
   FAQsCollectionSchema,
@@ -40,6 +41,7 @@ import type {
   Charter,
   CitiesCollection,
   City,
+  ContactPage,
   EducationalContent,
   Event,
   EventsCollection,
@@ -130,6 +132,10 @@ export async function loadOnboarding(): Promise<Onboarding> {
 
 export async function loadGetInvolved(): Promise<GetInvolved> {
   return loadContent("get-involved.json", GetInvolvedSchema);
+}
+
+export async function loadContact(): Promise<ContactPage> {
+  return loadContent("contact.json", ContactPageSchema);
 }
 
 export async function loadBitcoin101(): Promise<EducationalContent> {
