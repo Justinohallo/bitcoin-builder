@@ -50,7 +50,7 @@ export function Footer() {
   const socialLinks = [
     {
       name: "Twitter",
-      href: "#",
+      href: "https://twitter.com/builder_van",
       icon: (
         <svg
           className="w-5 h-5"
@@ -64,7 +64,7 @@ export function Footer() {
     },
     {
       name: "GitHub",
-      href: "#",
+      href: "https://github.com/builder-vancouver",
       icon: (
         <svg
           className="w-5 h-5"
@@ -82,7 +82,7 @@ export function Footer() {
     },
     {
       name: "Nostr",
-      href: "#",
+      href: "https://primal.net/p/builder_van",
       icon: (
         <svg
           className="w-5 h-5"
@@ -229,13 +229,13 @@ export function Footer() {
             </p>
             <div className="flex space-x-6">
               <Link
-                href={paths.home()}
+                href={paths.privacyPolicy()}
                 className="text-sm text-neutral-500 hover:text-orange-400 transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
-                href={paths.home()}
+                href={paths.termsOfService()}
                 className="text-sm text-neutral-500 hover:text-orange-400 transition-colors"
               >
                 Terms of Service
