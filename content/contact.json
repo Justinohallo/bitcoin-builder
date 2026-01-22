@@ -1,0 +1,31 @@
+{
+  "title": "Contact Builder Vancouver",
+  "slug": "contact",
+  "description": "Reach the Builder Vancouver team for community questions, partnerships, or speaking opportunities.",
+  "email": "bitcoinbuildervan@gmail.com",
+  "responseTime": "We usually respond within 48 hours on weekdays.",
+  "socialProfiles": [
+    {
+      "platform": "X (Twitter)",
+      "handle": "@BTCBuilderVan",
+      "url": "https://x.com/BTCBuilderVan",
+      "description": "Event updates, live coverage, and community announcements."
+    },
+    {
+      "platform": "Luma Events",
+      "handle": "BTCBuilderVan",
+      "url": "https://luma.com/user/BTCBuilderVan",
+      "description": "Event calendar, RSVPs, and upcoming Builder Vancouver meetups."
+    }
+  ],
+  "meta": {
+    "title": "Contact Builder Vancouver | Social and Email",
+    "description": "Find Builder Vancouver on social media or send us an email. Stay connected with event updates and community news.",
+    "keywords": [
+      "contact builder",
+      "builder vancouver",
+      "social media",
+      "email"
+    ]
+  }
+}
