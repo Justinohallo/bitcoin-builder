@@ -96,6 +96,8 @@ export const urls = {
   faq: () => buildUrl("/faq"),
 
   socialMedia: () => buildUrl("/social-media"),
+  privacyPolicy: () => buildUrl("/privacy-policy"),
+  termsOfService: () => buildUrl("/terms-of-service"),
 
   page: (slug: string) => buildUrl(`/${slug}`),
 } as const;
@@ -173,6 +175,8 @@ export const paths = {
   faq: () => "/faq",
 
   socialMedia: () => "/social-media",
+  privacyPolicy: () => "/privacy-policy",
+  termsOfService: () => "/terms-of-service",
 
   page: (slug: string) => `/${slug}`,
 } as const;
