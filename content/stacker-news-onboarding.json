@@ -1,0 +1,76 @@
+{
+  "title": "Stacker News Meetup Guide",
+  "slug": "stacker-news-onboarding",
+  "description": "Complete guide for setting up Lightning wallets and joining Stacker News discussions for Builder meetups.",
+  "sections": [
+    {
+      "title": "Quick Start Guide",
+      "body": "### Before the Event:\n\n1. **Download a Lightning Wallet**\n   - Wallet of Satoshi (easiest) OR Phoenix Wallet\n   - Available on iOS and Android app stores\n\n2. **Open the wallet** - No setup needed, just open the app\n\n3. **Go to Stacker News and Sign Up**\n   - Visit: https://stacker.news\n   - Click \"Sign Up\" → \"Sign Up with Lightning\"\n   - **Mobile**: Copy the invoice, paste in your wallet's \"Send\" section\n   - **Desktop**: Scan the QR code with your wallet app\n\n4. **Visit Our Meetup Post**\n   - Go to: https://stacker.news/items/1416761\n   - Introduce yourself and share what you're hoping to get from the event\n\n5. **Need Sats to Post?**\n   - Each post costs 6 sats minimum\n   - Message me on Luma and I'll send you some!"
+    },
+    {
+      "title": "Step 1: Download a Lightning Wallet",
+      "body": "You'll need a Lightning wallet to sign into Stacker News. We recommend one of these two options:\n\n**Option A: Wallet of Satoshi (Recommended for Beginners)**\n\n- **What it is**: The simplest Lightning wallet available\n- **Where to get it**: Search \"Wallet of Satoshi\" in your phone's app store\n- **Platforms**: iOS and Android\n- **Why we like it**: No setup required, just download and start using\n\n**Option B: Phoenix Wallet**\n\n- **What it is**: A slightly more advanced but still user-friendly Lightning wallet\n- **Where to get it**: Search \"Phoenix Wallet\" in your phone's app store\n- **Platforms**: iOS and Android\n- **Why we like it**: Good balance of simplicity and control\n\n**Important Notes:**\n\n- You do NOT need to fund your wallet to sign into Stacker News\n- We're keeping this simple - no need to worry about seed phrases or backups for now\n- This is just to get the tool in your hands and start practicing!",
+      "links": [
+        {
+          "text": "Wallet of Satoshi",
+          "url": "/wallets/wallet-of-satoshi",
+          "external": false
+        },
+        {
+          "text": "Phoenix Wallet",
+          "url": "/wallets/phoenix",
+          "external": false
+        }
+      ]
+    },
+    {
+      "title": "Step 2: Sign Into Stacker News with Lightning",
+      "body": "Once you have your wallet installed, it's time to create your Stacker News account.\n\n### For Mobile Users:\n\n1. **Open your browser** and go to https://stacker.news\n2. **Tap \"Sign Up\"** in the top right corner\n3. **Select \"Sign Up with Lightning\"**\n4. You'll see a QR code and a long text string (the Lightning invoice)\n5. **Tap the invoice text to copy it**\n6. **Open your Lightning wallet app** (Wallet of Satoshi or Phoenix)\n7. **Tap \"Send\"** in your wallet\n8. **Paste the invoice** you copied\n9. **Confirm the payment request** (this is just authentication, it costs nothing)\n10. **Return to your browser** - within 60 seconds, you should be signed in!\n\n### For Desktop Users:\n\n1. **Open your browser** and go to https://stacker.news\n2. **Click \"Sign Up\"** in the top right corner\n3. **Select \"Sign Up with Lightning\"**\n4. A QR code will appear on your screen\n5. **Open your Lightning wallet app** on your phone (Wallet of Satoshi or Phoenix)\n6. **Tap \"Send\"** or the camera/scan icon in your wallet\n7. **Scan the QR code** on your computer screen\n8. **Confirm the payment request** (this is just authentication, it costs nothing)\n9. **Wait on the webpage** - within 60 seconds, you should be signed in!\n\n**What Just Happened?**\n\nYou've just signed in using LNURL authentication! Your Lightning wallet acts like a secure login method - no passwords needed. Your Stacker News account is now tied to your Lightning wallet address."
+    },
+    {
+      "title": "Step 3: Join Our Meetup Discussion",
+      "body": "Now that you're signed in, let's get you to the meetup post!\n\n1. **Go to our meetup thread**: https://stacker.news/items/1416761\n2. You can bookmark this page to find it easily later\n3. Read through any existing posts from other attendees",
+      "links": [
+        {
+          "text": "Meetup Discussion Thread",
+          "url": "https://stacker.news/items/1416761",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Step 4: Introduce Yourself & Post",
+      "body": "This is where you'll practice using Lightning for real!\n\n### What to Post:\n\n- Introduce yourself (first name, what brought you to the meetup)\n- Share what you're hoping to get out of the event\n- Feel free to ask questions!\n\n### How to Post:\n\n1. **Scroll to the bottom** of the thread\n2. **Type your introduction** in the reply box\n3. **Click \"Post\"**\n\n### Important: Posting Costs 6 Sats\n\nEach post on Stacker News requires a minimum of 6 sats. This helps prevent spam and creates a quality discussion space.\n\n**Don't have any sats yet?** No problem!\n\n- **Before the event**: Message me on Luma and I'll send you some sats to get started\n- **At the event**: I'll be distributing sats to everyone who needs them\n- Just let me know and I'll get you set up!\n\n### How to Receive Sats:\n\nWhen I send you sats, they'll appear in your Stacker News wallet balance. You can see your balance in the top right corner of the Stacker News website (it will show a ⚡ lightning bolt icon with a number)."
+    },
+    {
+      "title": "Step 5: Engage with Others",
+      "body": "Once you've posted your introduction:\n\n- Read other attendees' introductions\n- Upvote posts you find interesting (this sends them sats!)\n- Reply to others if you have thoughts or questions\n- Check back periodically to see new responses\n\nThis is a great way to connect with fellow attendees before the meetup!"
+    },
+    {
+      "title": "What to Expect at the Meetup",
+      "body": "**At the event:**\n\n- We'll dive deeper into how Lightning and Stacker News work\n- I'll be available to help with any technical issues\n- We'll practice sending and receiving sats\n- You'll see Lightning payments in action!\n\n**After the event:**\n\n- Continue the discussion on the same Stacker News thread\n- Ask follow-up questions\n- Share what you learned\n- Stay connected with the community"
+    },
+    {
+      "title": "Troubleshooting",
+      "body": "**\"The sign-in is taking longer than 60 seconds\"**\n\n- Make sure you confirmed the payment request in your wallet\n- Try refreshing the Stacker News page\n- If still stuck, try signing in again from the beginning\n\n**\"I don't see a balance on Stacker News after you sent me sats\"**\n\n- Check your wallet app - the sats might be there instead\n- To move sats from your wallet to Stacker News: Go to your Stacker News settings → Wallet → Attach your Lightning wallet\n\n**\"I'm in the US and can't download Wallet of Satoshi\"**\n\n- Use Phoenix Wallet instead - it works the same way!\n\n**\"I posted but it says I don't have enough sats\"**\n\n- Message me on Luma and I'll send you some sats right away\n- At the event, find me in person and I'll get you set up\n\n**Other Issues?**\n\n- Reach out to me on Luma before the event\n- At the event, I'll be available to help troubleshoot"
+    },
+    {
+      "title": "You're All Set!",
+      "body": "Once you've completed these steps, you're ready for the meetup!\n\n**Remember:**\n\n- Your Stacker News account is tied to your Lightning wallet\n- The same thread will be used for pre-event, event, and post-event discussion\n- Bookmark the post: https://stacker.news/items/1416761\n- Don't hesitate to reach out if you need sats or have questions\n\nLooking forward to seeing you there! ⚡\n\n*Questions? Reach out to me on Luma anytime.*"
+    }
+  ],
+  "meta": {
+    "title": "Stacker News Meetup Guide | Builder Network",
+    "description": "Complete guide for setting up Lightning wallets and joining Stacker News discussions. Learn how to sign in with Lightning and participate in Builder meetups.",
+    "keywords": [
+      "stacker news",
+      "lightning wallet",
+      "meetup guide",
+      "bitcoin",
+      "lightning network",
+      "wallet of satoshi",
+      "phoenix wallet",
+      "lnurl auth"
+    ]
+  }
+}

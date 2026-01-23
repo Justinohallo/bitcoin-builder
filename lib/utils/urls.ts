@@ -42,6 +42,10 @@ export const urls = {
     vibeCoding: () => buildUrl("/vibe-coding"),
   },
 
+  guides: {
+    stackerNewsOnboarding: () => buildUrl("/guides/stacker-news-onboarding"),
+  },
+
   about: {
     overview: () => buildUrl("/about"),
     mission: () => buildUrl("/about/mission"),
@@ -127,6 +131,10 @@ export const paths = {
     lightningGettingStarted: () => "/lightning-getting-started",
     layer2: () => "/layer-2-overview",
     vibeCoding: () => "/vibe-coding",
+  },
+
+  guides: {
+    stackerNewsOnboarding: () => "/guides/stacker-news-onboarding",
   },
   about: {
     overview: () => "/about",
