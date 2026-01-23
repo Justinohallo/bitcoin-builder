@@ -12,6 +12,12 @@
       "description": "Event updates, live coverage, and community announcements."
     },
     {
+      "platform": "Nostr",
+      "handle": "nprofile1qqsv0wqcrcdju6nq2unzusz60ukv5q0va99k97xlu3ejetny86art7qan6ycz",
+      "url": "https://primal.net/p/nprofile1qqsv0wqcrcdju6nq2unzusz60ukv5q0va99k97xlu3ejetny86art7qan6ycz",
+      "description": "Decentralized social updates and community engagement on Nostr."
+    },
+    {
       "platform": "Luma Events",
       "handle": "BTCBuilderVan",
       "url": "https://luma.com/user/BTCBuilderVan",

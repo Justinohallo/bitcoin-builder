@@ -82,7 +82,7 @@ export function Footer() {
     },
     {
       name: "Nostr",
-      href: "https://primal.net/p/builder_van",
+      href: "https://primal.net/p/nprofile1qqsv0wqcrcdju6nq2unzusz60ukv5q0va99k97xlu3ejetny86art7qan6ycz",
       icon: (
         <svg
           className="w-5 h-5"
