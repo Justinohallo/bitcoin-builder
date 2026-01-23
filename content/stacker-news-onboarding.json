@@ -5,7 +5,7 @@
   "sections": [
     {
       "title": "Quick Start Guide",
-      "body": "### Before the Event:\n\n1. **Download a Lightning Wallet**\n   - Wallet of Satoshi (easiest) OR Phoenix Wallet\n   - Available on iOS and Android app stores\n\n2. **Open the wallet** - No setup needed, just open the app\n\n3. **Go to Stacker News and Sign Up**\n   - Visit: https://stacker.news\n   - Click \"Sign Up\" → \"Sign Up with Lightning\"\n   - **Mobile**: Copy the invoice, paste in your wallet's \"Send\" section\n   - **Desktop**: Scan the QR code with your wallet app\n\n4. **Visit Our Meetup Post**\n   - Go to: https://stacker.news/items/1416761\n   - Introduce yourself and share what you're hoping to get from the event\n\n5. **Need Sats to Post?**\n   - Each post costs 6 sats minimum\n   - Message me on Luma and I'll send you some!"
+      "body": "**Get started in 5 simple steps:**\n\n1. Download Wallet of Satoshi or Phoenix Wallet from your app store\n2. Sign in to Stacker News using your Lightning wallet\n3. Visit the meetup discussion thread\n4. Introduce yourself (6 sats required - message me on Luma if you need some!)\n5. Engage with other attendees\n\n*Detailed instructions for each step below.*"
     },
     {
       "title": "Step 1: Download a Lightning Wallet",

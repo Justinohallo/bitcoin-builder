@@ -115,7 +115,7 @@ export default async function StackerNewsOnboardingPage() {
           // Render Quick Start section with special styling
           if (isQuickStart(section.title)) {
             return (
-              <div key={index} id="quick-start">
+              <div key={index} id="quick-start" className="mb-12">
                 <QuickStart>
                   <MarkdownContent content={section.body} />
                 </QuickStart>
@@ -139,7 +139,7 @@ export default async function StackerNewsOnboardingPage() {
               });
 
             return (
-              <div key={index} id="troubleshooting">
+              <div key={index} id="troubleshooting" className="mb-12">
                 <Section>
                   <div className="flex items-center gap-3 mb-6">
                     <span className="text-3xl">❓</span>
@@ -195,7 +195,7 @@ export default async function StackerNewsOnboardingPage() {
           const sectionId = stepMatch ? `step-${stepMatch[1]}` : undefined;
 
           return (
-            <div key={index} id={sectionId}>
+            <div key={index} id={sectionId} className="mb-12">
               <Section>
                 <Heading level="h2" className="text-neutral-100 mb-6">
                   {section.title}
@@ -230,18 +230,27 @@ export default async function StackerNewsOnboardingPage() {
 
                 {section.links && section.links.length > 0 && (
                   <div className="flex flex-wrap gap-4 mt-6">
-                    {section.links.map((link, linkIndex) => (
-                      <Link
-                        key={linkIndex}
-                        href={link.url}
-                        className="text-orange-400 hover:text-orange-300 font-medium underline transition-colors"
-                        {...(link.external
-                          ? { target: "_blank", rel: "noopener noreferrer" }
-                          : {})}
-                      >
-                        {link.text}
-                      </Link>
-                    ))}
+                    {section.links.map((link, linkIndex) =>
+                      link.external ? (
+                        <a
+                          key={linkIndex}
+                          href={link.url}
+                          className="text-orange-400 hover:text-orange-300 font-medium underline transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.text}
+                        </a>
+                      ) : (
+                        <Link
+                          key={linkIndex}
+                          href={link.url}
+                          className="text-orange-400 hover:text-orange-300 font-medium underline transition-colors"
+                        >
+                          {link.text}
+                        </Link>
+                      )
+                    )}
                   </div>
                 )}
               </Section>
