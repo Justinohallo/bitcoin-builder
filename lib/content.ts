@@ -153,6 +153,10 @@ export async function loadLightningGettingStarted(): Promise<EducationalContent>
   );
 }
 
+export async function loadStackerNewsOnboarding(): Promise<EducationalContent> {
+  return loadContent("stacker-news-onboarding.json", EducationalContentSchema);
+}
+
 export async function loadLayer2(): Promise<EducationalContent> {
   return loadContent("layer2.json", EducationalContentSchema);
 }
