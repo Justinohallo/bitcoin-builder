@@ -165,6 +165,10 @@ export async function loadOpenSource(): Promise<EducationalContent> {
   return loadContent("open-source.json", EducationalContentSchema);
 }
 
+export async function loadGitHub101(): Promise<EducationalContent> {
+  return loadContent("github101.json", EducationalContentSchema);
+}
+
 export async function loadVibeCoding(): Promise<VibeCoding> {
   return loadContent("vibe-coding.json", VibeCodingSchema);
 }
