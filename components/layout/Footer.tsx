@@ -43,6 +43,7 @@ export function Footer() {
       { href: paths.cities.list(), label: "Cities" },
       { href: paths.sponsors.list(), label: "Sponsors" },
       { href: paths.members.list(), label: "Members" },
+      { href: paths.donation.page(), label: "Donate" },
     ],
   };
 

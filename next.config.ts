@@ -1,12 +1,10 @@
 import type { NextConfig } from "next";
 
-import path from "path";
+import withMdkCheckout from "@moneydevkit/nextjs/next-plugin";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  turbopack: {
-    root: path.join(__dirname, ".."),
-  },
 };
 
-export default nextConfig;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default withMdkCheckout(nextConfig as any);

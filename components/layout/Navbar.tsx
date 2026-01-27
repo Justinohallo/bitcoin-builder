@@ -119,6 +119,7 @@ export function Navbar() {
         { href: "/members", label: "Members" },
         { href: "/get-involved", label: "Get Involved" },
         { href: "/contact", label: "Contact" },
+        { href: "/donation", label: "Donate" },
       ],
     },
   ];

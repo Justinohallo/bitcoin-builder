@@ -100,6 +100,11 @@ export const urls = {
 
   faq: () => buildUrl("/faq"),
 
+  donation: {
+    page: () => buildUrl("/donation"),
+    success: () => buildUrl("/donation/success"),
+  },
+
   socialMedia: () => buildUrl("/social-media"),
   privacyPolicy: () => buildUrl("/privacy-policy"),
   termsOfService: () => buildUrl("/terms-of-service"),
@@ -183,6 +188,11 @@ export const paths = {
   },
 
   faq: () => "/faq",
+
+  donation: {
+    page: () => "/donation",
+    success: () => "/donation/success",
+  },
 
   socialMedia: () => "/social-media",
   privacyPolicy: () => "/privacy-policy",
