@@ -726,3 +726,28 @@ export const FAQsCollectionSchema = z.object({
   categories: z.array(FAQCategorySchema),
   meta: MetaSchema,
 });
+
+// Donation Page Schema
+const DonationAmountPresetSchema = z.object({
+  amount: z.number(),
+  label: z.string(),
+  description: z.string().optional(),
+});
+
+const DonationInfoItemSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+export const DonationPageSchema = z.object({
+  title: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  headline: z.string(),
+  subheadline: z.string(),
+  amountPresets: z.array(DonationAmountPresetSchema),
+  currency: z.enum(["SAT", "USD"]),
+  whyDonate: z.array(DonationInfoItemSchema),
+  thankYouMessage: z.string(),
+  meta: MetaSchema,
+});

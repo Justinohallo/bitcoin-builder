@@ -1,0 +1,54 @@
+{
+  "title": "Support Builder Vancouver",
+  "slug": "donation",
+  "description": "Help us grow the Bitcoin builder community in Vancouver. Your donation supports meetups, educational content, and community events.",
+  "headline": "Support Our Mission",
+  "subheadline": "Your donation helps us host meetups, create educational content, and build a stronger Bitcoin community in Vancouver.",
+  "amountPresets": [
+    {
+      "amount": 1000,
+      "label": "1,000 sats",
+      "description": "Buy us a coffee"
+    },
+    {
+      "amount": 5000,
+      "label": "5,000 sats",
+      "description": "Support a meetup snack"
+    },
+    {
+      "amount": 21000,
+      "label": "21,000 sats",
+      "description": "Sponsor educational materials"
+    },
+    {
+      "amount": 100000,
+      "label": "100,000 sats",
+      "description": "Help fund an event"
+    }
+  ],
+  "currency": "SAT",
+  "whyDonate": [
+    {
+      "title": "Free Meetups",
+      "description": "We keep our meetups free and open to everyone. Your donation helps cover venue costs and refreshments."
+    },
+    {
+      "title": "Educational Content",
+      "description": "We create tutorials, guides, and presentations to help people learn about Bitcoin development."
+    },
+    {
+      "title": "Community Growth",
+      "description": "Your support helps us expand our reach and bring more builders into the Bitcoin ecosystem."
+    },
+    {
+      "title": "Open Source",
+      "description": "We contribute to and support open-source Bitcoin projects that benefit the entire community."
+    }
+  ],
+  "thankYouMessage": "Thank you for supporting Builder Vancouver! Your generosity helps us continue our mission of growing the Bitcoin builder community.",
+  "meta": {
+    "title": "Donate to Builder Vancouver | Support Bitcoin Education",
+    "description": "Support Builder Vancouver with a Bitcoin Lightning donation. Help us host meetups, create educational content, and grow the Bitcoin builder community.",
+    "keywords": ["donate", "bitcoin", "lightning", "support", "builder vancouver", "community"]
+  }
+}

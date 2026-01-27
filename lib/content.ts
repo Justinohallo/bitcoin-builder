@@ -7,6 +7,7 @@ import {
   CharterSchema,
   CitiesCollectionSchema,
   ContactPageSchema,
+  DonationPageSchema,
   EducationalContentSchema,
   EventsCollectionSchema,
   FAQsCollectionSchema,
@@ -42,6 +43,7 @@ import type {
   CitiesCollection,
   City,
   ContactPage,
+  DonationPage,
   EducationalContent,
   Event,
   EventsCollection,
@@ -136,6 +138,10 @@ export async function loadGetInvolved(): Promise<GetInvolved> {
 
 export async function loadContact(): Promise<ContactPage> {
   return loadContent("contact.json", ContactPageSchema);
+}
+
+export async function loadDonation(): Promise<DonationPage> {
+  return loadContent("donation.json", DonationPageSchema);
 }
 
 export async function loadBitcoin101(): Promise<EducationalContent> {

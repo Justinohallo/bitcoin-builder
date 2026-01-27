@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.35.5",
+    "@moneydevkit/nextjs": "^0.8.0",
     "leaflet": "^1.9.4",
     "next": "16.0.10",
     "nostr-tools": "^2.0.0",
