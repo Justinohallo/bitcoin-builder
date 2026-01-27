@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname, ".."),
   },
+  serverExternalPackages: ["@moneydevkit/lightning-js", "@moneydevkit/core"],
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
