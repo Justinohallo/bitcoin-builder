@@ -15,6 +15,10 @@ interface MemberPageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Content is read from the repo at build time; unknown slugs are a static 404
+// instead of an on-demand server render.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const { members } = await loadMembers();
   return members.map((member) => ({
