@@ -46,6 +46,10 @@ export async function generateMetadata({ params }: PresentationPageProps) {
   });
 }
 
+// Content is read from the repo at build time; unknown slugs are a static 404
+// instead of an on-demand server render.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const { presentations } = await loadPresentations();
   return presentations.map((presentation) => ({

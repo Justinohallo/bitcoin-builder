@@ -10,10 +10,14 @@ export const proxy = clerkMiddleware(async (auth, req) => {
 });
 
 export const config = {
-  matcher: [
-    // Skip Next.js internals and all static files, unless found in search params
-    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
-    // Always run for API routes
-    "/(api|trpc)(.*)",
-  ],
+  // Only run the proxy where Clerk's server-side auth() is actually used.
+  //
+  // Every proxy run is a function invocation on Vercel. A catch-all matcher
+  // made every page view, 404 and bot probe (/.aws/config, /wp-*, ...) execute
+  // a function before the CDN could serve the prerendered HTML. Content pages
+  // are fully static and Clerk's client components (Navbar SignedIn/UserButton)
+  // work without the proxy, so it is scoped to the auth-dependent routes only.
+  //
+  // If you add a route that calls auth()/currentUser() on the server, add it here.
+  matcher: ["/social-media/:path*", "/login/:path*", "/api/social-media/:path*"],
 };

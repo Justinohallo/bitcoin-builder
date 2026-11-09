@@ -31,6 +31,10 @@ export async function generateMetadata({ params }: RecapPageProps) {
   return generateMeta(recap.meta);
 }
 
+// Content is read from the repo at build time; unknown slugs are a static 404
+// instead of an on-demand server render.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const { recaps } = await loadRecaps();
   return recaps.map((recap) => ({
