@@ -52,6 +52,7 @@ const CONTENT_SCHEMAS: Record<string, z.ZodSchema<unknown>> = {
   "stacker-news-onboarding.json": EducationalContentSchema,
   "layer2.json": EducationalContentSchema,
   "open-source.json": EducationalContentSchema,
+  "github101.json": EducationalContentSchema,
   "resources.json": ResourcesCollectionSchema,
   "recaps.json": RecapsCollectionSchema,
   "projects.json": ProjectsCollectionSchema,

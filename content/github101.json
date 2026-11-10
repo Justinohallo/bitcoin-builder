@@ -1,0 +1,117 @@
+{
+  "title": "GitHub for Non-Developers",
+  "slug": "github-101",
+  "description": "Learn how to use GitHub to interact with open source projects, suggest changes, report issues, and contribute to workflows—no coding required.",
+  "sections": [
+    {
+      "title": "Why GitHub Matters for Open Source",
+      "body": "GitHub is the world's largest platform for open source software development. While it's built for developers, it's also a powerful tool for anyone who wants to participate in open source projects—including product managers, designers, writers, researchers, and community members.\n\nYou don't need to write code to make valuable contributions. GitHub enables you to:\n\n• Report bugs and issues you discover\n• Suggest new features and improvements\n• Propose workflow and process changes\n• Contribute documentation and guides\n• Participate in discussions and planning\n• Review and provide feedback on proposals\n• Help organize and prioritize work\n\nAt Builder, we believe that great products come from diverse perspectives. Non-developers bring crucial insights about user experience, business logic, and community needs. GitHub provides the tools to turn those insights into actionable contributions that shape the future of open source projects."
+    },
+    {
+      "title": "Understanding GitHub Basics",
+      "body": "Before diving into workflows, let's understand the core concepts:\n\nRepository (Repo): A project's home on GitHub. It contains all the files, documentation, and history of a project. Think of it as a folder that tracks every change.\n\nIssue: A way to track bugs, feature requests, questions, or tasks. Issues are like tickets that help organize work and discussions.\n\nPull Request (PR): A proposal to make changes to a project. Even if you're not writing code, you can create PRs to update documentation, suggest process changes, or propose new content.\n\nFork: Your own copy of a repository. You can make changes in your fork without affecting the original project.\n\nBranch: A parallel version of the project where you can make changes safely. Think of it as a draft that doesn't affect the main version.\n\nThese concepts work together to create a collaborative workflow where anyone can contribute, and changes are reviewed before being merged into the main project."
+    },
+    {
+      "title": "Getting Started: Setting Up Your GitHub Account",
+      "body": "Creating a GitHub account is free and takes just a few minutes:\n\n1. Go to github.com and click \"Sign up\"\n2. Choose a username that represents you professionally\n3. Verify your email address\n4. Complete your profile: add a photo, bio, and location\n5. Enable two-factor authentication for security\n\nProfile Tips:\n• Use a professional photo or avatar\n• Write a clear bio describing your role and interests\n• Link to your website or portfolio\n• Your profile helps others understand who you are and what you bring to projects\n\nOnce your account is set up, explore GitHub by:\n• Following projects you're interested in\n• Starring repositories you find valuable\n• Watching repositories to get notifications about updates\n• Exploring the \"Explore\" page to discover new projects"
+    },
+    {
+      "title": "Reporting Issues and Bugs",
+      "body": "One of the most valuable contributions non-developers can make is reporting issues. Your fresh perspective often catches problems developers miss.\n\nHow to Report an Issue:\n\n1. Navigate to the repository's \"Issues\" tab\n2. Click \"New Issue\"\n3. Check if a similar issue already exists (search first!)\n4. Choose the appropriate issue template if available\n5. Fill out the form with:\n   • Clear, descriptive title\n   • Steps to reproduce the problem\n   • Expected vs. actual behavior\n   • Screenshots or examples if relevant\n   • Your environment (browser, OS, etc.)\n\nBest Practices:\n• Be specific and detailed\n• Include screenshots or screen recordings\n• Test on different devices/browsers if possible\n• Be respectful and constructive\n• Follow up if developers ask questions\n\nExample Good Issue Title: \"Documentation link broken on Getting Started page\"\nExample Bad Issue Title: \"Help!\" or \"Something's wrong\"\n\nRemember: Every issue report helps improve the project, even if it seems small. Your user perspective is invaluable."
+    },
+    {
+      "title": "Suggesting Features and Improvements",
+      "body": "As a product manager or user, you have unique insights into what features would be valuable. GitHub makes it easy to share these ideas.\n\nFeature Request Process:\n\n1. Check existing issues to see if your idea has been discussed\n2. Create a new issue with the \"Feature Request\" label (if available)\n3. Clearly describe:\n   • The problem you're trying to solve\n   • Your proposed solution\n   • Why this would be valuable\n   • Potential use cases or examples\n\nWriting Effective Feature Requests:\n\n• Start with the user's problem, not the solution\n• Explain the \"why\" behind your suggestion\n• Provide context: who would use this? When? How?\n• Consider edge cases and alternatives\n• Be open to discussion and refinement\n\nExample Structure:\n\"As a [user type], I want [goal] so that [benefit].\"\n\nExample: \"As a product manager, I want to see a roadmap visualization so that I can better communicate project timelines to stakeholders.\"\n\nPro Tip: Engage with the community. Respond to questions, provide additional context, and help refine the idea through discussion. The best features emerge from collaboration."
+    },
+    {
+      "title": "Proposing Workflow and Process Changes",
+      "body": "Non-developers often have valuable insights about how projects can be better organized, documented, or managed. GitHub provides tools to propose these improvements.\n\nCommon Workflow Improvements:\n\n• Documentation structure and organization\n• Issue templates and labels\n• Contribution guidelines\n• Release processes\n• Communication protocols\n• Onboarding procedures\n• Community guidelines\n\nHow to Propose Workflow Changes:\n\n1. Create an issue discussing the current process and proposed improvement\n2. Get community feedback and consensus\n3. If it involves documentation, create a Pull Request with the changes\n4. Reference the discussion issue in your PR\n5. Work with maintainers to refine and merge\n\nCreating Documentation PRs:\n\nEven without coding skills, you can:\n• Edit markdown files (GitHub's web editor makes this easy)\n• Improve clarity and organization\n• Add examples and use cases\n• Fix typos and formatting\n• Translate documentation\n\nStep-by-Step for Documentation PR:\n\n1. Navigate to the file you want to edit\n2. Click the pencil icon (Edit this file)\n3. Make your changes in the web editor\n4. Preview your changes\n5. Write a clear commit message describing your changes\n6. Click \"Propose changes\"\n7. Fill out the Pull Request form explaining your changes\n8. Submit and wait for review\n\nRemember: Small improvements add up. Every typo fixed, every clarification added, makes the project more accessible to others."
+    },
+    {
+      "title": "Participating in Discussions",
+      "body": "GitHub Discussions (when enabled) and Issues provide spaces for community conversation. Your participation shapes project direction.\n\nWhere to Participate:\n\n• Issue comments: Add context, ask questions, share experiences\n• Discussion forums: Engage in broader project conversations\n• Pull Request reviews: Provide feedback on proposed changes\n• Project boards: Help prioritize and organize work\n\nHow to Contribute to Discussions:\n\n• Ask clarifying questions\n• Share your use case or experience\n• Provide additional context or examples\n• Help others understand proposals\n• Suggest alternatives or improvements\n• Connect related issues or discussions\n\nBest Practices:\n\n• Read existing comments before posting\n• Be respectful and constructive\n• Stay on topic\n• Use @mentions to involve specific people\n• Format your comments clearly (use markdown)\n• Follow up on your suggestions\n\nYour perspective as a non-developer is valuable because:\n• You represent end users\n• You think about business and product implications\n• You notice usability issues developers might miss\n• You can help bridge technical and non-technical communities"
+    },
+    {
+      "title": "Common Workflows for Non-Developers",
+      "body": "Here are step-by-step workflows for common tasks:\n\nWorkflow 1: Reporting a Documentation Error\n\n1. Find the error in the documentation\n2. Click \"Edit\" on the file\n3. Make the correction\n4. Propose the change with a clear message\n5. Reference the issue if one exists\n\nWorkflow 2: Suggesting a New Feature\n\n1. Search existing issues to avoid duplicates\n2. Create a new issue with \"Feature Request\" label\n3. Use the template: \"As a [user], I want [feature] so that [benefit]\"\n4. Provide detailed context and use cases\n5. Engage in discussion and refine the idea\n6. Help prioritize if asked\n\nWorkflow 3: Improving Issue Organization\n\n1. Identify organizational problems (missing labels, unclear templates)\n2. Create an issue proposing improvements\n3. Get community feedback\n4. Create PRs to implement approved changes\n5. Update documentation to reflect new processes\n\nWorkflow 4: Contributing User Stories\n\n1. Identify a user need or pain point\n2. Write user stories following the project's format\n3. Create an issue or add to existing discussions\n4. Help prioritize based on user value\n5. Provide feedback as features are developed\n\nRemember: Start small, learn the process, and gradually take on more complex contributions."
+    },
+    {
+      "title": "Understanding Labels, Milestones, and Projects",
+      "body": "GitHub provides organizational tools that help manage work. Understanding these helps you contribute more effectively.\n\nLabels:\n\nLabels categorize issues and PRs. Common labels include:\n• bug, enhancement, documentation\n• good first issue, help wanted\n• priority: high/medium/low\n• status: in-progress, blocked, needs-review\n\nHow to Use Labels:\n• Filter issues by label to find work you can help with\n• Suggest new labels if categories are missing\n• Help maintainers organize by suggesting appropriate labels\n\nMilestones:\n\nMilestones group related issues toward a goal or release:\n• Help identify what's planned for upcoming releases\n• Show progress toward goals\n• Help prioritize work\n\nProjects:\n\nProject boards visualize work using columns (e.g., To Do, In Progress, Done):\n• See the big picture of project status\n• Understand priorities and workflows\n• Help organize and prioritize issues\n\nAs a non-developer, you can:\n• Help organize issues into appropriate milestones\n• Suggest labels for better categorization\n• Contribute to project board organization\n• Help prioritize based on user value"
+    },
+    {
+      "title": "Etiquette and Best Practices",
+      "body": "Contributing to open source is about collaboration and respect. Here are guidelines for effective participation:\n\nCommunication:\n\n• Be clear and concise\n• Use proper grammar and formatting\n• Be respectful and constructive\n• Assume good intentions\n• Thank maintainers for their work\n\nIssue Management:\n\n• Search before creating new issues\n• One issue per problem or feature\n• Keep issues focused and actionable\n• Update issues with new information\n• Close issues when resolved\n\nPull Requests:\n\n• Make small, focused changes\n• Write clear descriptions\n• Reference related issues\n• Respond to feedback promptly\n• Be patient with reviews\n\nCommunity:\n\n• Help others when you can\n• Share knowledge and experiences\n• Recognize that maintainers are volunteers\n• Be patient—open source moves at its own pace\n• Celebrate wins and progress\n\nRemember: You're joining a community. Building relationships and trust is just as important as the contributions you make."
+    },
+    {
+      "title": "Real-World Examples",
+      "body": "Here are examples of valuable non-developer contributions:\n\nExample 1: Documentation Improvement\n\nA product manager noticed that the onboarding guide was missing a crucial step. They:\n• Created an issue describing the gap\n• Proposed specific documentation changes\n• Created a PR with the improvements\n• Worked with maintainers to refine the wording\n• Result: Better onboarding experience for all new users\n\nExample 2: Feature Prioritization\n\nA community member analyzed user feedback and:\n• Compiled common feature requests\n• Created a prioritized list with user value justification\n• Facilitated discussion to reach consensus\n• Result: Project roadmap aligned with user needs\n\nExample 3: Process Improvement\n\nA designer noticed that design proposals were getting lost. They:\n• Proposed a new issue template for design proposals\n• Created the template with appropriate fields\n• Updated contribution guidelines\n• Result: Better organization and visibility of design work\n\nExample 4: User Research\n\nA researcher conducted user interviews and:\n• Documented findings in issues\n• Created user personas\n• Provided insights for feature development\n• Result: More user-centered product decisions\n\nThese examples show that non-developer contributions are just as valuable as code contributions."
+    },
+    {
+      "title": "Resources & Further Learning",
+      "body": "Continue learning with these resources:",
+      "links": [
+        {
+          "text": "GitHub Docs - Getting Started",
+          "url": "https://docs.github.com/en/get-started",
+          "external": true
+        },
+        {
+          "text": "GitHub Skills - Interactive Tutorials",
+          "url": "https://skills.github.com",
+          "external": true
+        },
+        {
+          "text": "First Contributions - Make Your First Open Source Contribution",
+          "url": "https://firstcontributions.github.io",
+          "external": true
+        },
+        {
+          "text": "GitHub Guides - Understanding the GitHub Flow",
+          "url": "https://guides.github.com/introduction/flow",
+          "external": true
+        },
+        {
+          "text": "Open Source Guide - How to Contribute",
+          "url": "https://opensource.guide/how-to-contribute",
+          "external": true
+        },
+        {
+          "text": "Markdown Guide - Formatting Your Contributions",
+          "url": "https://www.markdownguide.org",
+          "external": true
+        },
+        {
+          "text": "GitHub Community Forum",
+          "url": "https://github.community",
+          "external": true
+        },
+        {
+          "text": "GitHub Training Kit - Free Courses",
+          "url": "https://github.github.io/training-kit",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Next Steps",
+      "body": "Now that you understand the basics, here's how to get started:\n\n1. Set up your GitHub account and complete your profile\n2. Explore a project you're interested in\n3. Read their contribution guidelines and code of conduct\n4. Start small: fix a typo, report a bug, or ask a clarifying question\n5. Gradually take on more complex contributions\n6. Build relationships with the community\n7. Share your experiences and help others get started\n\nAt Builder, we encourage everyone to contribute to open source projects. Whether you're writing code, improving documentation, or helping organize work, your contributions make a difference.\n\nRemember: Every expert was once a beginner. The open source community values curiosity, helpfulness, and collaboration. Your unique perspective as a non-developer is an asset—use it to help build better products.\n\nReady to make your first contribution? Find a project you care about, start small, and don't be afraid to ask questions. The community is here to help."
+    }
+  ],
+  "meta": {
+    "title": "GitHub for Non-Developers | Builder Vancouver",
+    "description": "Learn how to use GitHub to interact with open source projects, suggest changes, report issues, and contribute workflows—no coding required.",
+    "keywords": [
+      "github",
+      "open source",
+      "non-developer",
+      "product manager",
+      "github tutorial",
+      "contributing to open source",
+      "github workflows",
+      "github issues",
+      "pull requests",
+      "open source contribution"
+    ]
+  }
+}
