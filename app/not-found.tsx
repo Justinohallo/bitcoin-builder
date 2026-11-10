@@ -21,8 +21,8 @@ export default function NotFound() {
             Page Not Found
           </p>
           <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
-            The page you're looking for seems to have vanished into the mempool.
-            Let's get you back on track.
+            The page you&apos;re looking for seems to have vanished into the
+            mempool. Let&apos;s get you back on track.
           </p>
         </div>
 

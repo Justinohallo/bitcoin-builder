@@ -49,26 +49,33 @@ export default function RootLayout({
   const websiteSchema = createWebSiteSchema();
   const siteSchema = createSchemaGraph(organizationSchema, websiteSchema);
 
-  return (
-    <ClerkProvider>
-      <html lang="en">
-        <head>
-          <JsonLd data={siteSchema} />
-          {process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && (
-            <meta
-              name="google-site-verification"
-              content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
-            />
-          )}
-        </head>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-950 text-neutral-100`}
-        >
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </body>
-      </html>
-    </ClerkProvider>
+  // Conditionally render ClerkProvider only if publishable key is available
+  // This allows builds to succeed in CI/CD environments without Clerk credentials
+  const clerkPublishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const content = (
+    <html lang="en">
+      <head>
+        <JsonLd data={siteSchema} />
+        {process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && (
+          <meta
+            name="google-site-verification"
+            content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
+          />
+        )}
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-950 text-neutral-100`}
+      >
+        <Navbar />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
+
+  if (clerkPublishableKey) {
+    return <ClerkProvider>{content}</ClerkProvider>;
+  }
+
+  return content;
 }

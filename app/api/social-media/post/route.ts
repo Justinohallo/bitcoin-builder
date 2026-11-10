@@ -36,6 +36,17 @@ import { loadSocialMediaConfig } from "@/lib/social-media-config";
  */
 export async function POST(request: NextRequest) {
   try {
+    // If Clerk is not configured, return error
+    if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
+      return NextResponse.json(
+        {
+          error: "Service unavailable",
+          message: "Authentication service is not configured",
+        },
+        { status: 503 }
+      );
+    }
+
     // Check authentication
     const { userId } = await auth();
 
